@@ -1,9 +1,9 @@
-function mediaEventListener(queryOption){
+function MediaEventListener(queryOption){
     var _self = this;
     _self.resolutionCurr = window.innerWidth;
     _self.resolutionLast = 0;
     // default device breakpoints или из опций при инициализации
-    _self.queries = (typeof queryOption != undefined) ? queryOption :[
+    _self.queries = (typeof queryOption !== undefined) ? queryOption :[
         {
             name: 'mobile',
             minResolution: 0,

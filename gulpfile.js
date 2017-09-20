@@ -1,16 +1,17 @@
 'use strict';
 
 var gulp = require('gulp'),
-    gutil = require('gulp-util'),
+    // gutil = require('gulp-util'),
     prefixer = require('gulp-autoprefixer'),
     uglify = require('gulp-uglify'),
     sass = require('gulp-sass'),
-    cleanCSS = require('gulp-clean-css'),
+    // cleanCSS = require('gulp-clean-css'),
     sourcemaps = require('gulp-sourcemaps'),
     concat =  require('gulp-concat'),
     cssmin = require('gulp-minify-css'),
-    rigger = require('gulp-rigger'),
-    rename = require("gulp-rename");
+    // rename = require("gulp-rename"),
+    rigger = require('gulp-rigger');
+
 
 var path = {
     build: {
@@ -27,7 +28,7 @@ var path = {
             'web/assets/scripts/_extends.js',
             'web/assets/scripts/**/[^_]*.js',
 
-            'web/assets/ui-kit/utilities/media-event-listener/media-event-listener-init.js',
+            'web/assets/ui-kit/utilities/media-event-listener/media-event-listener-init.js'
         ],
         style: 'web/assets/styles/main.scss',
         html: 'pages/[^_]*.html',
@@ -60,7 +61,9 @@ gulp.task('style:build', function () {
             sourceMap: true,
             errLogToConsole: true
         }))
-        .pipe(prefixer())
+        .pipe(prefixer({
+            browsers: ['last 2 versions', "> 3%", "ie 11", "ie 10"]
+        }))
         .pipe(sourcemaps.write())
         .pipe(gulp.dest('web/assets/compiled/'))
 });
@@ -95,5 +98,5 @@ gulp.task('build', [
     'vendor:build',
     'html:build',
     'js:build',
-    'style:build',
+    'style:build'
 ]);

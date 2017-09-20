@@ -24,7 +24,7 @@ $nice-tables-color-hover: darken(#e8eaeb,10%);    //  подсветка стр�
 $nice-tables-padding: 15px 18px;                  //  отступы в ячейках табилцы
 
 @include table-default($tables-color-border);
-@include table-nice($tables-color-border, $nice-tables-color-border, $nice-tables-color-striped, $nice-tables-color-hover, $nice-tables-padding){
+@include table-nice($nice-tables-color-border, $nice-tables-color-striped, $nice-tables-color-hover, $nice-tables-padding){
   table-layout: fixed;
 
   th {
@@ -36,8 +36,10 @@ $nice-tables-padding: 15px 18px;                  //  отступы в ячей
 };
 @include table-responsive();
 
+@import "../../../template-block/base-1/_common/nav-arrow.scss";
 @import "../../../template-block/base-1/catalog-menu/catalog-menu.scss";
 @import "../../../template-block/base-1/text-block/text-block.scss";
+@import "../../../template-block/base-1/advantages/advantages.scss";
 @import "../../../template-block/base-1/galery-fullwidth/galery-fullwidth.scss";
 
 

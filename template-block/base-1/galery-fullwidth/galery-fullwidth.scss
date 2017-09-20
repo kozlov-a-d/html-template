@@ -23,45 +23,12 @@
 
   }
   &__item{
-
-  }
-}
-
-.nav-arrow{
-  display: block;
-  font-size: 0;
-
-  &__btn{
-    display: inline-block;
-    width: 47px;
-    height: 47px;
-    vertical-align: top;
-    margin: 0 0 0 10px;
-
-    border: 1px solid #c9c9c9;
-    border-radius: 50%;
-    background: #fff;
-    font-size: 0;
-    text-align: center;
-    cursor: pointer;
-
-    transition: .2s;
-
-    &.-prev{
-
-    }
-    &.-next{
-
-    }
-
-    &:hover{
-      background: #5d8ea8;
-      &.-prev{
-
-      }
-      &.-next{
-
-      }
+    width: 318px;
+    img{
+      display: block;
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
     }
   }
 }
