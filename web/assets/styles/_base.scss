@@ -1,0 +1,97 @@
+/********************************************************************************************/
+/* Base style ------------------------------------------------------------------------------*/
+/* ...                                                                                      */
+/********************************************************************************************/
+*{
+  box-sizing: border-box;
+  outline: none;
+}
+body{
+  -webkit-text-size-adjust: 100%;
+  max-height: 999999px;
+}
+
+/********************************************************************************************/
+/* Typography-------------------------------------------------------------------------------*/
+/* style for h1, h2, h3, p, ul, ol and some other                                           */
+/********************************************************************************************/
+body{
+  font-family: $font-main;
+  font-size: $font-size-base;
+  font-weight: $font-weight-base;
+  line-height: $line-height-base;
+  color: $color-base;
+}
+h1{
+  @if $heading-h1-font != $font-main {
+    font-family: $font-main;
+  }
+  @if $heading-h1-color != $color-base {
+    color: $heading-h1-color;
+  }
+  font-size: $heading-h1-size;
+  font-weight: $heading-h1-weight;
+  line-height: $heading-h1-height;
+  text-align: $heading-h1-align;
+
+  margin-bottom: $text-margin;
+}
+h2{
+  @if $heading-h2-font != $font-main {
+    font-family: $heading-h2-font;
+  }
+  @if $heading-h2-color != $color-base {
+    color: $heading-h2-color;
+  }
+  font-size: $heading-h2-size;
+  font-weight: $heading-h2-weight;
+  line-height: $heading-h2-height;
+  text-align: $heading-h2-align;
+
+  margin-bottom: $text-margin;
+}
+h3{
+  @if $heading-h3-font != $font-main {
+    font-family: $heading-h3-font;
+  }
+  @if $heading-h3-color != $color-base {
+    color: $heading-h3-color;
+  }
+  font-size: $heading-h3-size;
+  font-weight: $heading-h3-weight;
+  line-height: $heading-h3-height;
+  text-align: $heading-h3-align;
+
+  margin-bottom: $text-margin;
+}
+a{
+  color: $color-link;
+
+  transition: 0.2s;
+  &:hover{
+    text-decoration: none;
+  }
+}
+p, ul, ol, table, pre, .grid{
+  margin-bottom: $text-margin;
+}
+
+ul, ol{
+  padding-left: $list-padding-left;
+  li{
+    margin: 3px 0;
+  }
+}
+.with_marker{
+  list-style: none;
+  li{
+    position: relative;
+    @include list-marker-style();
+  }
+}
+
+p + ul,
+p + ol{
+  margin-top: - $text-margin ;
+}
+

@@ -1,0 +1,17 @@
+.text-block{
+  padding: 20px 0 60px;
+  overflow: hidden;
+  &.-top{
+
+  }
+  &.-bottom{
+    padding: 40px 0 60px;
+    background: #e4e8eb;
+  }
+  &__container{
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0px 20px;
+  }
+}

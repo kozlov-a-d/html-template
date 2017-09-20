@@ -1,0 +1,180 @@
+<section class="demo-block">
+    <div class="demo-block__container">
+        <h1>Tables</h1>
+
+        <div class="helper-section-split"></div>
+
+        <h2>Scss переменные</h2>
+        <p><code><span class="css-class-name">web/assets/scripts/_extends.js</span></code></p>
+
+        <div class="helper-section-split"></div>
+
+        <h2>Классы для таблиц</h2>
+        <div class="grid js-buttons__toggle-class">
+            <div class="col-1-2 col-sm-1-1">
+                <p>Для обычных и симпатичных табличек</p>
+                <button data-class="noborder" data-active="false"><code><span class="css-class-name">noborder</span></code> - табличка без бордеров</button>
+                <button data-class="cellpading_5" data-active="false"><code><span class="css-class-name">cellpading_5</span></code> - симпатичная табличка</button>
+                <button data-class="cellpading_7" data-active="false"><code><span class="css-class-name">cellpading_7</span></code> - симпатичная табличка</button>
+                <button data-class="cellpading_10" data-active="false"><code><span class="css-class-name">cellpading_10</span></code> - симпатичная табличка</button>
+                <button data-class="cellpading_15" data-active="false"><code><span class="css-class-name">cellpading_15</span></code> - симпатичная табличка</button>
+            </div>
+            <div class="col-1-2 col-sm-1-1">
+                <p>Только для симпатичных табличек</p>
+                <button data-class="nice_table" data-active="true"><code><span class="css-class-name">nice_table</span></code> - симпатичная табличка</button>
+                <button data-class="-striped" data-active="false"><code><span class="css-class-name">-striped</span></code> - строчки таблицы выделены через одну</button>
+                <button data-class="-hover-row" data-active="false"><code><span class="css-class-name">-hover-row</span></code> - при наведение подсвечивается строка</button>
+                <button data-class="-hover-col" data-active="false"><code><span class="css-class-name">-hover-col</span></code> - при наведение подсвечивается столбец</button>
+                <button data-class="-hover-cross" data-active="false"><code><span class="css-class-name">-hover-cross</span></code> - при наведение подсвечивается строка и столбец</button>
+                <p><code><span class="css-class-name">-striped</span></code> плохо совмещается с подсветкой по колонкам</p>
+            </div>
+        </div>
+
+        <table class="nice_table js-test__table" >
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Username</th>
+                    <th>Age</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td>13</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                    <td>42</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                    <td>24</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                    <td>24</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                    <td>24</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="helper-section-split"></div>
+
+        <h2>Адаптивность таблиц</h2>
+        <p>Таблицы автоматически оборочиваются в <code><span class="css-class-name">table-responsive</span></code>, который добавляет им скрол, если таблица не помещается в экран</p>
+        <p>Сделать более конкретный селектор для таблиц, которым нужно добавить обертку для адаптива можно в скрипте <code><span class="css-class-name">web/assets/scripts/_extends.js</span></code></p>
+        <!--<p>Таблицы с атрибутом <code><span class="css-class-name">data-view-type="horizontal"</span></code> на адаптиве переворачиваются как на примере ниже.
+            <br>По умолчанию это происходит на разрешениях менее 1024px, однако это можно переопределить задав <code><span class="css-class-name">data-breakpoint="X"</span></code>, где X - число</p>
+
+        <table class="nice_table js-test__table" data-view-type="horizontal">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Username</th>
+                <th>Age</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>1</td>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+                <td>13</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+                <td>42</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Larry</td>
+                <td>the Bird</td>
+                <td>@twitter</td>
+                <td>24</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Larry</td>
+                <td>the Bird</td>
+                <td>@twitter</td>
+                <td>24</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Larry</td>
+                <td>the Bird</td>
+                <td>@twitter</td>
+                <td>24</td>
+            </tr>
+            </tbody>
+        </table>-->
+
+
+        <script>
+            var btns = document.querySelectorAll('.js-buttons__toggle-class button');
+            var table = document.getElementsByClassName('js-test__table')[0];
+            btns.forEach(function(item, i, arr) {
+                item.addEventListener("click", function(){
+
+                    if(item.getAttribute('data-active') == 'true'){
+                        console.log('true', item.getAttribute('data-active'));
+                        item.setAttribute('data-active', false);
+                        table.classList.remove(item.getAttribute('data-class'));
+                    } else {
+                        console.log('false', item.getAttribute('data-active'));
+                        item.setAttribute('data-active', true);
+                        table.classList.add(item.getAttribute('data-class'));
+                    }
+
+                });
+            });
+        </script>
+        <style>
+            .js-buttons__toggle-class button{
+                display: block;
+                margin-bottom: 15px;
+                border: 1px solid #555555;
+                width: 100%;
+                padding: 3px 5px;
+                text-align: left;
+                cursor: pointer;
+            }
+            .js-buttons__toggle-class button[data-active="true"]{
+                background: #86e286;
+            }
+
+        </style>
+
+        <div class="helper-section-split"></div>
+
+
+
+    </div>
+</section>

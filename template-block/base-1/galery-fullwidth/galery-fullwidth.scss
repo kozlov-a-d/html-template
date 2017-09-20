@@ -1,0 +1,67 @@
+.galery-fullwidth{
+  padding: 60px 0 82px;
+  &__header{
+    display: block;
+    width: 100%;
+    max-width: 1000px;
+    padding: 0 20px;
+    margin: 0 auto 40px;
+    overflow: hidden;
+
+
+  }
+  &__title{
+    float: left;
+    &>*{
+      margin: 0;
+    }
+  }
+  &__nav{
+    float: right;
+  }
+  &__carousel{
+
+  }
+  &__item{
+
+  }
+}
+
+.nav-arrow{
+  display: block;
+  font-size: 0;
+
+  &__btn{
+    display: inline-block;
+    width: 47px;
+    height: 47px;
+    vertical-align: top;
+    margin: 0 0 0 10px;
+
+    border: 1px solid #c9c9c9;
+    border-radius: 50%;
+    background: #fff;
+    font-size: 0;
+    text-align: center;
+    cursor: pointer;
+
+    transition: .2s;
+
+    &.-prev{
+
+    }
+    &.-next{
+
+    }
+
+    &:hover{
+      background: #5d8ea8;
+      &.-prev{
+
+      }
+      &.-next{
+
+      }
+    }
+  }
+}

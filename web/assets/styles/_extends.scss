@@ -1,0 +1,43 @@
+@import "../ui-kit/utilities/scss-mixins/utitlties";
+// mixin list:
+// @mixin cfix-after
+// @mixin cfix-before
+// @mixin cfix
+// @mixin container( $maxWidth: 1280px)
+// @mixin media-max($resolution)
+// @mixin media-min($resolution)
+// @mixin media-interval($resolution-min, $resolution-max)
+
+
+// LAYOUT ------------------------------------------------------------------------------------------------------------*/
+@import "../ui-kit/layout/grid/grid-inline";
+@import "../ui-kit/layout/grid/grid-mixins";
+
+
+// CONTENT -----------------------------------------------------------------------------------------------------------*/
+@import "../ui-kit/content/tables/tables";
+
+$tables-color-border: $color-base;                // цвет границ в обычной табилчке
+$nice-tables-color-border: #e8eaeb;               //  цвет границ в табличке
+$nice-tables-color-striped: #e8eaeb;              //  дополнительный цвет для строчек таблицы
+$nice-tables-color-hover: darken(#e8eaeb,10%);    //  подсветка строчек/строк табилцы при наведении
+$nice-tables-padding: 15px 18px;                  //  отступы в ячейках табилцы
+
+@include table-default($tables-color-border);
+@include table-nice($tables-color-border, $nice-tables-color-border, $nice-tables-color-striped, $nice-tables-color-hover, $nice-tables-padding){
+  table-layout: fixed;
+
+  th {
+    background: #2b8fc9;
+    color: #fff;
+    font-weight: bold;
+    text-align: left;
+  }
+};
+@include table-responsive();
+
+@import "../../../template-block/base-1/catalog-menu/catalog-menu.scss";
+@import "../../../template-block/base-1/text-block/text-block.scss";
+@import "../../../template-block/base-1/galery-fullwidth/galery-fullwidth.scss";
+
+

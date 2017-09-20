@@ -1,0 +1,60 @@
+@mixin cfix-after{
+  &:after{
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    *zoom: 1;
+  }
+}
+
+@mixin cfix-before{
+  &:before{
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    *zoom: 1;
+  }
+}
+
+@mixin cfix{
+  @include cfix-before;
+  @include cfix-after;
+}
+
+@mixin container( $maxWidth: 1280px){
+  width: 100%;
+  max-width: $maxWidth;
+  margin: 0 auto;
+  @include cfix();
+}
+
+@mixin animation($animation-run: true, $animation-duration:  0.2s, $animation-timing-function: ease-in-out, $animation-delay: 0s){
+  @if $animation-run {
+    transition: $animation-duration $animation-timing-function $animation-delay;
+  }
+  @else {
+    transition: none;
+  }
+}
+
+@mixin media-max($resolution){
+  @media (max-width: $resolution) {
+    @content;
+  }
+}
+@mixin media-min($resolution){
+  @media (min-width: $resolution) {
+    @content;
+  }
+}
+@mixin media-interval($resolution-min, $resolution-max){
+  @media (min-width: $resolution-min) and (max-width: $resolution-max){
+    @content;
+  }
+}
