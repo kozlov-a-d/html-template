@@ -34,14 +34,14 @@ var path = {
         html: 'pages/[^_]*.html',
         vendor:{
             js: [
-                'bower_components/jquery/dist/jquery.js',
-                'bower_components/owl.carousel/dist/owl.carousel.js'
+                'web/assets/vendor/jquery/dist/jquery.js',
+                'web/assets/vendor/owl.carousel/dist/owl.carousel.js'
             ],
             css: [
-                'bower_components/normalize-css/normalize.css',
-                'bower_components/animate.css/animate.css',
-                'bower_components/owl.carousel/dist/assets/owl.carousel.css',
-                'bower_components/owl.carousel/dist/assets/owl.theme.default.css'
+                'web/assets/vendor/normalize-css/normalize.css',
+                'web/assets/vendor/animate.css/animate.css',
+                'web/assets/vendor/owl.carousel/dist/assets/owl.carousel.css',
+                'web/assets/vendor/owl.carousel/dist/assets/owl.theme.default.css'
             ]
         }
     },
