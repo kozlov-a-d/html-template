@@ -1,6 +1,7 @@
 'use strict';
 
 var gulp = require('gulp'),
+    watch = require('gulp-watch'),
     // gutil = require('gulp-util'),
     prefixer = require('gulp-autoprefixer'),
     uglify = require('gulp-uglify'),
@@ -48,7 +49,9 @@ var path = {
     watch: {
         js: ['web/assets/ui-kit/**/*.js', 'web/assets/scripts/**/*.js'],
         style: ['web/assets/styles/**/*.scss', 'web/assets/ui-kit/**/*.scss'],
-        html: ['pages/**/*.html', 'template-block/**/*.html']
+        html: ['pages/**/*.html', 'template-block/**/*.html'],
+        vendor: 'web/assets/vendor/**/*.*',
+        templates: 'template-block/**/*.*'
     }
 };
 
@@ -100,3 +103,23 @@ gulp.task('build', [
     'js:build',
     'style:build'
 ]);
+
+gulp.task('watch', function(){
+    watch(path.watch.vendor, function() {
+        gulp.start('vendor:build');
+    });
+    watch(path.watch.html, function() {
+        gulp.start('html:build');
+    });
+    watch(path.watch.js, function() {
+        gulp.start('js:build');
+    });
+    watch(path.watch.style, function() {
+        gulp.start('style:build');
+    });
+    watch(path.watch.templates, function() {
+        gulp.start('html:build');
+        gulp.start('style:build');
+        gulp.start('js:build');
+    });
+});
