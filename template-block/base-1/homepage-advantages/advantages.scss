@@ -1,6 +1,8 @@
 .advantages{
   padding: 60px 0 82px;
   background: #e4e8eb;
+  border-top: 1px solid #fff;
+  border-bottom: 2px solid #fff;
   &__container{
     width: 100%;
     max-width: 1000px;
@@ -21,7 +23,7 @@
     float: right;
   }
   &__carousel{
-
+    width: 100%;
   }
   &__item{
 

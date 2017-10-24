@@ -230,6 +230,30 @@ Tables.addMobileView('table');
     });
 }());
 
+/// template-block/base-1/homepage-testimonials-widget
+(function testimonialsWidget() {
+    var testimonialsWidget = {
+        carousel : $(".js-testimonials-widget .bxslider"),
+        nextBtn : $(".js-testimonials-widget .js-nav-next"),
+        prevBtn : $(".js-testimonials-widget .js-nav-prev")
+    };
+    testimonialsWidget.carousel.bxSlider({
+        mode: 'vertical',
+        infiniteLoop: true,
+        easing: "ease-in",
+        pager: false,
+        controls: false,
+        minSlides: 2,
+        maxSlides: 2,
+        adaptiveHeight: false
+    });
+    testimonialsWidget.nextBtn.click(function() {
+        testimonialsWidget.carousel.goToNextSlide();
+    });
+    testimonialsWidget.prevBtn.click(function() {
+        testimonialsWidget.carousel.goToPrevSlide();
+    });
+}());
 
 
 

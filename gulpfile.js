@@ -36,13 +36,15 @@ var path = {
         vendor:{
             js: [
                 'bower_components/jquery/dist/jquery.js',
-                'bower_components/owl.carousel/dist/owl.carousel.js'
+                'bower_components/owl.carousel/dist/owl.carousel.js',
+                'bower_components/bxslider-4/dist/jquery.bxslider.js'
             ],
             css: [
                 'bower_components/normalize-css/normalize.css',
                 'bower_components/animate.css/animate.css',
                 'bower_components/owl.carousel/dist/assets/owl.carousel.css',
-                'bower_components/owl.carousel/dist/assets/owl.theme.default.css'
+                'bower_components/owl.carousel/dist/assets/owl.theme.default.css',
+                'bower_components/bxslider-4/dist/jquery.bxslider.css'
             ]
         }
     },
