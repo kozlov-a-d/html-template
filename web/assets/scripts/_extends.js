@@ -13,7 +13,7 @@ Tables.addMobileView('table');
 
 
 
-/// template-block/base-1/advantages
+/// template-block/base-1/homepage-advantages
 (function advantages() {
     var advantages = {
         carousel : $(".js-advantages .owl-carousel"),
@@ -40,7 +40,7 @@ Tables.addMobileView('table');
     });
 }());
 
-/// template-block/base-1/galery-fullwidth
+/// template-block/base-1/homepage-galery-fullwidth
 (function galeryFullwidthCentered() {
     var galeryFullwidthCentered = {
         carousel : $(".js-galery-fullwidth-centered .owl-carousel"),
@@ -63,7 +63,7 @@ Tables.addMobileView('table');
     });
 }());
 
-/// template-block/base-1/certificates-and-partners
+/// template-block/base-1/homepage-certificates-and-partners
 (function certificates() {
     var certificates = {
         carousel : $(".js-certificates .owl-carousel"),
