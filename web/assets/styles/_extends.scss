@@ -37,14 +37,14 @@ $nice-tables-padding: 15px 18px;                  //  отступы в ячей
 @include table-responsive();
 
 @import "../../../template-block/base-1/_common/nav-arrow.scss";
-@import "../../../template-block/base-1/homepage__catalog-menu/catalog-menu.scss";
-@import "../../../template-block/base-1/homepage__text-block/text-block.scss";
-@import "../../../template-block/base-1/homepage__advantages/advantages.scss";
-@import "../../../template-block/base-1/homepage__hits-widget/hits-widget.scss";
-@import "../../../template-block/base-1/homepage__work-scheme/work-scheme.scss";
-@import "../../../template-block/base-1/homepage__galery-fullwidth/galery-fullwidth.scss";
-@import "../../../template-block/base-1/homepage__certificates-and-partners/certificates-and-partners.scss";
-@import "../../../template-block/base-1/homepage__articles-widget/homepage__articles-widget.scss";
-@import "../../../template-block/base-1/homepage__testimonials-widget/testimonials-widget.scss";
+@import "../../../template-block/base-1/homepage/catalog-menu/catalog-menu.scss";
+@import "../../../template-block/base-1/homepage/text-block/text-block.scss";
+@import "../../../template-block/base-1/homepage/advantages/advantages.scss";
+@import "../../../template-block/base-1/homepage/hits-widget/hits-widget.scss";
+@import "../../../template-block/base-1/homepage/work-scheme/work-scheme.scss";
+@import "../../../template-block/base-1/homepage/galery-fullwidth/galery-fullwidth.scss";
+@import "../../../template-block/base-1/homepage/certificates-and-partners/certificates-and-partners.scss";
+@import "../../../template-block/base-1/homepage/articles-widget/articles-widget.scss";
+@import "../../../template-block/base-1/homepage/testimonials-widget/testimonials-widget.scss";
 
 

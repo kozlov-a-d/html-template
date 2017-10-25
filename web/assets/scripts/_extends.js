@@ -13,7 +13,7 @@ Tables.addMobileView('table');
 
 
 
-/// template-block/base-1/homepage__advantages
+/// template-block/base-1/homepage/advantages
 (function advantages() {
     var advantages = {
         carousel : $(".js-advantages .owl-carousel"),
@@ -40,7 +40,7 @@ Tables.addMobileView('table');
     });
 }());
 
-/// template-block/base-1/homepage__hits-widget
+/// template-block/base-1/homepage/hits-widget
 (function hitsWidget() {
     var hitsWidget = {
         carousel : $(".js-hits-widget .owl-carousel"),
@@ -63,7 +63,7 @@ Tables.addMobileView('table');
     });
 }());
 
-/// template-block/base-1/homepage__articles-widget
+/// template-block/base-1/homepage/articles-widget
 (function articlesWidget() {
     var articlesWidget = {
         carousel : $(".js-articles-widget .owl-carousel"),
@@ -86,7 +86,7 @@ Tables.addMobileView('table');
     });
 }());
 
-/// template-block/base-1/homepage__galery-fullwidth
+/// template-block/base-1/homepage/galery-fullwidth
 (function galeryFullwidthCentered() {
     var galeryFullwidthCentered = {
         carousel : $(".js-galery-fullwidth-centered .owl-carousel"),
@@ -109,7 +109,7 @@ Tables.addMobileView('table');
     });
 }());
 
-/// template-block/base-1/homepage__certificates-and-partners
+/// template-block/base-1/homepage/certificates-and-partners
 (function certificates() {
     var certificates = {
         carousel : $(".js-certificates .owl-carousel"),
@@ -151,7 +151,7 @@ Tables.addMobileView('table');
     });
 }());
 
-/// template-block/base-1/homepage__testimonials-widget
+/// template-block/base-1/homepage/testimonials-widget
 (function testimonialsWidget() {
     var testimonialsWidget = {
         carousel : $(".js-testimonials-widget .bxslider"),
