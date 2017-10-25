@@ -138,7 +138,7 @@ Tables.addMobileView('table');
 
 
 
-/// template-block/base-1/homepage-advantages
+/// template-block/base-1/homepage__advantages
 (function advantages() {
     var advantages = {
         carousel : $(".js-advantages .owl-carousel"),
@@ -165,7 +165,30 @@ Tables.addMobileView('table');
     });
 }());
 
-/// template-block/base-1/homepage-galery-fullwidth
+/// template-block/base-1/homepage__hits-widget
+(function hitsWidget() {
+    var hitsWidget = {
+        carousel : $(".js-hits-widget .owl-carousel"),
+        nextBtn : $(".js-hits-widget .js-nav-next"),
+        prevBtn : $(".js-hits-widget .js-nav-prev")
+    };
+    hitsWidget.carousel.owlCarousel({
+        center: true,
+        nav: false,
+        dots: false,
+        loop: true,
+        autoWidth: true,
+        margin: 22
+    });
+    hitsWidget.nextBtn.click(function() {
+        hitsWidget.carousel.trigger('next.owl.carousel');
+    });
+    hitsWidget.prevBtn.click(function() {
+        hitsWidget.carousel.trigger('prev.owl.carousel');
+    });
+}());
+
+/// template-block/base-1/homepage__galery-fullwidth
 (function galeryFullwidthCentered() {
     var galeryFullwidthCentered = {
         carousel : $(".js-galery-fullwidth-centered .owl-carousel"),
@@ -188,7 +211,7 @@ Tables.addMobileView('table');
     });
 }());
 
-/// template-block/base-1/homepage-certificates-and-partners
+/// template-block/base-1/homepage__certificates-and-partners
 (function certificates() {
     var certificates = {
         carousel : $(".js-certificates .owl-carousel"),
@@ -230,7 +253,7 @@ Tables.addMobileView('table');
     });
 }());
 
-/// template-block/base-1/homepage-testimonials-widget
+/// template-block/base-1/homepage__testimonials-widget
 (function testimonialsWidget() {
     var testimonialsWidget = {
         carousel : $(".js-testimonials-widget .bxslider"),
