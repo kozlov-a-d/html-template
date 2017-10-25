@@ -1,0 +1,81 @@
+.advantages{
+  padding: 60px 0 82px;
+  background: #e4e8eb;
+  border-top: 1px solid #fff;
+  border-bottom: 2px solid #fff;
+  &__container{
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  &__header{
+    margin: 0 auto 40px;
+    overflow: hidden;
+  }
+  &__title{
+    float: left;
+    &>*{
+      margin: 0;
+    }
+  }
+  &__nav{
+    float: right;
+  }
+  &__carousel{
+    width: 100%;
+  }
+  &__item{
+
+    &-img{
+      display: block;
+      width: 140px;
+      padding: 10px 10px 15px;
+      border-bottom: 2px solid #d2dbe0;
+      margin: 0 auto 20px;
+    }
+    img{
+      display: block;
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+    }
+    &-text{
+      text-align: center;
+      padding: 0 10px;
+      p{
+        font-size: 15px;
+        color: #637077;
+        &.advantages__item-name{
+          font-size: 17px;
+          color: #325f76;
+        }
+      }
+    }
+  }
+
+  .owl-stage-outer{
+    &:before{
+      content: '';
+      display: block;
+      width: 10px;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: rgba(228,232,235,1);
+      background: linear-gradient(to right, rgba(228,232,235,1) 0%, rgba(255,255,255,0) 100%);
+    }
+    &:after{
+      content: '';
+      display: block;
+      width: 10px;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: rgba(228,232,235,1);
+      background: linear-gradient(to left, rgba(228,232,235,1) 0%, rgba(255,255,255,0) 100%);
+    }
+  }
+}
