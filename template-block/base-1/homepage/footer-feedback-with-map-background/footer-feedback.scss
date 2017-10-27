@@ -1,0 +1,15 @@
+.footer-feedback{
+  padding: 50px 0 70px;
+
+  &__container{
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto 0;
+    @include cfix-after();
+  }
+
+  &__form{
+    float: right;
+    width: 380px;
+  }
+}

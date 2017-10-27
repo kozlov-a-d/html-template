@@ -86,6 +86,29 @@ Tables.addMobileView('table');
     });
 }());
 
+/// template-block/base-1/homepage/news-widget
+(function newsWidget() {
+    var newsWidget = {
+        carousel : $(".js-news-widget .owl-carousel"),
+        nextBtn : $(".js-news-widget .js-nav-next"),
+        prevBtn : $(".js-news-widget .js-nav-prev")
+    };
+    newsWidget.carousel.owlCarousel({
+        center: true,
+        nav: false,
+        dots: false,
+        loop: true,
+        autoWidth: true,
+        margin: 22
+    });
+    newsWidget.nextBtn.click(function() {
+        newsWidget.carousel.trigger('next.owl.carousel');
+    });
+    newsWidget.prevBtn.click(function() {
+        newsWidget.carousel.trigger('prev.owl.carousel');
+    });
+}());
+
 /// template-block/base-1/homepage/galery-fullwidth
 (function galeryFullwidthCentered() {
     var galeryFullwidthCentered = {

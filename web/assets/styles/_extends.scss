@@ -37,6 +37,8 @@ $nice-tables-padding: 15px 18px;                  //  отступы в ячей
 @include table-responsive();
 
 @import "../../../template-block/base-1/_common/nav-arrow.scss";
+@import "../../../template-block/base-1/_common/nav-arrow.scss";
+
 @import "../../../template-block/base-1/homepage/catalog-menu/catalog-menu.scss";
 @import "../../../template-block/base-1/homepage/text-block/text-block.scss";
 @import "../../../template-block/base-1/homepage/advantages/advantages.scss";
@@ -45,6 +47,9 @@ $nice-tables-padding: 15px 18px;                  //  отступы в ячей
 @import "../../../template-block/base-1/homepage/galery-fullwidth/galery-fullwidth.scss";
 @import "../../../template-block/base-1/homepage/certificates-and-partners/certificates-and-partners.scss";
 @import "../../../template-block/base-1/homepage/articles-widget/articles-widget.scss";
+@import "../../../template-block/base-1/homepage/news-widget-and-banners/news-widget.scss";
+@import "../../../template-block/base-1/homepage/news-widget-and-banners/banners.scss";
 @import "../../../template-block/base-1/homepage/testimonials-widget/testimonials-widget.scss";
+@import "../../../template-block/base-1/homepage/footer-feedback-with-map-background/footer-feedback.scss";
 
 
