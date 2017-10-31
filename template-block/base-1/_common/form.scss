@@ -1,0 +1,51 @@
+.form {
+  &__heading {
+    font-size: 30px;
+    font-weight: 300;
+    line-height: 40px;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  &__item {
+    margin-bottom: 12px;
+  }
+
+  .form-element-property{
+    display: block;
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: 1px solid #c6cfd4;
+    border-radius: 5px;
+    font-size: 15px;
+    color: #2f434d;
+    background: #fff;
+    @include animation();
+    &:focus{
+      box-shadow: 0 0 4px 0 rgba(119, 171, 196, 0.4);
+      border-color: rgb(123, 175, 201);
+    }
+  }
+
+  input:not([type="submit"]):not([type="checkbox"]):not([type="radio"]){
+    @extend .form-element-property;
+    height: 45px;
+    &:disabled{
+      color: #c6cfd4;
+    }
+  }
+
+  textarea{
+    @extend .form-element-property;
+    height: 187px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    resize: none;
+  }
+
+  select{
+    @extend .form-element-property;
+    height: 45px;
+  }
+
+}
