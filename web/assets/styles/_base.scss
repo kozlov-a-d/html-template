@@ -11,6 +11,13 @@ body{
   max-height: 999999px;
 }
 
+.layout-wrapper,
+.layout-main,
+.layout-header,
+.layout-footer{
+  width: 100%;
+  overflow: hidden;
+}
 /********************************************************************************************/
 /* Typography-------------------------------------------------------------------------------*/
 /* style for h1, h2, h3, p, ul, ol and some other                                           */
