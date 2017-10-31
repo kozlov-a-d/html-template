@@ -4,12 +4,14 @@
   $grid-gap: 16px;
   &__container{
     width: 100%;
-    max-width: 1000px;
+    max-width: 960px;
     margin: 0 auto;
   }
   &__list{
     display: block;
     padding:0;
+    margin-top: 0;
+    margin-bottom: 0;
     list-style: none;
     @include grid($grid-gap);
   }
@@ -72,13 +74,15 @@
   $grid-gap: 16px;
   &__container{
     width: 100%;
-    max-width: 1000px;
+    max-width: 960px;
     margin: 0 auto;
   }
   &__list{
     display: block;
     padding:0;
     list-style: none;
+    margin-top: 0;
+    margin-bottom: 0;
     @include grid($grid-gap);
   }
   &__item{
@@ -138,13 +142,15 @@
   $grid-gap: 22px;
   &__container{
     width: 100%;
-    max-width: 1000px;
+    max-width: 960px;
     margin: 0 auto;
   }
   &__list{
     display: block;
     padding:0;
     list-style: none;
+    margin-top: 0;
+    margin-bottom: 0;
     @include grid($grid-gap);
   }
   &__item{
