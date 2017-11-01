@@ -16,7 +16,16 @@ body{
 .layout-header,
 .layout-footer{
   width: 100%;
+  position: relative;
+}
+.layout-wrapper{
   overflow: hidden;
+}
+.layout-header{
+  z-index: 10;
+}
+.layout-main{
+  z-index: 5;
 }
 /********************************************************************************************/
 /* Typography-------------------------------------------------------------------------------*/

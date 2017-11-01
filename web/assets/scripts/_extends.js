@@ -11,6 +11,7 @@ var mediaEventListener = new MediaEventListener([
 /* задаём каим именно табилцам нужно добавлять обертки .table-responsive для адаптива */
 Tables.addMobileView('table');
 
+
 /// template-block/base-1/homepage/slider
 (function sliderHeader() {
     var sliderHeader = {
