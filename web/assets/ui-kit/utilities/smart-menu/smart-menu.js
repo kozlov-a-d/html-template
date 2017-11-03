@@ -41,7 +41,9 @@ function SmartMenu(options){
 
     // состояния модуля
     var states ={
-        isOpened: false
+        isOpened: false,   // открыт или закрыт на мобильном
+        isMobile: false,   // активна мобильная версия или нет
+        hasExtra: false
     };
 
     // Дерево меню, включает в себя только узлы, листья игнорируются
@@ -57,14 +59,18 @@ function SmartMenu(options){
 
     // Список селекторов, используемых в модуле
     var selectors = {
-        container: '.js-smart-menu',
+        container: '#js-smart-menu',
         node: '.-has-drop-down',
         nodeRoot: '#js-smart-menu > .menu-top__list',
         nodeLink: '.menu-top__item-name',
+        nodeItem: '.menu-top__item',
         nodeDropdown: '.menu-top__drop-down',
         nodeList: '.menu-top__list',
         btnToggle: '.menu-top__switcher-btn',
-        btnTitle: '.menu-top__title-btn'
+        btnTitle: '.menu-top__title-btn',
+
+        desktopContainer: '.menu-top__list',
+        desktopItems: '.js-smart-menu > .menu-top__list > .menu-top__item',
     };
 
     // Список элементов для быстрого обращения
@@ -87,7 +93,9 @@ function SmartMenu(options){
             nodeRoot: $(selectors.nodeRoot),
             nodeLinks: $(selectors.node + ' > ' + selectors.nodeLink),
             btnToggle: $(selectors.btnToggle),
-            btnTitle: $(selectors.btnTitle)
+            btnTitle: $(selectors.btnTitle),
+            desktopContainer: $(selectors.desktopContainer),
+            desktopItems: $(selectors.desktopItems)
         };
     }
 
@@ -148,7 +156,6 @@ function SmartMenu(options){
         // задаём корень текущим узлом
         currNode = getNodeRoot();
 
-        console.log(tree);
     }
 
     // Показать узел с заданым ID
@@ -226,18 +233,74 @@ function SmartMenu(options){
         elements.btnTitle.text(title);
     }
 
+    // Desktop ========================================================================================================/
+    function setScreenIsMobile(_isMobile) {
+        if( typeof _isMobile === 'boolean'){
+            states.isMobile = _isMobile;
+        } else {
+            console.warn('setScreenIsMobile(_isMobile) _isMobile не является boolean');
+        }
+    }
+    
+    function createExtraBar() {
+        var extrabarContent = '';
+        for(var i = 0; i < elements.desktopItems.length; i++){
+            extrabarContent = extrabarContent + elements.desktopItems.eq(i).get(0).outerHTML;
+
+        }
+
+        elements.nodeRoot.append(
+            '<li class="menu-top__item -extraBar -has-drop-down -drop-down-inverse">' +
+                '<button class="menu-top__item-name">extra</button>' +
+                '<div class="menu-top__drop-down">' +
+                    '<ul class="menu-top__list">' +
+                         extrabarContent +
+                    '</ul>' +
+                '</div>' +
+            '</li>'
+        );
+        elements.nodeRoot.find('.-extraBar .menu-top__drop-down .menu-top__drop-down').remove();
+        elements.nodeRoot.find('.-extraBar').hide();
+
+    }
+
+    function removeExtraBar() {
+        elements.nodeRoot.find('.-extraBar').remove();
+    }
+    
+    function hideItem() {
+        var dubler = elements.nodeRoot.find('.-extraBar .menu-top__item');
+
+        dubler.removeClass('-hidden');
+        elements.desktopItems.removeClass('-hidden');
+
+        var width = elements.desktopContainer.width();
+        var sumWidth = 0;
+        states.hasExtra = false;
+        for(var i = 0; i < elements.desktopItems.length; i++){
+            var elWidth = elements.desktopItems.eq(i).width();
+            if(sumWidth + elWidth < width){
+                sumWidth = sumWidth + elWidth;
+                dubler.eq(i).addClass('-hidden');
+                console.log(dubler.eq(i));
+            } else {
+                elements.desktopItems.eq(i).addClass('-hidden');
+                states.hasExtra = true;
+            }
+        }
+        id
+    }
+
 
     // Обработка событий ==============================================================================================/
 
-    // клик по гамбургеру
-    // - вешается при инициализации
+    // клик по гамбургеру - вешается при инициализации
     function addHandlerMobileToggle(){
         elements.btnToggle.on('click', function () {
             toggleMenu();
             return false;
         });
     }
-
 
     // Включаем обработчики навигации в мобильном виде
     function addHandlerMobileNav(){
@@ -261,41 +324,43 @@ function SmartMenu(options){
         elements.btnTitle.off();
     }
 
+    // переключаем события для разных размеров экрана
+    function changeScreenType() {
+        if(states.isMobile){
+            // переход на мобильный
+            removeExtraBar();
+        } else {
+            // переход на десктоп
+            createExtraBar();
+            hideItem();
+        }
+    }
 
     // initialize =====================================================================================================/
-    setOptions();
-    addElements();
-    addHandlerMobileToggle();
-    buildTree();
+    setOptions();  // переопределяем свойства, если это необходимо
+    addElements();   // кэшируем элементы для быстрого доступа
+    addHandlerMobileToggle();   // - вешается при инициализации обработку клика на гамбургер
+    buildTree(); // Построение дерева и запись его в массив
+
+    // changeScreenType(); // переключаем события для разных размеров экрана
 
 
     // public =========================================================================================================/
     return {
-        // // Скрыть текущий узел
-        // init: function(){
-        //     buildTree();
-        // },
+        // устанавливаем тип экрана
+        setScreenIsMobile: function(_isMobile){
+            setScreenIsMobile(_isMobile);
+            changeScreenType();
+        },
+        // переход к функционалу мобильной или десктопной версии
+        changeScreenType: function(){
+            changeScreenType();
+        },
         // Вывод данных для теста
         debug: function(){
-            console.log(tree);
+            // console.log(tree);
+            console.log(states.isMobile);
 
         }
     };
 }
-
-var menuTop = new SmartMenu({
-    text: {
-        rootTitle: 'Меню'
-    },
-    selectors: {
-        container: '.js-smart-menu',
-        node: '.-has-drop-down',
-        nodeRoot: '.js-smart-menu > .main-menu__list',
-        nodeLink: '.main-menu__item-name',
-        nodeDropdown: '.main-menu__drop-down',
-        nodeList: '.main-menu__list',
-        btnToggle: '.main-menu__switcher-btn',
-        btnTitle: '.main-menu__title-btn'
-    }
-});
-

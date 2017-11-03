@@ -12,6 +12,39 @@ var mediaEventListener = new MediaEventListener([
 Tables.addMobileView('table');
 
 
+var smartMenu = new SmartMenu({
+    text: {
+        rootTitle: 'Меню'
+    },
+    selectors: {
+        container: '.js-smart-menu',
+        node: '.-has-drop-down',
+        nodeRoot: '.js-smart-menu > .menu-top__list',
+        nodeItem: '.menu-top__item',
+        nodeLink: '.menu-top__item-name',
+        nodeDropdown: '.menu-top__drop-down',
+        nodeList: '.menu-top__list',
+        btnToggle: '.menu-top__switcher-btn',
+        btnTitle: '.menu-top__title-btn',
+
+        desktopContainer: '.menu-top__list',
+        desktopItems: '.js-smart-menu > .menu-top__list > .menu-top__item',
+    }
+});
+
+mediaEventListener.addQueryAction('mobile', function(){
+    smartMenu.setScreenIsMobile(true);
+});
+mediaEventListener.addQueryAction('desktop', function(){
+    smartMenu.setScreenIsMobile(false);
+});
+mediaEventListener.addQueryAction('resize', function(){
+    // smartMenu.debug();
+});
+// menuTop.init();
+// SmartMenu.debug();
+
+
 /// template-block/base-1/homepage/slider
 (function sliderHeader() {
     var sliderHeader = {

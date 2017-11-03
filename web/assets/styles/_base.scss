@@ -9,6 +9,7 @@
 body{
   -webkit-text-size-adjust: 100%;
   max-height: 999999px;
+  max-width: 100%;
 }
 
 .layout-wrapper,
@@ -26,6 +27,9 @@ body{
 }
 .layout-main{
   z-index: 5;
+}
+.layout-footer{
+  overflow: hidden;
 }
 /********************************************************************************************/
 /* Typography-------------------------------------------------------------------------------*/
