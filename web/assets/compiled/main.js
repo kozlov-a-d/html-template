@@ -347,17 +347,17 @@ function SmartMenu(options){
             console.warn('setScreenIsMobile(_isMobile) _isMobile не является boolean');
         }
     }
-    
+
+    // создаёт дополнительную выпадашку для непоместившихся элементов
     function createExtraBar() {
         var extrabarContent = '';
         for(var i = 0; i < elements.desktopItems.length; i++){
             extrabarContent = extrabarContent + elements.desktopItems.eq(i).get(0).outerHTML;
-
         }
 
         elements.nodeRoot.append(
             '<li class="menu-top__item -extraBar -has-drop-down -drop-down-inverse">' +
-                '<button class="menu-top__item-name">extra</button>' +
+                '<button class="menu-top__item-name">...</button>' +
                 '<div class="menu-top__drop-down">' +
                     '<ul class="menu-top__list">' +
                          extrabarContent +
@@ -366,20 +366,24 @@ function SmartMenu(options){
             '</li>'
         );
         elements.nodeRoot.find('.-extraBar .menu-top__drop-down .menu-top__drop-down').remove();
-        elements.nodeRoot.find('.-extraBar').hide();
+        // elements.nodeRoot.find('.-extraBar').hide();
 
     }
 
+    // удаляет дополнительную выпадашку
     function removeExtraBar() {
         elements.nodeRoot.find('.-extraBar').remove();
     }
-    
-    function hideItem() {
-        var dubler = elements.nodeRoot.find('.-extraBar .menu-top__item');
 
+    // проверяет элементы, если элементу не хватает места, то скрывает его
+    function hideItem() {
+        // подготавливаем выпадашку дублёра
+        var dubler = elements.nodeRoot.find('.-extraBar');
+        var dublerList = dubler.find('.menu-top__item');
         dubler.removeClass('-hidden');
         elements.desktopItems.removeClass('-hidden');
 
+        // ,,,
         var width = elements.desktopContainer.width();
         var sumWidth = 0;
         states.hasExtra = false;
@@ -387,14 +391,33 @@ function SmartMenu(options){
             var elWidth = elements.desktopItems.eq(i).width();
             if(sumWidth + elWidth < width){
                 sumWidth = sumWidth + elWidth;
-                dubler.eq(i).addClass('-hidden');
-                console.log(dubler.eq(i));
+                dublerList.eq(i).addClass('-hidden');
+                console.log(i);
             } else {
                 elements.desktopItems.eq(i).addClass('-hidden');
                 states.hasExtra = true;
             }
         }
-        id
+
+        // var widthContainer = elements.desktopContainer.width();
+        // var widthElements;
+        // for(var i = 0; i < elements.desktopItems.length; i++){
+        //     var elWidth = elements.desktopItems.eq(i).width();
+        //     widthElements =+ elWidth;
+        // }
+        //
+        // if(widthElements <= widthContainer ){
+        //     // все элементы помещается
+        //     dubler.hide();
+        // } else {
+        //     // часть элементов не помещается
+        //     // if(widthElements <= widthContainer ){
+        //     // dubler
+        // }
+        //
+        // var sumWidth = 0;
+
+
     }
 
 
@@ -470,8 +493,6 @@ function SmartMenu(options){
         }
     };
 }
-
-
 
 var Tables = (function(){
 
