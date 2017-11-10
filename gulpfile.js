@@ -26,6 +26,7 @@ var path = {
             'web/assets/ui-kit/utilities/media-event-listener/media-event-listener.js',
             'web/assets/ui-kit/utilities/smart-menu/smart-menu.js',
             'web/assets/ui-kit/content/tables/tables.js',
+            'web/assets/ui-kit/content/spoiler/spoiler.js',
 
             'web/assets/scripts/_extends.js',
             'web/assets/scripts/**/[^_]*.js',

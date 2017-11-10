@@ -1,0 +1,33 @@
+.btn{
+  display: block;
+  width: 280px;
+  height: 45px;
+  max-width: 100%;
+
+  margin: 0 auto 20px;
+
+  border: none;
+  background: #3990ab;
+  font-size: 15px;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: 0.3s;
+
+  &.-secondary{
+    background: #f1ebd0;
+    color: #5f5733;
+  }
+
+  &:hover{
+    background: #40545d;
+    &.-secondary{
+      background: #5f5733;
+      color: #f1ebd0;
+    }
+  }
+
+  &.-fullwidth{
+    width: 100%;
+  }
+}

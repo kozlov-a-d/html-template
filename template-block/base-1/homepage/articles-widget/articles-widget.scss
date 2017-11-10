@@ -45,6 +45,9 @@
   }
   &__nav{
     float: right;
+    @include media-max(420px){
+      display: none;
+    }
   }
   &__carousel{
 

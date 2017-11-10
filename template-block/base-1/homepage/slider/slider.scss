@@ -7,6 +7,12 @@
     overflow: hidden;
     height: 550px;
     position: relative;
+    @media (max-width: $media-lg) {
+      width: 100%;
+      height: 0;
+      padding-bottom: 57.3%;
+      position: relative;
+    }
   }
   &__img{
     display: block;
@@ -15,14 +21,34 @@
     position: relative;
     left: 50%;
     margin-left: -960px;
+
+    @media (max-width: $media-lg) {
+      position: absolute;
+      left: -50%;
+      top: 0;
+      width: 200% !important;
+      height: 100%;
+      margin-left: 0;
+    }
+
   }
   &__text-container{
     position: absolute;
-    left: 50%;
-    bottom:150px;
-    width: 600px;
-    max-width: 60%;
-    margin-left: -460px;
+
+
+    @media (min-width: $media-md) {
+      left: 20px;
+      bottom: 60px;
+      width: 600px;
+      margin-left: 0;
+    }
+    @media (min-width: $media-lg) {
+      left: 50%;
+      bottom:150px;
+      width: 600px;
+      max-width: 60%;
+      margin-left: -460px;
+    }
     p{
       color: #ffffff;
       font-size: 17px;
@@ -33,18 +59,17 @@
         margin: 0 0 10px;
       }
     }
+    @media (max-width: $media-md) {
+      display: none;
+    }
+
   }
 
 
-  &__nav{
-    position: absolute;
-    left: 50%;
-    bottom:55px;
-    width: 600px;
-    max-width: 40%;
-    margin-left: -460px;
-    z-index: 3;
+  @media (max-width: 980px) {
+
   }
+
   &__nav-counter{
     display: inline-block;
     vertical-align: top;
@@ -55,6 +80,44 @@
     color: #fff;
     margin-left: 20px;
   }
+
+  @media (min-width: $media-lg) {
+    &__nav{
+      position: absolute;
+      left: 50%;
+      bottom:55px;
+      width: 600px;
+      max-width: 40%;
+      margin-left: -460px;
+      z-index: 3;
+    }
+  }
+  @media (max-width: $media-lg) {
+    &__nav{
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      bottom: 10px;
+      z-index: 10;
+      font-size: 0;
+
+      .slider-header__nav-btn{
+        margin: 0 10px;
+        &.-prev{
+          order: 1;
+        }
+        &.-next{
+          order: 3;
+        }
+      }
+      .slider-header__nav-counter{
+        order: 2;
+      }
+    }
+  }
+
 
 
 }

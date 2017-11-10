@@ -1,0 +1,14 @@
+.spoiler[data-mobile-only="true"]{
+
+  &__content{
+
+  }
+  &__btn{
+
+  }
+
+  @include media-max($mobile-view){
+
+  }
+
+}

@@ -4,10 +4,10 @@
   margin: 60px auto 1px;
   padding:  0 ;
   &__container{
-    @include grid(22px);
+    //@include grid(22px);
   }
   &__item{
-    @include grid-col(1/3, 22px);
+    //@include grid-col(1/3, 22px);
     position: relative;
     overflow: hidden;
     border-radius: 5px;

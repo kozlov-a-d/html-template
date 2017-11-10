@@ -286,7 +286,7 @@ function SmartMenu(options){
             if(sumWidth + elWidth < width){
                 sumWidth = sumWidth + elWidth;
                 dublerList.eq(i).addClass('-hidden');
-                console.log(i);
+                // console.log(i);
             } else {
                 elements.desktopItems.eq(i).addClass('-hidden');
                 states.hasExtra = true;

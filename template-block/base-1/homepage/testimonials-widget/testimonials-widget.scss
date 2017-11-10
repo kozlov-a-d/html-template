@@ -33,6 +33,9 @@
     margin: 0;
     font-size: 15px;
     color: #2f434d;
+    @include media-max(480px){
+      padding: 17px 0 6px 0;
+    }
     &:before{
       content: '';
       display: block;
@@ -43,6 +46,9 @@
       left:0;
       top: 50%;
       margin-top: -13px;
+      @include media-max(480px){
+        display: none;
+      }
     }
 
     &-header{
