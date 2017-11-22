@@ -1,17 +1,20 @@
-// <div class="js-spoiler hidden-md">
-//  <!-- тут контент который нужно скрывать -->
-// </div>
-
-
-// <div class="spoiler js-spoiler"
+// js-spoiler-area - скрывает область под спойлер
+//
+// исходный код
+// <div class="js-spoiler-area hidden-md"
 // data-mobile-only="true"
 // data-text-opened="Скрыть"
 // data-text-closed="Показать полностью">
-//  <p>Text</p>
-//  <button class="spoiler__btn" ><span>Btn</span></button>
+//  <!-- тут контент который нужно скрывать -->
 // </div>
 
-$('.js-spoiler').each(function () {
+//  сегнерированый код
+//  <div class="spoiler">
+//      <div  class="spoiler js-spoiler-area"><!-- тут контент который нужно скрывать --></div>
+//      <button class="spoiler__btn" ><span>Btn</span></button>
+//  </div>
+
+$('.js-spoiler-area').each(function () {
 
     var self = $(this);
 
@@ -55,4 +58,22 @@ $('.js-spoiler').each(function () {
             btn.find('span').text(btnTextClosed);
         }
     });
+});
+
+
+$('.js-spoiler-items').each(function () {
+
+    var self = $(this);
+
+    // кэшируем data-атрибуты, подставляя значения по умолчанию, если атрибуты не заданы
+    var btnTextOpened = self.attr('data-text-opened') ? self.attr('data-text-opened') : 'Скрыть',
+        btnTextClosed = self.attr('data-text-closed') ? self.attr('data-text-closed') : 'Смотреть полностью',
+        btnClass = self.attr('data-btn-class') ? self.attr('data-btn-class') : '' ;
+
+    // добавляем необходимый html
+    self.addClass('spoiler__content');
+    self.wrap('<div class="spoiler"></div>');
+    self.parent().append('<button class="spoiler__btn btn ' + btnClass + '"><span>' + btnTextClosed + '</span></button>');
+
+
 });
