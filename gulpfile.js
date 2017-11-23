@@ -25,6 +25,7 @@ var path = {
         js: [
             'web/assets/ui-kit/utilities/media-event-listener/media-event-listener.js',
             'web/assets/ui-kit/utilities/menu-smart/menu-smart.js',
+            'web/assets/ui-kit/utilities/menu-mobile/menu-mobile.js',
             'web/assets/ui-kit/content/tables/tables.js',
             'web/assets/ui-kit/content/spoiler/spoiler.js',
 
@@ -39,7 +40,8 @@ var path = {
             js: [
                 'bower_components/jquery/dist/jquery.js',
                 'bower_components/owl.carousel/dist/owl.carousel.js',
-                'bower_components/bxslider-4/dist/jquery.bxslider.js'
+                'bower_components/bxslider-4/dist/jquery.bxslider.js',
+                'bower_components/vue/dist/vue.js'
             ],
             css: [
                 'bower_components/normalize-css/normalize.css',

@@ -101,7 +101,7 @@ function SmartMenu(options){
 
 
     // работа с деревом ===============================================================================================/
-
+/*
     // Получения узла по ID
     function getNodeById(id){
         var result = null;
@@ -231,7 +231,7 @@ function SmartMenu(options){
     // Вывод название для узла
     function changeMenuTitle(title) {
         elements.btnTitle.text(title);
-    }
+    }*/
 
     // Desktop ========================================================================================================/
     function setScreenIsMobile(_isMobile) {
@@ -292,25 +292,6 @@ function SmartMenu(options){
                 states.hasExtra = true;
             }
         }
-
-        // var widthContainer = elements.desktopContainer.width();
-        // var widthElements;
-        // for(var i = 0; i < elements.desktopItems.length; i++){
-        //     var elWidth = elements.desktopItems.eq(i).width();
-        //     widthElements =+ elWidth;
-        // }
-        //
-        // if(widthElements <= widthContainer ){
-        //     // все элементы помещается
-        //     dubler.hide();
-        // } else {
-        //     // часть элементов не помещается
-        //     // if(widthElements <= widthContainer ){
-        //     // dubler
-        // }
-        //
-        // var sumWidth = 0;
-
 
     }
 

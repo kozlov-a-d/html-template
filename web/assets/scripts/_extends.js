@@ -13,7 +13,7 @@ var mediaEventListener = new MediaEventListener([
 Tables.addMobileView('table');
 
 
-console.time('SmartMenu');
+console.time('SmartMenu');/*
 var smartMenu = new SmartMenu({
     text: {
         rootTitle: 'Меню'
@@ -43,7 +43,9 @@ mediaEventListener.addQueryAction('desktop', function(){
 });
 mediaEventListener.addQueryAction('resize', function(){
     // smartMenu.debug();
-});
+});*/
+
+var menuMobile = new MenuMobile({});
 console.timeEnd('SmartMenu');
 
 
