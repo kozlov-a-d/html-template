@@ -24,8 +24,10 @@ var path = {
     src: {
         js: [
             'web/assets/ui-kit/utilities/media-event-listener/media-event-listener.js',
-            'web/assets/ui-kit/utilities/menu-smart/menu-smart.js',
-            'web/assets/ui-kit/utilities/menu-mobile/menu-mobile.js',
+
+            'web/assets/ui-kit/components/menu-smart/menu-smart.js',
+            'web/assets/ui-kit/components/menu-mobile/menu-mobile.js',
+
             'web/assets/ui-kit/content/tables/tables.js',
             'web/assets/ui-kit/content/spoiler/spoiler.js',
 

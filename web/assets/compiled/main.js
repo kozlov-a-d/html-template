@@ -491,7 +491,7 @@ function MenuMobile(options){
 
     // состояния модуля
     var states ={
-        isOpened: false,   // открыт или закрыт на мобильном
+        isOpened: false   // открыт или закрыт на мобильном
     };
 
     // Дерево меню, включает в себя только узлы, листья игнорируются
@@ -552,15 +552,54 @@ function MenuMobile(options){
         }
         build( getNodeRoot() );
     }
+
+
+    // Vue.component('menu-mobile-title', {
+    //     props: ['tree'],
+    //     template:
+    //         '<li class="list-group-item" v-if=" ">' +
+    //             '<a href="#" v-on:click.prevent="activeParentNode">{{ tree.name }}</a>' +
+    //         '</li>',
+    //     methods: {
+    //         activeParentNode: function (event) {
+    //             app.activeNodeId = this._props.tree.name;
+    //         }
+    //     }
+    // });
+
+
+
     function renderMenu(callback){
         console.log(tree);
-        $('body').append('<div class="menu-mobile" id="app-' + id + '">{{ message }}</div>');
+        $('body').append('' +
+            '<div class="menu-mobile" id="app-' + id + '">' +
+                ' ' +
+                '<ul class="menu-mobile__list">' +
+                    '<menu-mobile-item v-for="item in tree" v-bind:item="item" v-if="item.parentId === activeNodeId" ></menu-mobile-item>' +
+                '</ul>' +
+            '</div>'
+        );
+
+        Vue.component('menu-mobile-item', {
+            props: ['item', 'activeNodeId'],
+            template:
+            '<li class="list-group-item">' +
+            '<a href="#" v-on:click.prevent="activeNode">{{ item.name }}</a>' +
+            '</li>',
+            methods: {
+                activeNode: function (event) {
+                    console.log(this._props.item.name);
+                    app.activeNodeId = this._props.item.id;
+                }
+            }
+        });
 
         var app = new Vue({
             el: '#app-' + id,
             data: {
                 message: 'Hello Vue!',
-                tree: tree
+                tree: tree,
+                activeNodeId: 0
             }
         });
 
