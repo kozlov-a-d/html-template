@@ -52,6 +52,11 @@ var path = {
                 'bower_components/owl.carousel/dist/assets/owl.theme.default.css',
                 'bower_components/bxslider-4/dist/jquery.bxslider.css'
             ]
+        },
+        ui:{
+            css: [
+                'web/assets/ui-kit/components/menu-mobile/menu-mobile.scss'
+            ]
         }
     },
     watch: {
@@ -105,8 +110,27 @@ gulp.task('vendor:build', function () {
 
 });
 
+gulp.task('ui:build', function () {
+
+    gulp.src(path.src.ui.css)
+        .pipe(sass({
+            includePaths: [path.src.style],
+            outputStyle: 'expanded',
+            sourceMap: true,
+            errLogToConsole: true
+        }))
+        .pipe(prefixer({
+            browsers: ['last 2 versions', "> 3%", "ie 11", "ie 10"]
+        }))
+        .pipe(concat('ui.min.css'))
+        .pipe(cssmin())
+        .pipe(gulp.dest('web/assets/compiled/'))
+
+});
+
 gulp.task('build', [
     'vendor:build',
+    'ui:build',
     'html:build',
     'js:build',
     'style:build'
@@ -120,9 +144,11 @@ gulp.task('watch', function(){
         gulp.start('html:build');
     });
     watch(path.watch.js, function() {
+        gulp.start('ui:build');
         gulp.start('js:build');
     });
     watch(path.watch.style, function() {
+        gulp.start('ui:build');
         gulp.start('style:build');
     });
     watch(path.watch.templates, function() {

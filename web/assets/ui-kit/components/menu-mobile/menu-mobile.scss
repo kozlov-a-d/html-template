@@ -1,0 +1,196 @@
+.menu-mobile{
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 100vh;
+  background: #d7d9e5;
+  box-sizing: border-box;
+
+  &__header{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 70px;
+    border-bottom: 1px solid #adafbb;
+  }
+
+  &__title{
+    width: 100%;
+    height: 70px;
+    text-align: left;
+    &-btn{
+      position: relative;
+      width: 100%;
+      height: 70px;
+      padding: 0 21px 0 36px;
+
+      border: none;
+      font-size: 20px;
+      font-weight: 600;
+      color: #000;
+      line-height: 70px;
+      text-align: left;
+      text-overflow:ellipsis;
+      white-space: nowrap;
+      background: none;
+    }
+  }
+
+  &__switcher-btn{
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: block;
+    width: 40px;
+    height: 70px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    span{
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      display: block;
+      width: 24px;
+      height: 2px;
+      margin: -1px 0 0 -12px;
+      background: none;
+      border: none;
+
+      &:before{
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: block;
+        width: 24px;
+        height: 2px;
+        margin: 0;
+        transform: rotate(45deg);
+        background: #40545d;
+        transition: .2s;
+      }
+      &:after{
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: block;
+        width: 24px;
+        height: 2px;
+        margin: 0;
+        transform: rotate(-45deg);
+        background: #40545d;
+        transition: .2s;
+      }
+    }
+  }
+
+  &__list{
+    display: block;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item{
+    display: block;
+    position: relative;
+    margin: 0;
+    border-bottom: 1px solid #adafbb;
+
+    &-name{
+      position: relative;
+      display: block;
+      padding: 11px 21px 13px;
+
+      text-decoration: none;
+      color: #2b2b2b;
+    }
+
+    &.-has-child .menu-mobile-name{
+      padding: 11px 51px 13px 21px;
+
+    }
+
+    &-btn{
+      display: block;
+      width: 42px;
+      height: 100%;
+      position: absolute;
+      right: 0;
+      top: 0;
+      background: none;
+      border: none;
+
+      &.hasChild{
+        border-left: 1px solid #adafbb;
+      }
+
+    }
+
+  }
+
+  &__icon{
+    &-arrow-left{
+      display: block;
+      width: 8px;
+      height: 8px;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin: -4px -4px 0 -5px;
+      border: 1px solid #40545d;
+      border-left: none;
+      border-bottom: none;
+      transform: rotate(45deg);
+    }
+
+    &-arrow-right{
+      display: block;
+      width: 8px;
+      height: 8px;
+      position: absolute;
+      left: 21px;
+      top: 50%;
+      margin: -4px -4px 0 3px;
+      border: 1px solid #40545d;
+      border-left: none;
+      border-bottom: none;
+      transform: rotate(-135deg);
+    }
+
+    &-more{
+      display: block;
+      width: 4px;
+      height: 4px;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin: -2px 0 0 -2px;
+      border-radius: 50%;
+      background: #40545d;
+
+      &:before,
+      &:after{
+        content: '';
+        display: block;
+        width: 4px;
+        height: 4px;
+        position: absolute;
+        left: 0;
+        border-radius: 50%;
+        background: #40545d;
+      }
+      &:before{
+        top: -7px;
+      }
+      &:after{
+        bottom: -7px;
+      }
+    }
+  }
+
+}

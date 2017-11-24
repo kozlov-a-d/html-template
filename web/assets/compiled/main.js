@@ -527,12 +527,9 @@ function MenuMobile(options){
     // работа с деревом ===============================================================================================/
 
     function buildMenu(){
-        console.log('buildMenu');
         var _id = 0;
-
         // задаём корень
         tree.push({ id: _id, name: text.rootTitle, elementLink: $(selectors.nodeRoot), hasChild: true, parentId: null });
-
         // рекурсивно строим остальное дерево
         function build(parentNode){
             var parent = $(parentNode.elementLink);
@@ -542,6 +539,7 @@ function MenuMobile(options){
                 var currNode = {
                     id: _id,
                     name: $(this).children(selectors.nodeLink).text(),
+                    href: $(this).children(selectors.nodeLink).attr('href'),
                     elementLink: $(this),
                     hasChild: $(this).hasClass(selectors.node),
                     parentId: parentNode.id
@@ -554,42 +552,68 @@ function MenuMobile(options){
     }
 
 
-    // Vue.component('menu-mobile-title', {
-    //     props: ['tree'],
-    //     template:
-    //         '<li class="list-group-item" v-if=" ">' +
-    //             '<a href="#" v-on:click.prevent="activeParentNode">{{ tree.name }}</a>' +
-    //         '</li>',
-    //     methods: {
-    //         activeParentNode: function (event) {
-    //             app.activeNodeId = this._props.tree.name;
-    //         }
-    //     }
-    // });
-
-
-
-    function renderMenu(callback){
+    function renderMenu(){
         console.log(tree);
         $('body').append('' +
             '<div class="menu-mobile" id="app-' + id + '">' +
-                ' ' +
+                '<menu-mobile-header v-bind:node="activeNode"></menu-mobile-header>' +
                 '<ul class="menu-mobile__list">' +
-                    '<menu-mobile-item v-for="item in tree" v-bind:item="item" v-if="item.parentId === activeNodeId" ></menu-mobile-item>' +
+                    '<menu-mobile-item v-for="item in tree" :key="item.id" v-bind:item="item" v-if="item.parentId === activeNode.id" ></menu-mobile-item>' +
                 '</ul>' +
             '</div>'
         );
 
-        Vue.component('menu-mobile-item', {
-            props: ['item', 'activeNodeId'],
+        Vue.component('menu-mobile-header', {
+            props: ['node'],
             template:
-            '<li class="list-group-item">' +
-            '<a href="#" v-on:click.prevent="activeNode">{{ item.name }}</a>' +
-            '</li>',
+                '<div class="menu-mobile__header">' +
+                    '<div class="menu-mobile__title">' +
+                        '<button class="menu-mobile__title-btn" v-on:click.prevent="activeParentNode">' +
+                            '<i class="menu-mobile__icon-arrow-right"></i>' +
+                            '{{ node.name }}' +
+                        '</button>' +
+                    '</div>' +
+                    '<button class="menu-mobile__switcher-btn" v-on:click.prevent="closeMenu"><span></span></button>' +
+                '</div>',
             methods: {
-                activeNode: function (event) {
-                    console.log(this._props.item.name);
-                    app.activeNodeId = this._props.item.id;
+                closeMenu: function (event) {
+                    app.closeMenu();
+                },
+                activeParentNode: function (event) {
+                    if( this._props.node.parentId !== null ){
+                        var parentId = this._props.node.parentId;
+                        for(var i = 0; i < app.tree.length; i++){
+                            if (app.tree[i].id === parentId) {
+                                app.activeNode = app.getNodeParam( app.tree[i] );
+                            }
+                        }
+                    } else {
+                        app.closeMenu();
+                    }
+
+                }
+            }
+        });
+
+        Vue.component('menu-mobile-item', {
+            props: ['item', 'activeNode'],
+            template:
+                '<li class="menu-mobile__item">' +
+                    '<a class="menu-mobile__item-name" v-bind:href="item.href">' +
+                        '{{ item.name }}' +
+                        // иконка со стрелкой, для элементов без потомков
+                        '<span v-if="!item.hasChild" class="menu-mobile__item-btn">' +
+                            '<i class="menu-mobile__icon-arrow-left"></i>' +
+                        '</span>' +
+                    '</a>' +
+                    // для элементов с подкатегориями добавляем кнопочку показывающую эти подразделы
+                    '<button v-if="item.hasChild" class="menu-mobile__item-btn hasChild"  v-on:click.prevent="showChild">' +
+                        '<i class="menu-mobile__icon-more"></i>' +
+                    '</button>' +
+                '</li>',
+            methods: {
+                showChild: function (event) {
+                    app.activeNode = app.getNodeParam( this._props.item );
                 }
             }
         });
@@ -597,13 +621,28 @@ function MenuMobile(options){
         var app = new Vue({
             el: '#app-' + id,
             data: {
-                message: 'Hello Vue!',
+                el: '#app-' + id,
                 tree: tree,
-                activeNodeId: 0
+                activeNode: {
+                    id: tree[0].id,
+                    name: tree[0].name,
+                    parentId: tree[0].parentId
+                }
+            },
+            methods: {
+                getNodeParam: function (input) {
+                    var result = {};
+                    result.id =  input.id;
+                    result.name =  input.name;
+                    result.parentId =  input.parentId;
+                    return result;
+                },
+                closeMenu: function () {
+                    $( this.el).hide();
+                    this.activeNode = app.getNodeParam( this.tree[0] );
+                }
             }
         });
-
-        callback;
     }
 
     // вспомогательные ================================================================================================/
@@ -622,11 +661,6 @@ function MenuMobile(options){
         return result;
     }
 
-    // Получения узла родителя
-    function getNodeParent(node){
-        return getNodeById(node.parentId);
-    }
-
     // Получения корня
     function getNodeRoot(){
         return getNodeById(0);
@@ -635,17 +669,17 @@ function MenuMobile(options){
 
     // Обработка событий ==============================================================================================/
 
-    function addHandlerNavigation(){
-        console.log('addHandlerNavigation');
-    }
-
     function addHandlerToggleBtn(){
+        $('body').on('click', selectors.btnToggle, function () {
+          $('#app-' + id).show();
+        });
     }
 
     // initialize =====================================================================================================/
     setOptions();  // переопределяем свойства, если это необходимо
     buildMenu();  // создаём модель меню
     renderMenu();   // ренедерим меню, колбэком навешиваем обработчики
+    addHandlerToggleBtn()
     // public =========================================================================================================/
     return {
         init: function () {
