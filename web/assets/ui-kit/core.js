@@ -1,0 +1,7 @@
+var app = {
+    ui : {
+        components : {
+
+        }
+    }
+};

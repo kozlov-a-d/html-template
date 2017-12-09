@@ -1,18 +1,21 @@
 
 // Utilities ------------------------------------------------------------------------------------------------------------*/
 @import "../ui-kit/utilities/scss-mixins/utitlties";
-// mixin list:
-// @mixin cfix-after
-// @mixin cfix-before
-// @mixin cfix
-// @mixin container( $maxWidth: 1280px)
-// @mixin media-max($resolution)
-// @mixin media-min($resolution)
-// @mixin media-interval($resolution-min, $resolution-max)
+/* mixin list:
+ @mixin cfix-after
+ @mixin cfix-before
+ @mixin cfix
+ @mixin container( $maxWidth: 1280px)
+ @mixin media-max($resolution)
+ @mixin media-min($resolution)
+ @mixin media-interval($resolution-min, $resolution-max)
+ */
 @import "../ui-kit/utilities/common-style/common-style.scss";
-// .visible (-xs, -sm, -md, -lg, -xl,)
-// .hidden (-xs, -sm, -md, -lg, -xl,)
-// .response-img (-xs, -sm, -md, -lg, -xl,)
+/*
+ .visible (-xs, -sm, -md, -lg, -xl,)
+ .hidden (-xs, -sm, -md, -lg, -xl,)
+ .response-img (-xs, -sm, -md, -lg, -xl,)
+*/
 
 
 // LAYOUT ------------------------------------------------------------------------------------------------------------*/

@@ -23,14 +23,19 @@ var path = {
     },
     src: {
         js: [
+            // core.js
+            'web/assets/ui-kit/core.js',
+            'web/assets/ui-kit/components/modal/modal.core.js',
+            // utilities
             'web/assets/ui-kit/utilities/media-event-listener/media-event-listener.js',
-
+            // components
             'web/assets/ui-kit/components/menu-smart/menu-smart.js',
+            'web/assets/ui-kit/components/menu-mobile/menu-mobile.vue.component.js',
             'web/assets/ui-kit/components/menu-mobile/menu-mobile.js',
-
+            // content
             'web/assets/ui-kit/content/tables/tables.js',
             'web/assets/ui-kit/content/spoiler/spoiler.js',
-
+            // core.js
             'web/assets/scripts/_extends.js',
             'web/assets/scripts/**/[^_]*.js',
 
