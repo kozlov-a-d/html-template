@@ -63,7 +63,7 @@ function MenuMobile(options){
     }
 
     function renderMenu(tree){
-        console.log(tree);
+        // console.log(tree);
         $('body').append('' +
             '<menu-mobile class="menu-mobile" id="menu-mobile-' + id + '"></menu-mobile>'
         );

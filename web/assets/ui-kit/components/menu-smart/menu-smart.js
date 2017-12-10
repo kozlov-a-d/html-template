@@ -99,140 +99,6 @@ function SmartMenu(options){
         };
     }
 
-
-    // работа с деревом ===============================================================================================/
-/*
-    // Получения узла по ID
-    function getNodeById(id){
-        var result = null;
-        //ищем элемент с заданным id
-        tree.forEach(function(item){
-            if( item.id == id ){
-                result = item;
-                return false;
-            }
-        });
-        // если элемента с таким id нет, то возвращаем null
-        return result;
-    }
-
-    // Получения узла родителя
-    function getNodeParent(node){
-        return getNodeById(node.parentId);
-    }
-
-    // Получения корня
-    function getNodeRoot(){
-        return getNodeById(0);
-    }
-
-    // Построение дерева и запись его в массив
-    function buildTree(){
-        var _id = 0;
-
-        // задаём корень
-        tree.push({ id: _id, name: text.rootTitle, elementLink: $(selectors.nodeRoot), parentId: null });
-
-        // рекурсивно строим остальное дерево
-        function build(parentNode){
-            var parent = $(parentNode.elementLink);
-            var el = parent.find(selectors.node)
-                .not( parent.find(selectors.node + ' ' + selectors.node));
-            el.each(function ( ) {
-                _id++;
-                var currNode = {
-                    id: _id,
-                    name: $(this).children(selectors.nodeLink).text(),
-                    elementLink: $(this),
-                    parentId: parentNode.id
-                };
-                tree.push(currNode);
-                $(this).children(selectors.nodeLink).attr('data-target-node-id', _id);
-                setTimeout(build( currNode ) , 10);
-            })
-        }
-        build( getNodeRoot() );
-
-        // задаём корень текущим узлом
-        currNode = getNodeRoot();
-
-    }
-
-    // Показать узел с заданым ID
-    function showNode(nodeId){
-        currNode = getNodeById(nodeId);
-        changeMenuTitle(currNode.name);
-        currNode.elementLink.children(selectors.nodeDropdown).children(selectors.nodeList).css({
-            'transform' : 'translateX(0)'
-        });
-        return false;
-    }
-
-    // Скрыть текущий узел, текущий становится узел на один уровень выше
-    function hideNode(){
-        currNode.elementLink.children(selectors.nodeDropdown).children(selectors.nodeList).css({
-            'transform' : 'translateX(100%)'
-        });
-        currNode = getNodeParent(currNode);
-        changeMenuTitle(currNode.name);
-        return false;
-    }
-
-    // Скрывает все узлы, кроме корневого
-    function hideAllNode(){
-        tree.forEach(function(item){
-            if( item.id != 0 ){
-                item.elementLink.children(selectors.nodeDropdown).children(selectors.nodeList).css({
-                    'transform' : 'translateX(100%)'
-                });
-            }
-        });
-        // задаём корень текущим узлом
-        currNode = getNodeRoot();
-    }
-
-
-    // показать/скрыть меню на мобильниках ============================================================================/
-    // - у контейнера появляется/убирается класс .is-opened
-
-    function toggleMenu(){
-        var body = $('body');
-        if(!states.isOpened){
-            // открываем менюшку
-            elements.container.addClass('is-opened');
-            // убираем скрол
-            body.css('overflow', 'hidden');
-            body.css('position', 'fixed');
-            // переключаем состояние
-            states.isOpened = true;
-            // включаем обработчики
-            addHandlerMobileNav();
-
-            changeMenuTitle(currNode.name);
-
-        } else {
-            // закрываем менюшку
-            elements.container.removeClass('is-opened');
-            // возвращаем скрол
-            body.css('overflow', 'visible');
-            body.css('position', 'static');
-            // переключаем состояние
-            states.isOpened = false;
-            // скрываем все раскрытые узлы, кроме корневого
-            hideAllNode();
-            // отключаем обработчики
-            removeHandlerMobileNav();
-        }
-    }
-
-
-    // разное =========================================================================================================/
-
-    // Вывод название для узла
-    function changeMenuTitle(title) {
-        elements.btnTitle.text(title);
-    }*/
-
     // Desktop ========================================================================================================/
     function setScreenIsMobile(_isMobile) {
         if( typeof _isMobile === 'boolean'){
@@ -298,14 +164,6 @@ function SmartMenu(options){
 
     // Обработка событий ==============================================================================================/
 
-    // клик по гамбургеру - вешается при инициализации
-    function addHandlerMobileToggle(){
-        elements.btnToggle.on('click', function () {
-            toggleMenu();
-            return false;
-        });
-    }
-
     // Включаем обработчики навигации в мобильном виде
     function addHandlerMobileNav(){
 
@@ -343,8 +201,6 @@ function SmartMenu(options){
     // initialize =====================================================================================================/
     setOptions();  // переопределяем свойства, если это необходимо
     addElements();   // кэшируем элементы для быстрого доступа
-    addHandlerMobileToggle();   // - вешается при инициализации обработку клика на гамбургер
-    buildTree(); // Построение дерева и запись его в массив
 
     // changeScreenType(); // переключаем события для разных размеров экрана
 

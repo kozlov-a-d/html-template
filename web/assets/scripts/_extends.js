@@ -14,7 +14,9 @@ Tables.addMobileView('table');
 
 
 console.time('SmartMenu');
+
 var menuMobile = new MenuMobile({});
+var smartMenu = new SmartMenu({});
 console.timeEnd('SmartMenu');
 
 
