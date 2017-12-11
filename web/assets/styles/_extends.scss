@@ -10,12 +10,7 @@
  @mixin media-min($resolution)
  @mixin media-interval($resolution-min, $resolution-max)
  */
-@import "../ui-kit/utilities/common-style/common-style.scss";
-/*
- .visible (-xs, -sm, -md, -lg, -xl,)
- .hidden (-xs, -sm, -md, -lg, -xl,)
- .response-img (-xs, -sm, -md, -lg, -xl,)
-*/
+
 
 
 // LAYOUT ------------------------------------------------------------------------------------------------------------*/
@@ -72,3 +67,11 @@ $nice-tables-padding: 15px 18px;                  //  отступы в ячей
 @import "../../../template-block/base-1/_common/footer-content/footer-content.scss";
 
 
+
+
+@import "../ui-kit/utilities/common-style/common-style.scss";
+/*
+ .visible (-xs, -sm, -md, -lg, -xl,)
+ .hidden (-xs, -sm, -md, -lg, -xl,)
+ .response-img (-xs, -sm, -md, -lg, -xl,)
+*/

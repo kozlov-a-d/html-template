@@ -705,7 +705,6 @@ console.timeEnd('SmartMenu');
 
 
 console.time('sliderHeader');
-/// template-block/base-1/homepage/slider
 (function sliderHeader() {
     var sliderHeader = {
         carousel : $(".js-slider-header .owl-carousel"),
@@ -748,7 +747,7 @@ console.time('sliderHeader');
 }());
 console.timeEnd('sliderHeader');
 
-/// template-block/base-1/homepage/advantages
+
 console.time('advantages');
 (function advantages() {
     var advantages = {
@@ -777,7 +776,7 @@ console.time('advantages');
 }());
 console.timeEnd('advantages');
 
-/// template-block/base-1/homepage/hits-widget
+
 console.time('hitsWidget');
 (function hitsWidget() {
     var hitsWidget = {
@@ -812,7 +811,7 @@ console.time('hitsWidget');
 }());
 console.timeEnd('hitsWidget');
 
-/// template-block/base-1/homepage/articles-widget
+
 console.time('articlesWidget');
 (function articlesWidget() {
     var articlesWidget = {
@@ -847,7 +846,7 @@ console.time('articlesWidget');
 }());
 console.timeEnd('articlesWidget');
 
-/// template-block/base-1/homepage/news-widget
+
 console.time('newsWidget+bannersWidget');
 (function newsWidget() {
     var newsWidget = {
@@ -907,7 +906,7 @@ console.time('newsWidget+bannersWidget');
 }());
 console.timeEnd('newsWidget+bannersWidget');
 
-/// template-block/base-1/homepage/galery-fullwidth
+
 console.time('galeryFullwidthCentered');
 (function galeryFullwidthCentered() {
     var galeryFullwidthCentered = {
@@ -932,7 +931,7 @@ console.time('galeryFullwidthCentered');
 }());
 console.timeEnd('galeryFullwidthCentered');
 
-/// template-block/base-1/homepage/certificates-and-partners
+
 console.time('certificates+partners');
 (function certificates() {
     var certificates = {
@@ -996,50 +995,9 @@ console.time('certificates+partners');
 }());
 console.timeEnd('certificates+partners');
 
-/// template-block/base-1/homepage/testimonials-widget
+
 console.time('testimonialsWidget');
-(function testimonialsWidget() {
-    var testimonialsWidget = {
-        carousel : $(".js-testimonials-widget .bxslider"),
-        nextBtn : $(".js-testimonials-widget .js-nav-next"),
-        prevBtn : $(".js-testimonials-widget .js-nav-prev")
-    };
-    // сохраняем слайдер в testimonialsWidget.carousel
-    testimonialsWidget.carousel.bxSlider();
-
-    testimonialsWidget.nextBtn.click(function() {
-        testimonialsWidget.carousel.goToNextSlide();
-    });
-    testimonialsWidget.prevBtn.click(function() {
-        testimonialsWidget.carousel.goToPrevSlide();
-    });
-
-    mediaEventListener.addQueryAction('mobile', function(){
-        testimonialsWidget.carousel.reloadSlider({
-            mode: 'horizontal',
-            infiniteLoop: true,
-            easing: "ease-in",
-            pager: true,
-            controls: false,
-            minSlides: 1,
-            maxSlides: 1,
-            adaptiveHeight: false
-        });
-    });
-
-    mediaEventListener.addQueryAction('desktop', function(){
-        testimonialsWidget.carousel.reloadSlider({
-            mode: 'vertical',
-            infiniteLoop: true,
-            easing: "ease-in",
-            pager: false,
-            controls: false,
-            minSlides: 2,
-            maxSlides: 2,
-            adaptiveHeight: false
-        });
-    });
-}());
+/// template-block/base-1/homepage/testimonials-widget/testimonials-widget.js
 console.timeEnd('testimonialsWidget');
 
 

@@ -11,6 +11,7 @@ var gulp = require('gulp'),
     concat =  require('gulp-concat'),
     cssmin = require('gulp-minify-css'),
     // rename = require("gulp-rename"),
+    include = require("gulp-include"),
     rigger = require('gulp-rigger');
 
 
@@ -92,6 +93,8 @@ gulp.task('style:build', function () {
 
 gulp.task('js:build', function () {
     gulp.src(path.src.js)
+        .pipe(include())
+            .on('error', console.log)
         .pipe(concat('main.js'))
         .pipe(gulp.dest(path.build.js));
 });

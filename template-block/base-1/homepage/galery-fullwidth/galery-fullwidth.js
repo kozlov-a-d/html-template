@@ -1,4 +1,3 @@
-/// template-block/base-1/galery-fullwidth
 (function galeryFullwidthCentered() {
     var galeryFullwidthCentered = {
         carousel : $(".js-galery-fullwidth-centered .owl-carousel"),
