@@ -90,7 +90,7 @@ gulp.task('style:build', function () {
         .pipe(sourcemaps.write())
         .pipe(gulp.dest('web/assets/compiled/'))
 });
-
+ 
 gulp.task('js:build', function () {
     gulp.src(path.src.js)
         .pipe(include())
