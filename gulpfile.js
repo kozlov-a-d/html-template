@@ -31,7 +31,7 @@ var path = {
             'web/assets/ui-kit/utilities/media-event-listener/media-event-listener.js',
             // components
             'web/assets/ui-kit/components/menu-smart/menu-smart.js',
-            'web/assets/ui-kit/components/menu-mobile/vue.menu-mobile.js',
+            'web/assets/ui-kit/components/menu-mobile/menu-mobile.vue.js',
             'web/assets/ui-kit/components/menu-mobile/menu-mobile.js',
             // content
             'web/assets/ui-kit/content/tables/tables.js',
