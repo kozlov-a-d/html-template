@@ -34,7 +34,7 @@ function initMenuMobile(id, data) {
             closeMenu: function () {
                 // $( this.el).hide();
                 this.activeNode = menuMobile.getNodeParam( this.tree[0] );
-                app.ui.components.modal.closeModal();
+                app.ui.components.scroll.enable();
                 this.show = false;
             }
         },
@@ -45,8 +45,8 @@ function initMenuMobile(id, data) {
                     '<transition name="menu-mobile-header-toggle">' +
                     '<div class="menu-mobile__header">' +
                         '<div class="menu-mobile__title">' +
-                            '<button class="menu-mobile__title-btn" v-on:click.prevent="activeParentNode">' +
-                                '<i class="menu-mobile__icon-arrow-right"></i>' +
+                            '<button class="menu-mobile__title-btn" :data-node="node.id" v-on:click.prevent="activeParentNode">' +
+                                '<i class="menu-mobile__icon-arrow-right" v-if="node.id"></i>' +
                                 '{{ node.name }}' +
                             '</button>' +
                         '</div>' +

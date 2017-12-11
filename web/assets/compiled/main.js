@@ -1,20 +1,30 @@
+var scrollComponent = (function(){
+    var scrollPosition = 0;
+
+    scrollEnable = function openModal() {
+        document.body.style.overflowY = '';
+        document.body.style.position = '';
+        window.scrollTo( 0, scrollPosition );
+    };
+
+    scrollDisable = function () {
+        scrollPosition = document.documentElement.scrollTop || window.pageYOffset || window.scrollY;
+        document.body.style.overflowY = 'hidden';
+        document.body.style.position = 'fixed';
+    };
+
+    return {
+        enable : function(){ scrollEnable() },
+        disable : function(){ scrollDisable() }
+    }
+}());
 var app = {
     ui : {
         components : {
-
+            scroll : scrollComponent
         }
     }
 };
-
-app.ui.components.modal = {
-    openModal : function () {
-        document.body.style.overflowY = 'hidden';
-    },
-    closeModal : function () {
-        document.body.style.overflowY = '';
-    }
-};
-
 function MediaEventListener(queryOption){
     var _self = this;
     _self.resolutionCurr = window.innerWidth;
@@ -384,7 +394,7 @@ function initMenuMobile(id, data) {
             closeMenu: function () {
                 // $( this.el).hide();
                 this.activeNode = menuMobile.getNodeParam( this.tree[0] );
-                app.ui.components.modal.closeModal();
+                app.ui.components.scroll.enable();
                 this.show = false;
             }
         },
@@ -395,8 +405,8 @@ function initMenuMobile(id, data) {
                     '<transition name="menu-mobile-header-toggle">' +
                     '<div class="menu-mobile__header">' +
                         '<div class="menu-mobile__title">' +
-                            '<button class="menu-mobile__title-btn" v-on:click.prevent="activeParentNode">' +
-                                '<i class="menu-mobile__icon-arrow-right"></i>' +
+                            '<button class="menu-mobile__title-btn" :data-node="node.id" v-on:click.prevent="activeParentNode">' +
+                                '<i class="menu-mobile__icon-arrow-right" v-if="node.id"></i>' +
                                 '{{ node.name }}' +
                             '</button>' +
                         '</div>' +
@@ -554,7 +564,7 @@ function MenuMobile(options){
     function addHandlerToggleBtn(container, vueMenuMobile){
         $(container).on('click', selectors.btnToggle, function () {
             vueMenuMobile.show = true;
-            app.ui.components.modal.openModal();
+            app.ui.components.scroll.disable();
         });
     }
 

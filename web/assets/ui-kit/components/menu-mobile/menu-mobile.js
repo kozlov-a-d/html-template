@@ -98,7 +98,7 @@ function MenuMobile(options){
     function addHandlerToggleBtn(container, vueMenuMobile){
         $(container).on('click', selectors.btnToggle, function () {
             vueMenuMobile.show = true;
-            app.ui.components.modal.openModal();
+            app.ui.components.scroll.disable();
         });
     }
 
