@@ -19,9 +19,12 @@ var scrollComponent = (function(){
     }
 }());
 var app = {
+    helper : {
+        scroll : scrollComponent
+    },
     ui : {
         components : {
-            scroll : scrollComponent
+
         }
     }
 };
@@ -130,44 +133,6 @@ function MediaEventListener(queryOption){
 
 
 
-
-/*
-
-Структура для меню, в [] - имена из elements/selectors,
-* [] - эти классы добавлены в структуру для наглядности и вставлять их в верстку не надо
-
-<nav class="menu-top js-smart-menu [container]">
-
-    <div class="menu-top__switcher">
-        <button class="menu-top__switcher-btn [btnToggle]">показать/скрыть меню</button>
-    </div>
-
-    <div class="menu-top__title">
-        <button class="menu-top__title-btn [btnTitle]">Шапка меню в развернутом виде</button>
-    </div>
-
-    <ul class="menu-top__list [nodeRoot]">
-        [<li class="menu-top__item -has-drop-down [node]" data-lvl="1">
-            <a class="menu-top__item-name" href="#">Каталог</a> --> title
-            <div class="menu-top__drop-down [nodeDropdown]">
-                (<ul class="menu-top__list [nodeList]">   --> show
-                    [<li class="menu-top__item -has-drop-down [node]" data-lvl="2">
-                        <a class="menu-top__item-name" href="#">Теплоизоляция ППУ</a>
-                        <div class="menu-top__drop-down [nodeDropdown]">
-                           <ul class="menu-top__list [nodeList]">
-                                <li class="menu-top__item">
-                                    <a class="menu-top__item-name" href="#">Трубы ППУ в изоляции</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>]
-                </ul>)
-            </div>
-        </li>]
-    </ul>
-</div>
-
- */
 
 
 function SmartMenu(options){
@@ -394,7 +359,7 @@ function initMenuMobile(id, data) {
             closeMenu: function () {
                 // $( this.el).hide();
                 this.activeNode = menuMobile.getNodeParam( this.tree[0] );
-                app.ui.components.scroll.enable();
+                app.helper.scroll.enable();
                 this.show = false;
             }
         },
@@ -469,6 +434,33 @@ function initMenuMobile(id, data) {
 // - bower_components/vue/dist/vue.js
 // - web/assets/ui-kit/components/modal/modal-core.js
 // - web/assets/ui-kit/components/menu-mobile/menu-mobile.vue.component.js
+//
+// Example
+// <nav class="js-menu-mobile">
+//
+//     <button data-menu-mobile--switcher-btn>menu</button>
+//
+//     <ul data-menu-mobile--root>
+//         <li data-menu-mobile--has-drop-down><a data-menu-mobile--item-name>Пунк 1</a>
+//             <div>
+//                 <ul>
+//                     <li><a data-menu-mobile--item-name>Пунк 1.1</a></li>
+//                     <li><a data-menu-mobile--item-name>Пунк 1.2</a></li>
+//                     <li><a data-menu-mobile--item-name>Пунк 1.3</a></li>
+//                     <li><a data-menu-mobile--item-name>Пунк 1.4</a></li>
+//                     <li><a data-menu-mobile--item-name>Пунк 1.5</a></li>
+//                 </ul>
+//             </div>
+//         </li>
+//         <li><a data-menu-mobile--item-name>Пунк 2</a></li>
+//         <li><a data-menu-mobile--item-name>Пунк 3</a></li>
+//         <li><a data-menu-mobile--item-name>Пунк 4</a></li>
+//         <li><a data-menu-mobile--item-name>Пунк 5</a></li>
+//         <li><a data-menu-mobile--item-name>Пунк 6</a></li>
+//     </ul>
+//
+// </nav>
+
 
 function MenuMobile(options){
 
@@ -493,9 +485,10 @@ function MenuMobile(options){
     // переопределяем переменные если надо ============================================================================/
 
     // переопределяем свойства, если это необходимо
-    function setOptions(){
+    function setOptions(container){
         // text = $.extend({}, selectors, options.text);
         // selectors = $.extend({}, selectors, options.selectors);
+        text.rootTitle = $(container).find(selectors.btnToggle).text();
     }
 
     // работа с деревом ===============================================================================================/
@@ -564,13 +557,13 @@ function MenuMobile(options){
     function addHandlerToggleBtn(container, vueMenuMobile){
         $(container).on('click', selectors.btnToggle, function () {
             vueMenuMobile.show = true;
-            app.ui.components.scroll.disable();
+            app.helper.scroll.disable();
         });
     }
 
     // initialize =====================================================================================================/
     $(selectors.container).each(function () {
-        setOptions();  // переопределяем свойства, если это необходимо
+        setOptions($(this));  // переопределяем свойства, если это необходимо
         var tree = buildMenu($(this).find(selectors.nodeRoot));  // создаём модель меню
         var vueMenuMobile = renderMenu(tree);   // ренедерим меню, колбэком навешиваем обработчики
         addHandlerToggleBtn(this, vueMenuMobile);
