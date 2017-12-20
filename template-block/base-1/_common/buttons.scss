@@ -19,11 +19,18 @@
     color: #5f5733;
   }
 
+  &.-dark{
+    background: #40545d;
+  }
+
   &:hover{
     background: #40545d;
     &.-secondary{
       background: #5f5733;
       color: #f1ebd0;
+    }
+    &.-dark{
+      background: #46616d;
     }
   }
 
