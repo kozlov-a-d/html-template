@@ -134,195 +134,149 @@ function MediaEventListener(queryOption){
 
 
 
+// Desktop ========================================================================================================/
+// function setScreenIsMobile(_isMobile) {
+//     if( typeof _isMobile === 'boolean'){
+//         states.isMobile = _isMobile;
+//     } else {
+//         console.warn('setScreenIsMobile(_isMobile) _isMobile не является boolean');
+//     }
+// }
+//
+// // создаёт дополнительную выпадашку для непоместившихся элементов
+// function createExtraBar() {
+//     var extrabarContent = '';
+//     for(var i = 0; i < elements.desktopItems.length; i++){
+//         extrabarContent = extrabarContent + elements.desktopItems.eq(i).get(0).outerHTML;
+//     }
+//
+//     elements.nodeRoot.append(
+//         '<li class="menu-top__item -extraBar -has-drop-down -drop-down-inverse">' +
+//         '<button class="menu-top__item-name">...</button>' +
+//         '<div class="menu-top__drop-down">' +
+//         '<ul class="menu-top__list">' +
+//         extrabarContent +
+//         '</ul>' +
+//         '</div>' +
+//         '</li>'
+//     );
+//     elements.nodeRoot.find('.-extraBar .menu-top__drop-down .menu-top__drop-down').remove();
+//     // elements.nodeRoot.find('.-extraBar').hide();
+//
+// }
 
-function SmartMenu(options){
+(function( $ ){
 
-    // состояния модуля
+    var defaults = {
+        // дефолтные опции
+    };
     var states ={
-        isOpened: false,   // открыт или закрыт на мобильном
-        isMobile: false,   // активна мобильная версия или нет
         hasExtra: false
     };
 
-    // Дерево меню, включает в себя только узлы, листья игнорируются
-    var tree = [];
+    var methods = {
 
-    // Текущий узел
-    var currNode = {};
+        init : function( options ) {
 
-    // Список текстов, используемых в модуле
-    var text = {
-        rootTitle: 'Меню'
-    };
+            options = $.extend({}, defaults, options);
 
-    // Список селекторов, используемых в модуле
-    var selectors = {
-        container: '#js-smart-menu',
-        node: '.-has-drop-down',
-        nodeRoot: '#js-smart-menu > .menu-top__list',
-        nodeLink: '.menu-top__item-name',
-        nodeItem: '.menu-top__item',
-        nodeDropdown: '.menu-top__drop-down',
-        nodeList: '.menu-top__list',
-        btnToggle: '.menu-top__switcher-btn',
-        btnTitle: '.menu-top__title-btn',
+            this.each(function() {
 
-        desktopContainer: '.menu-top__list',
-        desktopItems: '.js-smart-menu > .menu-top__list > .menu-top__item',
-    };
+                var container = $(this);
+                var menuRoot = $(this).find('ul').not('ul ul');
+                var menuItems = menuRoot.find('li').not('li li');
+                var containerWidth = menuRoot.width();
+                // тут код
+                console.log('menuSmart', menuItems);
 
-    // Список элементов для быстрого обращения
-    // - сформируется при инициализации / создание объекта класса
-    var elements = {};
+                methods.addExtraBar(menuRoot, menuItems);
+
+                containerWidth = menuRoot.width();
+                methods.hideItem(menuRoot, menuItems, containerWidth)
+
+                window.addEventListener("resize", function() {
+                    console.log('window.onresize');
+                    containerWidth = menuRoot.width();
+                    methods.hideItem(menuRoot, menuItems, containerWidth)
+                    lastResolution = window.width();
+                });
+
+                //
 
 
-    // переопределяем переменные если надо ============================================================================/
+            });
+        },
 
-    // переопределяем свойства, если это необходимо
-    function setOptions(){
-        text = $.extend({}, selectors, options.text);
-        selectors = $.extend({}, selectors, options.selectors);
-    }
+        resize : function () {
 
-    // кэшируем элементы для быстрого доступа
-    function addElements(){
-        elements =  {
-            container: $(selectors.container),
-            nodeRoot: $(selectors.nodeRoot),
-            nodeLinks: $(selectors.node + ' > ' + selectors.nodeLink),
-            btnToggle: $(selectors.btnToggle),
-            btnTitle: $(selectors.btnTitle),
-            desktopContainer: $(selectors.desktopContainer),
-            desktopItems: $(selectors.desktopItems)
-        };
-    }
+        },
 
-    // Desktop ========================================================================================================/
-    function setScreenIsMobile(_isMobile) {
-        if( typeof _isMobile === 'boolean'){
-            states.isMobile = _isMobile;
-        } else {
-            console.warn('setScreenIsMobile(_isMobile) _isMobile не является boolean');
-        }
-    }
+        addExtraBar: function (menuRoot, menuItems) {
+            var extrabarContent = '';
+            for(var i = 0; i < menuItems.length; i++){
+                extrabarContent = extrabarContent + menuItems.eq(i).get(0).outerHTML;
+            }
 
-    // создаёт дополнительную выпадашку для непоместившихся элементов
-    function createExtraBar() {
-        var extrabarContent = '';
-        for(var i = 0; i < elements.desktopItems.length; i++){
-            extrabarContent = extrabarContent + elements.desktopItems.eq(i).get(0).outerHTML;
-        }
-
-        elements.nodeRoot.append(
-            '<li class="menu-top__item -extraBar -has-drop-down -drop-down-inverse">' +
+            menuRoot.append(
+                '<li class="menu-top__item -extraBar -has-drop-down -drop-down-inverse">' +
                 '<button class="menu-top__item-name">...</button>' +
                 '<div class="menu-top__drop-down">' +
-                    '<ul class="menu-top__list">' +
-                         extrabarContent +
-                    '</ul>' +
+                '<ul class="menu-top__list">' +
+                extrabarContent +
+                '</ul>' +
                 '</div>' +
-            '</li>'
-        );
-        elements.nodeRoot.find('.-extraBar .menu-top__drop-down .menu-top__drop-down').remove();
-        // elements.nodeRoot.find('.-extraBar').hide();
+                '</li>'
+            );
+            menuRoot.find('.-extraBar .menu-top__drop-down .menu-top__drop-down').remove();
+        },
 
-    }
+        // удаляет дополнительную выпадашку
+       removeExtraBar : function (menuRoot) {
+           menuRoot.find('.-extraBar').remove();
+       },
 
-    // удаляет дополнительную выпадашку
-    function removeExtraBar() {
-        elements.nodeRoot.find('.-extraBar').remove();
-    }
 
-    // проверяет элементы, если элементу не хватает места, то скрывает его
-    function hideItem() {
-        // подготавливаем выпадашку дублёра
-        var dubler = elements.nodeRoot.find('.-extraBar');
-        var dublerList = dubler.find('.menu-top__item');
-        dubler.removeClass('-hidden');
-        elements.desktopItems.removeClass('-hidden');
+        // проверяет элементы, если элементу не хватает места, то скрывает его
+        hideItem : function (menuRoot, menuItems, containerWidth) {
+            // подготавливаем выпадашку дублёра
+            var dubler = menuRoot.find('.-extraBar');
+            var dublerList = dubler.find('.menu-top__item');
+            console.log(dublerList);
+            dubler.removeClass('-hidden');
+            menuItems.removeClass('-hidden');
 
-        // ,,,
-        var width = elements.desktopContainer.width();
-        var sumWidth = 0;
-        states.hasExtra = false;
-        for(var i = 0; i < elements.desktopItems.length; i++){
-            var elWidth = elements.desktopItems.eq(i).width();
-            if(sumWidth + elWidth < width){
-                sumWidth = sumWidth + elWidth;
-                dublerList.eq(i).addClass('-hidden');
-                // console.log(i);
-            } else {
-                elements.desktopItems.eq(i).addClass('-hidden');
-                states.hasExtra = true;
+            var width = containerWidth;
+            var sumWidth = 0;
+            states.hasExtra = false;
+            for(var i = 0; i < menuItems.length; i++){
+                var elWidth = menuItems.eq(i).width();
+                if(sumWidth + elWidth < width){
+                    sumWidth = sumWidth + elWidth;
+                    dublerList.eq(i).addClass('-hidden');
+                    // console.log(i);
+                } else {
+                    menuItems.eq(i).addClass('-hidden');
+                    states.hasExtra = true;
+                }
             }
-        }
-
-    }
-
-
-    // Обработка событий ==============================================================================================/
-
-    // Включаем обработчики навигации в мобильном виде
-    function addHandlerMobileNav(){
-
-        // клик по ссылки в меню
-        elements.nodeLinks.on('click', function () {
-            showNode( $(this).attr('data-target-node-id') );
-            return false;
-        });
-
-        // клик по кнопке/названию узала
-        elements.btnTitle.on('click', function () {
-            hideNode();
-            return false;
-        });
-    }
-
-    // отключаем обработчики навигации в мобильном виде
-    function removeHandlerMobileNav(){
-        elements.nodeLinks.off();
-        elements.btnTitle.off();
-    }
-
-    // переключаем события для разных размеров экрана
-    function changeScreenType() {
-        if(states.isMobile){
-            // переход на мобильный
-            removeExtraBar();
-        } else {
-            // переход на десктоп
-            createExtraBar();
-            hideItem();
-        }
-    }
-
-    // initialize =====================================================================================================/
-    setOptions();  // переопределяем свойства, если это необходимо
-    addElements();   // кэшируем элементы для быстрого доступа
-
-    // changeScreenType(); // переключаем события для разных размеров экрана
-
-
-    // public =========================================================================================================/
-    return {
-        // устанавливаем тип экрана
-        setScreenIsMobile: function(_isMobile){
-            setScreenIsMobile(_isMobile);
-            changeScreenType();
-        },
-        // переход к функционалу мобильной или десктопной версии
-        changeScreenType: function(){
-            changeScreenType();
-        },
-        // Вывод данных для теста
-        debug: function(){
-            // console.log(tree);
-            console.log(states.isMobile);
 
         }
+
     };
-}
 
+    $.fn.menuSmart = function(method) {
+
+        if ( methods[method] ) {
+            return methods[ method ].apply( this, Array.prototype.slice.call( arguments, 1 ));
+        } else if ( typeof method === 'object' || ! method ) {
+            return methods.init.apply( this, arguments );
+        } else {
+            $.error( 'Метод ' +  method + ' не существует в jQuery.menuSmart' );
+        }
+
+    };
+
+})( jQuery );
 function initMenuMobile(id, data) {
 
     var menuMobile = new Vue({
@@ -693,7 +647,7 @@ Tables.addMobileView('table');
 console.time('SmartMenu');
 
 var menuMobile = new MenuMobile({});
-var smartMenu = new SmartMenu({});
+$('.js-menu-smart').menuSmart();
 console.timeEnd('SmartMenu');
 
 

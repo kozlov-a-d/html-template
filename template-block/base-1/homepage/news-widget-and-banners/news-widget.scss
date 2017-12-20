@@ -30,7 +30,7 @@
   &__header{
     display: block;
     width: 100%;
-    max-width: 1000px;
+    max-width: $content-width + 40px;
     padding: 0 20px;
     margin: 0 auto 40px;
     overflow: hidden;
