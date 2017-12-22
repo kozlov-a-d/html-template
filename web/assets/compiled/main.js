@@ -134,41 +134,12 @@ function MediaEventListener(queryOption){
 
 
 
-// Desktop ========================================================================================================/
-// function setScreenIsMobile(_isMobile) {
-//     if( typeof _isMobile === 'boolean'){
-//         states.isMobile = _isMobile;
-//     } else {
-//         console.warn('setScreenIsMobile(_isMobile) _isMobile не является boolean');
-//     }
-// }
-//
-// // создаёт дополнительную выпадашку для непоместившихся элементов
-// function createExtraBar() {
-//     var extrabarContent = '';
-//     for(var i = 0; i < elements.desktopItems.length; i++){
-//         extrabarContent = extrabarContent + elements.desktopItems.eq(i).get(0).outerHTML;
-//     }
-//
-//     elements.nodeRoot.append(
-//         '<li class="menu-top__item -extraBar -has-drop-down -drop-down-inverse">' +
-//         '<button class="menu-top__item-name">...</button>' +
-//         '<div class="menu-top__drop-down">' +
-//         '<ul class="menu-top__list">' +
-//         extrabarContent +
-//         '</ul>' +
-//         '</div>' +
-//         '</li>'
-//     );
-//     elements.nodeRoot.find('.-extraBar .menu-top__drop-down .menu-top__drop-down').remove();
-//     // elements.nodeRoot.find('.-extraBar').hide();
-//
-// }
 
 (function( $ ){
 
     var defaults = {
         // дефолтные опции
+        minResolution: 1000
     };
     var states ={
         hasExtra: false
@@ -195,14 +166,11 @@ function MediaEventListener(queryOption){
                 methods.hideItem(menuRoot, menuItems, containerWidth)
 
                 window.addEventListener("resize", function() {
-                    console.log('window.onresize');
                     containerWidth = menuRoot.width();
-                    methods.hideItem(menuRoot, menuItems, containerWidth)
-                    lastResolution = window.width();
+                    if(containerWidth > options.minResolution){
+                        methods.hideItem(menuRoot, menuItems, containerWidth);
+                    }
                 });
-
-                //
-
 
             });
         },
@@ -219,12 +187,12 @@ function MediaEventListener(queryOption){
 
             menuRoot.append(
                 '<li class="menu-top__item -extraBar -has-drop-down -drop-down-inverse">' +
-                '<button class="menu-top__item-name">...</button>' +
-                '<div class="menu-top__drop-down">' +
-                '<ul class="menu-top__list">' +
-                extrabarContent +
-                '</ul>' +
-                '</div>' +
+                    '<button class="menu-top__item-name">...</button>' +
+                    '<div class="menu-top__drop-down">' +
+                        '<ul class="menu-top__list">' +
+                            extrabarContent +
+                        '</ul>' +
+                    '</div>' +
                 '</li>'
             );
             menuRoot.find('.-extraBar .menu-top__drop-down .menu-top__drop-down').remove();
@@ -250,11 +218,20 @@ function MediaEventListener(queryOption){
             states.hasExtra = false;
             for(var i = 0; i < menuItems.length; i++){
                 var elWidth = menuItems.eq(i).width();
+
                 if(sumWidth + elWidth < width){
+                    // если следующий элемент не влазит
                     sumWidth = sumWidth + elWidth;
                     dublerList.eq(i).addClass('-hidden');
-                    // console.log(i);
+
+
                 } else {
+                    // если элемент влазит
+                    // проверяем влезет ли гамбургер
+                    if(sumWidth + elWidth < width){
+
+                    }
+
                     menuItems.eq(i).addClass('-hidden');
                     states.hasExtra = true;
                 }
