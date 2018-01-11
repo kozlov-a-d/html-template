@@ -1,25 +1,34 @@
 // Dependencies
 var gulp           = require('gulp'),
-    autoprefixer   = require('gulp-autoprefixer'),
-    base64         = require('gulp-base64'),
-    bowerFiles     = require('main-bower-files'),
+
     cache          = require('gulp-cache'),
-    concat         = require('gulp-concat'),
-    cssBeautify    = require('gulp-cssbeautify'),
-    csso           = require('gulp-csso'),
-    expect         = require('gulp-expect-file'),
     hash           = require('gulp-hash'),
-    imageMin       = require('gulp-imagemin'),
+    concat         = require('gulp-concat'),
     include        = require("gulp-include"),
-    jpegRecompress = require('imagemin-jpeg-recompress'),
     merge          = require('gulp-merge'),
-    pngQuant       = require('imagemin-pngquant'),
-    rewriteCSS     = require('gulp-rewrite-css'),
-    sass           = require('gulp-sass'),
     stripDebug     = require('gulp-strip-debug'),
     uglify         = require('gulp-uglify'),
     uglifyCSS      = require('gulp-uglifycss'),
     sourcemaps     = require('gulp-sourcemaps'),
+
+    htmlhint       = require("gulp-htmlhint"),
+
+    sass           = require('gulp-sass'),
+    autoprefixer   = require('gulp-autoprefixer'),
+    base64         = require('gulp-base64'),
+    rewriteCSS     = require('gulp-rewrite-css'),
+    csso           = require('gulp-csso'),
+    postcss        = require('gulp-postcss'),
+    focus          = require('postcss-focus'),
+    cssMqpacker    = require('css-mqpacker'),
+    cssMqpackerSort = require('sort-css-media-queries');
+    cssNano        = require('cssnano'),
+    discardComments = require('postcss-discard-comments'),
+
+    imageMin       = require('gulp-imagemin'),
+    jpegRecompress = require('imagemin-jpeg-recompress'),
+    pngQuant       = require('imagemin-pngquant'),
+
     browserSync    = require("browser-sync"),
     reload         = browserSync.reload;
 
@@ -223,7 +232,6 @@ gulp
 
         scripts.forEach(function (scripts) {
             stream.add(gulp.src(scripts.src)
-            // .pipe(expect(scripts.src))
                 .pipe(sourcemaps.init())
                 .pipe(include())
                 .on('error', console.log)
@@ -238,12 +246,20 @@ gulp
     })
     .task('styles', function () {
         var stream = merge();
+        var processors = [
+            focus,
+            cssMqpacker({ sort: cssMqpackerSort.desktopFirst }),
+            discardComments,
+            // cssNano
+        ];
 
         styles.forEach(function (styles) {
             stream.add(gulp.src(styles.src)
-            // .pipe(expect(styles.src))
                 .pipe(sourcemaps.init())
-                .pipe(sass().on('error', sass.logError))
+                .pipe(sass({
+                    outputStyle: 'expanded',
+                    errLogToConsole: true
+                }).on('error', sass.logError))
                 .pipe(autoprefixer({
                     browsers: ['last 15 versions', '>1%', 'ie 10'],
                     cascade:  false
@@ -252,6 +268,7 @@ gulp
                     destination: dir.dev
                 }))
                 .pipe(concat(styles.target))
+                .pipe(postcss(processors))
                 .pipe(sourcemaps.write())
                 .pipe(gulp.dest(dir.dev)))
                 .pipe(reload({stream: true}))
@@ -265,6 +282,8 @@ gulp
         html.forEach(function (html) {
             stream.add(gulp.src(html.src)
                 .pipe(include())
+                .pipe(htmlhint())
+                .pipe(htmlhint.reporter())
                 .pipe(gulp.dest(html.target))
                 .pipe(reload({stream: true}))
             );
