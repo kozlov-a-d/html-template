@@ -298,6 +298,8 @@ gulp
             return gulp.watch(styles.src, ['styles']);
         })).concat(html.map(function (html) {
             return gulp.watch(html.src, ['html']);
+        })).concat(images.map(function (images) {
+            return gulp.watch(images.src, ['images']);
         }));
     })
     .task('serve-html', ['build-html', 'browser-sync', 'watch-html'])
