@@ -56,7 +56,7 @@ console.timeEnd('certificates+partners');
 
 
 console.time('testimonialsWidget');
-/// template-block/base-1/homepage/testimonials-widget/testimonials-widget.js
+//=include ../../template-block/base-1/homepage/testimonials-widget/testimonials-widget.js
 console.timeEnd('testimonialsWidget');
 
 

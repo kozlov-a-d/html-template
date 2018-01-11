@@ -36,8 +36,9 @@ var scripts = [
             src: [
                 // скопированые вендоры из node_modules
                 "web/assets/vendor/jquery/jquery.min.js",
-                "web/assets/vendor/bxslider-4/jquery.bxslider.min.js",
-                "web/assets/vendor/owl.carousel/owl.carousel.min.js",
+                "web/assets/vendor/imagesloaded/imagesloaded.pkgd.js",
+                "web/assets/vendor/bxslider/jquery.bxslider.js",
+                "web/assets/vendor/owl.carousel/owl.carousel.js",
                 "web/assets/vendor/vue/vue.min.js",
 
                 // core.js
@@ -86,7 +87,7 @@ var scripts = [
                 'web/assets/vendor/animate.css/animate.css',
                 'web/assets/vendor/owl.carousel/assets/owl.carousel.css',
                 'web/assets/vendor/owl.carousel/assets/owl.theme.default.css',
-                'web/assets/vendor/bxslider-4/dist/jquery.bxslider.css',
+                'web/assets/vendor/bxslider/dist/jquery.bxslider.css',
                 // cтили с проекта
                 'assets/styles/main.scss'
             ]
@@ -146,6 +147,12 @@ var scripts = [
             target: 'web/assets/vendor/vue/',
             src:    [
                 'node_modules/vue/dist/vue.min.js'
+            ]
+        },
+        { // imagesloaded
+            target: 'web/assets/vendor/imagesloaded/',
+            src:    [
+                'node_modules/imagesloaded/imagesloaded.pkgd.js'
             ]
         }
     ];

@@ -7,9 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-html": "gulp vendor && gulp build-html",
     "watch-html": "gulp vendor && gulp watch-html",
-    "serve":      "gulp vendor && gulp serve-html",
-    "build-dev":  "gulp vendor && gulp build",
-    "watch-dev":  "gulp vendor && gulp watch-html",
+    "serve": "gulp vendor && gulp serve-html",
+    "build-dev": "gulp vendor && gulp build",
+    "watch-dev": "gulp vendor && gulp watch-html",
     "build-prod": "gulp vendor && gulp build-prod"
   },
   "repository": {
@@ -54,6 +54,7 @@
   "dependencies": {
     "animate.css": "^3.5.2",
     "bxslider": "^4.2.13",
+    "imagesloaded": "^4.1.4",
     "jquery": "^1.12.4",
     "normalize.css": "^7.0.0",
     "owl.carousel": "^2.2.0",
