@@ -1,40 +1,63 @@
 {
-  "name": "StartTemplate",
+  "name": "darvinstudio-projects",
   "version": "1.0.0",
-  "description": "Базовый шаблон для верстки сайтов ( Darvin Studio / BeOnTop )\r Для использования требуется node.js, установленные глобально gulp (*npm i gulp -g*) и bower (*npm i bower -g*)",
+  "description": "Базовый шаблон для верстки сайтов ( Darvin Studio / BeOnTop )\r Для использования требуется node.js, установленные глобально gulp (*npm i gulp -g*)",
   "main": "gulpfile.js",
-  "dependencies": {},
-  "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^4.0.0",
-    "gulp-clean-css": "^3.8.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-filter": "^5.0.0",
-    "gulp-include": "^2.3.1",
-    "gulp-minify-css": "^1.2.4",
-    "gulp-rename": "^1.2.2",
-    "gulp-rigger": "^0.5.8",
-    "gulp-sass": "^3.1.0",
-    "gulp-sourcemaps": "^2.6.0",
-    "gulp-uglify": "^3.0.0",
-    "gulp-util": "^3.0.8",
-    "gulp-watch": "^4.3.11"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "gulp build",
-    "build-prod": "gulp build",
-    "watch": "gulp watch"
+    "build-html": "gulp vendor && gulp build-html",
+    "watch-html": "gulp vendor && gulp watch-html",
+    "serve":      "gulp vendor && gulp serve-html",
+    "build-dev":  "gulp vendor && gulp build",
+    "watch-dev":  "gulp vendor && gulp watch-html",
+    "build-prod": "gulp vendor && gulp build-prod"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/roflmanya/HTML-tempate.git"
+    "url": "https://github.com/kozlov-a-d/html-template.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/roflmanya/HTML-tempate/issues"
+  "author": {
+    "name": "Darvin Studio",
+    "email": "info@darvin-studio.ru",
+    "url": "https://www.darvin-studio.ru"
   },
-  "homepage": "https://github.com/roflmanya/HTML-tempate#readme"
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "bower": "^1.8.0",
+    "browser-sync": "^2.23.3",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-base64": "^0.1.3",
+    "gulp-cache": "^0.4.6",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssbeautify": "^0.1.3",
+    "gulp-csso": "^3.0.0",
+    "gulp-expect-file": "0.0.7",
+    "gulp-hash": "^4.1.1",
+    "gulp-imagemin": "^3.3.0",
+    "gulp-include": "^2.3.1",
+    "gulp-merge": "^0.1.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-rewrite-css": "^1.1.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.3",
+    "gulp-strip-debug": "^1.1.0",
+    "gulp-sync": "^0.1.4",
+    "gulp-uglify": "^3.0.0",
+    "gulp-uglifycss": "^1.0.8",
+    "gulper": "^0.1.3",
+    "imagemin-jpeg-recompress": "^5.1.0",
+    "imagemin-pngquant": "^5.0.1",
+    "livereload": "^0.6.0",
+    "main-bower-files": "^2.13.1"
+  },
+  "dependencies": {
+    "animate.css": "^3.5.2",
+    "bxslider": "^4.2.13",
+    "jquery": "^1.12.4",
+    "normalize.css": "^7.0.0",
+    "owl.carousel": "^2.2.0",
+    "vue": "^2.5.13",
+    "wiredep": "^4.0.0"
+  }
 }

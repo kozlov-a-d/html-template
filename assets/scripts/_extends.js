@@ -21,37 +21,37 @@ console.timeEnd('SmartMenu');
 
 
 console.time('sliderHeader');
-//=include ../../../template-block/base-1/homepage/slider/slider.js
+//=include ../../template-block/base-1/homepage/slider/slider.js
 console.timeEnd('sliderHeader');
 
 
 console.time('advantages');
-//=include ../../../template-block/base-1/homepage/advantages/advantages.js
+//=include ../../template-block/base-1/homepage/advantages/advantages.js
 console.timeEnd('advantages');
 
 
 console.time('hitsWidget');
-//=include ../../../template-block/base-1/homepage/hits-widget/hits-widget.js
+//=include ../../template-block/base-1/homepage/hits-widget/hits-widget.js
 console.timeEnd('hitsWidget');
 
 
 console.time('articlesWidget');
-//=include ../../../template-block/base-1/homepage/articles-widget/articles-widget.js
+//=include ../../template-block/base-1/homepage/articles-widget/articles-widget.js
 console.timeEnd('articlesWidget');
 
 
 console.time('newsWidget+bannersWidget');
-//=include ../../../template-block/base-1/homepage/news-widget-and-banners/news-widget-and-banners.js
+//=include ../../template-block/base-1/homepage/news-widget-and-banners/news-widget-and-banners.js
 console.timeEnd('newsWidget+bannersWidget');
 
 
 console.time('galeryFullwidthCentered');
-//=include ../../../template-block/base-1/homepage/galery-fullwidth/galery-fullwidth.js
+//=include ../../template-block/base-1/homepage/galery-fullwidth/galery-fullwidth.js
 console.timeEnd('galeryFullwidthCentered');
 
 
 console.time('certificates+partners');
-//=include ../../../template-block/base-1/homepage/certificates-and-partners/certificates-and-partners.js
+//=include ../../template-block/base-1/homepage/certificates-and-partners/certificates-and-partners.js
 console.timeEnd('certificates+partners');
 
 

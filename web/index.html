@@ -12,31 +12,10 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
 
-    <!-- Google+ Meta Tags -->
-    <link rel="publisher" href="https://plus.google.com/url"/>
-
-    <!-- Facebook Meta Tags -->
-    <meta property="og:url" content="site-url"/>
-    <meta property="og:title" content="title"/>
-    <meta property="og:type" content="article"/>
-    <meta property="og:image" content="image-url"/>
-    <meta property="og:description" content="description"/>
-
-    <!-- Twitter Meta Tags -->
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="@twitterID" />
-    <meta name="twitter:title" content="title" />
-    <meta name="twitter:description" content="description" />
-    <meta name="twitter:image" content="image-url" />
-
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
-    <!-- compress vendor styles -->
-    <link rel="stylesheet" href="assets/compiled/vendor.min.css" />
-    <link rel="stylesheet" href="assets/compiled/ui.min.css" />
-
     <!-- main styles -->
-    <link rel="stylesheet" href="assets/compiled/main.css" />
+    <link rel="stylesheet" href="assets/build-dev/app.css" />
 
     <script type="application/ld+json">
     {
@@ -136,7 +115,11 @@
             
             </nav>
             <!-- /menu-top end -->
+            
         </header>
+        
+        
+        
         <!-- HEADER end -->
 
         <!-- MAIN begin -->
@@ -145,62 +128,108 @@
             <div class="container">
 
                 <!-- typography begin -->
-                <!--//= ../template-block/demo/typography.html-->
+                <!--//=include ../template-block/demo/typography.html-->
                 <!-- typography end -->
 
 
                 <!-- tables begin -->
-                <!--//= ../template-block/demo/tables.html-->
+                <!--//=include ../template-block/demo/tables.html-->
                 <!-- tables end -->
 
                 <!-- slider begin -->
+
                 <div class="slider-header js-slider-header">
+
                     <div class="owl-carousel">
+
                         <div class="item slider-header__item">
+
                             <img class="slider-header__img" src="http://via.placeholder.com/1920x550" alt="Слайд">
+
                             <div class="slider-header__text-container">
+
                                 <p class="-title">Найдите новую одежду</p>
+
                                 <p>Обновите ваш гардероб к новому сезону!</p>
+
                             </div>
+
                         </div>
+
                         <div class="item slider-header__item">
+
                             <img class="slider-header__img" src="http://via.placeholder.com/1920x550" alt="Второй слайд">
+
                             <div class="slider-header__text-container">
+
                                 <p class="-title">Второй слайд</p>
+
                                 <p>Обновите ваш гардероб к новому сезону!</p>
+
                             </div>
+
                         </div>
+
                         <div class="item slider-header__item">
+
                             <img class="slider-header__img" src="http://via.placeholder.com/1920x550" alt="Третий слайд">
+
                         </div>
+
                     </div>
+
                 
+
                     <div class="slider-header__nav nav-arrow">
+
                         <button class="slider-header__nav-btn nav-arrow__btn -prev js-nav-prev">prev</button>
+
                         <button class="slider-header__nav-btn nav-arrow__btn -next js-nav-next">next</button>
+
                 
+
                         <div class="slider-header__nav-counter js-nav-counter"></div>
+
                     </div>
+
                 
+
                 </div>
+
                 <!-- / slider end -->
 
                 <!-- galery-fullwidth -->
+
                 <section class="catalog-menu -col-2">
+
                     <nav class="catalog-menu__container js-menu-mobile">
+
                         <button class="catalog-menu__btn-switcher btn -dark" data-menu-mobile--switcher-btn>Каталог продукции</button>
+
                         <ul class="catalog-menu__list" data-menu-mobile--root>
+
                             <li class="catalog-menu__item">
+
                                 <a href="" class="catalog-menu__item-img"><img src="http://via.placeholder.com/100x100" alt=""></a>
+
                                 <a href="" class="catalog-menu__item-name" data-menu-mobile--item-name>Блузы и рубашки</a>
+
                             </li>
+
                             <li class="catalog-menu__item">
+
                                 <a href="" class="catalog-menu__item-img"><img src="http://via.placeholder.com/100x100" alt=""></a>
+
                                 <a href="" class="catalog-menu__item-name" data-menu-mobile--item-name>Пальто и парки</a>
+
                             </li>
+
                         </ul>
+
                     </nav>
+
                 </section>
+
                 <!-- / galery-fullwidth END -->
                 <!-- galery-fullwidth -->
                 <section class="catalog-menu -col-3">
@@ -254,19 +283,33 @@
                 <!-- / galery-fullwidth END -->
 
                 <!-- text-block -top -->
+
                 <div class="text-block -top">
+
                     <div class="text-block__container">
+
                         <h1>Заголовок H1</h1>
+
                         <p>
+
                             <img class="response-img-md" src="http://via.placeholder.com/430x390" style="float: right; margin: -55px 0 20px 50px;" alt="">
+
                             Интернет-магазин одежды Stylecloth – это доступные цены, широкий, регулярно обновляемый ассортимент. В онлайн-каталоге Stylecloth представлено около 7000 ведущих брендов женской, мужской и детской одежды и обуви, электроники, книжной продукции, ювелирных изделий, игрушек и т.д. Для удобства пользования онлайн-каталог поделен на разделы, все товары можно сортировать по ряду критериев: цена, материал изготовления, сезонность, бренд.</p>
+
                 
+
                         <div class="js-spoiler-area hidden-md" data-btn-class="-secondary -fullwidth">
+
                             <p>Интернет-магазин Stylecloth регулярно проводит масштабные распродажи, в рамках которых купить одежду и обувь становится еще реальнее. Чтобы быть в курсе предстоящих скидок или появления в ассортименте новых моделей одежды от любимых брендов, достаточно подписаться на email-рассылку магазина. Дополнительные выгодные условия действуют для постоянных покупателей Wildberries – персональная скидка, зависящая от процента выкупа вещей. </p>
+
                         </div>
+
                 
+
                     </div>
+
                 </div>
+
                 <!-- / text-block -top END -->
                 <!-- hits-widget -->
                 <section class="hits-widget js-hits-widget">
@@ -450,6 +493,7 @@
                     </div>
                 </section>
                 <!-- / work-scheme END -->
+                
                 <!-- certificates-and-partners -->
                 <div class="block-column-two">
                     <div class="block-column-two__container">
@@ -708,33 +752,61 @@
                     </div>
                 
                     <!-- banners -->
+                
                     <div class="banners">
+                
                         <div class="banners__container">
+                
                             <div class="banners__carousel owl-carousel">
+                
                                 <div class="banners__item">
+                
                                     <a href="" class="banners__item-img"><img src="http://via.placeholder.com/305x150" alt=""></a>
+                
                                     <div class="banners__item-text">
+                
                                         <a href="" class="banners__item-title">Заголовок баннера</a>
+                
                                         <p>Краткое описание баннера</p>
+                
                                     </div>
+                
                                 </div>
+                
                                 <div class="banners__item">
+                
                                     <a href="" class="banners__item-img"><img src="http://via.placeholder.com/305x150" alt=""></a>
+                
                                     <div class="banners__item-text">
+                
                                         <a href="" class="banners__item-title">Заголовок баннера</a>
+                
                                         <p>Краткое описание баннера</p>
+                
                                     </div>
+                
                                 </div>
+                
                                 <div class="banners__item">
+                
                                     <a href="" class="banners__item-img"><img src="http://via.placeholder.com/305x150" alt=""></a>
+                
                                     <div class="banners__item-text">
+                
                                         <a href="" class="banners__item-title">Заголовок баннера</a>
+                
                                         <p>Краткое описание баннера</p>
+                
                                     </div>
+                
                                 </div>
+                
                             </div>
+                
                         </div>
+                
                     </div>
+                
                     <!-- / banners END -->
                 
                 </section>
@@ -879,6 +951,7 @@
                     </div>
                 </section>
                 <!-- / testimonials-widget END -->
+                
                 <!-- footer-feedback -bottom -->
                 <div class="footer-feedback">
                     <div class="footer-feedback__container">
@@ -931,87 +1004,168 @@
     <!-- WRAPPER end -->
 
     <!-- FOOTER begin -->
+
     <footer class="layout-footer">
+
         <div class="footer">
+
             <div class="footer__container">
+
                 <div class="footer__info">
+
                     <div class="footer__info-container">
+
         
+
                         <a href="" class="footer__info-logo">
+
                             <img src="http://via.placeholder.com/230x65/ffffff/000000" alt="logo" title="logo" />
+
                         </a>
+
         
+
                         <div class="footer__info-contacts">
+
                             <div class="footer__info-contacts-item -phone">
+
                                 <a href="tel:+70000000000">+7 (000) 000-00-00</a><br>
+
                                 <a href="tel:+70000000000">+7 (000) 000-00-00</a>
+
                             </div>
+
                             <div class="footer__info-contacts-item -time">
+
                                 Пн-Пт: с 0:00 до 0:00<br>
+
                                 Сб-Вс:  Выходные
+
                             </div>
+
                             <div class="footer__info-contacts-item -location">
+
                                 000000, Рыбная обл., г. Рыба, ул. Рыба, дом 00, к. 00 <a href="">Карта проезда</a>
+
                             </div>
+
                         </div>
+
         
+
                         <div class="footer__social-link">
+
                             <a href="" rel="noreferrer noopener" target="_blank"><img src="http://via.placeholder.com/38x38/ffffff/000000" alt="FB" title="FB" /></a>
+
                             <a href="" rel="noreferrer noopener" target="_blank"><img src="http://via.placeholder.com/38x38/ffffff/000000" alt="IN" title="IN" /></a>
+
                             <a href="" rel="noreferrer noopener" target="_blank"><img src="http://via.placeholder.com/38x38/ffffff/000000" alt="VK" title="VK" /></a>
+
                             <a href="" rel="noreferrer noopener" target="_blank"><img src="http://via.placeholder.com/38x38/ffffff/000000" alt="TW" title="TW" /></a>
+
                             <a href="" rel="noreferrer noopener" target="_blank"><img src="http://via.placeholder.com/38x38/ffffff/000000" alt="OK" title="OK" /></a>
+
                         </div>
+
         
+
                         <p class="footer__info-text">
+
                             Создание и продвижение сайта <a href="https://www.darvin-studio.ru">Darvin Studio</a><br>
+
                             <a href="">Политика конфиденциальности</a><br>
+
                             &copy; 2017. Все права защищены
+
                         </p>
+
                     </div>
+
                 </div>
+
                 <div class="footer__menu">
+
                     <ul class="footer__menu-container">
+
                         <li class="footer__menu-col">
+
                             <span class="footer__menu-col-heading">Компания</span>
+
                             <ul class="footer__menu-list">
+
                                 <li class="footer__menu-item"><a href="">О нас</a></li>
+
                                 <li class="footer__menu-item"><a href="">Новости</a></li>
+
                                 <li class="footer__menu-item"><a href="">Статьи</a></li>
+
                                 <li class="footer__menu-item"><a href="">Фотогалерея</a></li>
+
                                 <li class="footer__menu-item"><a href="">Продукция</a></li>
+
                                 <li class="footer__menu-item"><a href="">Вопрос-ответ</a></li>
+
                                 <li class="footer__menu-item"><a href="">Статьи</a></li>
+
                                 <li class="footer__menu-item"><a href="">Контакты</a></li>
+
                             </ul>
+
                         </li>
+
                         <li class="footer__menu-col">
+
                             <span class="footer__menu-col-heading">Каталог</span>
+
                             <ul class="footer__menu-list">
+
                                 <li class="footer__menu-item"><a href="">Пункт №1</a></li>
+
                                 <li class="footer__menu-item"><a href="">Пункт №2</a></li>
+
                                 <li class="footer__menu-item"><a href="">Пункт №3</a></li>
+
                                 <li class="footer__menu-item"><a href="">Пункт №4</a></li>
+
                                 <li class="footer__menu-item"><a href="">Пункт №5</a></li>
+
                                 <li class="footer__menu-item"><a href="">Пункт №6</a></li>
+
                                 <li class="footer__menu-item"><a href="">Пункт №7</a></li>
+
                                 <li class="footer__menu-item"><a href="">Пункт №8</a></li>
+
                             </ul>
+
                         </li>
+
                     </ul>
+
                 </div>
+
             </div>
+
         </div>
+
     </footer>
+
     <!-- FOOTER end -->
+
     
+
     <button class="scroll-top js-scroll-top" data-speed="500" data-offset-top="105" style="display:none;">to top</button>
+
     
+
     
+
     <!--scripts-->
-    <script src="assets/compiled/vendor.min.js"></script>
-    <script src="assets/compiled/main.js"></script>
+
+    <script src="assets/build-dev/app.js"></script>
+
     <!--/scripts-->
+
+    
 
 </body>
 </html>

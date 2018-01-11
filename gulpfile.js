@@ -1,167 +1,369 @@
-'use strict';
+// Dependencies
+var gulp           = require('gulp'),
+    autoprefixer   = require('gulp-autoprefixer'),
+    base64         = require('gulp-base64'),
+    bowerFiles     = require('main-bower-files'),
+    cache          = require('gulp-cache'),
+    concat         = require('gulp-concat'),
+    cssBeautify    = require('gulp-cssbeautify'),
+    csso           = require('gulp-csso'),
+    expect         = require('gulp-expect-file'),
+    hash           = require('gulp-hash'),
+    imageMin       = require('gulp-imagemin'),
+    include        = require("gulp-include"),
+    jpegRecompress = require('imagemin-jpeg-recompress'),
+    merge          = require('gulp-merge'),
+    pngQuant       = require('imagemin-pngquant'),
+    rewriteCSS     = require('gulp-rewrite-css'),
+    sass           = require('gulp-sass'),
+    stripDebug     = require('gulp-strip-debug'),
+    uglify         = require('gulp-uglify'),
+    uglifyCSS      = require('gulp-uglifycss'),
+    sourcemaps     = require('gulp-sourcemaps'),
+    browserSync    = require("browser-sync"),
+    reload         = browserSync.reload;
 
-var gulp = require('gulp'),
-    watch = require('gulp-watch'),
-    // gutil = require('gulp-util'),
-    prefixer = require('gulp-autoprefixer'),
-    uglify = require('gulp-uglify'),
-    sass = require('gulp-sass'),
-    // cleanCSS = require('gulp-clean-css'),
-    sourcemaps = require('gulp-sourcemaps'),
-    concat =  require('gulp-concat'),
-    cssmin = require('gulp-minify-css'),
-    // rename = require("gulp-rename"),
-    include = require("gulp-include"),
-    rigger = require('gulp-rigger');
-
-
-var path = {
-    build: {
-        js: './web/assets/compiled/',
-        style: './web/assets/compiled/',
-        html: './web/',
-        ui:  './web/assets/compiled/'
-    },
-    src: {
-        js: [
-            // core.js
-            'web/assets/ui-kit/components/scroll/scroll.component.js',
-            'web/assets/ui-kit/core.js',
-
-            // utilities
-            'web/assets/ui-kit/utilities/media-event-listener/media-event-listener.js',
-            // components
-            'web/assets/ui-kit/components/menu-smart/jquery.menu-smart.js',
-            'web/assets/ui-kit/components/menu-mobile/menu-mobile.vue.js',
-            'web/assets/ui-kit/components/menu-mobile/menu-mobile.js',
-            // content
-            'web/assets/ui-kit/content/tables/tables.js',
-            'web/assets/ui-kit/content/spoiler/spoiler.js',
-            // core.js
-            'web/assets/scripts/_extends.js',
-            'web/assets/scripts/**/[^_]*.js',
-
-            'web/assets/ui-kit/utilities/media-event-listener/media-event-listener-init.js'
-        ],
-        style: 'web/assets/styles/main.scss',
-        html: 'pages/[^_]*.html',
-        vendor:{
-            js: [
-                'bower_components/jquery/dist/jquery.js',
-                'bower_components/owl.carousel/dist/owl.carousel.js',
-                'bower_components/bxslider-4/dist/jquery.bxslider.js',
-                'bower_components/vue/dist/vue.js'
-            ],
-            css: [
-                'bower_components/normalize-css/normalize.css',
-                'bower_components/animate.css/animate.css',
-                'bower_components/owl.carousel/dist/assets/owl.carousel.css',
-                'bower_components/owl.carousel/dist/assets/owl.theme.default.css',
-                'bower_components/bxslider-4/dist/jquery.bxslider.css'
-            ]
-        },
-        ui:{
-            css: [
-                'web/assets/ui-kit/components/menu-mobile/menu-mobile.scss'
-            ]
-        }
-    },
-    watch: {
-        js: ['web/assets/ui-kit/**/*.js', 'web/assets/scripts/**/*.js'],
-        style: ['web/assets/styles/**/*.scss', 'web/assets/ui-kit/**/*.scss'],
-        html: ['pages/**/*.html', 'template-block/**/*.html'],
-        vendor: 'bower_components/**/*.*',
-        templates: 'template-block/**/*.*'
-    }
+// Build directories
+var dir = {
+    dev:  'web/assets/build-dev',
+    prod: 'web/assets/build'
 };
 
-gulp.task('style:build', function () {
-    gulp.src(path.src.style)
-        .pipe(sourcemaps.init())
-        .pipe(sass({
-            includePaths: [path.src.style],
-            outputStyle: 'expanded',
-            sourceMap: true,
-            errLogToConsole: true
-        }))
-        .pipe(prefixer({
-            browsers: ['last 2 versions', "> 3%", "ie 11", "ie 10"]
-        }))
-        .pipe(sourcemaps.write())
-        .pipe(gulp.dest('web/assets/compiled/'))
-});
- 
-gulp.task('js:build', function () {
-    gulp.src(path.src.js)
-        .pipe(include())
-            .on('error', console.log)
-        .pipe(concat('main.js'))
-        .pipe(gulp.dest(path.build.js));
-});
+// Assets
+var scripts = [
+        {
+            target: 'app.js',
+            src: [
+                // скопированые вендоры из node_modules
+                "web/assets/vendor/jquery/jquery.min.js",
+                "web/assets/vendor/bxslider-4/jquery.bxslider.min.js",
+                "web/assets/vendor/owl.carousel/owl.carousel.min.js",
+                "web/assets/vendor/vue/vue.min.js",
 
-gulp.task('html:build', function () {
-    gulp.src(path.src.html)
-        .pipe(rigger())
-        .pipe(gulp.dest(path.build.html));
-});
-gulp.task('vendor:build', function () {
+                // core.js
+                'assets/ui-kit/components/scroll/scroll.component.js',
+                'assets/ui-kit/core.js',
 
-    gulp.src(path.src.vendor.js)
-        .pipe(concat('vendor.min.js'))
-        .pipe(uglify())
-        .pipe(gulp.dest(path.build.js));
+                // utilities
+                'assets/ui-kit/utilities/media-event-listener/media-event-listener.js',
+                // components
+                'assets/ui-kit/components/menu-smart/jquery.menu-smart.js',
+                'assets/ui-kit/components/menu-mobile/menu-mobile.vue.js',
+                'assets/ui-kit/components/menu-mobile/menu-mobile.js',
+                // content
+                'assets/ui-kit/content/tables/tables.js',
+                'assets/ui-kit/content/spoiler/spoiler.js',
+                // core.js
+                'assets/scripts/_extends.js',
+                'assets/scripts/**/[^_]*.js',
 
-    gulp.src(path.src.vendor.css)
-        .pipe(concat('vendor.min.css'))
-        .pipe(cssmin())
-        .pipe(gulp.dest('web/assets/compiled/'))
+                'assets/ui-kit/utilities/media-event-listener/media-event-listener-init.js',
 
-});
+                // скрипты с проекта
+                "assets/scripts/main.js"
+            ]
+        }
+    ],
+    html = [
+        {
+            target: 'web/',
+            src: 'pages/[^_]*.html'
+        }
+    ],
+    scss = [
+        {
+            src: [
+                'assets/styles/**/*.scss'
+            ]
+        }
+    ],
+    styles = [
+        {
+            target: 'app.css',
+            src:    [
+                // скопированые вендоры из node_modules
+                'web/assets/vendor/normalize.css/normalize.css',
+                'web/assets/vendor/animate.css/animate.css',
+                'web/assets/vendor/owl.carousel/assets/owl.carousel.css',
+                'web/assets/vendor/owl.carousel/assets/owl.theme.default.css',
+                'web/assets/vendor/bxslider-4/dist/jquery.bxslider.css',
+                // cтили с проекта
+                'assets/styles/main.scss'
+            ]
+        }
+    ],
+    fonts = [
+        {
+            target: 'web/assets/fonts',
+            src:    [
+                'assets/fonts/**/*.*'
+            ]
+        }
+    ],
+    images = [
+        {
+            target: 'web/assets/images',
+            src:    [
+                'assets/images/**/*.*'
+            ]
+        }
+    ],
+    vendor = [
+        { // normalize.css
+            target: 'web/assets/vendor/normalize.css/',
+            src:    ['node_modules/normalize.css/normalize.css']
+        },
+        { // animate.css
+            target: 'web/assets/vendor/animate.css/',
+            src:    ['node_modules/animate.css/animate.css']
+        },
+        { // jquery
+            target: 'web/assets/vendor/jquery/',
+            src:    'node_modules/jquery/dist/*.js'
+        },
+        { // bxslider/images
+            target: 'web/assets/vendor/bxslider/images/',
+            src:    'node_modules/bxslider/dist/images/*'
+        },
+        { // bxslider
+            target: 'web/assets/vendor/bxslider/',
+            src:    [
+                'node_modules/bxslider/dist/*.js',
+                'node_modules/bxslider/dist/*.css'
+            ]
+        },
+        { // owl.carousel/assets
+            target: 'web/assets/vendor/owl.carousel/assets/',
+            src:    'node_modules/owl.carousel/dist/assets/*'
+        },
+        { // owl.carousel
+            target: 'web/assets/vendor/owl.carousel/',
+            src:    [
+                'node_modules/owl.carousel/dist/*.js'
+            ]
+        },
+        { // vue
+            target: 'web/assets/vendor/vue/',
+            src:    [
+                'node_modules/vue/dist/vue.min.js'
+            ]
+        }
+    ];
 
-gulp.task('ui:build', function () {
+// Tasks
+var watchers = [];
 
-    gulp.src(path.src.ui.css)
-        .pipe(sass({
-            includePaths: [path.src.style],
-            outputStyle: 'expanded',
-            sourceMap: true,
-            errLogToConsole: true
-        }))
-        .pipe(prefixer({
-            browsers: ['last 2 versions', "> 3%", "ie 11", "ie 10"]
-        }))
-        .pipe(concat('ui.min.css'))
-        .pipe(cssmin())
-        .pipe(gulp.dest('web/assets/compiled/'))
+gulp
+// Common
+    .task('clear', function (done) {
+        return cache.clearAll(done);
+    })
+    .task('fonts', function() {
+        var stream = merge();
 
-});
+        fonts.forEach(function (fonts) {
+            stream.add(gulp.src(fonts.src)
+                .pipe(gulp.dest(fonts.target)));
+        });
 
-gulp.task('build', [
-    'vendor:build',
-    'ui:build',
-    'html:build',
-    'js:build',
-    'style:build'
-]);
+        return stream;
+    })
+    .task('images', function() {
+        var stream = merge();
 
-gulp.task('watch', function(){
-    watch(path.watch.vendor, function() {
-        gulp.start('vendor:build');
+        images.forEach(function (images) {
+            stream.add(gulp.src(images.src)
+                .pipe(cache(imageMin([
+                    imageMin.gifsicle({
+                        interlaced: true
+                    }),
+                    imageMin.jpegtran({
+                        progressive: true
+                    }),
+                    jpegRecompress({
+                        loops:   5,
+                        min:     65,
+                        max:     70,
+                        quality: 'medium'
+                    }),
+                    imageMin.svgo(),
+                    imageMin.optipng({
+                        optimizationLevel: 3
+                    }),
+                    pngQuant({
+                        quality: '65-70',
+                        speed:   5
+                    })
+                ], {
+                    verbose: true
+                })))
+                .pipe(gulp.dest(images.target))
+                .pipe(reload({stream: true})))
+            ;
+        });
+
+        return stream;
+    })
+    .task('vendor', function() {
+        vendor.forEach(function (vendor) {
+            gulp.src(vendor.src)
+                .pipe(gulp.dest(vendor.target))
+        });
+    })
+    // Dev
+    .task('scripts', function () {
+        var stream = merge();
+
+        scripts.forEach(function (scripts) {
+            stream.add(gulp.src(scripts.src)
+            // .pipe(expect(scripts.src))
+                .pipe(sourcemaps.init())
+                .pipe(include())
+                .on('error', console.log)
+                .pipe(concat(scripts.target))
+                .pipe(sourcemaps.write())
+                .pipe(gulp.dest(dir.dev)))
+                .pipe(reload({stream: true}))
+            ;
+        });
+
+        return stream;
+    })
+    .task('styles', function () {
+        var stream = merge();
+
+        styles.forEach(function (styles) {
+            stream.add(gulp.src(styles.src)
+            // .pipe(expect(styles.src))
+                .pipe(sourcemaps.init())
+                .pipe(sass().on('error', sass.logError))
+                .pipe(autoprefixer({
+                    browsers: ['last 15 versions', '>1%', 'ie 10'],
+                    cascade:  false
+                }))
+                .pipe(rewriteCSS({
+                    destination: dir.dev
+                }))
+                .pipe(concat(styles.target))
+                .pipe(sourcemaps.write())
+                .pipe(gulp.dest(dir.dev)))
+                .pipe(reload({stream: true}))
+            ;
+        });
+
+        return stream;
+    })
+    .task('html', function () {
+        var stream = merge();
+        html.forEach(function (html) {
+            stream.add(gulp.src(html.src)
+                .pipe(include())
+                .pipe(gulp.dest(html.target))
+                .pipe(reload({stream: true}))
+            );
+        });
+        return stream;
+    })
+    .task('browser-sync', function () {
+        browserSync.init({
+            server: {
+                baseDir: "./web"
+            }
+        });
+    })
+
+    // html
+    .task('build-html', ['fonts', 'images', 'scripts', 'styles', 'html'])
+    .task('watch-html', ['build-html'], function () {
+        watchers.forEach(function (watcher) {
+            watcher.end();
+        });
+        watchers = [
+            gulp.watch('bower.json', function () {
+                reloadBowerAssets();
+                gulp.start('scripts', 'watch');
+            })
+        ].concat(scss.map(function (scss) {
+            return gulp.watch(scss.src, ['styles']);
+        })).concat(scripts.map(function (scripts) {
+            return gulp.watch(scripts.src, ['scripts']);
+        })).concat(styles.map(function (styles) {
+            return gulp.watch(styles.src, ['styles']);
+        })).concat(html.map(function (html) {
+            return gulp.watch(html.src, ['html']);
+        }));
+    })
+    .task('serve-html', ['build-html', 'browser-sync', 'watch-html'])
+    // Dev
+    .task('build', ['fonts', 'images', 'scripts', 'styles'])
+    .task('watch', ['build'], function () {
+        watchers.forEach(function (watcher) {
+            watcher.end();
+        });
+        watchers = [
+            gulp.watch('bower.json', function () {
+                reloadBowerAssets();
+                gulp.start('scripts', 'watch');
+            })
+        ].concat(scss.map(function (scss) {
+            return gulp.watch(scss.src, ['styles']);
+        })).concat(scripts.map(function (scripts) {
+            return gulp.watch(scripts.src, ['scripts']);
+        })).concat(styles.map(function (styles) {
+            return gulp.watch(styles.src, ['styles']);
+        }));
+    })
+    // Prod
+    .task('scripts-prod', ['scripts'], function () {
+        var stream = merge();
+
+        scripts.forEach(function (scripts) {
+            stream.add(gulp.src(scripts.src)
+            // .pipe(expect(scripts.src))
+                .pipe(include())
+                .on('error', console.log)
+                .pipe(stripDebug())
+                .pipe(concat(scripts.target))
+                .pipe(uglify())
+                .pipe(gulp.dest(dir.prod)));
+        });
+
+        return stream;
+    })
+    .task('styles-prod', ['styles'], function () {
+        var stream = merge();
+
+        styles.forEach(function (styles) {
+            stream.add(gulp.src(styles.src)
+            // .pipe(expect(styles.src))
+                .pipe(sass().on('error', sass.logError))
+                .pipe(autoprefixer({
+                    browsers: ['last 15 versions', '>1%', 'ie 10'],
+                    cascade:  false
+                }))
+                .pipe(csso())
+                .pipe(rewriteCSS({
+                    destination: dir.prod
+                }))
+                .pipe(base64())
+                .pipe(uglifyCSS({
+                    uglyComments: true
+                }))
+                .pipe(concat(styles.target))
+                .pipe(gulp.dest(dir.prod)));
+        });
+
+        return stream;
+    })
+    .task('build-prod', ['fonts', 'images', 'scripts-prod', 'styles-prod'], function () {
+        var getTarget = function (assets) {
+            return [dir.prod, assets.target].join('/');
+        };
+
+        return gulp.src(scripts.map(getTarget).concat(styles.map(getTarget)), {base: 'web'})
+            .pipe(hash({
+                template: '<%= name %><%= ext %>?<%= hash %>'
+            }))
+            .pipe(hash.manifest('manifest.json'))
+            .pipe(gulp.dest(dir.prod));
     });
-    watch(path.watch.html, function() {
-        gulp.start('html:build');
-    });
-    watch(path.watch.js, function() {
-        gulp.start('ui:build');
-        gulp.start('js:build');
-    });
-    watch(path.watch.style, function() {
-        gulp.start('ui:build');
-        gulp.start('style:build');
-    });
-    watch(path.watch.templates, function() {
-        gulp.start('html:build');
-        gulp.start('style:build');
-        gulp.start('js:build');
-    });
-});

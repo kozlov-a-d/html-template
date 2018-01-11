@@ -27,7 +27,7 @@
                 methods.addExtraBar(menuRoot, menuItems);
 
                 containerWidth = menuRoot.width();
-                methods.hideItem(menuRoot, menuItems, containerWidth)
+                methods.hideItem(menuRoot, menuItems, containerWidth);
 
                 window.addEventListener("resize", function() {
                     containerWidth = menuRoot.width();
