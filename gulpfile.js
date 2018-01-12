@@ -21,7 +21,7 @@ var gulp           = require('gulp'),
     postcss        = require('gulp-postcss'),
     focus          = require('postcss-focus'),
     cssMqpacker    = require('css-mqpacker'),
-    cssMqpackerSort = require('sort-css-media-queries');
+    cssMqpackerSort = require('sort-css-media-queries'),
     cssNano        = require('cssnano'),
     discardComments = require('postcss-discard-comments'),
 
