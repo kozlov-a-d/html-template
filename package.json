@@ -1,7 +1,7 @@
 {
-  "name": "darvinstudio-projects",
+  "name": "html-template",
   "version": "1.0.0",
-  "description": "Базовый шаблон для верстки сайтов ( Darvin Studio / BeOnTop )\r Для использования требуется node.js, установленные глобально gulp (*npm i gulp -g*)",
+  "description": "Базовый шаблон для верстки сайтов ( Darvin Studio / BeOnTop )\r Для использования требуется node.js",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
