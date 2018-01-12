@@ -34,7 +34,7 @@ function initMenuMobile(id, data) {
             closeMenu: function () {
                 // $( this.el).hide();
                 this.activeNode = menuMobile.getNodeParam( this.tree[0] );
-                app.helper.scroll.enable();
+                app.scroll.enable();
                 this.show = false;
             }
         },

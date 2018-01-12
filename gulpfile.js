@@ -22,7 +22,7 @@ var gulp           = require('gulp'),
     focus          = require('postcss-focus'),
     cssMqpacker    = require('css-mqpacker'),
     cssMqpackerSort = require('sort-css-media-queries'),
-    cssNano        = require('cssnano'),
+    // cssNano        = require('cssnano'),
     discardComments = require('postcss-discard-comments'),
 
     imageMin       = require('gulp-imagemin'),
@@ -51,7 +51,6 @@ var scripts = [
                 "web/assets/vendor/vue/vue.min.js",
 
                 // core.js
-                'assets/ui-kit/components/scroll/scroll.component.js',
                 'assets/ui-kit/core.js',
 
                 // utilities
@@ -71,6 +70,11 @@ var scripts = [
 
                 // скрипты с проекта
                 "assets/scripts/main.js"
+            ],
+            watch: [
+                'assets/scripts/**/*.js',
+                'assets/ui-kit/**/*.js',
+                'template-block/**/*.js'
             ]
         }
     ],
@@ -83,7 +87,9 @@ var scripts = [
     scss = [
         {
             src: [
-                'assets/styles/**/*.scss'
+                'assets/styles/**/*.scss',
+                'assets/ui-kit/**/*.scss',
+                'template-block/**/*.scss'
             ]
         }
     ],
@@ -249,7 +255,7 @@ gulp
         var processors = [
             focus,
             cssMqpacker({ sort: cssMqpackerSort.desktopFirst }),
-            discardComments,
+            discardComments
             // cssNano
         ];
 
@@ -294,7 +300,11 @@ gulp
         browserSync.init({
             server: {
                 baseDir: "./web"
-            }
+            },
+            // tunnel: true,
+            host: 'localhost',
+            port: 9080,
+            logPrefix: "browserSync"
         });
     })
 
@@ -312,7 +322,7 @@ gulp
         ].concat(scss.map(function (scss) {
             return gulp.watch(scss.src, ['styles']);
         })).concat(scripts.map(function (scripts) {
-            return gulp.watch(scripts.src, ['scripts']);
+            return gulp.watch(scripts.watch, ['scripts']);
         })).concat(styles.map(function (styles) {
             return gulp.watch(styles.src, ['styles']);
         })).concat(html.map(function (html) {

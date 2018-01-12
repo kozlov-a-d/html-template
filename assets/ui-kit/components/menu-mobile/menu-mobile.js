@@ -106,7 +106,7 @@ function MenuMobile(options){
         var result = null;
         //ищем элемент с заданным id
         tree.forEach(function(item){
-            if( item.id == id ){
+            if( item.id === id ){
                 result = item;
                 return false;
             }
@@ -126,7 +126,7 @@ function MenuMobile(options){
     function addHandlerToggleBtn(container, vueMenuMobile){
         $(container).on('click', selectors.btnToggle, function () {
             vueMenuMobile.show = true;
-            app.helper.scroll.disable();
+            app.scroll.disable();
         });
     }
 
