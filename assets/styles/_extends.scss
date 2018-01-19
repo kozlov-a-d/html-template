@@ -1,6 +1,6 @@
 
 // Utilities ------------------------------------------------------------------------------------------------------------*/
-@import "../ui-kit/utilities/scss-mixins/utitlties";
+@import "../ui-kit/utilities-mixins/utitlties";
 /* mixin list:
  @mixin cfix-after
  @mixin cfix-before
@@ -14,14 +14,14 @@
 
 
 // LAYOUT ------------------------------------------------------------------------------------------------------------*/
-@import "../ui-kit/layout/grid/grid-inline";
-@import "../ui-kit/layout/grid/grid-mixins";
+
+@import "../ui-kit/utilities-mixins/grid-mixins";
 
 
 // CONTENT -----------------------------------------------------------------------------------------------------------*/
 
-@import "../ui-kit/content/tables/tables";
-@import "../ui-kit/content/spoiler/spoiler";
+@import "../ui-kit/jquery-plugins/tables/tables";
+@import "../ui-kit/jquery-plugins/spoiler/spoiler";
 
 $tables-color-border: $color-base;                // цвет границ в обычной табилчке
 $nice-tables-color-border: #e8eaeb;               //  цвет границ в табличке
@@ -41,6 +41,13 @@ $nice-tables-padding: 15px 18px;                  //  отступы в ячей
   }
 };
 @include table-responsive();
+
+
+@import "../ui-kit/jquery-plugins/menu-mobile/menu-mobile.scss";
+
+
+
+
 
 @import "../../template-block/base-1/_common/form.scss";
 @import "../../template-block/base-1/_common/buttons.scss";
@@ -71,11 +78,9 @@ $nice-tables-padding: 15px 18px;                  //  отступы в ячей
 
 
 
+@import "../ui-kit/utilities-styles/grid-inline";  /* .grid  .col-x-y */
+@import "../ui-kit/utilities-styles/response-img.scss";  /* .response-img (-xs, -sm, -md, -lg, -xl,) */
+@import "../ui-kit/utilities-styles/hidden.scss";  /* .hidden (-xs, -sm, -md, -lg, -xl,) */
+@import "../ui-kit/utilities-styles/visible.scss";  /* .visible (-xs, -sm, -md, -lg, -xl,) */
 
-@import "../ui-kit/utilities/common-style/common-style.scss";
-@import "../ui-kit/components/menu-mobile/menu-mobile.scss";
-/*
- .visible (-xs, -sm, -md, -lg, -xl,)
- .hidden (-xs, -sm, -md, -lg, -xl,)
- .response-img (-xs, -sm, -md, -lg, -xl,)
-*/
+

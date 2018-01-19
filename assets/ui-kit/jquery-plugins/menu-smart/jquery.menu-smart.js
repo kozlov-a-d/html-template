@@ -18,7 +18,7 @@
             this.each(function() {
 
                 var container = $(this);
-                var menuRoot = $(this).find('ul').not('ul ul');
+                var menuRoot = container.find('ul').not('ul ul');
                 var menuItems = menuRoot.find('li').not('li li');
                 var containerWidth = menuRoot.width();
                 // тут код

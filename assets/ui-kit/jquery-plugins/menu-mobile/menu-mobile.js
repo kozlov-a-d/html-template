@@ -78,7 +78,7 @@ function MenuMobile(options){
                     name: $(this).children(selectors.nodeLink).text(),
                     href: $(this).children(selectors.nodeLink).attr('href'),
                     elementLink: $(this),
-                    hasChild:  $(this).attr(selectors.node) != null,
+                    hasChild:  $(this).attr(selectors.node) !== null,
                     parentId: parentNode.id
                 };
                 tree.push(currNode);

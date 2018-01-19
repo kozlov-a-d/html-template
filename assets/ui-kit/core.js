@@ -1,5 +1,5 @@
-//=include core/scroll.component.js
-//=include core/goal.component.js
+//=include core-components/scroll.component.js
+//=include core-components/goal.component.js
 
 (function() {
     window.app = {

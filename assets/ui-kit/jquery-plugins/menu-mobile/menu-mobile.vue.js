@@ -54,10 +54,10 @@ function initMenuMobile(id, data) {
                     '</div>' +
                     '</transition>',
                 methods: {
-                    closeMenu: function (event) {
+                    closeMenu: function () {
                         menuMobile.closeMenu();
                     },
-                    activeParentNode: function (event) {
+                    activeParentNode: function () {
                         if( this._props.node.parentId !== null ){
                             var parentId = this._props.node.parentId;
                             for(var i = 0; i < menuMobile.tree.length; i++){
@@ -91,7 +91,7 @@ function initMenuMobile(id, data) {
                     '</li>' +
                     '</transition>',
                 methods: {
-                    showChild: function (event) {
+                    showChild: function () {
                         menuMobile.activeNode = menuMobile.getNodeParam( this._props.item );
                     }
                 }

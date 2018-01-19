@@ -54,19 +54,19 @@ var scripts = [
                 'assets/ui-kit/core.js',
 
                 // utilities
-                'assets/ui-kit/utilities/media-event-listener/media-event-listener.js',
+                'assets/ui-kit/temp/media-event-listener.js',
                 // components
-                'assets/ui-kit/components/menu-smart/jquery.menu-smart.js',
-                'assets/ui-kit/components/menu-mobile/menu-mobile.vue.js',
-                'assets/ui-kit/components/menu-mobile/menu-mobile.js',
+                'assets/ui-kit/jquery-plugins/menu-smart/jquery.menu-smart.js',
+                'assets/ui-kit/jquery-plugins/menu-mobile/menu-mobile.vue.js',
+                'assets/ui-kit/jquery-plugins/menu-mobile/menu-mobile.js',
                 // content
-                'assets/ui-kit/content/tables/tables.js',
-                'assets/ui-kit/content/spoiler/spoiler.js',
+                'assets/ui-kit/jquery-plugins/tables/tables.js',
+                'assets/ui-kit/jquery-plugins/spoiler/spoiler.js',
                 // core.js
                 'assets/scripts/_extends.js',
                 'assets/scripts/**/[^_]*.js',
 
-                'assets/ui-kit/utilities/media-event-listener/media-event-listener-init.js',
+                'assets/ui-kit/temp/media-event-listener-init.js',
 
                 // скрипты с проекта
                 "assets/scripts/main.js"
