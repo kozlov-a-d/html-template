@@ -12,23 +12,23 @@ body{
   max-width: 100%;
 }
 
-.layout-wrapper,
-.layout-main,
-.layout-header,
-.layout-footer{
+.l-wrapper,
+.l-main,
+.l-header,
+.l-footer{
   width: 100%;
   position: relative;
 }
-.layout-wrapper{
+.l-wrapper{
   overflow: hidden;
 }
-.layout-header{
+.l-header{
   z-index: 10;
 }
-.layout-main{
+.l-main{
   z-index: 5;
 }
-.layout-footer{
+.l-footer{
   overflow: hidden;
 }
 /********************************************************************************************/

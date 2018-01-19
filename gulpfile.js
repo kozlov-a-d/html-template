@@ -81,7 +81,11 @@ var scripts = [
     html = [
         {
             target: 'web/',
-            src: 'pages/[^_]*.html'
+            src: 'pages/[^_]*.html',
+            watch: [
+                'pages/**/*.html',
+                'template-block/**/*.html'
+            ]
         }
     ],
     scss = [
