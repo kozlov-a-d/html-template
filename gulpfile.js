@@ -22,8 +22,6 @@ var gulp           = require('gulp'),
     focus          = require('postcss-focus'),
     cssMqpacker    = require('css-mqpacker'),
     cssMqpackerSort = require('sort-css-media-queries'),
-    // cssNano        = require('cssnano'),
-    discardComments = require('postcss-discard-comments'),
 
     imageMin       = require('gulp-imagemin'),
     jpegRecompress = require('imagemin-jpeg-recompress'),
@@ -258,9 +256,7 @@ gulp
         var stream = merge();
         var processors = [
             focus,
-            cssMqpacker({ sort: cssMqpackerSort.desktopFirst }),
-            discardComments
-            // cssNano
+            cssMqpacker({ sort: cssMqpackerSort.desktopFirst })
         ];
 
         styles.forEach(function (styles) {
@@ -305,7 +301,6 @@ gulp
             server: {
                 baseDir: "./web"
             },
-            // tunnel: true,
             host: 'localhost',
             port: 9080,
             logPrefix: "browserSync"
@@ -361,7 +356,6 @@ gulp
 
         scripts.forEach(function (scripts) {
             stream.add(gulp.src(scripts.src)
-            // .pipe(expect(scripts.src))
                 .pipe(include())
                 .on('error', console.log)
                 .pipe(stripDebug())
@@ -377,7 +371,6 @@ gulp
 
         styles.forEach(function (styles) {
             stream.add(gulp.src(styles.src)
-            // .pipe(expect(styles.src))
                 .pipe(sass().on('error', sass.logError))
                 .pipe(autoprefixer({
                     browsers: ['last 15 versions', '>1%', 'ie 10'],
