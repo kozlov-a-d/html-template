@@ -78,7 +78,7 @@ function MenuMobile(options){
                     name: $(this).children(selectors.nodeLink).text(),
                     href: $(this).children(selectors.nodeLink).attr('href'),
                     elementLink: $(this),
-                    hasChild:  $(this).attr(selectors.node) !== null,
+                    hasChild:  $(this).attr(selectors.node) != null,
                     parentId: parentNode.id
                 };
                 tree.push(currNode);
@@ -106,7 +106,7 @@ function MenuMobile(options){
         var result = null;
         //ищем элемент с заданным id
         tree.forEach(function(item){
-            if( item.id === id ){
+            if( item.id == id ){
                 result = item;
                 return false;
             }
@@ -126,7 +126,7 @@ function MenuMobile(options){
     function addHandlerToggleBtn(container, vueMenuMobile){
         $(container).on('click', selectors.btnToggle, function () {
             vueMenuMobile.show = true;
-            app.scroll.disable();
+            app.helper.scroll.disable();
         });
     }
 
@@ -141,7 +141,7 @@ function MenuMobile(options){
     // public =========================================================================================================/
     return {
         init: function () {
-            
+
         }
     };
 }

@@ -13,16 +13,16 @@ function initMenuMobile(id, data) {
             show: false
         },
         template:
-            '<transition name="menu-mobile-toggle" mode="out-in">' +
-            '<div class="menu-mobile" id="menu-mobile-' + id + '" v-if="show">' +
-                '<menu-mobile-header v-bind:node="activeNode"></menu-mobile-header>' +
-                '<ul class="menu-mobile__list">' +
-                    '<template  v-for="item in tree">' +
-                        '<menu-mobile-item v-if="item.parentId === activeNode.id" v-bind:item="item" :key="item.id" ></menu-mobile-item>' +
-                    '</template>' +
-                '</ul>' +
-            '</div>' +
-            '</transition>',
+        '<transition name="menu-mobile-toggle" mode="out-in">' +
+        '<div class="menu-mobile" id="menu-mobile-' + id + '" v-if="show">' +
+        '<menu-mobile-header v-bind:node="activeNode"></menu-mobile-header>' +
+        '<ul class="menu-mobile__list">' +
+        '<template  v-for="item in tree">' +
+        '<menu-mobile-item v-if="item.parentId === activeNode.id" v-bind:item="item" :key="item.id" ></menu-mobile-item>' +
+        '</template>' +
+        '</ul>' +
+        '</div>' +
+        '</transition>',
         methods: {
             getNodeParam: function (input) {
                 var result = {};
@@ -34,7 +34,7 @@ function initMenuMobile(id, data) {
             closeMenu: function () {
                 // $( this.el).hide();
                 this.activeNode = menuMobile.getNodeParam( this.tree[0] );
-                app.scroll.enable();
+                app.helper.scroll.enable();
                 this.show = false;
             }
         },
@@ -42,22 +42,22 @@ function initMenuMobile(id, data) {
             'menu-mobile-header': {
                 props: ['node'],
                 template:
-                    '<transition name="menu-mobile-header-toggle">' +
-                    '<div class="menu-mobile__header">' +
-                        '<div class="menu-mobile__title">' +
-                            '<button class="menu-mobile__title-btn" :data-node="node.id" v-on:click.prevent="activeParentNode">' +
-                                '<i class="menu-mobile__icon-arrow-right" v-if="node.id"></i>' +
-                                '{{ node.name }}' +
-                            '</button>' +
-                        '</div>' +
-                        '<button class="menu-mobile__switcher-btn" v-on:click.prevent="closeMenu"><span></span></button>' +
-                    '</div>' +
-                    '</transition>',
+                '<transition name="menu-mobile-header-toggle">' +
+                '<div class="menu-mobile__header">' +
+                '<div class="menu-mobile__title">' +
+                '<button class="menu-mobile__title-btn" :data-node="node.id" v-on:click.prevent="activeParentNode">' +
+                '<i class="menu-mobile__icon-arrow-right" v-if="node.id"></i>' +
+                '{{ node.name }}' +
+                '</button>' +
+                '</div>' +
+                '<button class="menu-mobile__switcher-btn" v-on:click.prevent="closeMenu"><span></span></button>' +
+                '</div>' +
+                '</transition>',
                 methods: {
-                    closeMenu: function () {
+                    closeMenu: function (event) {
                         menuMobile.closeMenu();
                     },
-                    activeParentNode: function () {
+                    activeParentNode: function (event) {
                         if( this._props.node.parentId !== null ){
                             var parentId = this._props.node.parentId;
                             for(var i = 0; i < menuMobile.tree.length; i++){
@@ -75,23 +75,23 @@ function initMenuMobile(id, data) {
             'menu-mobile-item': {
                 props: ['item', 'activeNode'],
                 template:
-                    '<transition name="menu-mobile-item-show" mode="out-in">' +
-                    '<li class="menu-mobile__item">' +
-                        '<a class="menu-mobile__item-name" v-bind:href="item.href">' +
-                            '{{ item.name }}' +
-                            // иконка со стрелкой, для элементов без потомков
-                            '<span v-if="!item.hasChild" class="menu-mobile__item-btn">' +
-                                '<i class="menu-mobile__icon-arrow-left"></i>' +
-                            '</span>' +
-                        '</a>' +
-                        // для элементов с подкатегориями добавляем кнопочку показывающую эти подразделы
-                        '<button v-if="item.hasChild" class="menu-mobile__item-btn hasChild"  v-on:click.prevent="showChild">' +
-                            '<i class="menu-mobile__icon-more"></i>' +
-                        '</button>' +
-                    '</li>' +
-                    '</transition>',
+                '<transition name="menu-mobile-item-show" mode="out-in">' +
+                '<li class="menu-mobile__item">' +
+                '<a class="menu-mobile__item-name" v-bind:href="item.href">' +
+                '{{ item.name }}' +
+                // иконка со стрелкой, для элементов без потомков
+                '<span v-if="!item.hasChild" class="menu-mobile__item-btn">' +
+                '<i class="menu-mobile__icon-arrow-left"></i>' +
+                '</span>' +
+                '</a>' +
+                // для элементов с подкатегориями добавляем кнопочку показывающую эти подразделы
+                '<button v-if="item.hasChild" class="menu-mobile__item-btn hasChild"  v-on:click.prevent="showChild">' +
+                '<i class="menu-mobile__icon-more"></i>' +
+                '</button>' +
+                '</li>' +
+                '</transition>',
                 methods: {
-                    showChild: function () {
+                    showChild: function (event) {
                         menuMobile.activeNode = menuMobile.getNodeParam( this._props.item );
                     }
                 }
