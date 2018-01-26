@@ -1,0 +1,69 @@
+// GLOBAL ------------------------------------------------------------------------------*/
+$mobile-view: 980px;
+$media-xs: 320px; // iphone5 в портретной ориентации
+$media-sm: 480px;   // большине телефоны  в портретной ориентации + запас
+$media-md: 768px;   // планшеты в портретной ориентации / телефоны в альбомной
+$media-lg: 1024px;  // планшеты в альбомной ориентации
+$media-xl: 1280px;   // ширина контента широкого сайта ( 1170 например )
+
+$content-width: 960px;
+
+// FONTS -------------------------------------------------------------------------------*/
+
+$font-main: 'Open Sans', sans-serif;             // основной шрифт
+$font-second: '';                                // дополнительный шрифт
+$font-size-base: 14px;                           // базовый размер шрифта
+$font-weight-base: 400;
+$line-height-base: 21px;                         // базовый междустрочный интервал
+$text-margin: 20px;                              // отступ между элементами в тексте
+
+
+// COLORS -------------------------------------------------------------------------------*/
+
+$color-base: #383e41;                            // базовый цвет текста
+$color-base-invert: #fff;                        // инвертированый цвет текста
+$color-link: #0090cc;                            // цвет текстовых ссылок
+$color-hover: #006896;                           // цвет при ховере
+$color-active: $color-hover;                     // цвет для активных состояний
+$color-accent: #f82951;                          // цвет для элементов, на которых нужно акцентировать внимание (ошибки)
+$color-disable: #cdd1d3;                         // цвет нективных
+
+// HEADING -------------------------------------------------------------------------------*/
+
+$heading-h1-font: $font-main;
+$heading-h1-size: 60px;
+$heading-h1-height: 80px;
+$heading-h1-weight: 300;
+$heading-h1-align: left;
+$heading-h1-color: $color-base;
+
+$heading-h2-font: $font-main;
+$heading-h2-size: 36px;
+$heading-h2-height: 46px;
+$heading-h2-weight: 300;
+$heading-h2-align: left;
+$heading-h2-color: $color-base;
+
+$heading-h3-font: $font-main;
+$heading-h3-size: 18px;
+$heading-h3-height: 30px;
+$heading-h3-weight: 400;
+$heading-h3-align: left;
+$heading-h3-color: $color-base;
+
+// MARKERS -------------------------------------------------------------------------------*/
+$list-padding-left: 40px;
+// описать все возможные варианты, не вставляя маркер картинкой оказалось жутко неюзабельно, легко запутаться.
+// намного проще описать его стилями, микс ниже применится к ul.with_marker li
+@mixin list-marker-style{
+  &:before{
+    content: '';
+    display: block;
+    width: 13px;
+    height: 1px;
+    position: absolute;
+    left: -20px;
+    top: 10px;
+    background: #2b8fc9;
+  }
+}
