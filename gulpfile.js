@@ -107,6 +107,11 @@ var scripts = [
                 'web/assets/vendor/bxslider/dist/jquery.bxslider.css',
                 // cтили с проекта
                 'assets/styles/main.scss'
+            ],
+            watch: [
+                'assets/styles/**/*.scss',
+                'assets/ui-kit/**/*.scss',
+                'template-block/**/*.scss'
             ]
         }
     ],
@@ -206,16 +211,16 @@ gulp
                     }),
                     jpegRecompress({
                         loops:   5,
-                        min:     65,
-                        max:     70,
-                        quality: 'medium'
+                        min:     75,
+                        max:     80,
+                        quality: 'high'
                     }),
                     imageMin.svgo(),
                     imageMin.optipng({
                         optimizationLevel: 3
                     }),
                     pngQuant({
-                        quality: '65-70',
+                        quality: '75-80',
                         speed:   5
                     })
                 ], {
@@ -323,9 +328,9 @@ gulp
         })).concat(scripts.map(function (scripts) {
             return gulp.watch(scripts.watch, ['scripts']);
         })).concat(styles.map(function (styles) {
-            return gulp.watch(styles.src, ['styles']);
+            return gulp.watch(styles.watch, ['styles']);
         })).concat(html.map(function (html) {
-            return gulp.watch(html.src, ['html']);
+            return gulp.watch(html.watch, ['html']);
         })).concat(images.map(function (images) {
             return gulp.watch(images.src, ['images']);
         }));
