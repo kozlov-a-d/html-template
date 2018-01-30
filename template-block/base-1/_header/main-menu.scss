@@ -1,10 +1,17 @@
 .menu-top{
   display: block;
   max-width: 100%;
-
   background: #3a4750;
 
+
   @include media-min(1024px) {
+
+    & > .menu-top__list{
+      width: 100%;
+      max-width: $content-width;
+      display: flex;
+      justify-content: space-between;
+    }
 
     &__switcher,
     &__title{

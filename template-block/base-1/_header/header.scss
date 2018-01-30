@@ -1,0 +1,47 @@
+@import "main-menu";
+
+.header-top{
+  border-bottom: 1px solid #bfc4c8;
+  &__container{
+    max-width: $content-width;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  &__social-link{
+    float: left;
+    padding: 10px 10px;
+    a{
+      display: inline-block;
+      vertical-align: top;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 0 0 10px;
+    }
+    img{
+      display: block;
+    }
+  }
+  &__item{
+    float: right;
+    padding: 10px 10px;
+    border-right: 1px solid #bfc4c8;
+  }
+}
+
+.header-middle{
+
+  &__container{
+    max-width: $content-width;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 15px 0;
+  }
+  &__btn{
+    float: right;
+    width: 155px;
+    margin: 10px 0 0 20px;
+  }
+}
+
