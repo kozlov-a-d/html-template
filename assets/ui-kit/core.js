@@ -4,8 +4,9 @@
 (function() {
     window.app = {
         methods:{},
-        scroll : {},
-        goal : {}
+        scroll: {},
+        goal: {},
+        modal: {}
     };
 
 }());
@@ -20,4 +21,5 @@ app.scroll = scrollComponent;
 app.goal = goalComponent;
 // app.goal.reach(goalName, event) - trigger reach goal  ( event="onload" for window.load )
 // app.goal.debug()
+
 
