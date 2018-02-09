@@ -1,0 +1,194 @@
+$modal-color-bg-base: #0e1a2b;
+$modal-color-close-btn: #868b95;
+$modal-color-close-btn-hover: #fff;
+$modal-color-bg-container: transparent;
+
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: table;
+    width: 100%;
+    height: 100vh;
+    z-index: 1000;
+    animation: overlay-show 0.7s ease-in-out;
+
+    &.closing {
+        animation: overlay-closing 1.4s ease-in-out;
+        .modal__container {
+            animation: overlay__container-closing 1.4s ease-in-out;
+        }
+    }
+
+    &__wrapper {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+    }
+    &__bg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: $modal-color-bg-base;
+    }
+    &__btn-close {
+        display: block;
+        position: absolute;
+        right: 50px;
+        top: 40px;
+        width: 34px;
+        height: 34px;
+        font-size: 0;
+        border: none;
+        background: none;
+        cursor: pointer;
+        z-index: 20;
+        &:before,
+        &:after{
+            content: '';
+            display: block;
+            width: 48px;
+            height: 1px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -17px;
+            background: $modal-color-close-btn;
+            transform-origin: center center;
+            transition: background $translate-time $translate-ease;
+        }
+        &:before{
+            transform: rotate(45deg);
+        }
+        &:after{
+            transform: rotate(-45deg);
+        }
+
+        &:hover{
+            &:before,
+            &:after{
+                background: $modal-color-close-btn-hover;
+            }   
+        }
+
+        @include media-max(1024px) {
+            right: 30px;
+            top: 20px;
+        }
+    }
+    &__loader {
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: rgba($modal-color-bg-base, 0.7) url('../images/loader.svg') center center no-repeat;
+        background-size: 40px 40px;
+    }
+    &__container {
+        position: relative;
+        text-align: center;
+        display: inline-block;
+        max-height: 100vh;
+        overflow-y: auto;
+        overflow-x: hidden;
+        background: $modal-color-bg-container;
+        @include media-max(1024px) {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        animation: overlay__container-show 1.4s ease-in-out;
+    }
+    &__scroll {
+        @include media-max(1024px) {
+            padding-top: 40px;
+            padding-bottom: 80px;
+        }
+    }
+    &__title {
+        display: block;
+        width: 100%;
+        font-size: 35px;
+        font-weight: bold;
+        line-height: 50px;
+        color: #30302a;
+        text-align: center;
+        text-transform: uppercase;
+        margin-bottom: 40px;
+        padding: 120px 0 0;
+        background: url(http://via.placeholder.com/80x80/fff/000000) center top no-repeat;
+        @include media-max(1024px) {
+            font-size: 25px;
+            line-height: 30px;
+            margin-bottom: 24px;
+        }
+    }
+
+    &.-default{
+
+    }
+    &.-light{
+
+    }
+    &.-dark *:not(a):not(label){
+        color: #fff;
+    }
+
+    &.-callback{
+        .modal__container{
+            max-width: 360px;
+        }
+    }
+    &.-send-enquiry{
+        .modal__container{
+            max-width: 710px;
+        }
+    }
+}
+
+@keyframes overlay-show {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes overlay-closing {
+    from,
+    50% {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes overlay__container-show {
+    from,
+    50% {
+        opacity: 0;
+        transform: translate3d(0, 15px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes overlay__container-closing {
+    from {
+        opacity: 1;
+        transform: none;
+    }
+    50%,
+    to {
+        opacity: 0;
+        transform: translate3d(0, 15px, 0);
+    }
+}

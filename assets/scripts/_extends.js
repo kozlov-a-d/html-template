@@ -12,6 +12,8 @@ var mediaEventListener = new MediaEventListener([
 /* задаём каим именно табилцам нужно добавлять обертки .table-responsive для адаптива */
 Tables.addMobileView('table');
 
+$('.js-ajax').modalAjax();
+
 // Base-1 Denis ------------------------------------------------------------------------------------------------------*/
 
 //=include ../../template-block/base-1/_header/header.js
