@@ -1,0 +1,35 @@
+<p class="modal__title">Оставить заявку</p>
+<form action="" class="form -columns -modal">
+    <div class="col-1">
+        <div class="form__item -name">
+            <input type="text" placeholder="Ваше имя">
+            <div class="error"></div>
+        </div>
+        <div class="form__item -email">
+            <input type="email" placeholder="Email">
+            <div class="error"></div>
+        </div>
+        <div class="form__item -phone">
+            <input type="phone" placeholder="Номер телефона">
+            <div class="error"><ul><li>Неправильный формат. Пример: 88008008080</li></ul></div>
+        </div>
+    </div>
+    <div class="col-2">
+        <div class="form__item">
+            <textarea placeholder="Адрес доставки и состав заказа"></textarea>
+            <div class="error"></div>
+        </div>
+    </div>
+
+    <div class="btns-container -align-right">
+
+        <div class="custom-checkbox">
+            <input type="checkbox" id="app_sample_choice_privacy-policy-2" value="1" required checked>
+            <label for="app_sample_choice_privacy-policy-2" class="required">Согласен с <a href="">политикой конфиденциальности</a></label>
+        </div>
+
+        <button class="btn -invert" type="submit">Отправить</button>
+
+    </div>
+
+</form>

@@ -57,6 +57,7 @@ var scripts = [
                 'assets/ui-kit/jquery-plugins/menu-smart/jquery.menu-smart.js',
                 'assets/ui-kit/jquery-plugins/menu-mobile/menu-mobile.vue.js',
                 'assets/ui-kit/jquery-plugins/menu-mobile/menu-mobile.js',
+                'assets/ui-kit/jquery-plugins/modal-ajax/jquery.modal-ajax.js',
                 // content
                 'assets/ui-kit/jquery-plugins/tables/tables.js',
                 'assets/ui-kit/jquery-plugins/spoiler/spoiler.js',

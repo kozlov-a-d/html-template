@@ -39,6 +39,40 @@
     <div class="l-wrapper">
         <!-- HEADER begin -->
         <header class="l-header">
+            <div class="header-top">
+                <div class="header-top__container">
+                    <div class="header-top__social-link">
+                        <a href="" rel="noreferrer noopener" target="_blank"><img src="http://via.placeholder.com/20x20/c0c0c0/000000" alt="Facebook" title="Facebook"></a>
+                        <a href="" rel="noreferrer noopener" target="_blank"><img src="http://via.placeholder.com/20x20/c0c0c0/000000" alt="Instagram" title="Instagram"></a>
+                        <a href="" rel="noreferrer noopener" target="_blank"><img src="http://via.placeholder.com/20x20/c0c0c0/000000" alt="VKontakte" title="VKontakte"></a>
+                        <a href="" rel="noreferrer noopener" target="_blank"><img src="http://via.placeholder.com/20x20/c0c0c0/000000" alt="Twitter" title="Twitter"></a>
+                        <a href="" rel="noreferrer noopener" target="_blank"><img src="http://via.placeholder.com/20x20/c0c0c0/000000" alt="Odnoklassniki" title="Odnoklassniki"></a>
+                    </div>
+            
+                    <a class="header-top__item cart-header" href="#">Корзина <span class="cart-header__count">24</span></a>
+                    <a class="header-top__item account-header" href="#">Личный кабинет</a>
+                    <a class="header-top__item email-header" href="mailto:domain@example.com">domain@example.com</a>
+                </div>
+            </div><!-- end header-top-->
+            <div class="header-middle">
+                <div class="header-middle__container">
+                    <a class="logo-header" href="/"><img src="http://via.placeholder.com/225x60/c0c0c0/ffffff" alt="" title=""></a>
+            
+                    <a class="header-middle__btn -send-enquiry btn js-ajax" data-class="-dark -send-enquiry" href="modal-send-enquiry.html">Оставить заявку</a>
+                    <a class="header-middle__btn -callback btn js-ajax" data-class="-dark -callback" href="modal-callback.html">Перезвоните мне</a>
+            
+                    <div class="header-middle__toggle">
+                        <div class="header-middle__toggle-container">
+                            <span class="header-middle__time">С 9:00 до 18:00</span>
+                            <div class="header-middle__phone-list">
+                                <a class="header-middle__phone -first" href="tel:+70000000000">+7 (000) 000-00-00</a>
+                                <a class="header-middle__phone" href="tel:+70000000000">+7 (000) 000-00-00</a>
+                                <a class="header-middle__phone" href="tel:+70000000000">+7 (000) 000-00-00</a>
+                            </div>
+                        </div>
+                    </div><!-- end header-middle__toggle -->
+                </div>
+            </div><!-- end header-middle-->
             <nav class="menu-top js-menu-smart js-menu-mobile">
             
                 <div class="menu-top__switcher">
@@ -820,7 +854,7 @@
                             <p>Stylecloth предлагает несколько различных вариантов оплаты заказа как при оформлении, так и по факту при получении, - банковскими картой или переводом, наличным расчетом или электронным платежом. </p>
                         </div>
                 
-                        <button class="btn">Оставить заявку</button>
+                        <button class="btn js-ajax" data-class="-dark -send-enquiry" href="modal-send-enquiry.html">Оставить заявку</button>
                     </div>
                 </div>
                 <!-- / text-block -bottom END -->
@@ -943,7 +977,7 @@
                             </div>
                         </div>
                 
-                        <button class="testimonials-widget__more btn">Смотреть все отзывы</button>
+                        <a class="testimonials-widget__more btn" href="">Смотреть все отзывы</a>
                 
                     </div>
                 </section>

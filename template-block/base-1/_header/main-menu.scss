@@ -1,10 +1,17 @@
 .menu-top{
   display: block;
   max-width: 100%;
-
   background: #3a4750;
 
+
   @include media-min(1024px) {
+
+    & > .menu-top__list{
+      width: 100%;
+      max-width: $content-width;
+      display: flex;
+      justify-content: space-between;
+    }
 
     &__switcher,
     &__title{
@@ -21,8 +28,6 @@
       text-align: left;
       font-size: 0;
       white-space: nowrap;
-
-      //max-width: 1008px;
     }
     &__item{
       display: inline-block;
@@ -31,7 +36,45 @@
       &.-hidden{
         display: none !important;
       }
-      &.-extraBar{}
+      &.-extraBar{
+        &> .menu-top__item-name{
+          display: block;
+          width: 20px;
+          height: 3px;
+          background: #fff;
+          position: relative;
+          margin: 29px 20px 28px;
+          padding: 0;
+          font-size: 0;
+          &:before,
+          &:after{
+            content: '';
+            display: block;
+            width: 20px;
+            height: 3px;
+            background: #fff;
+            position: absolute;
+            left: 0;
+            transition: 0.2s;
+          }
+          &:before{
+            top: -7px;
+          }
+          &:after{
+            top: 7px;
+          }
+        }
+        &:hover{
+          background: #fff;
+          &> .menu-top__item-name{
+            background: #3a4750;
+            &:before,
+            &:after{
+              background: #3a4750;
+            }
+          }
+        }
+      }
       &.is-active > .menu-top__item-name,
       &:hover > .menu-top__item-name{
         background: #fff;
@@ -57,6 +100,8 @@
       position: absolute;
       padding: 0;
       display: block;
+      border-radius: 0 0 6px 6px;
+      overflow: hidden;
       @include smooth-drop-down-hide(true){
         transition: transform .2s cubic-bezier(0.68,-0.55,0.265,1.55),opacity .2s  cubic-bezier(0.68,-0.55,0.265,1.55);
       };
@@ -64,7 +109,32 @@
       min-width: 256px;
       left: 0;
       top: 60px;
-      background: #f4d25e;
+      background: #fff;
+
+      .menu-top__list{
+        height: auto;
+      }
+      .menu-top__item{
+        border-bottom: 1px solid #cdcdcd;
+        &:last-child{
+          border-bottom: none;
+        }
+        &:hover,
+        &.is-active{
+          .menu-top__item-name{
+            color: #fff;
+            background: #5d8ea8;
+          }
+        }
+      }
+      .menu-top__item-name{
+        font-size: 15px;
+        color: #3a4750;
+        background: #fff;
+        line-height: 45px;
+
+      }
+
     }
 
     .-has-drop-down.-drop-down-inverse .menu-top__drop-down{
@@ -93,11 +163,26 @@
           background: #5d8ea8;
         }
       }
-      * .menu-top__item-name{
-        font-size: 15px;
-        text-transform: uppercase;
-        color: #3a4750;
-        background: #fff;
+      
+
+
+      &:not(.-extraBar) > .menu-top__item-name:after{
+        content: '';
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        border: 1px solid #fff;
+        border-bottom: none;
+        border-left: none;
+        transform-origin: center center;
+        transform: rotate(135deg);
+        margin-left: 6px;
+        position: relative;
+        top: -2px;
+        transition: 0.2s
+      }
+      &:hover > .menu-top__item-name:after{
+        border-color: #3a4750;
       }
     }
 

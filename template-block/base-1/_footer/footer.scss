@@ -2,7 +2,7 @@
   border-top: 2px solid #fff;
   max-width: $content-width + 40px;
   margin: 0 auto;
-  background: #e4e8eb;
+  background: #3a4750;
 
   &__container{
     width: 100%;
@@ -31,7 +31,7 @@
       right: 0;
       top: 0;
       z-index: 1;
-      width: 1000px;
+      width: 1000px; 
       height: 100%;
       background: #e4e8eb;
     }
@@ -129,7 +129,7 @@
     left: 0;
     top: 0;
     z-index: 1;
-    width: 1000px;
+    width: 1500px;
     height: 200%;
     background: #3a4750;
   }

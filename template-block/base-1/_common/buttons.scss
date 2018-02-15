@@ -3,7 +3,6 @@
   width: 280px;
   height: 45px;
   max-width: 100%;
-
   margin: 0 auto 20px;
 
   border: none;
@@ -12,7 +11,17 @@
   color: #fff;
   cursor: pointer;
   border-radius: 3px;
+  text-decoration: none;
+  text-align: center;
+  line-height:  45px;
   transition: 0.3s;
+
+  &__loader{
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin: 12px auto;
+  }
 
   &.-secondary{
     background: #f1ebd0;
@@ -37,6 +46,23 @@
   &.-fullwidth{
     width: 100%;
   }
+  &.-inline{
+    width: auto;
+    padding: 0 20px;
+  }
 
+}
 
+.btns-container{
+  &.-align-right{
+    @media (min-width: $media-md) {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: flex-end;
+      .btn{
+        margin: 0 0 20px 30px;
+      }
+    }
+  }
 }
