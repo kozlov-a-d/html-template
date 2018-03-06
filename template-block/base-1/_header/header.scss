@@ -91,15 +91,26 @@
     z-index: 5;
 
     &__container {
-        max-width: $content-width;
-        margin: 0 auto;
         padding: 15px 0;
-        @include cfix();
     }
     &__btn {
         float: right;
         width: 155px;
         margin: 8px 0 0 20px;
+
+        @media (max-width: $media-md ) {
+            //float: none;
+            width: 155px;
+            margin: 8px 0 0 20px;
+        }
+    }
+
+    &__switch-btn{
+        display: none;
+        @media (max-width: $media-lg ) {
+            float: right;
+            margin: 5px 0 0 20px;
+        }
     }
 
     &__toggle{
@@ -108,6 +119,11 @@
         width: 240px;
         height: 45px;
         margin: 2px 0 0 20px;
+
+        @media (max-width: $media-lg ) {
+            display: none;
+        }
+
         &:before{
             content: '';
             position: absolute;
@@ -135,7 +151,7 @@
     }
 
     &__time{
-        font-size: 15x;
+        font-size: 15px;
         color: #595959;
         line-height: 15px;
     }
@@ -194,5 +210,8 @@
     float: left;
     img{
         display: block; 
+    }
+    @media (max-width: $media-md ) {
+        //float: none;
     }
 }

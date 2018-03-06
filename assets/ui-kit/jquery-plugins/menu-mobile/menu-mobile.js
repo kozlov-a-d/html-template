@@ -2,7 +2,6 @@ function MenuMobile(options){
 
     // Дерево меню, включает в себя только узлы, листья игнорируются
 
-
     var text = {
         rootTitle: 'Меню'
     };
@@ -14,6 +13,8 @@ function MenuMobile(options){
         node: 'data-menu-mobile--has-drop-down',
         btnToggle: '[data-menu-mobile--switcher-btn]'
     };
+
+    var vm = null;
 
     var id = Math.round( Math.random()*10000);
 
@@ -97,18 +98,30 @@ function MenuMobile(options){
         });
     }
 
+    // Внешнее управление =============================================================================================/
+
+    function showMenu(){
+        vm.show = true;
+    }
+
     // initialize =====================================================================================================/
     $(selectors.container).each(function () {
         setOptions($(this));  // переопределяем свойства, если это необходимо
         var tree = buildMenu($(this).find(selectors.nodeRoot));  // создаём модель меню
-        var vueMenuMobile = renderMenu(tree);   // ренедерим меню, колбэком навешиваем обработчики
-        addHandlerToggleBtn(this, vueMenuMobile);
+        vm = renderMenu(tree);   // ренедерим меню, колбэком навешиваем обработчики
+        addHandlerToggleBtn(this, vm);
     });
 
     // public =========================================================================================================/
     return {
         init: function () {
 
+        },
+        getVM: function () {
+            return vm;
+        },
+        showMenu: function () {
+            showMenu();
         }
     };
 }

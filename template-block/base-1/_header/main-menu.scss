@@ -4,7 +4,7 @@
   background: #3a4750;
 
 
-  @include media-min(1024px) {
+  @include media-min($media-lg) {
 
     & > .menu-top__list{
       width: 100%;
@@ -189,17 +189,17 @@
   }
 
 
-  @include media-max(1023px){
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    margin: 0;
+  @include media-max($media-lg - 1){
+    @media (max-width: $media-lg ) {
+      display: none;
+    }
+    position: relative;
 
     &__switcher{
-      position: absolute;
-      right: 20px;
-      top: 20px;
+      //position: absolute;
+      //right: 20px;
+      //top: 20px;
+      position: relative;
 
       display: block;
       width: 50px;

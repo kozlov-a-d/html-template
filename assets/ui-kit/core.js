@@ -1,12 +1,12 @@
-//=include core-components/scroll.component.js
-//=include core-components/goal.component.js
+//=include components/scroll.component.js
+//=include components/goal.component.js
 
 (function() {
     window.app = {
         methods:{},
         scroll: {},
         goal: {},
-        modal: {}
+        // modal: {}
     };
 
 }());
@@ -19,7 +19,8 @@ app.scroll = scrollComponent;
 // - app.scroll.speed() - return scroll speed value
 
 app.goal = goalComponent;
-// app.goal.reach(goalName, event) - trigger reach goal  ( event="onload" for window.load )
+// app.goal.trigger(name, params) - trigger goal
+// window.onload = function() { app.goal.trigger(name, params) };  - trigger goal after window load
 // app.goal.debug()
 
 

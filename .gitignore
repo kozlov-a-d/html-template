@@ -1,5 +1,6 @@
 .idea/
 node_modules/
 bower_components/
-web/assets/vendor
+web/assets/vendor/
+web/assets/vendor/*
 *.log
