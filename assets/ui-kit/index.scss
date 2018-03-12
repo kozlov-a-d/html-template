@@ -1,6 +1,5 @@
-
-// Utilities ------------------------------------------------------------------------------------------------------------*/
-@import "../ui-kit/utilities-mixins/utitlties";
+// MIXINS ==========================================================================================/
+@import "./utilities-mixins/utitlties";
 /* mixin list:
  @mixin cfix-after
  @mixin cfix-before
@@ -13,15 +12,15 @@
 
 
 
-// LAYOUT ------------------------------------------------------------------------------------------------------------*/
+// LAYOUT ==========================================================================================/
 
-@import "../ui-kit/utilities-mixins/grid-mixins";
+@import "./utilities-mixins/grid-mixins";
 
 
-// CONTENT -----------------------------------------------------------------------------------------------------------*/
+// CONTENT ==========================================================================================/
 
-@import "../ui-kit/jquery-plugins/tables/tables";
-@import "../ui-kit/jquery-plugins/spoiler/spoiler";
+@import "./jquery-plugins/tables/tables";
+@import "./jquery-plugins/spoiler/spoiler";
 
 $tables-color-border: $color-base;                // цвет границ в обычной табилчке
 $nice-tables-color-border: #e8eaeb;               //  цвет границ в табличке
@@ -43,13 +42,16 @@ $nice-tables-padding: 15px 18px;                  //  отступы в ячей
 @include table-responsive();
 
 
-@import "../ui-kit/jquery-plugins/menu-mobile/menu-mobile.scss";
-@import "../ui-kit/jquery-plugins/modal-ajax/jquery.modal-ajax.scss";
+// JQUERY PLUGINS ======================================================================================/
+
+@import "./jquery-plugins/menu-mobile/menu-mobile.scss";
+@import "./jquery-plugins/modal-ajax/modal-ajax.jquery.scss";
 
 
+// UTILITIES ===========================================================================================/
 
+@import "./utilities-styles/grid-inline";  /* .grid  .col-x-y */
+@import "./utilities-styles/response-img.scss";  /* .response-img (-xs, -sm, -md, -lg, -xl,) */
+@import "./utilities-styles/hidden.scss";  /* .hidden (-xs, -sm, -md, -lg, -xl,) */
+@import "./utilities-styles/visible.scss";  /* .visible (-xs, -sm, -md, -lg, -xl,) */  
 
-@import "../ui-kit/utilities-styles/grid-inline";  /* .grid  .col-x-y */
-@import "../ui-kit/utilities-styles/response-img.scss";  /* .response-img (-xs, -sm, -md, -lg, -xl,) */
-@import "../ui-kit/utilities-styles/hidden.scss";  /* .hidden (-xs, -sm, -md, -lg, -xl,) */
-@import "../ui-kit/utilities-styles/visible.scss";  /* .visible (-xs, -sm, -md, -lg, -xl,) */

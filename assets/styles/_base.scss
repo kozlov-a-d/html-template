@@ -39,6 +39,7 @@ body{
   @include cfix();
   
   @media (max-width: ( $content-width + $content-gap * 2 ) ) {
+    width: auto;
     max-width: 100%;
     margin: 0 $content-gap;
   }

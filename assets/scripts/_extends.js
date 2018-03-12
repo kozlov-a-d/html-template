@@ -1,4 +1,7 @@
+//=include ../ui-kit/index.js
+
 console.time('extends-js');
+
 /*=========================================================================*/
 /* mediaEventListener кастомизируем breakpoint'ы */
 var mediaEventListener = new MediaEventListener([
@@ -53,5 +56,10 @@ mediaEventListener.addQueryAction('resize', function(){
 //     console.log('resize');
 //
 
+/*=========================================================================*/
+// mediaEventListener инициализируем после всех добавлений,
+// скрипты подвешеные позже не отработают при первой загрузке
+mediaEventListener.init();
+/*=========================================================================*/
 
 console.timeEnd('extends-js');

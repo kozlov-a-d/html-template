@@ -48,25 +48,10 @@ var scripts = [
                 "web/assets/vendor/owl.carousel/owl.carousel.js",
                 "web/assets/vendor/vue/vue.min.js",
 
-                // core.js
-                'assets/ui-kit/core.js',
-
-                // utilities
-                'assets/ui-kit/temp/media-event-listener.js',
-                // components
-                'assets/ui-kit/jquery-plugins/menu-smart/jquery.menu-smart.js',
-                'assets/ui-kit/jquery-plugins/menu-mobile/menu-mobile.vue.js',
-                'assets/ui-kit/jquery-plugins/menu-mobile/menu-mobile.js',
-                'assets/ui-kit/jquery-plugins/modal-ajax/jquery.modal-ajax.js',
-                // content
-                'assets/ui-kit/jquery-plugins/tables/tables.js',
-                'assets/ui-kit/jquery-plugins/spoiler/spoiler.js',
-                // core.js
+                
+                //js
                 'assets/scripts/_extends.js',
                 'assets/scripts/**/[^_]*.js',
-
-                'assets/ui-kit/temp/media-event-listener-init.js',
-
                 // скрипты с проекта
                 "assets/scripts/main.js"
             ],

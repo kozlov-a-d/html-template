@@ -1,5 +1,9 @@
-var menuMobile = new MenuMobile({});
+// var menuMobile = new MenuMobile({});
+$('.js-menu-mobile').menuMobile();
 $('.js-menu-smart').menuSmart();
+
+// var menuHeader =  $('.menu-top.js-menu-mobile').menuMobile();
+// var menuHeader =  $('.menu-top.js-menu-mobile').menuMobile('showMenu');
 
 // gпоправить мобайл меню
 // add menu-mobile--switcher-btn placeholder
@@ -12,7 +16,7 @@ $('.js-menu-smart').menuSmart();
     clone.classList.add('header-middle__switch-btn');
     // добавляем обработчик, который свяжет клик на клона с кликом на реальную кнопку
     clone.addEventListener('click', function () {
-        menuMobile.showMenu();
+        document.querySelectorAll('.menu-top .menu-top__switcher-btn')[0].click();
     });
     // находим элемент, после которого нужно вставить кнопку
     var appendAfterElement = document.querySelectorAll('.js-logo-header')[0];
