@@ -1,30 +1,20 @@
 // COMPONENTS ==========================================================================================/
 
 //=include ./components/scroll.component.js
+/**
+scrollComponent.current(value) - get/set value
+scrollComponent.direction() - return 'down'|'up'
+scrollComponent.disable() - disable scroll
+scrollComponent.enable() - enable scroll;
+- scrollComponent.speed() - return scroll speed value
+**/
+
 //=include ./components/goal.component.js
-
-(function() {
-    window.app = {
-        methods:{},
-        scroll: {},
-        goal: {},
-        // modal: {}
-    };
-
-}());
-
-app.scroll = scrollComponent;
-// app.scroll.current(value) - get/set value
-// app.scroll.direction() - return 'down'|'up'
-// app.scroll.disable() - disable scroll
-// app.scroll.enable() - enable scroll;
-// - app.scroll.speed() - return scroll speed value
-
-app.goal = goalComponent;
-// app.goal.trigger(name, params) - trigger goal
-// window.onload = function() { app.goal.trigger(name, params) };  - trigger goal after window load
-// app.goal.debug()
-
+/**
+goalComponent.trigger(name, params) - trigger goal
+window.onload = function() { goalComponent.trigger(name, params) };  - trigger goal after window load
+goalComponent.debug()
+**/
 
 // UTILITIES ===========================================================================================/
 

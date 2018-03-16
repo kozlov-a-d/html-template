@@ -3,6 +3,9 @@
   max-width: $content-width + 40px;
   margin: 0 auto;
   background: #3a4750;
+  @media (max-width: $media-md) {
+    background: #e4e8eb;
+  }
 
   &__container{
     width: 100%;

@@ -1,59 +1,47 @@
 // Dependencies
-var gulp           = require('gulp'),
-
+const gulp         = require('gulp'),
+    autoprefixer   = require('gulp-autoprefixer'),
+    browserSync    = require('browser-sync'),
     cache          = require('gulp-cache'),
-    hash           = require('gulp-hash'),
     concat         = require('gulp-concat'),
-    include        = require("gulp-include"),
+    csso           = require('gulp-csso'),
+    gnf            = require('gulp-npm-files'),
+    hash           = require('gulp-hash'),
+    imageMin       = require('gulp-imagemin'),
+    giflossy       = require('imagemin-giflossy'),
+    pngQuant       = require('imagemin-pngquant'),
+    mozjpeg        = require('imagemin-mozjpeg'),
+    zopfli         = require('imagemin-zopfli'),
+    include        = require('gulp-include'),
     merge          = require('gulp-merge'),
+    rewriteCSS     = require('gulp-rewrite-css'),
+    sass           = require('gulp-sass'),
+    sourcemaps     = require('gulp-sourcemaps'),
     stripDebug     = require('gulp-strip-debug'),
     uglify         = require('gulp-uglify'),
     uglifyCSS      = require('gulp-uglifycss'),
-    sourcemaps     = require('gulp-sourcemaps'),
-
-    htmlhint       = require("gulp-htmlhint"),
-
-    sass           = require('gulp-sass'),
-    autoprefixer   = require('gulp-autoprefixer'),
-    base64         = require('gulp-base64'),
-    rewriteCSS     = require('gulp-rewrite-css'),
-    csso           = require('gulp-csso'),
-    postcss        = require('gulp-postcss'),
-    focus          = require('postcss-focus'),
-    cssMqpacker    = require('css-mqpacker'),
-    cssMqpackerSort = require('sort-css-media-queries'),
-
-    imageMin       = require('gulp-imagemin'),
-    jpegRecompress = require('imagemin-jpeg-recompress'),
-    pngQuant       = require('imagemin-pngquant'),
-
-    browserSync    = require("browser-sync"),
     reload         = browserSync.reload;
 
+
 // Build directories
-var dir = {
+const dir = {
     dev:  'web/assets/build-dev',
     prod: 'web/assets/build'
 };
 
 // Assets
-var scripts = [
+const scripts = [
         {
             target: 'app.js',
             src: [
-                // скопированые вендоры из node_modules
-                "web/assets/vendor/jquery/jquery.min.js",
-                "web/assets/vendor/imagesloaded/imagesloaded.pkgd.js",
-                "web/assets/vendor/bxslider/jquery.bxslider.js",
-                "web/assets/vendor/owl.carousel/owl.carousel.js",
-                "web/assets/vendor/vue/vue.min.js",
+                'web/assets/node_modules/jquery/dist/jquery.js',
+                "web/assets/node_modules/imagesloaded/imagesloaded.pkgd.js",
+                'web/assets/node_modules/bxslider/dist/jquery.bxslider.js',
+                'web/assets/node_modules/owl.carousel/dist/owl.carousel.js',
+                'web/assets/node_modules/vue/dist/vue.js',
 
-                
-                //js
                 'assets/scripts/_extends.js',
-                'assets/scripts/**/[^_]*.js',
-                // скрипты с проекта
-                "assets/scripts/main.js"
+                'assets/scripts/app.js'
             ],
             watch: [
                 'assets/scripts/**/*.js',
@@ -62,37 +50,17 @@ var scripts = [
             ]
         }
     ],
-    html = [
-        {
-            target: 'web/',
-            src: 'pages/[^_]*.html',
-            watch: [
-                'pages/**/*.html',
-                'template-block/**/*.html'
-            ]
-        }
-    ],
-    scss = [
-        {
-            src: [
-                'assets/styles/**/*.scss',
-                'assets/ui-kit/**/*.scss',
-                'template-block/**/*.scss'
-            ]
-        }
-    ],
     styles = [
         {
             target: 'app.css',
             src:    [
-                // скопированые вендоры из node_modules
-                'web/assets/vendor/normalize.css/normalize.css',
-                'web/assets/vendor/animate.css/animate.css',
-                'web/assets/vendor/owl.carousel/assets/owl.carousel.css',
-                'web/assets/vendor/owl.carousel/assets/owl.theme.default.css',
-                'web/assets/vendor/bxslider/dist/jquery.bxslider.css',
-                // cтили с проекта
-                'assets/styles/main.scss'
+                'web/assets/node_modules/normalize.css/normalize.css',
+                'web/assets/node_modules/animate.css/animate.css',
+                'web/assets/node_modules/owl.carousel/dist/assets/owl.carousel.css',
+                'web/assets/node_modules/owl.carousel/dist/assets/owl.theme.default.css',
+                'web/assets/node_modules/bxslider/dist/jquery.bxslider.css',
+
+                'assets/styles/app.scss'
             ],
             watch: [
                 'assets/styles/**/*.scss',
@@ -109,6 +77,16 @@ var scripts = [
             ]
         }
     ],
+    html = [
+        {
+            target: 'web/',
+            src:    'html/[^_]*.html',
+            watch: [
+                'html/**/*.html',
+                'template-block/**/*.html'
+            ]
+        }
+    ],
     images = [
         {
             target: 'web/assets/images',
@@ -117,59 +95,26 @@ var scripts = [
             ]
         }
     ],
-    vendor = [
-        { // normalize.css
-            target: 'web/assets/vendor/normalize.css/',
-            src:    ['node_modules/normalize.css/normalize.css']
-        },
-        { // animate.css
-            target: 'web/assets/vendor/animate.css/',
-            src:    ['node_modules/animate.css/animate.css']
-        },
-        { // jquery
-            target: 'web/assets/vendor/jquery/',
-            src:    'node_modules/jquery/dist/*.js'
-        },
-        { // bxslider/images
-            target: 'web/assets/vendor/bxslider/images/',
-            src:    'node_modules/bxslider/dist/images/*'
-        },
-        { // bxslider
-            target: 'web/assets/vendor/bxslider/',
-            src:    [
-                'node_modules/bxslider/dist/*.js',
-                'node_modules/bxslider/dist/*.css'
-            ]
-        },
-        { // owl.carousel/assets
-            target: 'web/assets/vendor/owl.carousel/assets/',
-            src:    'node_modules/owl.carousel/dist/assets/*'
-        },
-        { // owl.carousel
-            target: 'web/assets/vendor/owl.carousel/',
-            src:    [
-                'node_modules/owl.carousel/dist/*.js'
-            ]
-        },
-        { // vue
-            target: 'web/assets/vendor/vue/',
-            src:    [
-                'node_modules/vue/dist/vue.min.js'
-            ]
-        },
-        { // imagesloaded
-            target: 'web/assets/vendor/imagesloaded/',
-            src:    [
-                'node_modules/imagesloaded/imagesloaded.pkgd.js'
+    scss = [
+        {
+            watch: [
+                'assets/styles/**/*.scss',
+                'assets/ui-kit/**/*.scss',
+                'template-block/**/*.scss'
             ]
         }
     ];
 
 // Tasks
-var watchers = [];
-
 gulp
 // Common
+    .task('browser-sync', function () {
+        browserSync.init({
+            server: {
+                baseDir: './web'
+            }
+        });
+    })
     .task('clear', function (done) {
         return cache.clearAll(done);
     })
@@ -189,44 +134,31 @@ gulp
         images.forEach(function (images) {
             stream.add(gulp.src(images.src)
                 .pipe(cache(imageMin([
-                    imageMin.gifsicle({
-                        interlaced: true
-                    }),
-                    imageMin.jpegtran({
-                        progressive: true
-                    }),
-                    jpegRecompress({
-                        loops:   5,
-                        min:     75,
-                        max:     80,
-                        quality: 'high'
-                    }),
-                    imageMin.svgo(),
-                    imageMin.optipng({
-                        optimizationLevel: 3
-                    }),
-                    pngQuant({
-                        quality: '75-80',
-                        speed:   5
-                    })
+                    pngQuant({ speed: 1, quality: 90 }),
+                    zopfli({ more: true }),
+                    giflossy({ optimizationLevel: 3, optimize: 3, lossy: 2 }),
+                    imageMin.svgo({ plugins: [{  removeViewBox: false }] }),
+                    imageMin.jpegtran({ progressive: true, arithmetic: true }),
+                    mozjpeg({ quality: 90 })
                 ], {
                     verbose: true
                 })))
                 .pipe(gulp.dest(images.target))
-                .pipe(reload({stream: true})))
-            ;
+                .pipe(reload({
+                    stream: true
+                })));
         });
 
         return stream;
     })
     .task('vendor', function() {
-        vendor.forEach(function (vendor) {
-            gulp.src(vendor.src)
-                .pipe(gulp.dest(vendor.target))
-        });
+        return gulp.src(gnf(), {
+            base: './'
+        })
+            .pipe(gulp.dest('web/assets'));
     })
     // Dev
-    .task('scripts', function () {
+    .task('scripts', ['vendor'], function () {
         var stream = merge();
 
         scripts.forEach(function (scripts) {
@@ -237,26 +169,20 @@ gulp
                 .pipe(concat(scripts.target))
                 .pipe(sourcemaps.write())
                 .pipe(gulp.dest(dir.dev)))
-                .pipe(reload({stream: true}))
-            ;
+                .pipe(reload({
+                    stream: true
+                }));
         });
 
         return stream;
     })
-    .task('styles', function () {
+    .task('styles', ['vendor'], function () {
         var stream = merge();
-        var processors = [
-            focus,
-            cssMqpacker({ sort: cssMqpackerSort.desktopFirst })
-        ];
 
         styles.forEach(function (styles) {
             stream.add(gulp.src(styles.src)
                 .pipe(sourcemaps.init())
-                .pipe(sass({
-                    outputStyle: 'expanded',
-                    errLogToConsole: true
-                }).on('error', sass.logError))
+                .pipe(sass().on('error', sass.logError))
                 .pipe(autoprefixer({
                     browsers: ['last 15 versions', '>1%', 'ie 10'],
                     cascade:  false
@@ -265,81 +191,26 @@ gulp
                     destination: dir.dev
                 }))
                 .pipe(concat(styles.target))
-                .pipe(postcss(processors))
                 .pipe(sourcemaps.write())
                 .pipe(gulp.dest(dir.dev)))
-                .pipe(reload({stream: true}))
-            ;
+                .pipe(reload({
+                    stream: true
+                }));
         });
 
         return stream;
     })
-    .task('html', function () {
-        var stream = merge();
-        html.forEach(function (html) {
-            stream.add(gulp.src(html.src)
-                .pipe(include())
-                .pipe(htmlhint())
-                .pipe(htmlhint.reporter())
-                .pipe(gulp.dest(html.target))
-                .pipe(reload({stream: true}))
-            );
-        });
-        return stream;
-    })
-    .task('browser-sync', function () {
-        browserSync.init({
-            server: {
-                baseDir: "./web"
-            },
-            host: 'localhost',
-            port: 9080,
-            logPrefix: "browserSync"
-        });
-    })
-
-    // html
-    .task('build-html', ['fonts', 'images', 'scripts', 'styles', 'html'])
-    .task('watch-html', ['build-html'], function () {
-        watchers.forEach(function (watcher) {
-            watcher.end();
-        });
-        watchers = [
-            gulp.watch('bower.json', function () {
-                reloadBowerAssets();
-                gulp.start('scripts', 'watch');
-            })
-        ].concat(scss.map(function (scss) {
-            return gulp.watch(scss.src, ['styles']);
-        })).concat(scripts.map(function (scripts) {
-            return gulp.watch(scripts.watch, ['scripts']);
-        })).concat(styles.map(function (styles) {
-            return gulp.watch(styles.watch, ['styles']);
-        })).concat(html.map(function (html) {
-            return gulp.watch(html.watch, ['html']);
-        })).concat(images.map(function (images) {
-            return gulp.watch(images.src, ['images']);
-        }));
-    })
-    .task('serve-html', ['build-html', 'browser-sync', 'watch-html'])
-    // Dev
     .task('build', ['fonts', 'images', 'scripts', 'styles'])
     .task('watch', ['build'], function () {
-        watchers.forEach(function (watcher) {
-            watcher.end();
+        scripts.map(function (scripts) {
+            gulp.watch(scripts.watch, ['scripts']);
         });
-        watchers = [
-            gulp.watch('bower.json', function () {
-                reloadBowerAssets();
-                gulp.start('scripts', 'watch');
-            })
-        ].concat(scss.map(function (scss) {
-            return gulp.watch(scss.src, ['styles']);
-        })).concat(scripts.map(function (scripts) {
-            return gulp.watch(scripts.src, ['scripts']);
-        })).concat(styles.map(function (styles) {
-            return gulp.watch(styles.src, ['styles']);
-        }));
+        scss.map(function (scss) {
+            gulp.watch(scss.watch, ['styles']);
+        });
+        styles.map(function (styles) {
+            gulp.watch(styles.watch, ['styles']);
+        });
     })
     // Prod
     .task('scripts-prod', ['scripts'], function () {
@@ -364,14 +235,13 @@ gulp
             stream.add(gulp.src(styles.src)
                 .pipe(sass().on('error', sass.logError))
                 .pipe(autoprefixer({
-                    browsers: ['last 15 versions', '>1%', 'ie 10'],
+                    browsers: ['last 2 versions', '>1%', 'ie 10'],
                     cascade:  false
                 }))
                 .pipe(csso())
                 .pipe(rewriteCSS({
                     destination: dir.prod
                 }))
-                .pipe(base64())
                 .pipe(uglifyCSS({
                     uglyComments: true
                 }))
@@ -392,4 +262,36 @@ gulp
             }))
             .pipe(hash.manifest('manifest.json'))
             .pipe(gulp.dest(dir.prod));
-    });
+    })
+    // HTML
+    .task('html', ['vendor'], function () {
+        var stream = merge();
+
+        html.forEach(function (html) {
+            stream.add(gulp.src(html.src)
+                .pipe(include())
+                .pipe(gulp.dest(html.target))
+                .pipe(reload({
+                    stream: true
+                }))
+            );
+        });
+
+        return stream;
+    })
+    .task('build-html', ['fonts', 'images', 'scripts', 'styles', 'html'])
+    .task('watch-html', ['build-html'], function () {
+        scripts.map(function (scripts) {
+            gulp.watch(scripts.watch, ['scripts']);
+        });
+        scss.map(function (scss) {
+            gulp.watch(scss.watch, ['styles']);
+        });
+        styles.map(function (styles) {
+            gulp.watch(styles.watch, ['styles']);
+        });
+        html.map(function (html) {
+            gulp.watch(html.watch, ['html']);
+        });
+    })
+    .task('serve-html', ['build-html', 'browser-sync', 'watch-html']);

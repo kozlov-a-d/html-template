@@ -3,15 +3,6 @@
   "version": "1.0.0",
   "description": "Базовый шаблон для верстки сайтов ( Darvin Studio / BeOnTop )\r Для использования требуется node.js",
   "main": "gulpfile.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build-html": "gulp vendor && gulp build-html",
-    "watch-html": "gulp vendor && gulp watch-html",
-    "serve": "gulp vendor && gulp serve-html",
-    "build-dev": "gulp vendor && gulp build",
-    "watch-dev": "gulp vendor && gulp watch-html",
-    "build-prod": "gulp vendor && gulp build-prod"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/kozlov-a-d/html-template.git"
@@ -24,32 +15,28 @@
   "license": "UNLICENSED",
   "devDependencies": {
     "browser-sync": "^2.23.3",
-    "css-mqpacker": "^6.0.1",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
-    "gulp-base64": "^0.1.3",
     "gulp-cache": "^0.4.6",
     "gulp-concat": "^2.6.1",
     "gulp-csso": "^3.0.0",
     "gulp-hash": "^4.1.1",
-    "gulp-htmlhint": "^1.0.0",
     "gulp-imagemin": "^3.3.0",
     "gulp-include": "^2.3.1",
     "gulp-merge": "^0.1.1",
-    "gulp-postcss": "^7.0.1",
-    "gulp-rename": "^1.2.2",
+    "gulp-npm-files": "^0.1.3",
     "gulp-rewrite-css": "^1.1.0",
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.6.3",
     "gulp-strip-debug": "^1.1.0",
-    "gulp-sync": "^0.1.4",
     "gulp-uglify": "^3.0.0",
     "gulp-uglifycss": "^1.0.8",
     "gulper": "^0.1.3",
-    "imagemin-jpeg-recompress": "^5.1.0",
+    "imagemin-giflossy": "^5.1.10",
+    "imagemin-mozjpeg": "^7.0.0",
     "imagemin-pngquant": "^5.0.1",
-    "postcss-focus": "^3.0.0",
-    "sort-css-media-queries": "^1.3.4"
+    "imagemin-zopfli": "^5.1.0",
+    "livereload": "^0.6.0"
   },
   "dependencies": {
     "animate.css": "^3.5.2",

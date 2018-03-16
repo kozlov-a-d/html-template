@@ -49,7 +49,7 @@ function initMenuMobile(id, data) {
             closeMenu: function () {
                 // $( this.el).hide();
                 this.activeNode = menuMobile.getNodeParam( this.tree[0] );
-                app.scroll.enable();
+                scrollComponent.enable();
                 this.show = false;
             },
             activeParentNode: function (event) {

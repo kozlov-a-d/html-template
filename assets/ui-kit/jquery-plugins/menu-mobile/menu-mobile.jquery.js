@@ -44,12 +44,12 @@
 
                 // this.each(function() {
 
-                const container = $(this);
-                const id = Math.round( Math.random()*10000);
+                var container = $(this);
+                var id = Math.round( Math.random()*10000);
 
                 menuMobile.settings.text.rootTitle = $(container).find(menuMobile.settings.selectors.btnToggle).text();
 
-                const tree = methods.buildMenuTree($(this), options);
+                var tree = methods.buildMenuTree($(this), options);
                 menuMobile.settings.VM = methods.renderMenu(id, tree);
 
                 // handlers
@@ -137,16 +137,16 @@
 
             showMenu : function (VM) {
                 VM.show = true;
-                if( typeof app.scroll !== "undefined") {
-                    app.scroll.disable();
+                if( typeof scrollComponent !== "undefined") {
+                    scrollComponent.disable();
                 }
             },
 
             // как ту из вне поулчить вьюмодел?
             hideMenu : function (VM) {
                 VM.show = false;
-                if( typeof app.scroll !== "undefined") {
-                    app.scroll.enable();
+                if( typeof scrollComponent !== "undefined") {
+                    scrollComponent.enable();
                 }
             }
 
