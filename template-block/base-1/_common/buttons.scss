@@ -46,9 +46,9 @@
   &.-fullwidth{
     width: 100%;
   }
+
   &.-inline{
-    width: auto;
-    padding: 0 20px;
+   display: inline-block;
   }
 
 }
