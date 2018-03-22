@@ -114,6 +114,3 @@ var photoswipeComponent = (function( container, item ){
         }
     }
 }());
-
-
-photoswipeComponent.init('.js-photoswipe-gallery', 'a');
