@@ -17,6 +17,10 @@ Tables.addMobileView('table');
 
 $('.js-ajax').modalAjax();
 
+
+// execute above function
+// initPhotoSwipeFromDOM('.js-photoswipe-gallery');
+
 // Base-1 Denis ------------------------------------------------------------------------------------------------------*/
 
 //=include ../../template-block/base-1/_header/header.js

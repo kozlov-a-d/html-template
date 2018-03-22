@@ -37,34 +37,34 @@
 }());
 (function partners() {
     var partners = {
-        carousel : $(".js-partners .owl-carousel"),
+        carousel : $(".js-partners .js-slider"),
         nextBtn : $(".js-partners .js-nav-next"),
         prevBtn : $(".js-partners .js-nav-prev")
     };
     $(partners.carousel).imagesLoaded()
         .always( function( instance ) {
-            partners.carousel.owlCarousel({
-                nav: false,
+
+            partners.carousel.slick({
+                infinite: true,
+                arrows: false,
                 dots: false,
-                loop: true,
-                autoWidth:true,
-                margin: 25,
-                responsive: {
-                    0: {
+                rows: 4,
+                slidesPerRow: 1,
+                slidesToShow: 2,
+                speed: 400,
+                responsive: [{
+                    breakpoint: 980,
+                    settings: {
                         dots: true,
-                        items:1
-                    },
-                    980: {
-                        dots: false,
-                        margin: 22
                     }
-                }
+                }]
             });
+
             partners.nextBtn.click(function() {
-                partners.carousel.trigger('next.owl.carousel');
+                partners.carousel.slick('slickNext');
             });
             partners.prevBtn.click(function() {
-                partners.carousel.trigger('prev.owl.carousel');
+                partners.carousel.slick('slickPrev');
             });
         })
         .fail( function() {

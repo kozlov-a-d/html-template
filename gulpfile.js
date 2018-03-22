@@ -36,9 +36,11 @@ const scripts = [
             src: [
                 'web/assets/node_modules/jquery/dist/jquery.js',
                 "web/assets/node_modules/imagesloaded/imagesloaded.pkgd.js",
-                'web/assets/node_modules/bxslider/dist/jquery.bxslider.js',
                 'web/assets/node_modules/owl.carousel/dist/owl.carousel.js',
+                'web/assets/node_modules/slick-carousel/slick/slick.js',
                 'web/assets/node_modules/vue/dist/vue.js',
+                'web/assets/node_modules/photoswipe/dist/photoswipe.js',
+                'web/assets/node_modules/photoswipe/dist/photoswipe-ui-default.js',
 
                 'assets/scripts/_extends.js',
                 'assets/scripts/app.js'
@@ -58,7 +60,10 @@ const scripts = [
                 'web/assets/node_modules/animate.css/animate.css',
                 'web/assets/node_modules/owl.carousel/dist/assets/owl.carousel.css',
                 'web/assets/node_modules/owl.carousel/dist/assets/owl.theme.default.css',
-                'web/assets/node_modules/bxslider/dist/jquery.bxslider.css',
+                'web/assets/node_modules/slick-carousel/slick/slick.scss',
+                'web/assets/node_modules/slick-carousel/slick/slick-theme.scss',
+                'web/assets/node_modules/photoswipe/dist/photoswipe.css',
+                'web/assets/node_modules/photoswipe/dist/default-skin/default-skin.css',
 
                 'assets/styles/app.scss'
             ],
@@ -158,7 +163,7 @@ gulp
             .pipe(gulp.dest('web/assets'));
     })
     // Dev
-    .task('scripts', ['vendor'], function () {
+    .task('scripts', function () {
         var stream = merge();
 
         scripts.forEach(function (scripts) {
@@ -176,7 +181,7 @@ gulp
 
         return stream;
     })
-    .task('styles', ['vendor'], function () {
+    .task('styles', function () {
         var stream = merge();
 
         styles.forEach(function (styles) {
@@ -200,7 +205,7 @@ gulp
 
         return stream;
     })
-    .task('build', ['fonts', 'images', 'scripts', 'styles'])
+    .task('build', ['vendor', 'fonts', 'images', 'scripts', 'styles'])
     .task('watch', ['build'], function () {
         scripts.map(function (scripts) {
             gulp.watch(scripts.watch, ['scripts']);
@@ -251,7 +256,7 @@ gulp
 
         return stream;
     })
-    .task('build-prod', ['fonts', 'images', 'scripts-prod', 'styles-prod'], function () {
+    .task('build-prod', ['vendor', 'fonts', 'images', 'scripts-prod', 'styles-prod'], function () {
         var getTarget = function (assets) {
             return [dir.prod, assets.target].join('/');
         };
@@ -264,7 +269,7 @@ gulp
             .pipe(gulp.dest(dir.prod));
     })
     // HTML
-    .task('html', ['vendor'], function () {
+    .task('html', function () {
         var stream = merge();
 
         html.forEach(function (html) {
@@ -279,7 +284,7 @@ gulp
 
         return stream;
     })
-    .task('build-html', ['fonts', 'images', 'scripts', 'styles', 'html'])
+    .task('build-html', ['vendor', 'fonts', 'images', 'scripts', 'styles', 'html'])
     .task('watch-html', ['build-html'], function () {
         scripts.map(function (scripts) {
             gulp.watch(scripts.watch, ['scripts']);

@@ -73,11 +73,35 @@
       display: none;
     }
   }
-  &__item a{
-    display: block;
-    margin-bottom: 24px;
-    border: 1px solid #c2c2c2;
-    border-radius: 5px;
-    overflow: hidden;
+  &__carousel{
+    line-height: 0;
+
+    &.slick-slider{
+      display: none;
+      &.slick-initialized{
+        display: block;
+      }
+    }
+
+    .slick-slide {
+      margin: 0 15px;
+    }
+    .slick-list {
+      margin: 0 -15px;
+    }
   }
+  &__item{
+    a{
+      display: block;
+      margin-bottom: 24px;
+      border: 1px solid #c2c2c2;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    img{
+      width: 100%;
+    }
+  }
+
 }

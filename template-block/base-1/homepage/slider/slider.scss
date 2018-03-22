@@ -1,11 +1,19 @@
+$slider-width-desktop: 1920px;
+$slider-height-desktop: 550px;
+
 .slider-header{
   position: relative;
   width: 100%;
+  height: $slider-height-desktop;
   overflow: hidden;
+
+  @media (max-width: $media-lg) {
+    height: auto;
+  }
 
   &__item{
     overflow: hidden;
-    height: 550px;
+    height: $slider-height-desktop;
     position: relative;
     @media (max-width: $media-lg) {
       width: 100%;
@@ -16,8 +24,8 @@
   }
   &__img{
     display: block;
-    width: 1920px !important;
-    height: 550px;
+    width: $slider-width-desktop !important;
+    height: $slider-height-desktop;
     position: relative;
     left: 50%;
     margin-left: -960px;
@@ -119,5 +127,7 @@
   }
 
 
-
+  &:not(.is-initialized) .slider-header__nav{
+    display: none;
+  }
 }

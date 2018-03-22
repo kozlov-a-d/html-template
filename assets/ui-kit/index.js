@@ -16,6 +16,11 @@ window.onload = function() { goalComponent.trigger(name, params) };  - trigger g
 goalComponent.debug()
 **/
 
+//=include ./components/photoswipe.component.js
+/**
+ * initPhotoSwipeFromDOM('.js-photoswipe-gallery');
+ */
+
 // UTILITIES ===========================================================================================/
 
 //=include ./temp/media-event-listener.js

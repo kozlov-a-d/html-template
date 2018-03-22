@@ -1,40 +1,50 @@
 (function sliderHeader() {
     var sliderHeader = {
-        carousel : $(".js-slider-header .owl-carousel"),
-        nextBtn : $(".js-slider-header .js-nav-next"),
-        prevBtn : $(".js-slider-header .js-nav-prev"),
-        counter : $(".js-slider-header .js-nav-counter"),
-        direction : 'forward'   // inverse
+        root:     $(".js-slider-header"),
+        carousel: $(".js-slider-header .js-slider"),
+        nextBtn:  $(".js-slider-header .js-nav-next"),
+        prevBtn:  $(".js-slider-header .js-nav-prev"),
+        counter:  $(".js-slider-header .js-nav-counter"),
+        animation: 'flipInX'
     };
-    sliderHeader.carousel.owlCarousel({
-        autoplay: true,
-        autoplayTimeout: 6000,
-        loop:true,
-        margin:0,
-        nav:false,
-        dots: false,
-        items: 1,
-        animateOut: 'slideOutDown',
-        animateIn: 'flipInX',
-        onInitialized: renderCounter,
-        onTranslate: renderCounter
-    });
 
-    function renderCounter(event) {
-        // normalize index
-        if( sliderHeader.direction === 'inverse' && event.item.index-1 === 0){
-            sliderHeader.counter.html( event.item.count + '/' + event.item.count);
-        } else {
-            sliderHeader.counter.html(event.item.index-1 + '/' + event.item.count);
+    if ( sliderHeader.carousel.find('.item').length > 1 ){
+
+        // animateOut: 'slideOutDown',
+        // animateIn: 'flipInX',
+
+        sliderHeader.carousel.on('init', function(e, slick) {
+            renderCounter(slick.slideCount, 1);
+            sliderHeader.root.addClass('is-initialized');
+        });
+        sliderHeader.carousel.on('beforeChange', function(e, slick, currentSlide, nextSlide) {
+            renderCounter(slick.slideCount, nextSlide+1);
+        });
+
+        sliderHeader.carousel.slick({
+            autoplay: true,
+            autoplaySpeed: 4000,
+            infinite: true,
+            arrows: false,
+            dots: false,
+            fade: true,
+            speed: 400
+        });
+
+        function renderCounter(slideCount, nextSlide) {
+            sliderHeader.counter.html( nextSlide + '/' + slideCount);
         }
+
+        sliderHeader.nextBtn.click(function() {
+            sliderHeader.carousel.slick('slickNext');
+        });
+        sliderHeader.prevBtn.click(function() {
+            sliderHeader.carousel.slick('slickPrev');
+        });
+
+    } else {
+        sliderHeader.nextBtn.remove();
+        sliderHeader.prevBtn.remove();
     }
 
-    sliderHeader.nextBtn.click(function() {
-        sliderHeader.direction = 'forward';
-        sliderHeader.carousel.trigger('next.owl.carousel');
-    });
-    sliderHeader.prevBtn.click(function() {
-        sliderHeader.direction = 'inverse';
-        sliderHeader.carousel.trigger('prev.owl.carousel');
-    });
 }());
