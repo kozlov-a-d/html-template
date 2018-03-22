@@ -189,7 +189,7 @@ gulp
                 .pipe(sourcemaps.init())
                 .pipe(sass().on('error', sass.logError))
                 .pipe(autoprefixer({
-                    browsers: ['last 15 versions', '>1%', 'ie 10'],
+                    browsers: ['last 2 versions', '>1%', 'ie 10'],
                     cascade:  false
                 }))
                 .pipe(rewriteCSS({
