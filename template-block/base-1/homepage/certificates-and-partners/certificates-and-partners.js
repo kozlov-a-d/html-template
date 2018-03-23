@@ -51,7 +51,8 @@
                 rows: 4,
                 slidesPerRow: 1,
                 slidesToShow: 2,
-                speed: 400,
+                speed: 300,
+                waitForAnimate: true,
                 responsive: [{
                     breakpoint: 980,
                     settings: {

@@ -49,7 +49,7 @@
                             '</div>'
                         );
                         setTimeout(function(){
-                            app.scroll.disable();
+                            scrollComponent.disable();
                             methods.addEventListener($('#' + modalId));
                         }, 10);
                     }).always(function () {
@@ -73,7 +73,7 @@
             })
             .on('click', '.modal__btn-close', function (e) {
                 e.preventDefault();
-                app.scroll.enable();
+                scrollComponent.enable();
                 $('.modal').addClass('closing');
                 setTimeout(function () {
                     $('.modal').remove();

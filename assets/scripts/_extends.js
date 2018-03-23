@@ -18,6 +18,9 @@ Tables.addMobileView('table');
 $('.js-ajax').modalAjax();
 
 
+//=include ../ui-kit/temp/blind-version/blind.js
+
+
 photoswipeComponent.init('.js-photoswipe-gallery', 'a');
 
 // Base-1 Denis ------------------------------------------------------------------------------------------------------*/

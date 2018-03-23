@@ -65,7 +65,6 @@ var photoswipeComponent = (function( container, item ){
                     var elements = self.closest(container).querySelectorAll(el);
                     var items = []; //массив слайдов
 
-                    console.log(self);
                     for (var i = 0; i < elements.length; i++) {
                         var size = elements[i].getAttribute('data-size').split('x'); //размер текущего изображения
                         items[i] =

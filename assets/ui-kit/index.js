@@ -1,5 +1,10 @@
 // COMPONENTS ==========================================================================================/
 
+//=include ./components/localstorage.component.js
+/**
+ *
+ */
+
 //=include ./components/scroll.component.js
 /**
 scrollComponent.current(value) - get/set value
