@@ -57,6 +57,33 @@
   .custom-checkbox {
       font-size: 13px;
       margin-bottom: 12px;
+      input{
+        display: none;
+        &:checked + span:before{
+          background: #3990ab;
+        }
+      }
+      span{
+        display: block;
+        cursor: pointer;
+        &:before{
+          content: '';
+          display: inline-block;
+          position: relative;
+          top: 1px;
+          box-sizing: border-box;
+          width: 12px;
+          height: 12px;
+          margin-right: 4px;
+          border: 1px solid #3990ab;
+          border-radius: 3px;
+          transition: background $translate-time $translate-ease;
+        }
+      }
+
+      &.-center{
+        text-align: center;
+      }
   }
   &.-modal {
     .form__item {

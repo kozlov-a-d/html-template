@@ -85,7 +85,7 @@ const scripts = [
     html = [
         {
             target: 'web/',
-            src:    'html/[^_]*.html',
+            src:    'html/**/[^_]*.html',
             watch: [
                 'html/**/*.html',
                 'template-block/**/*.html'

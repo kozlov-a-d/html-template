@@ -191,7 +191,7 @@
 
   @include media-max($media-lg - 1){
     @media (max-width: $media-lg ) {
-      //display: none;
+      display: none;
     }
     position: relative;
 
