@@ -1,3 +1,7 @@
+/**
+ * Компонент для работы со скролом
+ * @type {{current, direction, enable, disable}}
+ */
 var scrollComponent = (function(){
 
     var scrollPosition = {
@@ -8,35 +12,35 @@ var scrollComponent = (function(){
 
     // PRIVATE =========================================================================================================
 
-    scrollCheck = function () {
+    var scrollCheck = function () {
         scrollPosition.previous = scrollPosition.current;
         scrollPosition.current = document.documentElement.scrollTop || window.pageYOffset || window.scrollY;
     };
 
     /* scroll to */
-    scrollMoveTo = function (position) {
+    var scrollMoveTo = function (position) {
         window.scrollTo( 0, position );
     };
 
     /* save scroll position */
-    scrollSave = function () {
+    var scrollSave = function () {
         scrollPosition.backup = document.documentElement.scrollTop || window.pageYOffset || window.scrollY;
     };
 
     /* scroll enable */
-    scrollEnable = function () {
+    var scrollEnable = function () {
         document.body.style.overflowY = '';
         document.body.style.position = '';
     };
 
     /* scroll disable */
-    scrollDisable = function () {
+    var scrollDisable = function () {
         document.body.style.overflowY = 'hidden';
         document.body.style.position = 'fixed';
     };
 
     /* return down || up */
-    scrollDirection = function () {
+    var scrollDirection = function () {
         return ( scrollPosition.current >= scrollPosition.previous ) ? 'down' : 'up';
     };
 

@@ -62,6 +62,9 @@ $font-bold: 700;
     border: 2px solid #000000;
     padding: 15px 20px;
     font-size: 20px;
+    &.is-visible{
+      display: block;
+    }
   }
   .c-settings__dropdown-title{
     font-size: 44px;
@@ -301,6 +304,7 @@ $font-bold: 700;
       position: relative;
       background: #FFFFFF;
       border: 1px solid #000000;
+
       &:before{
         content: '';
         display: none;

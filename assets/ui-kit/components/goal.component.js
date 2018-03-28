@@ -1,3 +1,8 @@
+/**
+ * Компонент для отслеживание целей
+ *
+ * @type {{trigger, debug}}
+ */
 var goalComponent = (function(){
 
     var services = {
@@ -10,7 +15,7 @@ var goalComponent = (function(){
 
     // PRIVATE =========================================================================================================
 
-    goalDone = function (goalName, goalParams) {
+    var goalDone = function (goalName, goalParams) {
         if(services.yaCounterID !=='' &&  typeof window['yaCounter' + services.yaCounterID] !== "undefined"){
             window['yaCounter' + services.yaCounterID].reachGoal(goalName, function () {});
         }
@@ -29,7 +34,7 @@ var goalComponent = (function(){
         }
     };
 
-    debug = function () {
+    var debug = function () {
         window.onload = function() {
             console.log( 'yaCounterID: ' + (typeof window['yaCounter' + services.yaCounterID] !== "undefined") );
             console.log( 'gaUsed: ' + (typeof ga !== "undefined") );

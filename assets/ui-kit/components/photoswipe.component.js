@@ -1,4 +1,8 @@
-var photoswipeComponent = (function( container, item ){
+/**
+ * Компонент для упрощения инициализации photoswipe
+ * @type {{init}}
+ */
+var photoswipeComponent = (function(){
 
     var photoswipeProps = {
         isExist: false,
@@ -12,7 +16,7 @@ var photoswipeComponent = (function( container, item ){
     // PRIVATE =========================================================================================================
 
     /* add HTML  */
-    addHTML = function () {
+    var  addHTML = function () {
         var html = document.createElement('div');
         html.classList.add('pswp');
         html.innerHTML = '' +
@@ -52,7 +56,7 @@ var photoswipeComponent = (function( container, item ){
     };
 
     /* add handler */
-    addHandler = function ( container, el, html ) {
+    var addHandler = function ( container, el, html ) {
         var containers = document.querySelectorAll(container);
         containers.forEach(function(item){
             var items = item.querySelectorAll(el);

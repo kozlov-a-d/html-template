@@ -30,24 +30,26 @@
       }
     }
 
-    &.cellpading_5 {
-      td, th {
-        padding: 5px;
+    &.cellpadding{
+      &_5 {
+        td, th {
+          padding: 5px;
+        }
       }
-    }
-    &.cellpading_7 {
-      td, th {
-        padding: 7px;
+      &_7 {
+        td, th {
+          padding: 7px;
+        }
       }
-    }
-    &.cellpading_10 {
-      td, th {
-        padding: 10px;
+      &_10 {
+        td, th {
+          padding: 10px;
+        }
       }
-    }
-    &.cellpading_15 {
-      td, th {
-        padding: 15px;
+      &_15 {
+        td, th {
+          padding: 15px;
+        }
       }
     }
 
