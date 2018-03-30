@@ -74,6 +74,19 @@
   }
 }
 
+.helper-grid-template{
+  padding-bottom: 50px;
+  .grid .col{
+    min-height: 40px;
+    background: #cdd1d3;
+    border: 1px solid #fff;
+    line-height: 40px;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+}
+
 pre{
   //dracula
   display: block;

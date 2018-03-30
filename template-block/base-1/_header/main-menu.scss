@@ -102,6 +102,8 @@
       display: block;
       border-radius: 0 0 6px 6px;
       overflow: hidden;
+      border: 1px solid #cdcdcd;
+      border-top: none;
       @include smooth-drop-down-hide(true){
         transition: transform .2s cubic-bezier(0.68,-0.55,0.265,1.55),opacity .2s  cubic-bezier(0.68,-0.55,0.265,1.55);
       };

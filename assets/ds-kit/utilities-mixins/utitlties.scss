@@ -34,15 +34,6 @@
   @include cfix();
 }
 
-@mixin animation($animation-run: true, $animation-duration:  0.2s, $animation-timing-function: ease-in-out, $animation-delay: 0s){
-  @if $animation-run {
-    transition: $animation-duration $animation-timing-function $animation-delay;
-  }
-  @else {
-    transition: none;
-  }
-}
-
 @mixin media-max($resolution){
   @media (max-width: $resolution) {
     @content;
@@ -69,7 +60,7 @@
   @if $is-custom-transition {
     @content;
   } @else {
-    transition: all .2s linear;
+    transition: opacity,transform .2s linear;
   }
 }
 // показываем выпадашку ( по ховеру )
