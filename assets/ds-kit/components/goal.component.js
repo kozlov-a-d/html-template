@@ -25,7 +25,7 @@ var goalComponent = (function(){
         if(services.gaUsed && typeof ga !== "undefined"){
             ga('send', 'event', 'button', goalName);
         }
-        if(services.gtagUsed && typeof ga !== "undefined"){
+        if(services.gtagUsed && typeof gtag !== "undefined"){
             gtag('event', goalName, goalParams);
             console.log(goalName);
         }
