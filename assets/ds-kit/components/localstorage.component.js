@@ -41,7 +41,7 @@ var localStorageComponent = (function(){
 
     // PUBLIC ==========================================================================================================
 
-    return {
+    return Object.freeze({
         state: function(name, value){
             if(typeof value !== "undefined"){
                 setItem(name, value);
@@ -56,7 +56,7 @@ var localStorageComponent = (function(){
         exist: function(name){
             return existItem(name);
         }
-    }
+    });
 }());
 
 // добавляем

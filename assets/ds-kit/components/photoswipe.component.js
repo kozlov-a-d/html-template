@@ -109,11 +109,11 @@ var photoswipeComponent = (function(){
 
     // PUBLIC ==========================================================================================================
 
-    return {
+    return Object.freeze({
         init : function( container, item){
             if (photoswipeProps.isExist){
                 addHandler( container, item, addHTML() );
             }
         }
-    }
+    });
 }());

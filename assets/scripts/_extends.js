@@ -1,4 +1,4 @@
-//=include ../ui-kit/index.js
+//=include ../ds-kit/index.js
 
 console.time('extends-js');
 
@@ -18,7 +18,7 @@ Tables.addMobileView('table');
 $('.js-ajax').modalAjax();
 
 
-//=include ../ui-kit/temp/blind-version/blind.js
+//=include ../ds-kit/temp/blind-version/blind.js
 
 
 photoswipeComponent.init('.js-photoswipe-gallery', 'a');

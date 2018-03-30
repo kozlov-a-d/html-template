@@ -57,12 +57,12 @@ var goalComponent = (function(){
 
     // PUBLIC ==========================================================================================================
 
-    return {
+    return Object.freeze({
         trigger : function(name, params){
             goalDone(name, params);
         },
         debug : function(){ debug(); }
-    }
+    });
 }());
 
 

@@ -55,7 +55,7 @@ var scrollComponent = (function(){
 
     // PUBLIC ==========================================================================================================
 
-    return {
+    return Object.freeze({
         current : function(value){
             if(typeof value !== "undefined"){
                 scrollMoveTo(value);
@@ -75,5 +75,5 @@ var scrollComponent = (function(){
             scrollSave();
             scrollDisable();
         }
-    }
+    });
 }());
