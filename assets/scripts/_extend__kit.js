@@ -16,8 +16,7 @@ photoswipeWrapper.init('.js-photoswipe-gallery', 'a');
 $('.js-menu-smart').menuSmart();
 
 //=include ../ds-kit/plugins/menu-mobile/menu-mobile.vue.js
-//=include ../ds-kit/plugins/menu-mobile/menu-mobile
-// .jquery.js
+//=include ../ds-kit/plugins/menu-mobile/menu-mobile.jquery.js
 $('.js-menu-mobile').menuMobile(); // переделать без vue.js ?
 
 //=include ../ds-kit/plugins/modal-ajax/modal-ajax.jquery.js
