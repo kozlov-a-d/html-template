@@ -41,13 +41,12 @@ const scripts = [
                 'web/assets/node_modules/vue/dist/vue.js',
                 'web/assets/node_modules/photoswipe/dist/photoswipe.js',
                 'web/assets/node_modules/photoswipe/dist/photoswipe-ui-default.js',
-
-                'assets/scripts/_extends.js',
+                
                 'assets/scripts/app.js'
             ],
             watch: [
                 'assets/scripts/**/*.js',
-                'assets/ui-kit/**/*.js',
+                'assets/ds-kit/**/*.js',
                 'template-block/**/*.js'
             ]
         }
@@ -69,7 +68,7 @@ const scripts = [
             ],
             watch: [
                 'assets/styles/**/*.scss',
-                'assets/ui-kit/**/*.scss',
+                'assets/ds-kit/**/*.scss',
                 'template-block/**/*.scss'
             ]
         }
@@ -104,7 +103,7 @@ const scripts = [
         {
             watch: [
                 'assets/styles/**/*.scss',
-                'assets/ui-kit/**/*.scss',
+                'assets/ds-kit/**/*.scss',
                 'template-block/**/*.scss'
             ]
         }

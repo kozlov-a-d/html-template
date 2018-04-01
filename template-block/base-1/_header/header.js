@@ -1,11 +1,3 @@
-// var menuMobile = new MenuMobile({});
-$('.js-menu-mobile').menuMobile();
-$('.js-menu-smart').menuSmart();
-
-// var menuHeader =  $('.menu-top.js-menu-mobile').menuMobile();
-// var menuHeader =  $('.menu-top.js-menu-mobile').menuMobile('showMenu');
-
-// gпоправить мобайл меню
 // add menu-mobile--switcher-btn placeholder
 (function placeholderMenuMobileSwitcher() {
     // находим кнопку, открывающую меню

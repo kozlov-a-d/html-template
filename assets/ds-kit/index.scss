@@ -1,15 +1,6 @@
 // MIXINS ==========================================================================================/
-@import "./utilities-mixins/utitlties";
-/* mixin list:
- @mixin cfix-after
- @mixin cfix-before
- @mixin cfix
- @mixin container( $maxWidth: 1280px)
- @mixin media-max($resolution)
- @mixin media-min($resolution)
- @mixin media-interval($resolution-min, $resolution-max)
- */
 
+@import "./utilities-mixins/utitlties";
 
 
 // LAYOUT ==========================================================================================/
@@ -19,33 +10,16 @@
 
 // CONTENT ==========================================================================================/
 
-@import "./jquery-plugins/tables/tables";
-@import "./jquery-plugins/spoiler/spoiler";
+@import "plugins/tables/tables";
+@import "plugins/spoiler/spoiler";
 
-$tables-color-border: $color-base;                // цвет границ в обычной табилчке
-$nice-tables-color-border: #e8eaeb;               //  цвет границ в табличке
-$nice-tables-color-striped: #e8eaeb;              //  дополнительный цвет для строчек таблицы
-$nice-tables-color-hover: darken(#e8eaeb,10%);    //  подсветка строчек/строк табилцы при наведении
-$nice-tables-padding: 15px 18px;                  //  отступы в ячейках табилцы
-
-@include table-default($tables-color-border);
-@include table-nice($nice-tables-color-border, $nice-tables-color-striped, $nice-tables-color-hover, $nice-tables-padding){
-  table-layout: fixed;
-
-  th {
-    background: #2b8fc9;
-    color: #fff;
-    font-weight: bold;
-    text-align: left;
-  }
-};
-@include table-responsive();
-
+//@import "./temp/blind-version/blind-version-settings.scss";
+//@import "./temp/blind-version/blind-version-theme.scss";
 
 // JQUERY PLUGINS ======================================================================================/
 
-@import "./jquery-plugins/menu-mobile/menu-mobile.scss";
-@import "./jquery-plugins/modal-ajax/modal-ajax.jquery.scss";
+@import "plugins/menu-mobile/menu-mobile.scss";
+@import "plugins/modal-ajax/modal-ajax.jquery.scss";
 
 
 // UTILITIES ===========================================================================================/

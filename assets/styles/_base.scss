@@ -2,7 +2,6 @@
 
 /********************************************************************************************/
 /* Base style ------------------------------------------------------------------------------*/
-/* ...                                                                                      */
 /********************************************************************************************/
 *{
   box-sizing: border-box;
@@ -19,6 +18,9 @@ body{
   max-height: 999999px;
   max-width: 100%;
 }
+
+
+// LAYOUT ==========================================================================================/
 
 .l-wrapper,
 .l-main,
@@ -51,10 +53,10 @@ body{
     margin: 0 $content-gap;
   }
 }
-/********************************************************************************************/
-/* Typography-------------------------------------------------------------------------------*/
-/* style for h1, h2, h3, p, ul, ol and some other                                           */
-/********************************************************************************************/
+
+// Typography ==========================================================================================/
+// style for h1, h2, h3, p, ul, ol and some other
+
 body{
   font-family: $font-main;
   font-size: $font-size-base;
@@ -134,3 +136,22 @@ p + ol{
   margin-top: - $text-margin ;
 }
 
+// Tables ==========================================================================================/
+$tables-color-border: $color-base;                // цвет границ в обычной табилчке
+$nice-tables-color-border: #e8eaeb;               //  цвет границ в табличке
+$nice-tables-color-striped: #e8eaeb;              //  дополнительный цвет для строчек таблицы
+$nice-tables-color-hover: darken(#e8eaeb,10%);    //  подсветка строчек/строк табилцы при наведении
+$nice-tables-padding: 15px 18px;                  //  отступы в ячейках табилцы
+
+@include table-default($tables-color-border);
+@include table-nice($nice-tables-color-border, $nice-tables-color-striped, $nice-tables-color-hover, $nice-tables-padding){
+  table-layout: fixed;
+
+  th {
+    background: #2b8fc9;
+    color: #fff;
+    font-weight: bold;
+    text-align: left;
+  }
+};
+@include table-responsive();

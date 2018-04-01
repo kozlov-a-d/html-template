@@ -70,55 +70,31 @@ var goalComponent = (function(){
 $('a[href^="tel:"]').on('click', function(){
     goalComponent.reach('ClickOnPhone', {'event_category': 'UsersClicks'});
 });
-/*
-$('body').on('click', '.js-buy"]', function(){
-    console.log('test');
-    var randomId = Math.round( Math.random()*9999 ) + 1
-    var randomPrice = Math.round( Math.random()*9999 ) + 1
-    var randomCount = Math.round( Math.random()*9 ) + 1;
-    dataLayer.push({
-        'event': 'addToCart',
-        'ecommerce': {
-            'currencyCode': 'RUB',
-            'add': {
-                'products': [{
-                    'id': randomId,
-                    'name': "test"+randomId,
-                    'price': randomPrice,
-                    'brand': 'Google',
-                    'category': 'Apparel',
-                    'variant': 'Gray',
-                    'quantity': 1
-                }]
-            }
-        }
-    });
-});
 
-/*
-UsersClicks
-	ClickOnPhone - - Клик на телефон
-	ClickOnEmail - Клик на почту
+category: Click {
+    Phone - Клик на телефон
+    Email - Клик на почту
+}
 
+category: Ecommerce {
+    ViewProduct - Просмотр продукта
+    AddToCart - Добавление в корзину
+    RemoveFromCart - Удаление из корзины
+    Purchase - Покупка
 
-Ecommerce:
+    GetPriceList - Получить прайс
+    Enquire - Отправить запрос
+    QuickOrder - Заказ без корзины
+    ReviewProduct - Отзыв к товару
+}
 
-ProductDetail - Просмотр продукта
-AddToCart -	Добавление в корзину
-RemoveFromCart - Удаление из корзины
-Purchase - Покупка
+category: Enquiry {
+    Feedback - ФОС
+    Callback - Заказ звонка
+    Review - Добавление отзыва
+    Specialist - Вызов специалиста
+}
 
-GetPrice - Получить прайс
-SendEnquire - Отправить запрос
-SendOrder - Заказ без корзины
-SendReviewProduct - Отзыв к товару
-
-
-Feedbacks:
-Feedback - ФОС
-Callback - Заказ звонка
-SendReview - Добавление отзыва
-СallSpecialist - Вызов специалиста
 
 app.ajax.html
 

@@ -264,5 +264,3 @@ var blindVersion = (function(){
     }
 
 }());
-
-// blindVersion.init();

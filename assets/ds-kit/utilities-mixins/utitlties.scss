@@ -1,3 +1,19 @@
+/**
+ * MIXINS LIST:
+ * @mixin cfix-after
+ * @mixin cfix-before
+ * @mixin cfix
+ * @mixin container( $maxWidth: 1280px)
+ * @mixin media-max($resolution)
+ * @mixin media-min($resolution)
+ * @mixin media-interval($resolution-min, $resolution-max)
+ * @mixin smooth-drop-down-hide
+ * @mixin smooth-drop-down-show
+ */
+
+/**
+ * Оменяем обтекание ( float )
+ */
 @mixin cfix-after{
   &:after{
     content: "";
@@ -9,7 +25,6 @@
     *zoom: 1;
   }
 }
-
 @mixin cfix-before{
   &:before{
     content: "";
@@ -21,19 +36,25 @@
     *zoom: 1;
   }
 }
-
 @mixin cfix{
   @include cfix-before;
   @include cfix-after;
 }
 
+/**
+ * Центрированый контейнер
+ */
 @mixin container( $maxWidth: 1280px){
   width: 100%;
   max-width: $maxWidth;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
   @include cfix();
 }
 
+/**
+ * Миксины для работы с медиазапросами
+ */
 @mixin media-max($resolution){
   @media (max-width: $resolution) {
     @content;
@@ -50,9 +71,10 @@
   }
 }
 
-
-// скрываем выпадашку
-@mixin smooth-drop-down-hide($is-custom-transition: false){
+/**
+ * Появление выпадашки
+ */
+@mixin smooth-drop-down-hide($is-custom-transition: false){ // скрываем выпадашку
   opacity: 0;
   transform: scaleY(0);
   transform-origin: 0 0;
@@ -63,8 +85,7 @@
     transition: opacity,transform .2s linear;
   }
 }
-// показываем выпадашку ( по ховеру )
-@mixin smooth-drop-down-show(){
+@mixin smooth-drop-down-show(){ // показываем выпадашку ( по ховеру )
   opacity: 1;
   transform: scaleY(1);
 }

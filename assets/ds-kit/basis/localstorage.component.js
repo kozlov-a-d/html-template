@@ -42,6 +42,11 @@ var localStorageComponent = (function(){
     // PUBLIC ==========================================================================================================
 
     return Object.freeze({
+        /**
+         * Добавляем или получаем значение из LocalStorage
+         * @param name {string} - название объекта
+         * @param value {string|number|json|array|*} - новое значение, если пустое - фукнция возвращает текущее
+         */
         state: function(name, value){
             if(typeof value !== "undefined"){
                 setItem(name, value);
@@ -50,19 +55,19 @@ var localStorageComponent = (function(){
                 return getItem(name);
             }
         },
+        /**
+         * Удаляет значение из LocalStorage с заданным именем
+         * @param name {string}
+         */
         remove: function(name){
             removeItem(name);
         },
+        /**
+         * Проверка существования значения в LocalStorage с заданным именем
+         * @param name {string}
+         */
         exist: function(name){
             return existItem(name);
         }
     });
 }());
-
-// добавляем
-// localStorageComponent.state('test', 'value');
-// localStorageComponent.state('test json', {prop: 1, text: "text prop", date: 1521793462353});
-
-// получаем
-// localStorageComponent.state('test');
-// localStorageComponent.state('test json');

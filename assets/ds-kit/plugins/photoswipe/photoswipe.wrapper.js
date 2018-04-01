@@ -2,7 +2,7 @@
  * Компонент для упрощения инициализации photoswipe
  * @type {{init}}
  */
-var photoswipeComponent = (function(){
+var photoswipeWrapper = (function(){
 
     var photoswipeProps = {
         isExist: false,
@@ -99,7 +99,6 @@ var photoswipeComponent = (function(){
     };
 
     // INIT ============================================================================================================
-
 
     if(typeof PhotoSwipe === 'function') {
         photoswipeProps.isExist = true;

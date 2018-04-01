@@ -56,7 +56,12 @@ var scrollComponent = (function(){
     // PUBLIC ==========================================================================================================
 
     return Object.freeze({
-        current : function(value){
+        /**
+         * Добавляем или получаем значение прокрутки
+         * @param value {number}
+         * @returns {number}
+         */
+        current: function(value){
             if(typeof value !== "undefined"){
                 scrollMoveTo(value);
                 scrollCheck();
@@ -66,12 +71,24 @@ var scrollComponent = (function(){
                 return scrollPosition.current;
             }
         },
-        direction : function(){ return scrollDirection() },
-        enable : function(){
+        /**
+         * Узнаём направление скрола
+         * @returns {*} 'down'|'up'
+         */
+        direction: function(){
+            return scrollDirection()
+        },
+        /**
+         * Включаем скрол
+         */
+        enable: function(){
             scrollEnable();
             scrollMoveTo(scrollPosition.backup);
         },
-        disable : function(){
+        /**
+         * Отключаем скролл
+         */
+        disable: function(){
             scrollSave();
             scrollDisable();
         }
