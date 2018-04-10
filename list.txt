@@ -1,4 +1,4 @@
-- доделать шапку на адаптиве
+﻿- доделать шапку на адаптиве
 
 
 ==================================
@@ -6,5 +6,7 @@ JS
 - валидацию (parsley) к формам добавить
 
 - SocialShare в автоконфиг
+- /utilities/objects  из animation-jelly-scroll
+
 
 https://frontender.info/the-design-of-code-organizing-javascript/

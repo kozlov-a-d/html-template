@@ -1,6 +1,10 @@
 @media print {
   .l-header,
   .l-footer  {
-    display: none;
+    display: none none !important;
+  }
+
+  form{
+    display: none !important;
   }
 }

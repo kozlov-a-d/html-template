@@ -85,6 +85,7 @@
         &:hover{
           .catalog-menu__item-name{
             &:before{
+              margin-top: 0;
               font-size: 14px;
               opacity: 1;
             }
@@ -109,6 +110,7 @@
         display: table;
         position: relative;
         border-radius: 5px;
+        overflow: hidden;
         background-color: rgb(225, 225, 225);
 
         &-img{

@@ -10,8 +10,29 @@
     <title>HTML Template</title>
 
     <!-- Meta Tags -->
+
     <meta name="description" content="">
-    <meta name="keywords" content="">
+
+    <meta property="og:title" content="значение из основного title" />
+    <meta property="og:image" content="это URL на картинку. Это будет отдельная картинка размеров 1200x630" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="значение из meta description" />
+    <meta property="og:url" content="полный URL текущей страницы" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="название сайта" />
+
+    <meta property="article:publisher" content="A Facebook page URL or ID of the publishing entity" />
+    <meta property="article:author" content="Facebook profile URLs or ID of the author for this article" />
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="полный URL текущей страницы" />
+    <meta property="twitter:title" content="значение из основного title" />
+    <meta property="twitter:description" content="значение из meta description" /> 
+    <meta property="twitter:image" content="это URL на картинку. Та же самая которая добавляется для метатега фейсбука" />
+    <meta property="twitter:image:width" content="1200" />
+    <meta property="twitter:image:height" content="630" />
+    <meta property="twitter:site" content="аккаунт твиттера" />
 
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
@@ -19,18 +40,18 @@
     <link rel="stylesheet" href="assets/build-dev/app.css" />
 
     <script type="application/ld+json">
-    {
-      "@context" : "http://schema.org",
-      "@type" : "Organization",
-      "name" : "OrganizationName",
-      "url" : "http://domain.ru",
-      "sameAs" : [
-        "http://vk.com/id",
-        "https://www.facebook.com/id",
-        "https://twitter.com/id",
-        "https://plus.google.com/+id"
-      ]
-    }
+        {
+            "@context": "http://schema.org",
+            "@type": "Organization",
+            "name": "OrganizationName",
+            "url": "http://domain.ru",
+            "sameAs": [
+                "http://vk.com/id",
+                "https://www.facebook.com/id",
+                "https://twitter.com/id",
+                "https://plus.google.com/+id"
+            ]
+        }
     </script>
 
 </head>
@@ -179,14 +200,6 @@
         <main class="l-main">
 
             <div class="container">
-
-                <!-- typography begin -->
-                <!--//=include ../template-block/demo/typography.html-->
-                <!-- typography end -->
-
-                <!-- tables begin -->
-                <!--//=include ../template-block/demo/tables.html-->
-                <!-- tables end -->
 
                 <!-- slider begin -->
 
@@ -1053,9 +1066,11 @@
                                 </div>
                 
                                 <div class="btns-container">
-                                    <div class="custom-checkbox">
-                                        <label for="app_sample_choice_privacy-policy-3" class="required">Согласен с <a href="">политикой конфиденциальности</a></label>
-                                        <input type="checkbox" id="app_sample_choice_privacy-policy-3" value="1" required checked>
+                                    <div class="custom-checkbox -center">
+                                        <label for="app_sample_choice_privacy-policy-3" class="required">
+                                            <input type="checkbox" id="app_sample_choice_privacy-policy-3" value="1" required checked>
+                                            <span>Согласен с <a href="">политикой конфиденциальности</a></span>
+                                        </label>
                                     </div>
                                     <button class="btn" type="submit">Отправить</button>
                                 </div>

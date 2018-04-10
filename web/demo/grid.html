@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <base href="/">
+
+    <title>HTML Template</title>
+
+    <!-- Meta Tags -->
+
+    <meta name="description" content="">
+
+    <meta property="og:title" content="значение из основного title" />
+    <meta property="og:image" content="это URL на картинку. Это будет отдельная картинка размеров 1200x630" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="значение из meta description" />
+    <meta property="og:url" content="полный URL текущей страницы" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="название сайта" />
+
+    <meta property="article:publisher" content="A Facebook page URL or ID of the publishing entity" />
+    <meta property="article:author" content="Facebook profile URLs or ID of the author for this article" />
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="полный URL текущей страницы" />
+    <meta property="twitter:title" content="значение из основного title" />
+    <meta property="twitter:description" content="значение из meta description" /> 
+    <meta property="twitter:image" content="это URL на картинку. Та же самая которая добавляется для метатега фейсбука" />
+    <meta property="twitter:image:width" content="1200" />
+    <meta property="twitter:image:height" content="630" />
+    <meta property="twitter:site" content="аккаунт твиттера" />
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- main styles -->
+    <link rel="stylesheet" href="assets/build-dev/app.css" />
+
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "Organization",
+            "name": "OrganizationName",
+            "url": "http://domain.ru",
+            "sameAs": [
+                "http://vk.com/id",
+                "https://www.facebook.com/id",
+                "https://twitter.com/id",
+                "https://plus.google.com/+id"
+            ]
+        }
+    </script>
+
+</head>
+
+<body>
+
+<!-- WRAPPER begin -->
+<div class="l-wrapper">
+    <!-- HEADER begin -->
+    <header class="l-header">
+        <div class="header-top">
+            <div class="header-top__container">
+                <div class="header-top__social-link">
+                    <a href="" rel="noreferrer noopener" target="_blank"><img src="http://via.placeholder.com/20x20/c0c0c0/000000" alt="Facebook" title="Facebook"></a>
+                    <a href="" rel="noreferrer noopener" target="_blank"><img src="http://via.placeholder.com/20x20/c0c0c0/000000" alt="Instagram" title="Instagram"></a>
+                    <a href="" rel="noreferrer noopener" target="_blank"><img src="http://via.placeholder.com/20x20/c0c0c0/000000" alt="VKontakte" title="VKontakte"></a>
+                    <a href="" rel="noreferrer noopener" target="_blank"><img src="http://via.placeholder.com/20x20/c0c0c0/000000" alt="Twitter" title="Twitter"></a>
+                    <a href="" rel="noreferrer noopener" target="_blank"><img src="http://via.placeholder.com/20x20/c0c0c0/000000" alt="Odnoklassniki" title="Odnoklassniki"></a>
+                </div>
+        
+                <a class="header-top__item cart-header" href="#">Корзина <span class="cart-header__count">24</span></a>
+                <a class="header-top__item account-header" href="#">Личный кабинет</a>
+                <a class="header-top__item email-header" href="mailto:domain@example.com">domain@example.com</a>
+            </div>
+        </div><!-- end header-top-->
+        <div class="header-middle">
+            <div class="header-middle__container l-container">
+                <a class="logo-header js-logo-header" href="/"><img src="http://via.placeholder.com/225x60/c0c0c0/ffffff" alt="" title=""></a>
+        
+                <a class="header-middle__btn -send-enquiry btn js-ajax" data-class="-dark -send-enquiry" href="modal-send-enquiry.html">Оставить заявку</a>
+                <a class="header-middle__btn -callback btn js-ajax" data-class="-dark -callback" href="modal-callback.html">Перезвоните мне</a>
+        
+                <div class="header-middle__toggle">
+                    <div class="header-middle__toggle-container">
+                        <span class="header-middle__time">С 9:00 до 18:00</span>
+                        <div class="header-middle__phone-list">
+                            <a class="header-middle__phone -first" href="tel:+70000000000">+7 (000) 000-00-00</a>
+                            <a class="header-middle__phone" href="tel:+70000000000">+7 (000) 000-00-00</a>
+                            <a class="header-middle__phone" href="tel:+70000000000">+7 (000) 000-00-00</a>
+                        </div>
+                    </div>
+                </div><!-- end header-middle__toggle -->
+            </div>
+        </div><!-- end header-middle-->
+        <nav class="menu-top js-menu-smart js-menu-mobile">
+        
+            <div class="menu-top__switcher">
+                <button class="menu-top__switcher-btn" data-menu-mobile--switcher-btn><span>Меню</span></button>
+            </div>
+        
+            <ul class="menu-top__list" data-menu-mobile--root>
+                <li class="menu-top__item -has-drop-down" data-menu-mobile--has-drop-down>
+                    <a class="menu-top__item-name" href="#" data-menu-mobile--item-name>Demo</a>
+                    <div class="menu-top__drop-down">
+                        <ul class="menu-top__list">
+                            <li class="menu-top__item">
+                                <a class="menu-top__item-name" href="demo/grid.html" data-menu-mobile--item-name>Grids</a>
+                            </li>
+                            <li class="menu-top__item">
+                                <a class="menu-top__item-name" href="demo/typography.html" data-menu-mobile--item-name>Typography</a>
+                            </li>
+                            <li class="menu-top__item">
+                                <a class="menu-top__item-name" href="demo/tables.html" data-menu-mobile--item-name>Tables</a>
+                            </li>
+                            <li class="menu-top__item">
+                                <a class="menu-top__item-name" href="demo/forms.html" data-menu-mobile--item-name>Forms</a>
+                            </li>
+        
+                        </ul>
+                    </div>
+                </li>
+                <li class="menu-top__item -has-drop-down" data-menu-mobile--has-drop-down>
+                    <a class="menu-top__item-name" href="#" data-menu-mobile--item-name>Каталог</a>
+                    <div class="menu-top__drop-down">
+                        <ul class="menu-top__list">
+                            <li class="menu-top__item">
+                                <a class="menu-top__item-name" href="#" data-menu-mobile--item-name>Теплоизоляция ППУ</a>
+                            </li>
+                            <li class="menu-top__item">
+                                <a class="menu-top__item-name" href="#" data-menu-mobile--item-name>Опоры трубопроводов</a>
+                            </li>
+                            <li class="menu-top__item">
+                                <a class="menu-top__item-name" href="#" data-menu-mobile--item-name>Фасонные изделия</a>
+                            </li>
+                            <li class="menu-top__item">
+                                <a class="menu-top__item-name" href="#" data-menu-mobile--item-name>Комплекты изоляции стыков</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="menu-top__item">
+                    <a class="menu-top__item-name" href="#" data-menu-mobile--item-name>Прайс</a>
+                </li>
+                <li class="menu-top__item -has-drop-down" data-menu-mobile--has-drop-down>
+                    <a class="menu-top__item-name" href="#" data-menu-mobile--item-name>Производство</a>
+                    <div class="menu-top__drop-down">
+                        <ul class="menu-top__list">
+                            <li class="menu-top__item">
+                                <a class="menu-top__item-name" href="#" data-menu-mobile--item-name>Тестовая страница</a>
+                            </li>
+                        </ul>
+                    </div>
+        
+                </li>
+                <li class="menu-top__item">
+                    <a class="menu-top__item-name" href="#" data-menu-mobile--item-name>Доставка</a>
+                </li>
+                <li class="menu-top__item">
+                    <a class="menu-top__item-name" href="#" data-menu-mobile--item-name>Гарантия</a>
+                </li>
+                <li class="menu-top__item">
+                    <a class="menu-top__item-name" href="#" data-menu-mobile--item-name>Сертификаты</a>
+                </li>
+                <li class="menu-top__item">
+                    <a class="menu-top__item-name" href="#" data-menu-mobile--item-name>Сертификаты</a>
+                </li>
+                <li class="menu-top__item">
+                    <a class="menu-top__item-name" href="#" data-menu-mobile--item-name>Сертификаты</a>
+                </li>
+                <li class="menu-top__item">
+                    <a class="menu-top__item-name" href="#" data-menu-mobile--item-name>Доставка</a>
+                </li>
+                <li class="menu-top__item">
+                    <a class="menu-top__item-name" href="#" data-menu-mobile--item-name>Гарантия</a>
+                </li>
+                <li class="menu-top__item">
+                    <a class="menu-top__item-name" href="#" data-menu-mobile--item-name>Доставка</a>
+                </li>
+                <li class="menu-top__item">
+                    <a class="menu-top__item-name" href="#" data-menu-mobile--item-name>Гарантия</a>
+                </li>
+                <li class="menu-top__item">
+                    <a class="menu-top__item-name" href="#" data-menu-mobile--item-name>Сертификаты</a>
+                </li>
+            </ul>
+        
+        
+        </nav>
+        <!-- /menu-top end -->
+        
+        
+    </header>
+    <!-- HEADER end -->
+
+    <!-- MAIN begin -->
+    <main class="l-main">
+
+        <div class="container">
+            <div class="l-container">
+
+                <div class="helper-grid-template">
+
+                    <h1>Grid system</h1>
+
+                    <div class="helper-section-split"></div>
+
+                    <h2>Get Started</h2>
+
+                    <p>Сетку можно использовать 2-мя способами:</p>
+
+                    <ul class="with_marker">
+
+                        <li>прописывая классы непосредственно в html (аналогично bootstrap'у)</li>
+
+                        <li>использую mixin'ы в стилях</li>
+
+                    </ul>
+
+                    <h3>Inline-вариант</h3>
+
+                    <p>
+
+                        Класс для контейнера <code><span class="css-class-name">grid</span></code>, элементы обозначаются классами <code><span class="css-class-name">col-X-Y</span></code>.
+
+                        Ширина каждого блока равна отношению <code><span class="css-class-name">X / Y * 100% - Z </span></code>, где  <code><span class="css-class-name"> Z </span></code> - расстояние между колонками
+
+                        <br>
+
+                        При необходимости можно вынести часть элемнтов в отдельную строку, добавив им обёртку <code><span class="css-class-name">row</span></code>.
+
+                    </p>
+
+                    <div class="helper-grid-template">
+
+                        <div class="grid">
+
+                            <div class="col col-1-6">col-1-6</div>
+
+                            <div class="col col-5-6">col-5-6</div>
+
+                            <div class="col col-1-4">col-1-4</div>
+
+                            <div class="col col-3-4">col-3-4</div>
+
+                            <div class="col col-1-2">col-1-2</div>
+
+                            <div class="col col-1-2">col-1-2</div>
+
+                            <div class="col col-1-1">col-1-1</div>
+
+                        </div>
+
+                    </div>
+
+                    <pre data-name="html-код примера">
+
+                         <div class="row"><span class="html-tag">&lt;div</span> class=<span class="html-class-name">"grid"</span><span class="html-tag">&gt;</span></div>
+
+                         <div class="row">    <span class="html-tag">&lt;div</span> class=<span class="html-class-name">"col-1-6"</span><span class="html-tag">&gt;</span>col-1-6<span class="html-tag">&lt;/div&gt;</span></div>
+
+                         <div class="row">    <span class="html-tag">&lt;div</span> class=<span class="html-class-name">"col-5-6"</span><span class="html-tag">&gt;</span>col-5-6<span class="html-tag">&lt;/div&gt;</span></div>
+
+                         <div class="row">    <span class="html-tag">&lt;div</span> class=<span class="html-class-name">"col-1-4"</span><span class="html-tag">&gt;</span>col-1-4<span class="html-tag">&lt;/div&gt;</span></div>
+
+                         <div class="row">    <span class="html-tag">&lt;div</span> class=<span class="html-class-name">"col-3-4"</span><span class="html-tag">&gt;</span>col-3-4<span class="html-tag">&lt;/div&gt;</span></div>
+
+                         <div class="row">    <span class="html-tag">&lt;div</span> class=<span class="html-class-name">"col-1-1"</span><span class="html-tag">&gt;</span>col-1-1<span class="html-tag">&lt;/div&gt;</span></div>
+
+                         <div class="row">    <span class="html-tag">&lt;div</span> class=<span class="html-class-name">"col-1-2"</span><span class="html-tag">&gt;</span>col-1-2<span class="html-tag">&lt;/div&gt;</span></div>
+
+                         <div class="row">    <span class="html-tag">&lt;div</span> class=<span class="html-class-name">"col-1-2"</span><span class="html-tag">&gt;</span>col-1-2<span class="html-tag">&lt;/div&gt;</span></div>
+
+                         <div class="row"><span class="html-tag">&lt;/div&gt;</span></div>
+
+                    </pre>
+
+                    <p>*Класс <code><span class="css-class-name">col</span></code> в данном случае нужен только в декоративных целях</p>
+
+                    <h3>CSS-вариант</h3>
+
+                
+
+                
+
+                
+
+                    <div class="helper-section-split"></div>
+
+                    <h2>Grids Units Sizes</h2>
+
+                    <div class="grid">
+
+                        <div class="row">
+
+                            <div class="col col-1-6">col-1-6</div>
+
+                            <div class="col col-5-6">col-5-6</div>
+
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col col-1-5">col-1-5</div>
+
+                            <div class="col col-4-5">col-4-5</div>
+
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col col-1-4">col-1-4</div>
+
+                            <div class="col col-3-4">col-3-4</div>
+
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col col-1-3">col-1-3</div>
+
+                            <div class="col col-2-3">col-2-3</div>
+
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col col-2-5">col-2-5</div>
+
+                            <div class="col col-3-5">col-3-5</div>
+
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col col-1-2">col-1-2</div>
+
+                            <div class="col col-1-2">col-1-2</div>
+
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col col-1-1">col-1-1</div>
+
+                        </div>
+
+                    </div>
+
+                
+
+                
+
+                
+
+                    <div class="helper-section-split"></div>
+
+                    <h2>Default Media Queries</h2>
+
+                    <p>Для адаптивных сайтов вы можете контролировать то, как сетка будет вести себя на определённых разрешения путём добавления специальных классов. Ниже приведена таблица со стандартными значениями:</p>
+
+                    <table class="nice_table">
+
+                        <colgroup>
+
+                            <col width="70"/>
+
+                            <col width="350"/>
+
+                            <col width="150"/>
+
+                            <col width="120"/>
+
+                        </colgroup>
+
+                        <tr>
+
+                            <th>Key</th>
+
+                            <th>CSS Media Query</th>
+
+                            <th>Разрешение</th>
+
+                            <th>Класс</th>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>xs</td>
+
+                            <td>@media (min-width: 320px)</td>
+
+                            <td>≥ 320px</td>
+
+                            <td>col-xs-*-*</td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>sm</td>
+
+                            <td>@media (min-width: 568px)</td>
+
+                            <td>≥ 568px</td>
+
+                            <td>col-sm-*-*</td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>md</td>
+
+                            <td>@media (min-width: 768px)</td>
+
+                            <td>≥ 768px</td>
+
+                            <td>col-md-*-*</td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>lg</td>
+
+                            <td>@media (min-width: 1024px)</td>
+
+                            <td>≥ 1024px</td>
+
+                            <td>col-lg-*-*</td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>xl</td>
+
+                            <td>@media (min-width: 1280px)</td>
+
+                            <td>≥ 1280px</td>
+
+                            <td>col-xl-*-*</td>
+
+                        </tr>
+
+                    </table>
+
+                    <p>Эти значения можно переопределить в основном файле стилей <i>\assets\styles\common.css</i></p>
+
+                </div>
+
+                
+
+            </div>
+        </div>
+
+    </main>
+    <!-- MAIN end -->
+
+</div>
+<!-- WRAPPER end -->
+<!-- FOOTER begin -->
+<footer class="l-footer">
+    <div class="footer">
+        <div class="l-container">
+        <div class="footer__container">
+            <div class="footer__info">
+                <div class="footer__info-container">
+    
+                    <a href="" class="footer__info-logo">
+                        <img src="http://via.placeholder.com/230x65/ffffff/000000" alt="logo" title="logo" />
+                    </a>
+    
+                    <div class="footer__info-contacts">
+                        <div class="footer__info-contacts-item -phone">
+                            <a href="tel:+70000000000">+7 (000) 000-00-00</a><br>
+                            <a href="tel:+70000000000">+7 (000) 000-00-00</a>
+                        </div>
+                        <div class="footer__info-contacts-item -time">
+                            Пн-Пт: с 0:00 до 0:00<br>
+                            Сб-Вс:  Выходные
+                        </div>
+                        <div class="footer__info-contacts-item -location">
+                            000000, Рыбная обл., г. Рыба, ул. Рыба, дом 00, к. 00 <a href="">Карта проезда</a>
+                        </div>
+                    </div>
+    
+                    <div class="footer__social-link">
+                        <a href="" rel="noreferrer noopener" target="_blank"><img src="http://via.placeholder.com/38x38/ffffff/000000" alt="FB" title="FB" /></a>
+                        <a href="" rel="noreferrer noopener" target="_blank"><img src="http://via.placeholder.com/38x38/ffffff/000000" alt="IN" title="IN" /></a>
+                        <a href="" rel="noreferrer noopener" target="_blank"><img src="http://via.placeholder.com/38x38/ffffff/000000" alt="VK" title="VK" /></a>
+                        <a href="" rel="noreferrer noopener" target="_blank"><img src="http://via.placeholder.com/38x38/ffffff/000000" alt="TW" title="TW" /></a>
+                        <a href="" rel="noreferrer noopener" target="_blank"><img src="http://via.placeholder.com/38x38/ffffff/000000" alt="OK" title="OK" /></a>
+                    </div>
+    
+                    <p class="footer__info-text">
+                        Создание и продвижение сайта <a href="https://www.darvin-studio.ru">Darvin Studio</a><br>
+                        <a href="">Политика конфиденциальности</a><br>
+                        &copy; 2017. Все права защищены
+                    </p>
+                </div>
+            </div>
+            <div class="footer__menu b-fmenu">
+                <ul class="b-fmenu__container">
+                    <li class="b-fmenu__col">
+                        <span class="b-fmenu__col-heading">Компания</span>
+                        <ul class="b-fmenu__list">
+                            <li class="b-fmenu__item"><a href="">О нас</a></li>
+                            <li class="b-fmenu__item"><a href="">Новости</a></li>
+                            <li class="b-fmenu__item"><a href="">Статьи</a></li>
+                            <li class="b-fmenu__item"><a href="">Фотогалерея</a></li>
+                            <li class="b-fmenu__item"><a href="">Продукция</a></li>
+                            <li class="b-fmenu__item"><a href="">Вопрос-ответ</a></li>
+                            <li class="b-fmenu__item"><a href="">Статьи</a></li>
+                            <li class="b-fmenu__item"><a href="">Контакты</a></li>
+                        </ul>
+                    </li>
+                    <li class="b-fmenu__col">
+                        <span class="b-fmenu__col-heading">Каталог</span>
+                        <ul class="b-fmenu__list">
+                            <li class="b-fmenu__item"><a href="">Пункт №1</a></li>
+                            <li class="b-fmenu__item"><a href="">Пункт №2</a></li>
+                            <li class="b-fmenu__item"><a href="">Пункт №3</a></li>
+                            <li class="b-fmenu__item"><a href="">Пункт №4</a></li>
+                            <li class="b-fmenu__item"><a href="">Пункт №5</a></li>
+                            <li class="b-fmenu__item"><a href="">Пункт №6</a></li>
+                            <li class="b-fmenu__item"><a href="">Пункт №7</a></li>
+                            <li class="b-fmenu__item"><a href="">Пункт №8</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        </div>
+    </div>
+</footer>
+<!-- FOOTER end -->
+
+<button class="scroll-top js-scroll-top" data-speed="500" data-offset-top="105" style="display:none;">to top</button>
+
+
+
+
+<!--scripts-->
+<script src="assets/build-dev/app.js"></script>
+<!--/scripts-->
+
+
+</body>
+</html>

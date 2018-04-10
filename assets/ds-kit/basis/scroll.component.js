@@ -4,17 +4,23 @@
  */
 var scrollComponent = (function(){
 
-    var scrollPosition = {
-        current : 0,
-        previous : 0,
-        backup : 0
+    var self = {
+        elsTransform: null,
+        isTransform: true,
+        current: 0,
+        previous: 0,
+        backup: 0
     };
 
     // PRIVATE =========================================================================================================
 
+    var addTransformElements = function(selector){
+        self.elsTransform = document.querySelectorAll(selector);
+    }
+
     var scrollCheck = function () {
-        scrollPosition.previous = scrollPosition.current;
-        scrollPosition.current = document.documentElement.scrollTop || window.pageYOffset || window.scrollY;
+        self.previous = self.current;
+        self.current = document.documentElement.scrollTop || window.pageYOffset || window.scrollY;
     };
 
     /* scroll to */
@@ -24,26 +30,31 @@ var scrollComponent = (function(){
 
     /* save scroll position */
     var scrollSave = function () {
-        scrollPosition.backup = document.documentElement.scrollTop || window.pageYOffset || window.scrollY;
+        self.backup = document.documentElement.scrollTop || window.pageYOffset || window.scrollY;
     };
 
     /* scroll enable */
-    var scrollEnable = function () {
+    var scrollEnable = function ( ) {
+        if ( self.isTransform = true ) {
+            self.elsTransform.forEach(function(item){
+                item.style.transform = 'none'; 
+            });
+        }
         document.body.style.overflowY = '';
         document.body.style.position = '';
     };
 
     /* scroll disable */
-    var scrollDisable = function () {
+    var scrollDisable = function ( useTransform ) {
+        ( useTransform === false ) ? self.isTransform = false : self.isTransform = true ; 
+        if ( self.isTransform ) {
+            self.elsTransform.forEach(function(item){
+                item.style.transform = 'translateY(' + -self.backup + 'px)';
+            });
+        }
         document.body.style.overflowY = 'hidden';
         document.body.style.position = 'fixed';
     };
-
-    /* return down || up */
-    var scrollDirection = function () {
-        return ( scrollPosition.current >= scrollPosition.previous ) ? 'down' : 'up';
-    };
-
 
     // INIT ============================================================================================================
 
@@ -57,9 +68,16 @@ var scrollComponent = (function(){
 
     return Object.freeze({
         /**
+         * Можно указать селекторы элементы, которые нужно сдвигать трансформом
+         * @param {string} selector селектор
+         */
+        init: function(selector){
+            if( typeof selector !== 'undefined') addTransformElements(selector);
+        },
+        /**
          * Добавляем или получаем значение прокрутки
-         * @param value {number}
-         * @returns {number}
+         * @param {number} value новое значение 
+         * @returns {number} текущее значение
          */
         current: function(value){
             if(typeof value !== "undefined"){
@@ -68,7 +86,7 @@ var scrollComponent = (function(){
             }
             else {
                 scrollCheck();
-                return scrollPosition.current;
+                return self.current;
             }
         },
         /**
@@ -76,21 +94,22 @@ var scrollComponent = (function(){
          * @returns {*} 'down'|'up'
          */
         direction: function(){
-            return scrollDirection()
+            return ( self.current >= self.previous ) ? 'down' : 'up';
         },
         /**
          * Включаем скрол
          */
         enable: function(){
             scrollEnable();
-            scrollMoveTo(scrollPosition.backup);
+            scrollMoveTo(self.backup);
         },
         /**
          * Отключаем скролл
+         * @param {bolean} useTransform использовать ли трансформ
          */
-        disable: function(){
+        disable: function(useTransform){
             scrollSave();
-            scrollDisable();
+            scrollDisable(useTransform);
         }
     });
 }());

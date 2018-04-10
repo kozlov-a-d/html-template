@@ -3,6 +3,7 @@
 //=include ../ds-kit/basis/decorators.util.js
 //=include ../ds-kit/basis/localstorage.component.js
 //=include ../ds-kit/basis/scroll.component.js
+scrollComponent.init('.l-wrapper, .l-footer');
 //=include ../ds-kit/basis/resize.component.js
 resizeComponent.setFreezeTime(200);
 
