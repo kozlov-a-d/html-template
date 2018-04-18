@@ -7,6 +7,3 @@ JS
 
 - SocialShare в автоконфиг
 - /utilities/objects  из animation-jelly-scroll
-
-
-https://frontender.info/the-design-of-code-organizing-javascript/

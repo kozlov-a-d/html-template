@@ -44,8 +44,8 @@ var localStorageComponent = (function(){
     return Object.freeze({
         /**
          * Добавляем или получаем значение из LocalStorage
-         * @param name {string} - название объекта
-         * @param value {string|number|json|array|*} - новое значение, если пустое - фукнция возвращает текущее
+         * @param {string} name название объекта
+         * @param {string|number|json|array|*} value новое значение, если пустое - фукнция возвращает текущее
          */
         state: function(name, value){
             if(typeof value !== "undefined"){
@@ -57,14 +57,14 @@ var localStorageComponent = (function(){
         },
         /**
          * Удаляет значение из LocalStorage с заданным именем
-         * @param name {string}
+         * @param {string} name
          */
         remove: function(name){
             removeItem(name);
         },
         /**
          * Проверка существования значения в LocalStorage с заданным именем
-         * @param name {string}
+         * @param {string} name
          */
         exist: function(name){
             return existItem(name);

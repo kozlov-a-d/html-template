@@ -7,8 +7,8 @@
  *   большее или равное задержке.
  * - Реальный вызов происходит сразу, а все остальные попытки вызова игнорируются, пока не пройдет время,
  *   большее или равное задержке, отсчитанной от времени последней попытки.
- * @param func {function} - callback функция
- * @param ms {number} - время задержики
+ * @param {function} func callback функция
+ * @param {number} ms время задержики
  * @returns {function}
  */
 function debounce(func, ms) {
@@ -40,8 +40,8 @@ function debounce(func, ms) {
  * Данный декоратор позволяет «затормозить» функцию — функция будет выполняться не чаще одного раза в указанный период,
  * даже если она будет вызвана много раз в течение этого периода.
  * Т.е. все промежуточные вызовы будут игнорироваться.
- * @param func {function} - callback функция
- * @param ms {number} - время задержики
+ * @param {function} func callback функция
+ * @param {number} ms время задержики
  * @returns {function}
  */
 function throttle(func, ms) {

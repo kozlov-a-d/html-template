@@ -103,7 +103,7 @@ var resizeComponent = (function(){
     return  Object.freeze({
         /**
          * Установка минимального интервала между ресайзами
-         * @param time {number}
+         * @param {number} time
          */
         setFreezeTime: function(time){
             setFreezeTime(time);
