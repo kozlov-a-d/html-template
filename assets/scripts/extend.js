@@ -15,12 +15,12 @@ resizeComponent.setFreezeTime(200);
 //=include ../ds-kit/plugins/photoswipe/photoswipe.wrapper.js
 photoswipeWrapper.init('.js-photoswipe-gallery', 'a');
 
+//=include ../ds-kit/plugins/menu-smart/menu-smart.jquery.js
+$('.js-menu-smart').menuSmart();
+
 //=include ../ds-kit/plugins/menu-mobile/menu-mobile.vue.js
 //=include ../ds-kit/plugins/menu-mobile/menu-mobile.jquery.js
 $('.js-menu-mobile').menuMobile(); // переделать без vue.js ?
-
-//=include ../ds-kit/plugins/menu-smart/menu-smart.jquery.js
-$('.js-menu-smart').menuSmart();
 
 //=include ../ds-kit/plugins/modal-ajax/modal-ajax.jquery.js
 $('.js-ajax').modalAjax();

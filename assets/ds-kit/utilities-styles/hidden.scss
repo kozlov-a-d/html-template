@@ -1,26 +1,26 @@
 body .hidden{
   display: none;
-  @media (max-width: $media-xl){
+  @media (max-width: $xl){
     &-xl{
       display: none;
     }
   }
-  @media (max-width: $media-lg){
+  @media (max-width: $lg){
     &-lg{
       display: none;
     }
   }
-  @media (max-width: $media-md){
+  @media (max-width: $md){
     &-md{
       display: none;
     }
   }
-  @media (max-width: $media-sm){
+  @media (max-width: $sm){
     &-sm{
       display: none;
     }
   }
-  @media (max-width: $media-xs){
+  @media (max-width: $xs){
     &-xs{
       display: none;
     }

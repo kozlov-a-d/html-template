@@ -1,5 +1,5 @@
 .response-img{
-  @media (max-width: $media-xl){
+  @media (max-width: $xl){
     &-xl{
       display: block;
       width: auto !important;
@@ -9,7 +9,7 @@
       margin: 0 auto 20px !important;
     }
   }
-  @media (max-width: $media-lg){
+  @media (max-width: $lg){
     &-lg{
       display: block;
       width: auto !important;
@@ -19,7 +19,7 @@
       margin: 0 auto 20px !important;
     }
   }
-  @media (max-width: $media-md){
+  @media (max-width: $md){
     &-md{
       display: block;
       width: auto !important;
@@ -29,7 +29,7 @@
       margin: 0 auto 20px !important;
     }
   }
-  @media (max-width: $media-sm){
+  @media (max-width: $sm){
     &-sm{
       display: block;
       width: auto !important;
@@ -39,7 +39,7 @@
       margin: 0 auto 20px !important;
     }
   }
-  @media (max-width: $media-xs){
+  @media (max-width: $xs){
     &-xs{
       display: block;
       width: auto !important;

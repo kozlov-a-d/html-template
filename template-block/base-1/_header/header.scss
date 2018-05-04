@@ -11,7 +11,7 @@
     &__social-link {
         float: left;
         padding: 10px 10px;
-        @media (max-width: $media-md) {
+        @media (max-width: $md) {
             display: none;
         }
         a {
@@ -96,7 +96,7 @@
     &__container {
         padding: 15px 0;
 
-        @media (max-width: $media-md ) {
+        @media (max-width: $md ) {
             padding-top: 80px;
             text-align: center;
         }
@@ -107,14 +107,14 @@
         margin: 8px 0 0 20px;
 
 
-        @media (max-width: $media-md ) {
+        @media (max-width: $md ) {
             float: none;
             clear: both;
             width: 250px;
             display: inline-block;
             margin: 8px 20px 0 20px;
         }
-        @media (max-width: $media-sm ) {
+        @media (max-width: $sm ) {
             display: block;
             width: 100%;
             margin: 12px 0 0;
@@ -123,12 +123,12 @@
 
     &__switch-btn{
         display: none;
-        @media (max-width: $media-lg ) {
+        @media (max-width: $lg ) {
             display: block;
             float: right;
             margin: 4px 0 0 20px;
         }
-        @media (max-width: $media-md ) {
+        @media (max-width: $md ) {
             display: block;
             position: absolute;
             top: 0;
@@ -144,7 +144,7 @@
         height: 45px;
         margin: 2px 0 0 20px;
 
-        @media (max-width: $media-lg ) {
+        @media (max-width: $lg ) {
             display: none;
         }
 
@@ -235,7 +235,7 @@
     img{
         display: block; 
     }
-    @media (max-width: $media-md ) {
+    @media (max-width: $md ) {
         display: block;
         position: absolute;
         top: 0;
