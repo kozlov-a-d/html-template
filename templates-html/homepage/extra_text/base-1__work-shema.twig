@@ -1,0 +1,41 @@
+{%  set workScheme = [ {
+    img: 'http://via.placeholder.com/66x66',
+    text: 'Вы выбираете товар в каталоге'
+},{
+    img: 'http://via.placeholder.com/66x66',
+    text: 'Вы выбираете товар в каталоге'
+},{
+    img: 'http://via.placeholder.com/66x66',
+    text: 'Вы выбираете товар в каталоге'
+},{
+    img: 'http://via.placeholder.com/66x66',
+    text: 'Вы выбираете товар в каталоге'
+},{
+    img: 'http://via.placeholder.com/66x66',
+    text: 'Вы выбираете товар в каталоге'
+},{
+    img: 'http://via.placeholder.com/66x66',
+    text: 'Вы выбираете товар в каталоге'
+}] %}
+<!-- work-scheme -->
+<section class="work-scheme">
+    <div class="work-scheme__container">
+
+        <div class="work-scheme__title">
+            <h2>Схема работы</h2>
+        </div>
+
+        <div class="work-scheme__list">
+            {% for item in workScheme %}
+            <div class="work-scheme__item">
+                <div class="work-scheme__item-img">
+                    <img src="{{ item.img }}" alt="{{ item.text }}" title="{{ item.text }}">
+                </div>
+                <p>{{ item.text }}</p>
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+</section> 
+<!-- / work-scheme END -->

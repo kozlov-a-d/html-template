@@ -1,0 +1,50 @@
+{%  set newsWidget = [ {
+    title: 'Псевдо гарантии или несбыточная мечта',
+    text: 'Женщина-политик в 21 веке все еще обязана доказывать обществу, что не зря занимает свое кресло. От Маши Кожевниковой до королевы...',
+    dateDay: '13',
+    dateMonth: 'сент.'
+},{
+    title: 'Псевдо гарантии или несбыточная мечта',
+    text: 'Женщина-политик в 21 веке все еще обязана доказывать обществу, что не зря занимает свое кресло. От Маши Кожевниковой до королевы...',
+    dateDay: '13',
+    dateMonth: 'сент.'
+},{
+    title: 'Псевдо гарантии или несбыточная мечта',
+    text: 'Женщина-политик в 21 веке все еще обязана доказывать обществу, что не зря занимает свое кресло. От Маши Кожевниковой до королевы...',
+    dateDay: '13',
+    dateMonth: 'сент.'
+},{
+    title: 'Псевдо гарантии или несбыточная мечта',
+    text: 'Женщина-политик в 21 веке все еще обязана доказывать обществу, что не зря занимает свое кресло. От Маши Кожевниковой до королевы...',
+    dateDay: '13',
+    dateMonth: 'сент.'
+}] %}
+<!-- begin news-widget -->
+<section class="news-widget js-news-widget">
+
+    <div class="news-widget__header">
+        <div class="news-widget__title">
+            <h2>Новости</h2>
+        </div>
+        <div class="news-widget__nav nav-arrow">
+            <button class="news-widget__nav-btn nav-arrow__btn -prev js-nav-prev">prev</button>
+            <button class="news-widget__nav-btn nav-arrow__btn -next js-nav-next">next</button>
+        </div>
+    </div>
+
+    <div class="news-widget__carousel owl-carousel">
+        {% for item in newsWidget %}
+        <div class="news-widget__item news-item">
+            <div class="news-item__date">
+                <span class="news-item__date-day">{{ item.dateDay }}</span>
+                <span class="news-item__date-month">{{ item.dateMonth }}</span>
+            </div>
+            <div class="news-item__text">
+                <a href="/text.html" class="news-item__name">{{ item.title }}</a>
+                <p>{{ item.text }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+<!-- end news-widget --> 

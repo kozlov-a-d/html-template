@@ -1,0 +1,252 @@
+.main-menu {
+    display: block;
+    max-width: 100%;
+    background: #3a4750;
+    @media (min-width: $lg) {
+        & .is-root {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: $content-width;
+        }
+        &__switcher,
+        &__title {
+            display: none;
+        }
+        ul {
+            display: block;
+            width: 100%;
+            height: 60px;
+            padding: 0 0;
+            margin: 0 auto;
+            list-style: none;
+            text-align: left;
+            font-size: 0;
+            white-space: nowrap;
+        }
+        li {
+            display: inline-block;
+            padding: 0;
+            margin: 0;
+            vertical-align: top;
+            &.-hidden {
+                display: none !important;
+            }
+            &.-extraBar {
+                & > button {
+                    position: relative;
+                    display: block;
+                    width: 20px;
+                    height: 3px;
+                    padding: 0;
+                    margin: 29px 20px 28px;
+                    border: none;
+                    background: #fff;
+                    font-size: 0;
+                    &:before,
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        display: block;
+                        width: 20px;
+                        height: 3px;
+                        background: #fff;
+                        transition: background 0.2s;
+                        z-index: 3;
+                    }
+                    &:before {
+                        top: -7px;
+                    }
+                    &:after {
+                        top: 7px;
+                    }
+                }
+                &:hover {
+                    background: #fff;
+                    & > button {
+                        background: #3a4750;
+                        &:before,
+                        &:after {
+                            background: #3a4750;
+                        }
+                    }
+                }
+            }
+            &.is-active>a,
+            &:hover>a{
+                background: #fff;
+                color: #3a4750;
+            }
+        }
+        a, button {
+            display: block;
+            position: relative;
+            text-decoration: none;
+            transition: .2s;
+            cursor: pointer;
+            padding: 0 24px;
+            font-size: 15px;
+            line-height: 60px;
+            color: #fff;
+            border: none;
+            background: none;
+        }
+        div {
+            position: absolute;
+            padding: 0;
+            display: block;
+            border: 1px solid #cdcdcd;
+            border-top: none;
+            border-radius: 0 0 6px 6px;
+            overflow: hidden;
+            @include smooth-drop-down-hide(true) {
+                transition: transform .2s cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity .2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            }
+            min-width: 256px;
+            left: 0;
+            top: 60px;
+            background: #fff;
+            ul {
+                height: auto;
+            }
+            li {
+                border-bottom: 1px solid #cdcdcd;
+                &:last-child {
+                    border-bottom: none;
+                }
+                &:hover,
+                &.is-active {
+                    a {
+                        color: #fff;
+                        background: #5d8ea8;
+                    }
+                }
+            }
+            a {
+                font-size: 15px;
+                color: #3a4750;
+                background: #fff;
+                line-height: 45px;
+            }
+        }
+        .-has-dropdown.-drop-down-inverse div {
+            left: auto;
+            right: 0;
+        }
+        .-has-dropdown {
+            position: relative;
+            & .main-menu__list {
+                z-index: 3;
+                position: relative;
+            }
+            &:hover div {
+                @include smooth-drop-down-show();
+            }
+            li {
+                display: block;
+                width: 100%;
+                margin: 0;
+                &.is-active,
+                &:hover {
+                    background: #5d8ea8;
+                }
+            }
+            &:not(.-extraBar) > a:after {
+                content: '';
+                display: inline-block;
+                width: 6px;
+                height: 6px;
+                border: 1px solid #fff;
+                border-bottom: none;
+                border-left: none;
+                transform-origin: center center;
+                transform: rotate(135deg);
+                margin-left: 6px;
+                position: relative;
+                top: -2px;
+                transition: 0.2s
+            }
+            &:hover > a:after {
+                border-color: #3a4750;
+            }
+        }
+    }
+    @media (max-width: $lg) {
+        display: none;
+        position: relative;
+        &__switcher {
+            position: relative;
+            display: block;
+            width: 50px;
+            height: 50px;
+            background: #40545d;
+            border-radius: 3px;
+            font-size: 0;
+            cursor: pointer;
+            z-index: 250;
+            &-btn {
+                display: block;
+                width: 50px;
+                height: 50px;
+                background: none;
+                border: none;
+                cursor: pointer;
+                span {
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    display: block;
+                    width: 21px;
+                    height: 3px;
+                    margin: -1px 0 0 -11px;
+                    background: #fff;
+                    border: none;
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        display: block;
+                        width: 21px;
+                        height: 3px;
+                        margin: -6px 0 0 0;
+                        background: #fff;
+                        transition: .2s;
+                    }
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        display: block;
+                        width: 21px;
+                        height: 3px;
+                        margin: 6px 0 0 0;
+                        background: #fff;
+                        transition: .2s;
+                    }
+                }
+            }
+        }
+        &.is-opened .main-menu__switcher {
+            z-index: 450;
+            &-btn {
+                span {
+                    background: #40545d;
+                    &:before {
+                        margin: 0;
+                        transform: rotate(45deg);
+                    }
+                    &:after {
+                        margin: 0;
+                        transform: rotate(-45deg);
+                    }
+                }
+            }
+        }
+        &__list {
+            display: none;
+        }
+    }
+}

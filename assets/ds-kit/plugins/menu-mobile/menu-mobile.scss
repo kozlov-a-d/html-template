@@ -1,8 +1,15 @@
-$mobile-menu-color-bg: #d7d9e5;
-$mobile-menu-color-main: #2b2b2b;
-$mobile-menu-color-header: #000;
-$mobile-menu-color-border: #adafbb;
-$mobile-menu-color-icons: #40545d;
+// $mobile-menu-color-bg: #d7d9e5;
+// $mobile-menu-color-main: #2b2b2b;
+// $mobile-menu-color-header: #000;
+// $mobile-menu-color-border: #adafbb;
+// $mobile-menu-color-icons: #40545d;
+// $mobile-menu-header-height: 70px;
+
+$mobile-menu-color-bg: #194769;
+$mobile-menu-color-main: #fff;
+$mobile-menu-color-header: #fff;
+$mobile-menu-color-border: #fff;
+$mobile-menu-color-icons: #fff;
 $mobile-menu-header-height: 70px;
 
 .menu-mobile{
@@ -39,6 +46,7 @@ $mobile-menu-header-height: 70px;
       color: $mobile-menu-color-header;
       line-height: $mobile-menu-header-height;
       text-align: left;
+      text-transform: uppercase;
       text-overflow:ellipsis;
       white-space: nowrap;
       background: none;

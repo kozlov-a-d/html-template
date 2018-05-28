@@ -14,7 +14,7 @@ var resizeComponent = (function(){
      * Заготовка для новых запросов, хранит настройки по умочанию, объединяется с новыми запросами
      * @type {{min: number, max: number, isEnter: boolean, onEnter: null, onEach: null}}
      */
-    var defaultQuery = { min: 0, max: 10000, isEnter: false, onEnter: null,  onEach: null };
+    var defaultQuery = { min: 0, max: 10000, isEnter: false, onEnter: null,  onEach: null, onExit: null };
 
     // PRIVATE =========================================================================================================
 
@@ -46,7 +46,9 @@ var resizeComponent = (function(){
                 query.onEach();
             }
         } else {
+            if(query.isEnter){  query.onExit(); }
             query.isEnter = false;
+
         }
     };
 
@@ -69,19 +71,26 @@ var resizeComponent = (function(){
             console.warn('resizeComponent: query.onEach type must be a function, now a ' + typeof validQuery.onEach);
             validQuery.onEach = null;
         }
+        if ( typeof validQuery.onExit !== 'function' && typeof validQuery.onExit !== 'undefined' ){
+            console.warn('resizeComponent: query.onEach type must be a function, now a ' + typeof validQuery.onExit);
+            validQuery.onExit = null;
+        }
         return validQuery;
     };
 
     // добавляем новый медиа-запрос
     var addQuery = function(query){
         var newQuery = Object.assign(defaultQuery, validateQuery(query));
+        console.log('newQuery', newQuery);
         self.queries.push(newQuery);
+        console.log('медиа-запросы', self.queries);
         triggerQuery(newQuery);
     };
 
     // перебираем все медиа-запросы при ресайзе, используется декоратор throttle
     var onResize = throttle(function(){
         // debounce
+
         self.queries.forEach(function (item) {
             triggerQuery(item);
         })
@@ -121,6 +130,8 @@ var resizeComponent = (function(){
          * @param {{min: number, max: number, onEnter: function, onEach: function}} query
          */
         addMediaQuery: function(query){
+
+            console.log('addMediaQuery', query);
             addQuery(query);
         },
         /**

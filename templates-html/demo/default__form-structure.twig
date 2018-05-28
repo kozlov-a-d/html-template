@@ -1,0 +1,239 @@
+<form action="" class="form">
+    <p class="form__heading">Defualt</p>
+    <p>Самая обычная форма, все элементы находятся один под другим</p>
+    <div class="col">
+        <div class="form__item -name">
+            <label>Имя</label>
+            <input type="text" placeholder="Как вас зовут?">
+            <div class="form__item-error"></div>
+        </div>
+        <div class="form__item -phone">
+            <label>Телефон</label>
+            <input type="tel" placeholder="Номер телефона">
+            <div class="form__item-error">
+                <ul>
+                    <li>Неправильный формат. Пример: 88008008080</li>
+                </ul>
+            </div>
+        </div>
+        <div class="form__item -email">
+            <label>Email</label>
+            <input type="email" placeholder="Электронная почта">
+            <div class="form__item-error"></div>
+        </div>
+        <div class="form__item -text">
+            <label>Сообщение</label>
+            <textarea placeholder="Текст сообщения"></textarea>
+            <div class="form__item-error"></div>
+        </div>
+    </div>
+
+    <div class="btns-container">
+        <div class="custom-checkbox -center">
+            <label for="app_sample_choice_privacy-policy-3" class="required">
+                <input type="checkbox" id="app_sample_choice_privacy-policy-3" value="1" required checked>
+                <span>Согласен с
+                    <a href="">политикой конфиденциальности</a>
+                </span>
+            </label>
+        </div>
+        <button class="btn" type="submit">Отправить</button>
+    </div>
+</form>
+
+<div class="helper-section-split"></div>
+
+<p class="form__heading">Line</p>
+<p>Модификатор
+    <code>
+        <span class="css-class-name">-line</span>
+    </code>
+</p>
+<p>
+    Все item'ы формы располагаются в линию, как inline-block'и.
+    <br> Также тут добавлен модификатор для кнопки
+    <code>
+        <span class="css-class-name">-width-100</span>
+    </code>, чтобы кнопка занимала всё доступное ей пространство.
+</p>
+<form action="" class="form -line">
+
+    <div class="form__item">
+        <input type="text" placeholder="Name">
+        <div class="form__item-error"></div>
+    </div>
+    <div class="form__item">
+        <input type="email" placeholder="Email">
+        <div class="form__item-error">
+            <ul>
+                <li>Неправильный формат. Пример: example@domain.ru</li>
+            </ul>
+        </div>
+    </div>
+    <div class="btns-container">
+        <button class="btn -width-100" type="submit">Submit</button>
+    </div>
+</form>
+
+<div class="helper-section-split"></div>
+
+<h2>Column 1-2 / 1-1-1</h2>
+<p>Модификатор
+    <code>
+        <span class="css-class-name">-columns</span>
+    </code>
+</p>
+<p>Добавляются колонки, внутри которых вставляются item'ы формы</p>
+<form action="" class="form -columns">
+    <div class="col-1">
+        <div class="form__item">
+            <label>Name</label>
+            <input type="text" placeholder="Name">
+            <div class="form__item-error"></div>
+        </div>
+        <div class="form__item">
+            <label>Password</label>
+            <input type="password" placeholder="Password">
+            <div class="form__item-error"></div>
+        </div>
+        <div class="form__item">
+            <label>Email</label>
+            <input type="email" placeholder="Email">
+            <div class="form__item-error">
+                <ul>
+                    <li>Неправильный формат. Пример: example@domain.ru</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-2">
+        <div class="form__item">
+            <label>Text</label>
+            <textarea placeholder="Text"></textarea>
+            <div class="form__item-error"></div>
+        </div>
+    </div>
+
+    <div class="btns-container col-1-1">
+        <button class="btn" type="submit">Submit</button>
+    </div>
+</form>
+
+<div class="helper-section-split"></div>
+
+<p>Пример формы с колонками 1-1-1</p>
+<form action="" class="form -columns">
+    <div class="col-1">
+        <div class="form__item">
+            <label>Name</label>
+            <input type="text" placeholder="Name">
+            <div class="form__item-error"></div>
+        </div>
+        <div class="form__item">
+            <label>Email</label>
+            <input type="email" placeholder="Password">
+            <div class="form__item-error">
+                <ul>
+                    <li>Неправильный формат. Пример: example@domain.ru</li>
+                </ul>
+            </div>
+        </div>
+        <div class="form__item">
+            <label>Password</label>
+            <input type="password" placeholder="Password">
+            <div class="form__item-error"></div>
+        </div>
+    </div>
+    <div class="col-1">
+        <div class="form__item">
+            <label>Name</label>
+            <input type="text" placeholder="Name">
+            <div class="form__item-error"></div>
+        </div>
+        <div class="form__item">
+            <label>Email</label>
+            <input type="email" placeholder="Password">
+            <div class="form__item-error"></div>
+        </div>
+        <div class="form__item">
+            <label>Password</label>
+            <input type="password" placeholder="Password">
+            <div class="form__item-error"></div>
+        </div>
+    </div>
+    <div class="col-1">
+        <div class="form__item">
+            <label>Text</label>
+            <textarea placeholder="Text"></textarea>
+            <div class="form__item-error"></div>
+        </div>
+    </div>
+
+    <div class="btns-container col-1-1">
+        <button class="btn" type="submit">Submit</button>
+    </div>
+</form>
+
+<div class="helper-section-split"></div>
+
+<h2>Horizontal</h2>
+<p>Модификатор
+    <code>
+        <span class="css-class-name">-horizontal</span>
+    </code>
+</p>
+<p>У каждого item'а название и поле расположены в линию</p>
+
+<form action="" class="form -horizontal">
+    <div class="form__item">
+        <label class="form__item-name">Name</label>
+        <input class="form__item-field" type="text" placeholder="Name">
+        <div class="form__item-error"></div>
+    </div>
+    <div class="form__item">
+        <label class="form__item-name">Email</label>
+        <input class="form__item-field" type="email" placeholder="Password">
+        <div class="form__item-error">
+            <ul>
+                <li>Неправильный формат. Пример: example@domain.ru</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="btns-container col-1-1">
+        <button class="btn" type="submit">Submit</button>
+    </div>
+</form>
+
+<div class="helper-section-split"></div>
+
+
+<h2>Horizontal + description</h2>
+<p>Модификатор
+    <code>
+        <span class="css-class-name">-horizontal-desc</span>
+    </code>
+</p>
+<p>Аналогично horizontal, только к полям добавляется описание</p>
+<form action="" class="form -horizontal-desc">
+    <div class="form__item">
+        <label class="form__item-name">Name</label>
+        <input class="form__item-field" type="text" placeholder="Name">
+        <div class="form__item-desc">Описание поля</div>
+        <div class="form__item-error"></div>
+    </div>
+    <div class="form__item">
+        <label class="form__item-name">Email</label>
+        <input class="form__item-field" type="email" placeholder="Password">
+        <div class="form__item-desc">Очень длинное описание поля очень длинное описание поля очень длинное описание поля очень длинное описание поля</div>
+        <div class="form__item-error">
+            <ul>
+                <li>Неправильный формат. Пример: example@domain.ru</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="btns-container col-1-1">
+        <button class="btn" type="submit">Submit</button>
+    </div>
+</form>

@@ -1,0 +1,182 @@
+.catalog-subdir {
+    padding: 15px 20px;
+    border-bottom: 2px solid #e4e8eb;
+    @media (max-width: $md) {
+        border-bottom: none;
+        border-top: 1px solid #e4e8eb;
+    }
+    &__container {
+        width: 100%;
+        max-width: $content-width;
+        margin: 0 auto;
+    }
+    &__btn-switcher {
+        display: none;
+        @media (max-width: $md) {
+            display: block;
+            margin: 0 auto;
+        }
+    }
+    &__list {
+        display: block;
+        padding: 0;
+        list-style: none;
+        margin-top: 0;
+        margin-bottom: 0;
+        @media (max-width: $md) {
+            display: none !important;
+        }
+    }
+    &.-col-2 {
+        $grid-gap: 16px;
+        .catalog-subdir {
+            &__list {
+                @include grid($grid-gap);
+            }
+            &__item {
+                @include grid-col(1/2, $grid-gap);
+                display: table;
+                position: relative;
+                border-radius: 5px;
+                background-color: rgb(225, 225, 225);
+                &-img {
+                    display: table-cell;
+                    vertical-align: middle;
+                    width: 36%;
+                    img {
+                        display: block;
+                        margin: 0 auto;
+                    }
+                }
+                &-name {
+                    display: table-cell;
+                    vertical-align: middle;
+                    font-size: 20px;
+                    color: #3a4750;
+                    text-align: left;
+                    text-decoration: none;
+                    line-height: 24px;
+                    padding: 16px;
+                    &:before {
+                        content: 'Смотреть каталог';
+                        display: block;
+                        width: 140px;
+                        font-size: 14px;
+                        line-height: 20px;
+                        color: #3a4750;
+                        transition: 0.3s;
+                        margin-top: -20px;
+                        opacity: 0;
+                        background: url('http://via.placeholder.com/14x20') right bottom no-repeat;
+                    }
+                }
+                &:hover {
+                    .catalog-subdir__item-name {
+                        &:before {
+                            margin-top: 0;
+                            font-size: 14px;
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.-col-3 {
+        $grid-gap: 16px;
+        .catalog-subdir {
+            &__list {
+                @include grid($grid-gap);
+            }
+            &__item {
+                @include grid-col(1/3,
+                $grid-gap);
+                display: table;
+                position: relative;
+                border-radius: 5px;
+                overflow: hidden;
+                background-color: rgb(225, 225, 225);
+                &-img {
+                    display: table-cell;
+                    vertical-align: middle;
+                    width: 120px;
+                    img {
+                        display: block;
+                        margin: 0 auto;
+                        width: 100%;
+                    }
+                }
+                &-name {
+                    display: table-cell;
+                    vertical-align: middle;
+                    font-size: 17px;
+                    color: #3a4750;
+                    text-align: left;
+                    text-decoration: none;
+                    line-height: 21px;
+                    padding: 16px 6px;
+                    &:after {
+                        content: 'Смотреть каталог';
+                        display: block;
+                        width: 140px;
+                        font-size: 14px;
+                        line-height: 20px;
+                        color: #3a4750;
+                        transition: 0.3s;
+                        margin-bottom: -20px;
+                        opacity: 0;
+                        background: url('http://via.placeholder.com/14x20') right bottom no-repeat;
+                    }
+                }
+                &:hover {
+                    .catalog-subdir__item-name {
+                        &:after {
+                            font-size: 14px;
+                            margin-bottom: 0;
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.-col-5 {
+        $grid-gap: 22px;
+        .catalog-subdir {
+            &__list {
+                @include grid($grid-gap);
+            }
+            &__item {
+                @include grid-col(1/5,
+                $grid-gap);
+                display: table;
+                position: relative;
+                border-radius: 5px;
+                background-color: rgb(225, 225, 225);
+                &-img {
+                    display: block;
+                    padding: 5px 0 0;
+                    img {
+                        display: block;
+                        margin: 0 auto;
+                    }
+                }
+                &-name {
+                    display: block;
+                    font-size: 14px;
+                    color: #3a4750;
+                    text-align: center;
+                    text-decoration: none;
+                    line-height: 20px;
+                    padding: 16px;
+                }
+                &-link {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    opacity: 0;
+                }
+            }
+        }
+    }
+}

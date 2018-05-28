@@ -75,7 +75,7 @@ var scrollComponent = (function(){
             if( typeof selector !== 'undefined') addTransformElements(selector);
         },
         /**
-         * Добавляем или получаем значение прокрутки
+         * Задаём или получаем значение прокрутки
          * @param {number} value новое значение 
          * @returns {number} текущее значение
          */

@@ -31,10 +31,9 @@
                     $link.data('clicked', true).html(AJAX_LOADER);
 
                     $.ajax({
-                        url: $link.attr('href')
+                        url: ( $link.attr('data-url') ) ? $link.attr('data-url') : $link.attr('href')
                     }).done(function (html) {
-                        
-                        $('body').append(
+                        var $html = $(
                             '<div class="modal ' + $link.attr('data-class') + '" id="' + modalId + '">' +
                                 '<div class="modal__wrapper">' +
                                     '<div class="modal__bg"></div>' +
@@ -48,16 +47,19 @@
                                 '</div>' +
                             '</div>'
                         );
+                        $('body').append($html);
                         setTimeout(function(){
                             scrollComponent.disable();
                             methods.addEventListener($('#' + modalId));
+                            $(document).trigger('app.html', {
+                                $html: $html
+                            });
+                            $html.find('input[required]:visible:first').trigger('focus');
                         }, 10);
                     }).always(function () {
                         $link.removeData('clicked').html(linkContent);
                         $('.modal__loader').css({'opacity': 0, 'pointerEvents': 'none'});
-                    }).fail(function () {
-                        console.warn('Ajax fail');
-                    });
+                    }).fail(App.onAjaxFail);
                 })
                 
                 
@@ -81,11 +83,6 @@
                 }, 1350);
             });
         },
-
-        // проверяет элементы, если элементу не хватает места, то скрывает его
-        hideItem : function () {
-            
-        }
 
     };
 

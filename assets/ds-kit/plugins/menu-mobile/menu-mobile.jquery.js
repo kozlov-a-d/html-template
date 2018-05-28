@@ -2,15 +2,15 @@
 
     var defaults = {
         text: {
-            rootTitle: 'Меню'
+            rootTitle: 'Menu'
         },
         selectors: {
-            nodeRoot: '[data-menu-mobile--root]',
-            nodeLink: '[data-menu-mobile--item-name]',
-            node: 'data-menu-mobile--has-drop-down',
+            nodeRoot: '.is-root',
+            nodeLink: 'a',
+            node: '-has-dropdown',
             btnToggle: '[data-menu-mobile--switcher-btn]'
         }
-    };
+    }; 
 
 
 
@@ -41,8 +41,6 @@
             init : function( options ) {
 
                 menuMobile.settings = $.extend({}, defaults, options);
-
-                // this.each(function() {
 
                 var container = $(this);
                 var id = Math.round( Math.random()*10000);
@@ -83,7 +81,7 @@
                             name: $(this).children(nodeLink).text(),
                             href: $(this).children(nodeLink).attr('href'),
                             elementLink: $(this),
-                            hasChild:  $(this).attr(node) != null,
+                            hasChild:  $(this).hasClass(node),
                             parentId: parentNode.id
                         };
                         tree.push(currNode);
@@ -99,7 +97,7 @@
                 $('body').append('' +
                     '<menu-mobile class="menu-mobile" id="menu-mobile-' + id + '"></menu-mobile>'
                 );
-
+                // console.log(tree);
                 return initMenuMobile(id, tree);
             },
 

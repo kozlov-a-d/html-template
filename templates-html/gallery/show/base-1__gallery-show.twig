@@ -1,0 +1,68 @@
+{%  set galeryItems = [ {
+    img: 'http://via.placeholder.com/305x181',
+    imgFull: 'http://via.placeholder.com/900x600',
+    imgSize: '900x600',
+    name: 'Test name 1',
+},{
+    img: 'http://via.placeholder.com/305x181',
+    imgFull: 'http://via.placeholder.com/1900x600',
+    imgSize: '1900x600',
+    name: 'Test name 2',
+},{
+    img: 'http://via.placeholder.com/305x181',
+    imgFull: 'http://via.placeholder.com/1200x600',
+    imgSize: '1200x600',
+    name: 'Test name 3',
+},{
+    img: 'http://via.placeholder.com/305x181',
+    imgFull: 'http://via.placeholder.com/900x1600',
+    imgSize: '900x1600',
+    name: 'Test name 4',
+},{
+    img: 'http://via.placeholder.com/305x181',
+    imgFull: 'http://via.placeholder.com/900x600',
+    imgSize: '900x600',
+    name: 'Test name 5',
+},{
+    img: 'http://via.placeholder.com/305x181',
+    imgFull: 'http://via.placeholder.com/900x600',
+    imgSize: '900x600',
+    name: 'Test name 6',
+},{
+    img: 'http://via.placeholder.com/305x181',
+    imgFull: 'http://via.placeholder.com/900x600',
+    imgSize: '900x600',
+    name: 'Test name 1',
+},{
+    img: 'http://via.placeholder.com/305x181',
+    imgFull: 'http://via.placeholder.com/1900x600',
+    imgSize: '1900x600',
+    name: 'Test name 2',
+},{
+    img: 'http://via.placeholder.com/305x181',
+    imgFull: 'http://via.placeholder.com/1200x600',
+    imgSize: '1200x600',
+    name: 'Test name 3',
+},{
+    img: 'http://via.placeholder.com/305x181',
+    imgFull: 'http://via.placeholder.com/900x1600',
+    imgSize: '900x1600',
+    name: 'Test name 4',
+},{
+    img: 'http://via.placeholder.com/305x181',
+    imgFull: 'http://via.placeholder.com/900x600',
+    imgSize: '900x600',
+    name: 'Test name 5',
+},{
+    img: 'http://via.placeholder.com/305x181',
+    imgFull: 'http://via.placeholder.com/900x600',
+    imgSize: '900x600',
+    name: 'Test name 6',
+}] %}
+<div class="gallery-show js-photoswipe-gallery">
+    {% for item in galeryItems %}
+    <div class="gallery-show__item">
+        <a href="{{ item.imgFull }}" data-size="{{ item.imgSize }}"><img src="{{ item.img }}" alt="{{ item.name }}" title="{{ item.name }}"></a>
+    </div>
+    {% endfor %}
+</div>

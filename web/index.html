@@ -1,1108 +1,166 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="format-detection" content="telephone=no">
-    <base href="/">
+    <meta charset="UTF-8">
+    <title>Home page | template site </title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="format-detection" content="telephone=no">
 
-    <title>HTML Template</title>
+<!-- Meta Tags -->
+<meta name="description" content="description">
+<meta name="keywords" content="keywords">
 
-    <!-- Meta Tags -->
+<meta property="og:title" content="значение из основного title" />
+<meta property="og:image" content="это URL на картинку. Это будет отдельная картинка размеров 1200x630" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:description" content="значение из meta description" />
+<meta property="og:url" content="полный URL текущей страницы" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="название сайта" />
 
-    <meta name="description" content="">
+<meta property="article:publisher" content="A Facebook page URL or ID of the publishing entity" />
+<meta property="article:author" content="Facebook profile URLs or ID of the author for this article" />
 
-    <meta property="og:title" content="значение из основного title" />
-    <meta property="og:image" content="это URL на картинку. Это будет отдельная картинка размеров 1200x630" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:description" content="значение из meta description" />
-    <meta property="og:url" content="полный URL текущей страницы" />
-    <meta property="og:type" content="article" />
-    <meta property="og:site_name" content="название сайта" />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content="полный URL текущей страницы" />
+<meta property="twitter:title" content="значение из основного title" />
+<meta property="twitter:description" content="значение из meta description" />
+<meta property="twitter:image" content="это URL на картинку. Та же самая которая добавляется для метатега фейсбука" />
+<meta property="twitter:image:width" content="1200" />
+<meta property="twitter:image:height" content="630" />
+<meta property="twitter:site" content="аккаунт твиттера" />
 
-    <meta property="article:publisher" content="A Facebook page URL or ID of the publishing entity" />
-    <meta property="article:author" content="Facebook profile URLs or ID of the author for this article" />
+<script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "name": "OrganizationName",
+        "url": "http://domain.ru",
+        "sameAs": [
+            "http://vk.com/id",
+            "https://www.facebook.com/id",
+            "https://twitter.com/id",
+            "https://plus.google.com/+id"
+        ]
+    }
 
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="полный URL текущей страницы" />
-    <meta property="twitter:title" content="значение из основного title" />
-    <meta property="twitter:description" content="значение из meta description" /> 
-    <meta property="twitter:image" content="это URL на картинку. Та же самая которая добавляется для метатега фейсбука" />
-    <meta property="twitter:image:width" content="1200" />
-    <meta property="twitter:image:height" content="630" />
-    <meta property="twitter:site" content="аккаунт твиттера" />
+</script>
 
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-
-    <!-- main styles -->
-    <link rel="stylesheet" href="assets/build-dev/app.css" />
-
-    <script type="application/ld+json">
-        {
-            "@context": "http://schema.org",
-            "@type": "Organization",
-            "name": "OrganizationName",
-            "url": "http://domain.ru",
-            "sameAs": [
-                "http://vk.com/id",
-                "https://www.facebook.com/id",
-                "https://twitter.com/id",
-                "https://plus.google.com/+id"
-            ]
-        }
-    </script>
-
+    <link rel="shortcut icon" href="assets/favicon.ico">
+     <link rel="stylesheet" href="assets/build-dev/app.css">
 </head>
 
-<body>
-
-    <!-- WRAPPER begin -->
-    <div class="l-wrapper">
-        <!-- HEADER begin -->
-        <header class="l-header">
-            <div class="header-top">
-                <div class="header-top__container">
-                    <div class="header-top__social-link">
-                        <a href="" rel="noreferrer noopener" target="_blank"><img src="http://via.placeholder.com/20x20/c0c0c0/000000" alt="Facebook" title="Facebook"></a>
-                        <a href="" rel="noreferrer noopener" target="_blank"><img src="http://via.placeholder.com/20x20/c0c0c0/000000" alt="Instagram" title="Instagram"></a>
-                        <a href="" rel="noreferrer noopener" target="_blank"><img src="http://via.placeholder.com/20x20/c0c0c0/000000" alt="VKontakte" title="VKontakte"></a>
-                        <a href="" rel="noreferrer noopener" target="_blank"><img src="http://via.placeholder.com/20x20/c0c0c0/000000" alt="Twitter" title="Twitter"></a>
-                        <a href="" rel="noreferrer noopener" target="_blank"><img src="http://via.placeholder.com/20x20/c0c0c0/000000" alt="Odnoklassniki" title="Odnoklassniki"></a>
-                    </div>
-            
-                    <a class="header-top__item cart-header" href="#">Корзина <span class="cart-header__count">24</span></a>
-                    <a class="header-top__item account-header" href="#">Личный кабинет</a>
-                    <a class="header-top__item email-header" href="mailto:domain@example.com">domain@example.com</a>
-                </div>
-            </div><!-- end header-top-->
-            <div class="header-middle">
-                <div class="header-middle__container l-container">
-                    <a class="logo-header js-logo-header" href="/"><img src="http://via.placeholder.com/225x60/c0c0c0/ffffff" alt="" title=""></a>
-            
-                    <a class="header-middle__btn -send-enquiry btn js-ajax" data-class="-dark -send-enquiry" href="modal-send-enquiry.html">Оставить заявку</a>
-                    <a class="header-middle__btn -callback btn js-ajax" data-class="-dark -callback" href="modal-callback.html">Перезвоните мне</a>
-            
-                    <div class="header-middle__toggle">
-                        <div class="header-middle__toggle-container">
-                            <span class="header-middle__time">С 9:00 до 18:00</span>
-                            <div class="header-middle__phone-list">
-                                <a class="header-middle__phone -first" href="tel:+70000000000">+7 (000) 000-00-00</a>
-                                <a class="header-middle__phone" href="tel:+70000000000">+7 (000) 000-00-00</a>
-                                <a class="header-middle__phone" href="tel:+70000000000">+7 (000) 000-00-00</a>
-                            </div>
-                        </div>
-                    </div><!-- end header-middle__toggle -->
-                </div>
-            </div><!-- end header-middle-->
-            <nav class="menu-top js-menu-smart js-menu-mobile">
-            
-                <div class="menu-top__switcher">
-                    <button class="menu-top__switcher-btn" data-menu-mobile--switcher-btn><span>Меню</span></button>
-                </div>
-            
-                <ul class="menu-top__list" data-menu-mobile--root>
-                    <li class="menu-top__item -has-drop-down" data-menu-mobile--has-drop-down>
-                        <a class="menu-top__item-name" href="#" data-menu-mobile--item-name>Demo</a>
-                        <div class="menu-top__drop-down">
-                            <ul class="menu-top__list">
-                                <li class="menu-top__item">
-                                    <a class="menu-top__item-name" href="demo/grid.html" data-menu-mobile--item-name>Grids</a>
-                                </li>
-                                <li class="menu-top__item">
-                                    <a class="menu-top__item-name" href="demo/typography.html" data-menu-mobile--item-name>Typography</a>
-                                </li>
-                                <li class="menu-top__item">
-                                    <a class="menu-top__item-name" href="demo/tables.html" data-menu-mobile--item-name>Tables</a>
-                                </li>
-                                <li class="menu-top__item">
-                                    <a class="menu-top__item-name" href="demo/forms.html" data-menu-mobile--item-name>Forms</a>
-                                </li>
-            
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="menu-top__item -has-drop-down" data-menu-mobile--has-drop-down>
-                        <a class="menu-top__item-name" href="#" data-menu-mobile--item-name>Каталог</a>
-                        <div class="menu-top__drop-down">
-                            <ul class="menu-top__list">
-                                <li class="menu-top__item">
-                                    <a class="menu-top__item-name" href="#" data-menu-mobile--item-name>Теплоизоляция ППУ</a>
-                                </li>
-                                <li class="menu-top__item">
-                                    <a class="menu-top__item-name" href="#" data-menu-mobile--item-name>Опоры трубопроводов</a>
-                                </li>
-                                <li class="menu-top__item">
-                                    <a class="menu-top__item-name" href="#" data-menu-mobile--item-name>Фасонные изделия</a>
-                                </li>
-                                <li class="menu-top__item">
-                                    <a class="menu-top__item-name" href="#" data-menu-mobile--item-name>Комплекты изоляции стыков</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="menu-top__item">
-                        <a class="menu-top__item-name" href="#" data-menu-mobile--item-name>Прайс</a>
-                    </li>
-                    <li class="menu-top__item -has-drop-down" data-menu-mobile--has-drop-down>
-                        <a class="menu-top__item-name" href="#" data-menu-mobile--item-name>Производство</a>
-                        <div class="menu-top__drop-down">
-                            <ul class="menu-top__list">
-                                <li class="menu-top__item">
-                                    <a class="menu-top__item-name" href="#" data-menu-mobile--item-name>Тестовая страница</a>
-                                </li>
-                            </ul>
-                        </div>
-            
-                    </li>
-                    <li class="menu-top__item">
-                        <a class="menu-top__item-name" href="#" data-menu-mobile--item-name>Доставка</a>
-                    </li>
-                    <li class="menu-top__item">
-                        <a class="menu-top__item-name" href="#" data-menu-mobile--item-name>Гарантия</a>
-                    </li>
-                    <li class="menu-top__item">
-                        <a class="menu-top__item-name" href="#" data-menu-mobile--item-name>Сертификаты</a>
-                    </li>
-                    <li class="menu-top__item">
-                        <a class="menu-top__item-name" href="#" data-menu-mobile--item-name>Сертификаты</a>
-                    </li>
-                    <li class="menu-top__item">
-                        <a class="menu-top__item-name" href="#" data-menu-mobile--item-name>Сертификаты</a>
-                    </li>
-                    <li class="menu-top__item">
-                        <a class="menu-top__item-name" href="#" data-menu-mobile--item-name>Доставка</a>
-                    </li>
-                    <li class="menu-top__item">
-                        <a class="menu-top__item-name" href="#" data-menu-mobile--item-name>Гарантия</a>
-                    </li>
-                    <li class="menu-top__item">
-                        <a class="menu-top__item-name" href="#" data-menu-mobile--item-name>Доставка</a>
-                    </li>
-                    <li class="menu-top__item">
-                        <a class="menu-top__item-name" href="#" data-menu-mobile--item-name>Гарантия</a>
-                    </li>
-                    <li class="menu-top__item">
-                        <a class="menu-top__item-name" href="#" data-menu-mobile--item-name>Сертификаты</a>
-                    </li>
-                </ul>
-            
-            
-            </nav>
-            <!-- /menu-top end -->
-            
-            
-        </header>
-        <!-- HEADER end -->
-
-        <!-- MAIN begin -->
-        <main class="l-main">
-
-            <div class="container">
-
-                <!-- slider begin -->
-
-                <div class="slider-header js-slider-header">
-
-                    <div class="js-slider">
-
-                        <div class="item slider-header__item">
-
-                            <img class="slider-header__img" src="http://via.placeholder.com/1920x550" alt="Слайд">
-
-                            <div class="slider-header__text-container">
-
-                                <p class="-title">Найдите новую одежду</p>
-
-                                <p>Обновите ваш гардероб к новому сезону!</p>
-
-                            </div>
-
-                        </div>
-
-                        <div class="item slider-header__item">
-
-                            <img class="slider-header__img" src="http://via.placeholder.com/1920x550" alt="Второй слайд">
-
-                            <div class="slider-header__text-container">
-
-                                <p class="-title">Второй слайд</p>
-
-                                <p>Обновите ваш гардероб к новому сезону!</p>
-
-                            </div>
-
-                        </div>
-
-                        <div class="item slider-header__item">
-
-                            <img class="slider-header__img" src="http://via.placeholder.com/1920x550" alt="Третий слайд">
-
-                        </div>
-
-                        <div class="item slider-header__item">
-
-                            <img class="slider-header__img" src="http://via.placeholder.com/1920x550" alt="Слайд">
-
-                            <div class="slider-header__text-container">
-
-                                <p class="-title">444 Найдите новую одежду</p>
-
-                                <p>Обновите ваш гардероб к новому сезону!</p>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                
-
-                    <div class="slider-header__nav nav-arrow">
-
-                        <button class="slider-header__nav-btn nav-arrow__btn -prev js-nav-prev">prev</button>
-
-                        <button class="slider-header__nav-btn nav-arrow__btn -next js-nav-next">next</button>
-
-                
-
-                        <div class="slider-header__nav-counter js-nav-counter"></div>
-
-                    </div>
-
-                
-
-                </div>
-
-                <!-- / slider end -->
-
-                <!-- galery-fullwidth -->
-
-                <section class="catalog-menu -col-2">
-
-                    <nav class="catalog-menu__container js-menu-mobile">
-
-                        <button class="catalog-menu__btn-switcher btn -dark" data-menu-mobile--switcher-btn>Каталог продукции</button>
-
-                        <ul class="catalog-menu__list" data-menu-mobile--root>
-
-                            <li class="catalog-menu__item">
-
-                                <a href="" class="catalog-menu__item-img"><img src="http://via.placeholder.com/100x100" alt=""></a>
-
-                                <a href="" class="catalog-menu__item-name" data-menu-mobile--item-name>Блузы и рубашки</a>
-
-                            </li>
-
-                            <li class="catalog-menu__item">
-
-                                <a href="" class="catalog-menu__item-img"><img src="http://via.placeholder.com/100x100" alt=""></a>
-
-                                <a href="" class="catalog-menu__item-name" data-menu-mobile--item-name>Пальто и парки</a>
-
-                            </li>
-
-                        </ul>
-
-                    </nav>
-
-                </section>
-
-                <!-- / galery-fullwidth END -->
-                <!-- galery-fullwidth -->
-                <section class="catalog-menu -col-3">
-                    <nav class="catalog-menu__container js-menu-mobile">
-                        <button class="catalog-menu__btn-switcher btn -dark" data-menu-mobile--switcher-btn>Каталог продукции</button>
-                        <ul class="catalog-menu__list" data-menu-mobile--root>
-                            <li class="catalog-menu__item">
-                                <a href="" class="catalog-menu__item-img"><img src="http://via.placeholder.com/100x100" alt=""></a>
-                                <a href="" class="catalog-menu__item-name" data-menu-mobile--item-name>Блузы и рубашки</a>
-                            </li>
-                            <li class="catalog-menu__item catalog-menu-item">
-                                <a href="" class="catalog-menu__item-img"><img src="http://via.placeholder.com/100x100" alt=""></a>
-                                <a href="" class="catalog-menu__item-name" data-menu-mobile--item-name>Пальто и парки</a>
-                            </li>
-                            <li class="catalog-menu__item catalog-menu-item">
-                                <a href="" class="catalog-menu__item-img"><img src="http://via.placeholder.com/100x100" alt=""></a>
-                                <a href="" class="catalog-menu__item-name" data-menu-mobile--item-name>Куртки и дубленки</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </section>
-                <!-- / galery-fullwidth END -->
-                <!-- galery-fullwidth -->
-                <section class="catalog-menu -col-5">
-                    <nav class="catalog-menu__container js-menu-mobile">
-                        <button class="catalog-menu__btn-switcher btn -dark" data-menu-mobile--switcher-btn>Каталог продукции</button>
-                        <ul class="catalog-menu__list" data-menu-mobile--root>
-                            <li class="catalog-menu__item">
-                                <a href="" class="catalog-menu__item-img"><img src="http://via.placeholder.com/110x110" alt=""></a>
-                                <a href="" class="catalog-menu__item-name" data-menu-mobile--item-name>Блузы и рубашки</a>
-                            </li>
-                            <li class="catalog-menu__item">
-                                <a href="" class="catalog-menu__item-img"><img src="http://via.placeholder.com/110x110" alt=""></a>
-                                <a href="" class="catalog-menu__item-name" data-menu-mobile--item-name>Пальто и парки</a>
-                            </li>
-                            <li class="catalog-menu__item">
-                                <a href="" class="catalog-menu__item-img"><img src="http://via.placeholder.com/110x110" alt=""></a>
-                                <a href="" class="catalog-menu__item-name" data-menu-mobile--item-name>Куртки и дубленки</a>
-                            </li>
-                            <li class="catalog-menu__item">
-                                <a href="" class="catalog-menu__item-img"><img src="http://via.placeholder.com/110x110" alt=""></a>
-                                <a href="" class="catalog-menu__item-name" data-menu-mobile--item-name>Блузы и рубашки</a>
-                            </li>
-                            <li class="catalog-menu__item">
-                                <a href="" class="catalog-menu__item-img"><img src="http://via.placeholder.com/110x110" alt=""></a>
-                                <a href="" class="catalog-menu__item-name" data-menu-mobile--item-name>Пальто и парки</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </section>
-                <!-- / galery-fullwidth END -->
-
-                <!-- text-block -top -->
-
-                <div class="text-block -top">
-
-                    <div class="text-block__container">
-
-                        <h1>Заголовок H1</h1>
-
-                        <p>
-
-                            <img class="response-img-md" src="http://via.placeholder.com/430x390" style="float: right; margin: -55px 0 20px 50px;" alt="">
-
-                            Интернет-магазин одежды Stylecloth – это доступные цены, широкий, регулярно обновляемый ассортимент. В онлайн-каталоге Stylecloth представлено около 7000 ведущих брендов женской, мужской и детской одежды и обуви, электроники, книжной продукции, ювелирных изделий, игрушек и т.д. Для удобства пользования онлайн-каталог поделен на разделы, все товары можно сортировать по ряду критериев: цена, материал изготовления, сезонность, бренд.</p>
-
-                
-
-                        <div class="js-spoiler-area hidden-md" data-btn-class="-secondary -fullwidth">
-
-                            <p>Интернет-магазин Stylecloth регулярно проводит масштабные распродажи, в рамках которых купить одежду и обувь становится еще реальнее. Чтобы быть в курсе предстоящих скидок или появления в ассортименте новых моделей одежды от любимых брендов, достаточно подписаться на email-рассылку магазина. Дополнительные выгодные условия действуют для постоянных покупателей Wildberries – персональная скидка, зависящая от процента выкупа вещей. </p>
-
-                        </div>
-
-                
-
-                    </div>
-
-                </div>
-
-                <!-- / text-block -top END -->
-                <!-- hits-widget -->
-                <section class="hits-widget js-hits-widget">
-                
-                    <div class="hits-widget__header">
-                        <div class="hits-widget__title">
-                            <h2>Хиты продаж</h2>
-                        </div>
-                        <div class="hits-widget__nav nav-arrow">
-                            <button class="hits-widget__nav-btn nav-arrow__btn -prev js-nav-prev">prev</button>
-                            <button class="hits-widget__nav-btn nav-arrow__btn -next js-nav-next">next</button>
-                        </div>
-                    </div>
-                
-                    <div class="hits-widget__carousel owl-carousel">
-                
-                        <div class="hits-widget__item hit-item">
-                            <div class="hit-item__img">
-                                <a href=""><img src="http://via.placeholder.com/250x250/ffffff/000000" alt=""></a>
-                            </div>
-                            <div class="hit-item__text">
-                                <a href="" class="hit-item__name">Плотная рубашка из эластичной джинсовой ткани</a>
-                                <span class="hit-item__price">5 999 ₽</span>
-                            </div>
-                            <div class="hit-item__icons">
-                                <div class="hit-item__icon -hit">Хит продаж</div>
-                                <div class="hit-item__icon -stock">Акция</div>
-                            </div>
-                            <button class="hit-item__buy">Купить</button>
-                        </div>
-                
-                        <div class="hits-widget__item hit-item">
-                            <div class="hit-item__img">
-                                <a href=""><img src="http://via.placeholder.com/250x250/ffffff/000000" alt=""></a>
-                            </div>
-                            <div class="hit-item__text">
-                                <a href="" class="hit-item__name">Футболка с заклепками</a>
-                                <span class="hit-item__price">5 999 ₽</span>
-                            </div>
-                            <div class="hit-item__icons">
-                                <div class="hit-item__icon -hit">Хит продаж</div>
-                                <div class="hit-item__icon -stock">Акция</div>
-                            </div>
-                            <button class="hit-item__buy">Купить</button>
-                        </div>
-                        <div class="hits-widget__item hit-item">
-                            <div class="hit-item__img">
-                                <a href=""><img src="http://via.placeholder.com/250x250/ffffff/000000" alt=""></a>
-                            </div>
-                            <div class="hit-item__text">
-                                <a href="" class="hit-item__name">Футболка с заклепками</a>
-                                <span class="hit-item__price">5 999 ₽</span>
-                            </div>
-                            <div class="hit-item__icons">
-                                <div class="hit-item__icon -hit">Хит продаж</div>
-                                <div class="hit-item__icon -stock">Акция</div>
-                            </div>
-                            <button class="hit-item__buy">Купить</button>
-                        </div>
-                        <div class="hits-widget__item hit-item">
-                            <div class="hit-item__img">
-                                <a href=""><img src="http://via.placeholder.com/250x250/ffffff/000000" alt=""></a>
-                            </div>
-                            <div class="hit-item__text">
-                                <a href="" class="hit-item__name">Футболка с заклепками</a>
-                                <span class="hit-item__price">5 999 ₽</span>
-                            </div>
-                            <div class="hit-item__icons">
-                                <div class="hit-item__icon -hit">Хит продаж</div>
-                                <div class="hit-item__icon -stock">Акция</div>
-                            </div>
-                            <button class="hit-item__buy">Купить</button>
-                        </div>
-                        <div class="hits-widget__item hit-item">
-                            <div class="hit-item__img">
-                                <a href=""><img src="http://via.placeholder.com/250x250/ffffff/000000" alt=""></a>
-                            </div>
-                            <div class="hit-item__text">
-                                <a href="" class="hit-item__name">Футболка с заклепками</a>
-                                <span class="hit-item__price">5 999 ₽</span>
-                            </div>
-                            <div class="hit-item__icons">
-                                <div class="hit-item__icon -hit">Хит продаж</div>
-                                <div class="hit-item__icon -stock">Акция</div>
-                            </div>
-                            <button class="hit-item__buy">Купить</button>
-                        </div>
-                        <div class="hits-widget__item hit-item">
-                            <div class="hit-item__img">
-                                <a href=""><img src="http://via.placeholder.com/250x250/ffffff/000000" alt=""></a>
-                            </div>
-                            <div class="hit-item__text">
-                                <a href="" class="hit-item__name">Футболка с заклепками</a>
-                                <span class="hit-item__price">5 999 ₽</span>
-                            </div>
-                            <div class="hit-item__icons">
-                                <div class="hit-item__icon -hit">Хит продаж</div>
-                                <div class="hit-item__icon -stock">Акция</div>
-                            </div>
-                            <button class="hit-item__buy">Купить</button>
-                        </div>
-                        <div class="hits-widget__item hit-item">
-                            <div class="hit-item__img">
-                                <a href=""><img src="http://via.placeholder.com/250x250/ffffff/000000" alt=""></a>
-                            </div>
-                            <div class="hit-item__text">
-                                <a href="" class="hit-item__name">Футболка с заклепками</a>
-                                <span class="hit-item__price">5 999 ₽</span>
-                            </div>
-                            <div class="hit-item__icons">
-                                <div class="hit-item__icon -hit">Хит продаж</div>
-                                <div class="hit-item__icon -stock">Акция</div>
-                            </div>
-                            <button class="hit-item__buy">Купить</button>
-                        </div>
-                        <div class="hits-widget__item hit-item">
-                            <div class="hit-item__img">
-                                <a href=""><img src="http://via.placeholder.com/250x250/ffffff/000000" alt=""></a>
-                            </div>
-                            <div class="hit-item__text">
-                                <a href="" class="hit-item__name">Футболка с заклепками</a>
-                                <span class="hit-item__price">5 999 ₽</span>
-                            </div>
-                            <div class="hit-item__icons">
-                                <div class="hit-item__icon -hit">Хит продаж</div>
-                                <div class="hit-item__icon -stock">Акция</div>
-                            </div>
-                            <button class="hit-item__buy">Купить</button>
-                        </div>
-                    </div>
-                
-                </section>
-                <!-- / hits-widget END -->
-                <!-- work-scheme -->
-                <section class="work-scheme">
-                    <div class="work-scheme__container">
-                
-                        <div class="work-scheme__title">
-                            <h2>Схема работы</h2>
-                        </div>
-                
-                        <div class="work-scheme__list">
-                            <div class="work-scheme__item">
-                                <div class="work-scheme__item-img">
-                                    <img src="http://via.placeholder.com/66x66" alt="">
-                                </div>
-                                <p>Вы выбираете товар в каталоге</p>
-                            </div>
-                            <div class="work-scheme__item">
-                                <div class="work-scheme__item-img">
-                                    <img src="http://via.placeholder.com/66x66" alt="">
-                                </div>
-                                <p>Вы выбираете товар в каталоге</p>
-                            </div>
-                            <div class="work-scheme__item">
-                                <div class="work-scheme__item-img">
-                                    <img src="http://via.placeholder.com/66x66" alt="">
-                                </div>
-                                <p>Вы выбираете товар в каталоге</p>
-                            </div>
-                            <div class="work-scheme__item">
-                                <div class="work-scheme__item-img">
-                                    <img src="http://via.placeholder.com/66x66" alt="">
-                                </div>
-                                <p>Вы выбираете товар в каталоге</p>
-                            </div>
-                            <div class="work-scheme__item">
-                                <div class="work-scheme__item-img">
-                                    <img src="http://via.placeholder.com/66x66" alt="">
-                                </div>
-                                <p>Вы выбираете товар в каталоге</p>
-                            </div>
-                            <div class="work-scheme__item">
-                                <div class="work-scheme__item-img">
-                                    <img src="http://via.placeholder.com/66x66" alt="">
-                                </div>
-                                <p>Вы выбираете товар в каталоге</p>
-                            </div>
-                        </div>
-                
-                    </div>
-                </section>
-                <!-- / work-scheme END -->
-                
-                <!-- certificates-and-partners -->
-                <div class="l-column-two">
-                    <div class="l-column-two__container">
-                        <div class="l-column-two__grid">
-                            <div class="l-column-two__column">
-                
-                                <!-- certificates -->
-                                <div class="certificates js-certificates">
-                                    <div class="certificates__header">
-                                        <div class="certificates__title">
-                                            <h2>Сертификаты</h2>
-                                        </div>
-                                        <div class="certificates__nav nav-arrow">
-                                            <button class="certificates__nav-btn nav-arrow__btn -prev js-nav-prev">prev</button>
-                                            <button class="certificates__nav-btn nav-arrow__btn -next js-nav-next">next</button>
-                                        </div>
-                                    </div>
-                                    <div class="certificates__carousel owl-carousel js-photoswipe-gallery">
-                                        <div class="certificates__item -big">
-                                            <a href="http://via.placeholder.com/400x800" data-size="400x800"><img src="http://via.placeholder.com/310x460" alt=""></a>
-                                        </div>
-                                        <div class="certificates__item">
-                                            <a href="http://via.placeholder.com/400x800" data-size="400x800"><img src="http://via.placeholder.com/144x220" alt=""></a>
-                                            <a href="http://via.placeholder.com/400x800" data-size="400x800"><img src="http://via.placeholder.com/144x220" alt=""></a>
-                                        </div>
-                                        <div class="certificates__item">
-                                            <a href="http://via.placeholder.com/400x800" data-size="400x800"><img src="http://via.placeholder.com/144x220" alt=""></a>
-                                            <a href="http://via.placeholder.com/400x800" data-size="400x800"><img src="http://via.placeholder.com/144x220" alt=""></a>
-                                        </div>
-                                        <div class="certificates__item">
-                                            <a href="http://via.placeholder.com/400x800" data-size="400x800"><img src="http://via.placeholder.com/144x220" alt=""></a>
-                                            <a href="http://via.placeholder.com/400x800" data-size="400x800"><img src="http://via.placeholder.com/144x220" alt=""></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- certificates End -->
-                
-                            </div>
-                            <div class="l-column-two__column">
-                
-                                <!-- partners -->
-                                <div class="partners js-partners">
-                                    <div class="partners__header">
-                                        <div class="partners__title">
-                                            <h2>Партнеры</h2>
-                                        </div>
-                                        <div class="partners__nav nav-arrow">
-                                            <button class="partners__nav-btn nav-arrow__btn -prev js-nav-prev">prev</button>
-                                            <button class="partners__nav-btn nav-arrow__btn -next js-nav-next">next</button>
-                                        </div>
-                                    </div>
-                                    <div class="partners__carousel js-slider">
-                                        <div class="partners__item"><a href=""><img src="http://via.placeholder.com/200x95" alt=""></a></div>
-                                        <div class="partners__item"><a href=""><img src="http://via.placeholder.com/200x95" alt=""></a></div>
-                                        <div class="partners__item"><a href=""><img src="http://via.placeholder.com/200x95" alt=""></a></div>
-                                        <div class="partners__item"><a href=""><img src="http://via.placeholder.com/200x95" alt=""></a></div>
-                                        <div class="partners__item"><a href=""><img src="http://via.placeholder.com/200x95" alt=""></a></div>
-                                        <div class="partners__item"><a href=""><img src="http://via.placeholder.com/200x95" alt=""></a></div>
-                                        <div class="partners__item"><a href=""><img src="http://via.placeholder.com/200x95" alt=""></a></div>
-                                        <div class="partners__item"><a href=""><img src="http://via.placeholder.com/200x95" alt=""></a></div>
-                                        <div class="partners__item"><a href=""><img src="http://via.placeholder.com/200x95" alt=""></a></div>
-                                        <div class="partners__item"><a href=""><img src="http://via.placeholder.com/200x95" alt=""></a></div>
-                                        <div class="partners__item"><a href=""><img src="http://via.placeholder.com/200x95" alt=""></a></div>
-                                        <div class="partners__item"><a href=""><img src="http://via.placeholder.com/200x95" alt=""></a></div>
-                                        <div class="partners__item"><a href=""><img src="http://via.placeholder.com/200x95" alt=""></a></div>
-                                        <div class="partners__item"><a href=""><img src="http://via.placeholder.com/200x95" alt=""></a></div>
-                                        <div class="partners__item"><a href=""><img src="http://via.placeholder.com/200x95" alt=""></a></div>
-                                        <div class="partners__item"><a href=""><img src="http://via.placeholder.com/200x95" alt=""></a></div>
-                                        <div class="partners__item"><a href=""><img src="http://via.placeholder.com/200x95" alt=""></a></div>
-                                        <div class="partners__item"><a href=""><img src="http://via.placeholder.com/200x95" alt=""></a></div>
-                                    </div>
-                                </div>
-                                <!-- partners End -->
-                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- / certificates-and-partners End -->
-                <!-- articles-widget -->
-                <section class="articles-widget js-articles-widget">
-                
-                    <div class="articles-widget__header">
-                        <div class="articles-widget__title">
-                            <h2>Статьи</h2>
-                        </div>
-                        <div class="articles-widget__nav nav-arrow">
-                            <button class="articles-widget__nav-btn nav-arrow__btn -prev js-nav-prev">prev</button>
-                            <button class="articles-widget__nav-btn nav-arrow__btn -next js-nav-next">next</button>
-                        </div>
-                    </div>
-                
-                    <div class="articles-widget__carousel owl-carousel">
-                
-                        <div class="articles-widget__item article-item">
-                            <div class="article-item__img">
-                                <a href=""><img src="http://via.placeholder.com/305x181" alt=""></a>
-                            </div>
-                            <div class="article-item__text">
-                                <a href="" class="article-item__name">Название статьи №1</a>
-                                <p>Выбирая украшения с перидотом, особое внимание обрати на кольца и серьги PANDORA: для новой коллекции ювелиры бренда выбрали камни мягкого оливкового цвета, тщательно огранили их и оправили в стерлинговое серебро — броско и в то же время универсально.</p>
-                            </div>
-                            <a class="article-item__link" href="#" rel="nofollow">Читать далее</a>
-                        </div>
-                
-                        <div class="articles-widget__item article-item">
-                            <div class="article-item__img">
-                                <a href=""><img src="http://via.placeholder.com/305x181" alt=""></a>
-                            </div>
-                            <div class="article-item__text">
-                                <a href="" class="article-item__name">Название статьи №1</a>
-                                <p>Выбирая украшения с перидотом, особое внимание обрати на кольца и серьги PANDORA: для новой коллекции ювелиры бренда выбрали камни мягкого оливкового цвета, тщательно огранили их и оправили в стерлинговое серебро — броско и в то же время универсально.</p>
-                            </div>
-                            <a class="article-item__link" href="#" rel="nofollow">Читать далее</a>
-                        </div>
-                        <div class="articles-widget__item article-item">
-                            <div class="article-item__img">
-                                <a href=""><img src="http://via.placeholder.com/305x181" alt=""></a>
-                            </div>
-                            <div class="article-item__text">
-                                <a href="" class="article-item__name">Название статьи №1</a>
-                                <p>Выбирая украшения с перидотом, особое внимание обрати на кольца и серьги PANDORA: для новой коллекции ювелиры бренда выбрали камни мягкого оливкового цвета, тщательно огранили их и оправили в стерлинговое серебро — броско и в то же время универсально.</p>
-                            </div>
-                            <a class="article-item__link" href="#" rel="nofollow">Читать далее</a>
-                        </div>
-                        <div class="articles-widget__item article-item">
-                            <div class="article-item__img">
-                                <a href=""><img src="http://via.placeholder.com/305x181" alt=""></a>
-                            </div>
-                            <div class="article-item__text">
-                                <a href="" class="article-item__name">Название статьи №1</a>
-                                <p>Выбирая украшения с перидотом, особое внимание обрати на кольца и серьги PANDORA: для новой коллекции ювелиры бренда выбрали камни мягкого оливкового цвета, тщательно огранили их и оправили в стерлинговое серебро — броско и в то же время универсально.</p>
-                            </div>
-                            <a class="article-item__link" href="#" rel="nofollow">Читать далее</a>
-                        </div>
-                        <div class="articles-widget__item article-item">
-                            <div class="article-item__img">
-                                <a href=""><img src="http://via.placeholder.com/305x181" alt=""></a>
-                            </div>
-                            <div class="article-item__text">
-                                <a href="" class="article-item__name">Название статьи №1</a>
-                                <p>Выбирая украшения с перидотом, особое внимание обрати на кольца и серьги PANDORA: для новой коллекции ювелиры бренда выбрали камни мягкого оливкового цвета, тщательно огранили их и оправили в стерлинговое серебро — броско и в то же время универсально.</p>
-                            </div>
-                            <a class="article-item__link" href="#" rel="nofollow">Читать далее</a>
-                        </div>
-                        <div class="articles-widget__item article-item">
-                            <div class="article-item__img">
-                                <a href=""><img src="http://via.placeholder.com/305x181" alt=""></a>
-                            </div>
-                            <div class="article-item__text">
-                                <a href="" class="article-item__name">Название статьи №1</a>
-                                <p>Выбирая украшения с перидотом, особое внимание обрати на кольца и серьги PANDORA: для новой коллекции ювелиры бренда выбрали камни мягкого оливкового цвета, тщательно огранили их и оправили в стерлинговое серебро — броско и в то же время универсально.</p>
-                            </div>
-                            <a class="article-item__link" href="#" rel="nofollow">Читать далее</a>
-                        </div>
-                        <div class="articles-widget__item article-item">
-                            <div class="article-item__img">
-                                <a href=""><img src="http://via.placeholder.com/305x181" alt=""></a>
-                            </div>
-                            <div class="article-item__text">
-                                <a href="" class="article-item__name">Название статьи №1</a>
-                                <p>Выбирая украшения с перидотом, особое внимание обрати на кольца и серьги PANDORA: для новой коллекции ювелиры бренда выбрали камни мягкого оливкового цвета, тщательно огранили их и оправили в стерлинговое серебро — броско и в то же время универсально.</p>
-                            </div>
-                            <a class="article-item__link" href="#" rel="nofollow">Читать далее</a>
-                        </div>
-                
-                
-                
-                    </div>
-                
-                </section>
-                <!-- / articles-widget END -->
-                <!-- news-widget -->
-                <section class="news-widget js-news-widget">
-                
-                    <div class="news-widget__header">
-                        <div class="news-widget__title">
-                            <h2>Новости</h2>
-                        </div>
-                        <div class="news-widget__nav nav-arrow">
-                            <button class="news-widget__nav-btn nav-arrow__btn -prev js-nav-prev">prev</button>
-                            <button class="news-widget__nav-btn nav-arrow__btn -next js-nav-next">next</button>
-                        </div>
-                    </div>
-                
-                    <div class="news-widget__carousel owl-carousel">
-                
-                        <div class="news-widget__item news-item">
-                            <div class="news-item__date">
-                                <span class="news-item__date-day">13</span>
-                                <span class="news-item__date-month">сент.</span>
-                            </div>
-                            <div class="news-item__text">
-                                <a href="" class="news-item__name">Псевдо гарантии или несбыточная мечта</a>
-                                <p>Женщина-политик в 21 веке все еще обязана доказывать обществу, что не зря занимает свое кресло. От Маши Кожевниковой до королевы...</p>
-                            </div>
-                        </div>
-                
-                        <div class="news-widget__item news-item">
-                            <div class="news-item__date">
-                                <span class="news-item__date-day">13</span>
-                                <span class="news-item__date-month">сент.</span>
-                            </div>
-                            <div class="news-item__text">
-                                <a href="" class="news-item__name">Псевдо гарантии или несбыточная мечта</a>
-                                <p>Женщина-политик в 21 веке все еще обязана доказывать обществу, что не зря занимает свое кресло. От Маши Кожевниковой до королевы...</p>
-                            </div>
-                        </div>
-                        <div class="news-widget__item news-item">
-                            <div class="news-item__date">
-                                <span class="news-item__date-day">13</span>
-                                <span class="news-item__date-month">сент.</span>
-                            </div>
-                            <div class="news-item__text">
-                                <a href="" class="news-item__name">Псевдо гарантии или несбыточная мечта</a>
-                                <p>Женщина-политик в 21 веке все еще обязана доказывать обществу, что не зря занимает свое кресло. От Маши Кожевниковой до королевы...</p>
-                            </div>
-                        </div>
-                        <div class="news-widget__item news-item">
-                            <div class="news-item__date">
-                                <span class="news-item__date-day">13</span>
-                                <span class="news-item__date-month">сент.</span>
-                            </div>
-                            <div class="news-item__text">
-                                <a href="" class="news-item__name">Псевдо гарантии или несбыточная мечта</a>
-                                <p>Женщина-политик в 21 веке все еще обязана доказывать обществу, что не зря занимает свое кресло. От Маши Кожевниковой до королевы...</p>
-                            </div>
-                        </div>
-                        <div class="news-widget__item news-item">
-                            <div class="news-item__date">
-                                <span class="news-item__date-day">13</span>
-                                <span class="news-item__date-month">сент.</span>
-                            </div>
-                            <div class="news-item__text">
-                                <a href="" class="news-item__name">Псевдо гарантии или несбыточная мечта</a>
-                                <p>Женщина-политик в 21 веке все еще обязана доказывать обществу, что не зря занимает свое кресло. От Маши Кожевниковой до королевы...</p>
-                            </div>
-                        </div>
-                        <div class="news-widget__item news-item">
-                            <div class="news-item__date">
-                                <span class="news-item__date-day">13</span>
-                                <span class="news-item__date-month">сент.</span>
-                            </div>
-                            <div class="news-item__text">
-                                <a href="" class="news-item__name">Псевдо гарантии или несбыточная мечта</a>
-                                <p>Женщина-политик в 21 веке все еще обязана доказывать обществу, что не зря занимает свое кресло. От Маши Кожевниковой до королевы...</p>
-                            </div>
-                        </div>
-                
-                    </div>
-                
-                    <!-- banners -->
-                
-                    <div class="banners">
-                
-                        <div class="banners__container">
-                
-                            <div class="banners__carousel owl-carousel">
-                
-                                <div class="banners__item">
-                
-                                    <a href="" class="banners__item-img"><img src="http://via.placeholder.com/305x150" alt=""></a>
-                
-                                    <div class="banners__item-text">
-                
-                                        <a href="" class="banners__item-title">Заголовок баннера</a>
-                
-                                        <p>Краткое описание баннера</p>
-                
-                                    </div>
-                
-                                </div>
-                
-                                <div class="banners__item">
-                
-                                    <a href="" class="banners__item-img"><img src="http://via.placeholder.com/305x150" alt=""></a>
-                
-                                    <div class="banners__item-text">
-                
-                                        <a href="" class="banners__item-title">Заголовок баннера</a>
-                
-                                        <p>Краткое описание баннера</p>
-                
-                                    </div>
-                
-                                </div>
-                
-                                <div class="banners__item">
-                
-                                    <a href="" class="banners__item-img"><img src="http://via.placeholder.com/305x150" alt=""></a>
-                
-                                    <div class="banners__item-text">
-                
-                                        <a href="" class="banners__item-title">Заголовок баннера</a>
-                
-                                        <p>Краткое описание баннера</p>
-                
-                                    </div>
-                
-                                </div>
-                
-                            </div>
-                
-                        </div>
-                
-                    </div>
-                
-                    <!-- / banners END -->
-                
-                </section>
-                <!-- / news-widget END -->
-                <!-- text-block -bottom -->
-                <div class="text-block -bottom">
-                    <div class="text-block__container">
-                        <h2>Заголовок H2</h2>
-                        <p>
-                            <img class="response-img-md" src="http://via.placeholder.com/430x390" style="float: right; margin: -55px 0 20px 50px; width: 430px; height: 390px;" alt="">
-                            Онлайн магазин Stylecloth осуществляет бесплатную доставку по всей России с помощью собственной курьерской службы. Также покупатель может забрать заказ из пункта самовывоза или получить по почте. Любую одежду, обувь и другие товары можно примерить перед оплатой заказа курьеру или в пункте самовывоза, оборудованном удобными примерочными.</p>
-                
-                        <div class="js-spoiler-area hidden-md" data-btn-class="-secondary -fullwidth">
-                            <p>Stylecloth предлагает несколько различных вариантов оплаты заказа как при оформлении, так и по факту при получении, - банковскими картой или переводом, наличным расчетом или электронным платежом. </p>
-                        </div>
-                        <p style="text-align: center">
-                            <a class="btn -inline js-ajax" data-class="-dark -send-enquiry" href="modal-send-enquiry.html">Оставить заявку</a>
-                        </p>
-                    </div>
-                </div>
-                <!-- / text-block -bottom END -->
-                <!-- galery-fullwidth -->
-                <section class="galery-fullwidth js-galery-fullwidth-centered">
-                
-                    <div class="galery-fullwidth__header">
-                        <div class="galery-fullwidth__title">
-                            <h2>Фотогалерея</h2>
-                        </div>
-                        <div class="galery-fullwidth__nav nav-arrow">
-                            <button class="galery-fullwidth__nav-btn nav-arrow__btn -prev js-nav-prev">prev</button>
-                            <button class="galery-fullwidth__nav-btn nav-arrow__btn -next js-nav-next">next</button>
-                        </div>
-                    </div>
-                
-                    <div class="galery-fullwidth__carousel owl-carousel js-photoswipe-gallery">
-                        <div class="galery-fullwidth__item">
-                            <a href="http://via.placeholder.com/900x600" data-size="900x600"><img src="http://via.placeholder.com/318x200" alt=""></a>
-                        </div>
-                        <div class="galery-fullwidth__item">
-                            <a href="http://via.placeholder.com/960x600" data-size="960x600"><img src="http://via.placeholder.com/318x200" alt=""></a>
-                        </div>
-                        <div class="galery-fullwidth__item">
-                            <a href="http://via.placeholder.com/900x500" data-size="900x500"><img src="http://via.placeholder.com/318x200" alt=""></a>
-                        </div>
-                        <div class="galery-fullwidth__item">
-                            <a href="http://via.placeholder.com/1900x1100" data-size="1900x1100"><img src="http://via.placeholder.com/318x200" alt=""></a>
-                        </div>
-                        <div class="galery-fullwidth__item">
-                            <a href="http://via.placeholder.com/300x600" data-size="300x600"><img src="http://via.placeholder.com/318x200" alt=""></a>
-                        </div>
-                        <div class="galery-fullwidth__item">
-                            <a href="http://via.placeholder.com/700x800" data-size="700x800"><img src="http://via.placeholder.com/318x200" alt=""></a>
-                        </div>
-                        <div class="galery-fullwidth__item">
-                            <a href="http://via.placeholder.com/1024x768" data-size="1024x768"><img src="http://via.placeholder.com/318x200" alt=""></a>
-                        </div>
-                    </div>
-                
-                </section>
-                <!-- / galery-fullwidth END -->
-                <!-- advantages -->
-                <section class="advantages js-advantages">
-                    <div class="advantages__container">
-                
-                        <div class="advantages__header">
-                            <div class="advantages__title">
-                                <h2>Преимущества работы с нами</h2>
-                            </div>
-                            <div class="advantages__nav nav-arrow">
-                                <button class="advantages__nav-btn nav-arrow__btn -prev js-nav-prev">prev</button>
-                                <button class="advantages__nav-btn nav-arrow__btn -next js-nav-next">next</button>
-                            </div>
-                        </div>
-                
-                        <div class="advantages__carousel owl-carousel">
-                            <div class="advantages__item">
-                                <div class="advantages__item-img"><img src="http://via.placeholder.com/120x120" alt=""></div>
-                                <div class="advantages__item-text">
-                                    <p class="advantages__item-name">Безопасность</p>
-                                    <p>Безопасность вашего дома гарантирует наличие не менее одного замка 4-го (высшего) класса по</p>
-                                </div>
-                            </div>
-                            <div class="advantages__item">
-                                <div class="advantages__item-img"><img src="http://via.placeholder.com/120x120" alt=""></div>
-                                <div class="advantages__item-text">
-                                    <p class="advantages__item-name">Надежность</p>
-                                    <p>Наши мастера прошли специальное обучение на курсах по ремонту электротехники</p>
-                                </div>
-                            </div>
-                            <div class="advantages__item">
-                                <div class="advantages__item-img"><img src="http://via.placeholder.com/120x120" alt=""></div>
-                                <div class="advantages__item-text">
-                                    <p class="advantages__item-name">Качество</p>
-                                    <p>Мы гарантируем качество оказания услуг и предоставление всех заявленных возможностей</p>
-                                </div>
-                            </div>
-                            <div class="advantages__item">
-                                <div class="advantages__item-img"><img src="http://via.placeholder.com/120x120" alt=""></div>
-                                <div class="advantages__item-text">
-                                    <p class="advantages__item-name">Гарантия</p>
-                                    <p>У нас представлен огромный выбор запасных деталей на все сегвеи</p>
-                                </div>
-                            </div>
-                        </div>
-                
-                    </div>
-                </section>
-                <!-- / advantages END -->
-                <!-- testimonials-widget -->
-                <section class="testimonials-widget js-testimonials-widget">
-                    <div class="testimonials-widget__container">
-                
-                        <div class="testimonials-widget__header">
-                            <div class="testimonials-widget__title">
-                                <h2>О нас говорят</h2>
-                            </div>
-                            <div class="testimonials-widget__nav nav-arrow">
-                                <button class="testimonials-widget__nav-btn nav-arrow__btn -prev js-nav-prev">prev</button>
-                                <button class="testimonials-widget__nav-btn nav-arrow__btn -next js-nav-next">next</button>
-                            </div>
-                        </div>
-                
-                        <div class="testimonials-widget__carousel js-slider">
-                            <div class="testimonials-widget__item">
-                                <p class="testimonials-widget__item-header">
-                                    <span class="testimonials-widget__item-name">Александр Пушкин</span>
-                                    <span class="testimonials-widget__item-date">2 ноября 2016</span>
-                                </p>
-                                <p>Раньше делали шубы гораздо качественней, сейчас же везде один Китай. В моей шубе нет дополнительного утеплителя, поэтому я мерзну в ней как цуцик. Я читала много форумов, и девушки писали что им не холодно в норке даже в - 30. Но либо они по природе своей "горячих" кровей, либо на них под норкой 3 теплых свитера.</p>
-                            </div>
-                            <div class="testimonials-widget__item">
-                                <p class="testimonials-widget__item-header">
-                                    <span class="testimonials-widget__item-name">Александр Пушкин</span>
-                                    <span class="testimonials-widget__item-date">2 ноября 2016</span>
-                                </p>
-                                <p>Свою любимую норочку я купила летом 2006 года и она до сих пор как новая (хотя как-то по-особому я за ней не ухаживала, ну, типа, там холодильника для шубы у меня нет))))). Летом хранила в специальном чехле, вот и вся забота. Но зато какая она теплая! Я живу на Урале, холода тоже приличные бывают. </p>
-                            </div>
-                            <div class="testimonials-widget__item">
-                                <p class="testimonials-widget__item-header">
-                                    <span class="testimonials-widget__item-name">Александр Пушкин</span>
-                                    <span class="testimonials-widget__item-date">2 ноября 2016</span>
-                                </p>
-                                <p>Раньше делали шубы гораздо качественней, сейчас же везде один Китай. В моей шубе нет дополнительного утеплителя, поэтому я мерзну в ней как цуцик.</p>
-                            </div>
-                            <div class="testimonials-widget__item">
-                                <p class="testimonials-widget__item-header">
-                                    <span class="testimonials-widget__item-name">Александр Пушкин</span>
-                                    <span class="testimonials-widget__item-date">2 ноября 2016</span>
-                                </p>
-                                <p>Свою любимую норочку я купила летом 2006 года и она до сих пор как новая (хотя как-то по-особому я за ней не ухаживала, ну, типа, там холодильника для шубы у меня нет))))). Летом хранила в специальном чехле, вот и вся забота. Но зато какая она теплая! Я живу на Урале, холода тоже приличные бывают. </p>
-                            </div>
-                        </div>
-                
-                        <a class="testimonials-widget__more btn" href="">Смотреть все отзывы</a>
-                
-                    </div>
-                </section>
-                <!-- / testimonials-widget END -->
-                
-                <!-- bottom-feedback -->
-                <div class="bottom-feedback">
-                    <div class="bottom-feedback__container">
-                        <div class="bottom-feedback__form">
-                
-                            <form action="" class="form -bottom-feedback">
-                                <div class="form__heading">Связаться с нами</div>
-                                <div class="col">
-                                    <div class="form__item -name">
-                                        <input type="text" placeholder="Как вас зовут?">
-                                        <div class="form__item-error"></div>
-                                    </div>
-                                    <div class="form__item -phone">
-                                        <input type="tel" placeholder="Номер телефона">
-                                        <div class="form__item-error"><ul><li>Неправильный формат. Пример: 88008008080</li></ul></div>
-                                    </div>
-                                    <div class="form__item -email">
-                                        <input type="email" placeholder="Электронная почта">
-                                        <div class="error"></div>
-                                    </div>
-                                    <div class="form__item -text">
-                                        <textarea placeholder="Текст сообщения"></textarea>
-                                        <div class="form__item-error"></div>
-                                    </div>
-                                </div>
-                
-                                <div class="btns-container">
-                                    <div class="custom-checkbox -center">
-                                        <label for="app_sample_choice_privacy-policy-3" class="required">
-                                            <input type="checkbox" id="app_sample_choice_privacy-policy-3" value="1" required checked>
-                                            <span>Согласен с <a href="">политикой конфиденциальности</a></span>
-                                        </label>
-                                    </div>
-                                    <button class="btn" type="submit">Отправить</button>
-                                </div>
-                            </form>
-                
-                        </div>
-                    </div>
-                    <div class="bottom-feedback__map">
-                
-                    </div>
-                </div>
-                <!-- / bottom-feedback END -->
-
+<body  class="home-page">
+    
+    <!-- begin wrapper -->
+    <div class="l-wrapper"> 
+
+        <!-- begin header -->
+        
+    
+    <header class="l-header header">
+    <div class="header-middle"> 
+        <div class="header-middle__container l-container">
+            <a class="logo-header js-logo-header" href="/"><img src="http://via.placeholder.com/225x60/c0c0c0/ffffff" alt="TopCharter" title="TopCharter"></a>
+
+            <div class="header-contact -phone">
+                <span>Phone</span>
+                <a href="tel:+971504984734">+971 50 498 4734</a>
             </div>
 
-        </main>
-        <!-- MAIN end -->
+            <div class="header-contact -email">
+                <span>Email</span>
+                <a href="mailto:info@yachtrentaldubai.ae">info@yachtrentaldubai.ae</a>
+            </div>
 
+            <button class="header-middle__btn -send-enquiry btn js-ajax" data-class="-dark -send-enquiry" data-url="modal-send-enquiry.html">Book Now</button>
+
+            <div class="header-middle__social-link">
+                <a href="" rel="noreferrer noopener" target="_blank"><img src="http://via.placeholder.com/20x20/c0c0c0/000000" alt="Facebook" title="Facebook"></a>
+                <a href="" rel="noreferrer noopener" target="_blank"><img src="http://via.placeholder.com/20x20/c0c0c0/000000" alt="Instagram" title="Instagram"></a>
+                <a href="" rel="noreferrer noopener" target="_blank"><img src="http://via.placeholder.com/20x20/c0c0c0/000000" alt="VKontakte" title="VKontakte"></a>
+                <a href="" rel="noreferrer noopener" target="_blank"><img src="http://via.placeholder.com/20x20/c0c0c0/000000" alt="Twitter" title="Twitter"></a>
+            </div>
+        </div>
+    </div><!-- end header-middle-->
+    <nav class="main-menu js-menu-smart js-menu-mobile">
+
+    <div class="main-menu__switcher">
+        <button class="main-menu__switcher-btn" data-menu-mobile--switcher-btn><span>Меню</span></button>
     </div>
-    <!-- WRAPPER end -->
-    <!-- FOOTER begin -->
+
+    <ul class="is-root" data-menu-mobile--root>
+        <li class="-has-dropdown">
+            <a href="#">Demo</a>
+            <div>
+                <ul>
+                    <li><a href="demo/grid.html">Grids</a></li>
+                    <li><a href="demo/typography.html">Typography</a></li>
+                    <li><a href="demo/tables.html">Tables</a></li>
+                    <li><a href="demo/form-elements.html">Forms elements</a></li>
+                    <li><a href="demo/form-structure.html">Forms structure</a></li>
+                </ul>
+            </div>
+        </li>
+        <li class="-has-dropdown">
+            <a href="/products-list.html">Catalog</a>
+            <div>
+                <ul>
+                    <li><a href="/products-list.html">Catalog subdir #1</a></li>
+                    <li><a href="/products-list.html">Catalog subdir #2</a></li>
+                    <li><a href="/products-list.html">Catalog subdir #3</a></li>
+                    <li><a href="/products-list.html">Catalog subdir #4</a></li>
+                </ul>
+            </div>
+        </li>
+        <li><a href="/gallery-list.html">Gallery</a></li>
+        <li><a href="/reviews-list.html">Reviews</a></li>
+        <li><a href="/publication-list-article.html">Publication</a></li>
+        <li><a href="/text.html">Text</a></li>
+        <li><a href="/contacts.html">Contacts</a></li>
+        <li><a href="#">Сертификаты</a></li>
+        <li><a href="#">Доставка</a></li>
+        <li><a href="#">Гарантия</a></li>
+        <li><a href="#">Сертификаты</a></li>
+    </ul>
+    
+</nav>
+<!-- /main-menu end -->
+
+</header>
+
+
+        <!-- end header -->
+
+        <!-- begin main -->
+        <main class="l-main">
+             
+
+ 
+
+
+ 
+
+
+        </main><!-- end main -->
+
+    </div><!-- end wrapper -->
+
+    <!-- begin footer -->
+    
     <footer class="l-footer">
-        <div class="footer">
-            <div class="l-container">
+    <div class="footer">
+        <div class="l-container">
             <div class="footer__container">
                 <div class="footer__info">
                     <div class="footer__info-container">
-        
+
                         <a href="" class="footer__info-logo">
                             <img src="http://via.placeholder.com/230x65/ffffff/000000" alt="logo" title="logo" />
                         </a>
-        
+
                         <div class="footer__info-contacts">
                             <div class="footer__info-contacts-item -phone">
                                 <a href="tel:+70000000000">+7 (000) 000-00-00</a><br>
@@ -1113,10 +171,11 @@
                                 Сб-Вс:  Выходные
                             </div>
                             <div class="footer__info-contacts-item -location">
-                                000000, Рыбная обл., г. Рыба, ул. Рыба, дом 00, к. 00 <a href="">Карта проезда</a>
+                                000000, Рыбная обл., г. Рыба, ул. Рыба, дом 00, к. 00 
+                                <a href="/contacts.html">Карта проезда</a>
                             </div>
                         </div>
-        
+
                         <div class="footer__social-link">
                             <a href="" rel="noreferrer noopener" target="_blank"><img src="http://via.placeholder.com/38x38/ffffff/000000" alt="FB" title="FB" /></a>
                             <a href="" rel="noreferrer noopener" target="_blank"><img src="http://via.placeholder.com/38x38/ffffff/000000" alt="IN" title="IN" /></a>
@@ -1124,9 +183,9 @@
                             <a href="" rel="noreferrer noopener" target="_blank"><img src="http://via.placeholder.com/38x38/ffffff/000000" alt="TW" title="TW" /></a>
                             <a href="" rel="noreferrer noopener" target="_blank"><img src="http://via.placeholder.com/38x38/ffffff/000000" alt="OK" title="OK" /></a>
                         </div>
-        
+
                         <p class="footer__info-text">
-                            Создание и продвижение сайта <a href="https://www.darvin-studio.ru">Darvin Studio</a><br>
+                            Создание и продвижение сайта <a href="//www.darvin-studio.ru">Darvin Studio</a><br>
                             <a href="">Политика конфиденциальности</a><br>
                             &copy; 2017. Все права защищены
                         </p>
@@ -1150,33 +209,34 @@
                         <li class="b-fmenu__col">
                             <span class="b-fmenu__col-heading">Каталог</span>
                             <ul class="b-fmenu__list">
-                                <li class="b-fmenu__item"><a href="">Пункт №1</a></li>
-                                <li class="b-fmenu__item"><a href="">Пункт №2</a></li>
-                                <li class="b-fmenu__item"><a href="">Пункт №3</a></li>
-                                <li class="b-fmenu__item"><a href="">Пункт №4</a></li>
-                                <li class="b-fmenu__item"><a href="">Пункт №5</a></li>
-                                <li class="b-fmenu__item"><a href="">Пункт №6</a></li>
-                                <li class="b-fmenu__item"><a href="">Пункт №7</a></li>
-                                <li class="b-fmenu__item"><a href="">Пункт №8</a></li>
+                                <li class="b-fmenu__item"><a href="/products-list.html">Пункт №1</a></li>
+                                <li class="b-fmenu__item"><a href="/products-list.html">Пункт №2</a></li>
+                                <li class="b-fmenu__item"><a href="/products-list.html">Пункт №3</a></li>
+                                <li class="b-fmenu__item"><a href="/products-list.html">Пункт №4</a></li>
+                                <li class="b-fmenu__item"><a href="/products-list.html">Пункт №5</a></li>
+                                <li class="b-fmenu__item"><a href="/products-list.html">Пункт №6</a></li>
+                                <li class="b-fmenu__item"><a href="/products-list.html">Пункт №7</a></li>
+                                <li class="b-fmenu__item"><a href="/products-list.html">Пункт №8</a></li>
                             </ul>
                         </li>
                     </ul>
                 </div>
             </div>
-            </div>
         </div>
-    </footer>
-    <!-- FOOTER end -->
-    
-    <button class="scroll-top js-scroll-top" data-speed="500" data-offset-top="105" style="display:none;">to top</button>
-    
-    
-    
-    
-    <!--scripts-->
-    <script src="assets/build-dev/app.js"></script>
-    <!--/scripts-->
+    </div>
+</footer>
+
+    <!-- end footer -->
+
+    <button class="scroll-top js-scroll-top">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polyline points="14 18 8 12 14 6"></polyline></svg>
+</button>
     
 
+     
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" ></script>
+    
+    <script src="assets/build-dev/app.js"></script> 
+    
 </body>
 </html>

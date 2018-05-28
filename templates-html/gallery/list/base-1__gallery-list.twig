@@ -1,0 +1,31 @@
+{%  set galleryList = [ {
+    img: 'http://via.placeholder.com/305x181',
+    title: 'Album name 1 - bla bla bla bla Album name 1',
+},{
+    img: 'http://via.placeholder.com/305x181',
+    title: 'Album name 2 - bla bla bla bla',
+},{
+    img: 'http://via.placeholder.com/305x181',
+    title: 'Album name 3',
+},{
+    img: 'http://via.placeholder.com/305x181',
+    title: 'Album name 4 - bla bla bla bla',
+},{
+    img: 'http://via.placeholder.com/305x181',
+    title: 'Album name 2 - bla bla bla bla',
+},{
+    img: 'http://via.placeholder.com/305x181',
+    title: 'Album name 3',
+}] %}
+<div class="gallery-list">
+    {% for item in galleryList %}
+        <div class="gallery-list__item">
+            <a class="gallery-list__img" href="gallery-show.html">
+                <img src="{{ item.img }}" alt="{{ item.title }}" title="{{ item.title }}"></a>
+            </a>
+            <div class="gallery-list__text">
+                <a class="gallery-list__title" href="gallery-show.html">{{ item.title }}</a>
+            </div>
+        </div>
+    {% endfor %}
+</div>

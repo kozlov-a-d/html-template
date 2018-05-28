@@ -12,8 +12,8 @@ module.exports = (gulp, dir, scripts) => {
 
         scripts.forEach((scripts) => {
             stream.add(gulp.src(filesExist(scripts.src))
-                .pipe(sourcemaps.init())
                 .pipe(include())
+                .pipe(sourcemaps.init())
                 .on('error', console.log)
                 .pipe(concat(scripts.target))
                 .pipe(sourcemaps.write())

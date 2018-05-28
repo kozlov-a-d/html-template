@@ -1,10 +1,158 @@
+/*
+- vendor/highslide
+- анимацию в слайдер
+- фотосвайп в карусельках (не учитывать клонированные элементы)
+- добавить мелкую шапку для первого типовика ( взять с яхт )
+- баннеры/сертификаты/партнеры на главной
+- поменять чекбокс "согласен с политикой" на надпись
+- вынести base в типовик
+- добавить ещё 1 типовик
+- запустить на сервере
+
+Последовательность действий
+
+/templates-html/common/_variables/ 
+- нужны ли настройки шрифта?
+
+/templates-html/common/base/layout
+- правим настройки если надо
+
+/templates-html/common/base/typography
+- задаём настройки ширфта для текста и заголовков по макету текстовой страници
+
+*/
+
+/*‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾*/
+/*                                                      FONTS                                                         */
+/*____________________________________________________________________________________________________________________*/
+
 @import "fonts";
+
+
+/*‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾*/
+/*                                                    VARIABLES                                                       */
+/*____________________________________________________________________________________________________________________*/
+
 @import "variables";
-@import "extend";
+// перезаписываем переменные взависимости от выбранного типовика
+/* Base-1 Denis + Lesya */  //@import "../../templates-html/common/_variables/base-1__variables.scss";
+/* Base-2 Oleg          */  @import "../../templates-html/common/_variables/base-2__variables.scss";
+
+
+
+/*‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾*/
+/*                                                      DS-KIT                                                        */
+/*____________________________________________________________________________________________________________________*/
+
+/* MIXINS */  @import "../ds-kit/utilities-mixins/utitlties";
+
+/* LAYOUT  */  @import "../ds-kit/utilities-mixins/grid-mixins";
+
+/* CONTENT */  @import "../ds-kit/plugins/tables/tables";
+/* CONTENT */  @import "../ds-kit/plugins/spoiler/spoiler";
+/* CONTENT */  //@import "./temp/blind-version/blind-version-settings.scss";
+/* CONTENT */  //@import "./temp/blind-version/blind-version-theme.scss";
+
+/* JQUERY PLUGINS */  @import "../ds-kit/plugins/menu-mobile/menu-mobile.scss";
+/* JQUERY PLUGINS */  @import "../ds-kit/plugins/modal-ajax/modal-ajax.jquery.scss";
+
+/* UTILITIES */  @import "../ds-kit/utilities-styles/grid-inline";  /* .grid  .col-x-y */
+/* UTILITIES */  @import "../ds-kit/utilities-styles/response-img.scss";  /* .response-img (-xs, -sm, -md, -lg, -xl,) */
+/* UTILITIES */  @import "../ds-kit/utilities-styles/hidden.scss";  /* .hidden (-xs, -sm, -md, -lg, -xl,) */
+/* UTILITIES */ @import "../ds-kit/utilities-styles/visible.scss";  /* .visible (-xs, -sm, -md, -lg, -xl,) */  
+
+
+/*‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾*/
+/*                                                       BASE                                                         */
+/*____________________________________________________________________________________________________________________*/
+
 @import "base";
-@import "templates";
+
+/*‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾*/
+/*                                                     TEMPLATES                                                      */
+/*____________________________________________________________________________________________________________________*/
+
+@import "../../templates-html/demo/_demo.scss";
+
+// Common ============================================================================================================*/
+
+/* Base-1 Denis + Lesya */  //@import "../../templates-html/common/typography/base-1__text.scss";
+/* Base-2 Oleg          */  @import "../../templates-html/common/typography/base-2__text.scss";
+
+/* Base-1 Denis + Lesya */  //@import "../../templates-html/common/typography/base-1__tables.scss";
+/* Base-2 Oleg          */  @import "../../templates-html/common/typography/base-2__tables.scss";
+
+/* Base-1 Denis + Lesya */  @import "../../templates-html/common/form/base-1__form.scss";
+/* Base-1 Denis + Lesya */  @import "../../templates-html/common/buttons/base-1__buttons.scss";
+/* Base-1 Denis + Lesya */  @import "../../templates-html/common/modal/base-1__modal.scss";
+/* Base-1 Denis + Lesya */  @import "../../templates-html/common/owl-themes/base-1__owl-themes.scss"; 
+/* Base-1 Denis + Lesya */  @import "../../templates-html/common/nav-btns/base-1__nav-btns.scss";
+/* Base-1 Denis + Lesya */  @import "../../templates-html/common/breadcrumbs/base-1__breadcrumbs.scss"; 
+/* Base-1 Denis + Lesya */  @import "../../templates-html/common/pagination/base-1__pagination.scss"; 
+
+
+// Header ============================================================================================================*/
+
+/* Base-1 Denis + Lesya */  // @import "../../templates-html/layout/header/base-1__header.scss";
+/* Base-1 Denis + Lesya */  @import "../../templates-html/layout/header/base-1__header-short.scss";
+/* Base-1 Denis + Lesya */  @import "../../templates-html/layout/top_menu/base-1__main-menu.scss";
+
+
+// Footer ============================================================================================================*/
+
+/* Base-1 Denis + Lesya */ @import "../../templates-html/layout/footer/base-1__footer.scss";   
+
+
+// Common-block ======================================================================================================*/
+
+/* Base-1 Denis + Lesya */  @import "../../templates-html/feedback/base-1__feedback-container.scss";
+
+
+// Homepage ==========================================================================================================*/
+
+/* Base-1 Denis + Lesya */  @import "../../templates-html/homepage/slider/base-1__slider.scss";
+/* Base-1 Denis + Lesya */  @import "../../templates-html/homepage/catalog-subdirectory/base-1__catalog-subdir.scss";     
+/* Base-1 Denis + Lesya */  @import "../../templates-html/homepage/text/base-1__text.scss";
+/* Base-1 Denis + Lesya */  @import "../../templates-html/homepage/products/base-1__products-bestseller.scss"; 
+/* Base-1 Denis + Lesya */  @import "../../templates-html/homepage/extra_text/base-1__work-shema.scss";
+/* Base-1 Denis + Lesya */  @import "../../templates-html/homepage/extra_text/base-1__partners.scss";
+/* Base-1 Denis + Lesya */  @import "../../templates-html/homepage/publications/base-1__articles.scss"; 
+/* Base-1 Denis + Lesya */  @import "../../templates-html/homepage/publications/base-1__news.scss";
+/* Base-1 Denis + Lesya */  @import "../../templates-html/homepage/extra_text/base-1__extra-text.scss";
+/* Base-1 Denis + Lesya */  @import "../../templates-html/homepage/gallery/base-1__gallery.scss";
+/* Base-1 Denis + Lesya */  @import "../../templates-html/homepage/extra_text/base-1__advantages.scss";
+/* Base-1 Denis + Lesya */  @import "../../templates-html/homepage/banner/base-1__banner-list.scss";
+/* Base-1 Denis + Lesya */  @import "../../templates-html/homepage/reviews/base-1__reviews.scss"; 
+
+
+// Text pages ========================================================================================================*/
+
+/* Base-1 Denis + Lesya */ @import "../../templates-html/text/contacts/base-1__contacts.scss";    
+
+
+// Products ==========================================================================================================*/
+
+/* Base-1 Denis + Lesya */ @import "../../templates-html/products/list-item/base-1__products-list-item.scss";    
+/* Base-1 Denis + Lesya */ @import "../../templates-html/products/list/base-1__products-list.scss";    
+/* Base-1 Denis + Lesya */ @import "../../templates-html/products/show/base-1__products-show.scss";    
+/* Base-1 Denis + Lesya */ @import "../../templates-html/products/similar/base-1__products-similar.scss";     
+
+
+// Gallery ===========================================================================================================*/
+
+/* Base-1 Denis + Lesya */ @import "../../templates-html/gallery/list/base-1__gallery-list.scss";  
+/* Base-1 Denis + Lesya */ @import "../../templates-html/gallery/show/base-1__gallery-show.scss";  
+
+
+// Reviews ===========================================================================================================*/
+
+/* Base-1 Denis + Lesya */ @import "../../templates-html/reviews/list/base-1__reviews-list.scss";  
+/* Base-1 Denis + Lesya */ @import "../../templates-html/reviews/form/base-1__reviews-form.scss";  
+
+
+// Publication =======================================================================================================*/
+
+/* Base-1 Denis + Lesya */ @import "../../templates-html/publication/list/base-1__publication-list-article.scss";       
+
 @import "print";
 
-
-// вспомогательные стили для демонстрации
-@import "../../template-block/demo/demo";

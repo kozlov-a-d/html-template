@@ -110,7 +110,7 @@ var photoswipeWrapper = (function(){
 
     return Object.freeze({
         init : function( container, item){
-            if (photoswipeProps.isExist){
+            if (photoswipeProps.isExist && document.querySelector(container)){
                 addHandler( container, item, addHTML() );
             }
         }

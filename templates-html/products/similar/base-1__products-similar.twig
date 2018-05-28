@@ -1,0 +1,46 @@
+{%  set productsSimilar = [ {
+    img: 'http://via.placeholder.com/250x250/ffffff/000000',
+    title: 'Плотная рубашка из эластичной джинсовой ткани',
+    price: '5 999'
+},{
+    img: 'http://via.placeholder.com/250x250/ffffff/000000',
+    title: 'Плотная рубашка из эластичной джинсовой ткани',
+    price: '5 999'
+},{
+    img: 'http://via.placeholder.com/250x250/ffffff/000000',
+    title: 'Плотная рубашка из эластичной джинсовой ткани',
+    price: '5 999'
+},{
+    img: 'http://via.placeholder.com/250x250/ffffff/000000',
+    title: 'Плотная рубашка из эластичной джинсовой ткани',
+    price: '5 999'
+},{
+    img: 'http://via.placeholder.com/250x250/ffffff/000000',
+    title: 'Плотная рубашка из эластичной джинсовой ткани',
+    price: '5 999'
+},{
+    img: 'http://via.placeholder.com/250x250/ffffff/000000',
+    title: 'Плотная рубашка из эластичной джинсовой ткани',
+    price: '5 999'
+}] %}
+<section class="products-similar js-products-similar">
+
+    <div class="products-similar__header">
+        <div class="products-similar__title">
+            <h2>Similar products</h2>
+        </div>
+        <div class="products-similar__nav nav-arrow">
+            <button class="products-similar__nav-btn nav-arrow__btn -prev js-nav-prev">prev</button>
+            <button class="products-similar__nav-btn nav-arrow__btn -next js-nav-next">next</button>
+        </div>
+    </div>
+
+    <div class="products-similar__list-container">
+        <div class="products-similar__list owl-carousel">
+            {% for item in productsSimilar %}
+            {% include '../../products/list-item/base-1__products-list-item.twig' with {'item': item, 'class': 'products-similar', 'mod': '-similar'} %} 
+            {% endfor %}
+        </div>
+    </div>
+
+</section>

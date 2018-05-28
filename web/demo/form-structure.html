@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form sctructure page | template site </title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="format-detection" content="telephone=no">
+
+<!-- Meta Tags -->
+<meta name="description" content="description">
+<meta name="keywords" content="keywords">
+
+<meta property="og:title" content="значение из основного title" />
+<meta property="og:image" content="это URL на картинку. Это будет отдельная картинка размеров 1200x630" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:description" content="значение из meta description" />
+<meta property="og:url" content="полный URL текущей страницы" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="название сайта" />
+
+<meta property="article:publisher" content="A Facebook page URL or ID of the publishing entity" />
+<meta property="article:author" content="Facebook profile URLs or ID of the author for this article" />
+
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content="полный URL текущей страницы" />
+<meta property="twitter:title" content="значение из основного title" />
+<meta property="twitter:description" content="значение из meta description" />
+<meta property="twitter:image" content="это URL на картинку. Та же самая которая добавляется для метатега фейсбука" />
+<meta property="twitter:image:width" content="1200" />
+<meta property="twitter:image:height" content="630" />
+<meta property="twitter:site" content="аккаунт твиттера" />
+
+<script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "name": "OrganizationName",
+        "url": "http://domain.ru",
+        "sameAs": [
+            "http://vk.com/id",
+            "https://www.facebook.com/id",
+            "https://twitter.com/id",
+            "https://plus.google.com/+id"
+        ]
+    }
+
+</script>
+
+    <link rel="shortcut icon" href="assets/favicon.ico">
+     <link rel="stylesheet" href="../assets/build-dev/app.css">
+</head>
+
+<body  class="inner-page">
+    
+    <!-- begin wrapper -->
+    <div class="l-wrapper"> 
+
+        <!-- begin header -->
+        
+    
+    <header class="l-header header">
+    <div class="header-middle"> 
+        <div class="header-middle__container l-container">
+            <a class="logo-header js-logo-header" href="/"><img src="http://via.placeholder.com/225x60/c0c0c0/ffffff" alt="TopCharter" title="TopCharter"></a>
+
+            <div class="header-contact -phone">
+                <span>Phone</span>
+                <a href="tel:+971504984734">+971 50 498 4734</a>
+            </div>
+
+            <div class="header-contact -email">
+                <span>Email</span>
+                <a href="mailto:info@yachtrentaldubai.ae">info@yachtrentaldubai.ae</a>
+            </div>
+
+            <button class="header-middle__btn -send-enquiry btn js-ajax" data-class="-dark -send-enquiry" data-url="modal-send-enquiry.html">Book Now</button>
+
+            <div class="header-middle__social-link">
+                <a href="" rel="noreferrer noopener" target="_blank"><img src="http://via.placeholder.com/20x20/c0c0c0/000000" alt="Facebook" title="Facebook"></a>
+                <a href="" rel="noreferrer noopener" target="_blank"><img src="http://via.placeholder.com/20x20/c0c0c0/000000" alt="Instagram" title="Instagram"></a>
+                <a href="" rel="noreferrer noopener" target="_blank"><img src="http://via.placeholder.com/20x20/c0c0c0/000000" alt="VKontakte" title="VKontakte"></a>
+                <a href="" rel="noreferrer noopener" target="_blank"><img src="http://via.placeholder.com/20x20/c0c0c0/000000" alt="Twitter" title="Twitter"></a>
+            </div>
+        </div>
+    </div><!-- end header-middle-->
+    <nav class="main-menu js-menu-smart js-menu-mobile">
+
+    <div class="main-menu__switcher">
+        <button class="main-menu__switcher-btn" data-menu-mobile--switcher-btn><span>Меню</span></button>
+    </div>
+
+    <ul class="is-root" data-menu-mobile--root>
+        <li class="-has-dropdown">
+            <a href="#">Demo</a>
+            <div>
+                <ul>
+                    <li><a href="demo/grid.html">Grids</a></li>
+                    <li><a href="demo/typography.html">Typography</a></li>
+                    <li><a href="demo/tables.html">Tables</a></li>
+                    <li><a href="demo/form-elements.html">Forms elements</a></li>
+                    <li><a href="demo/form-structure.html">Forms structure</a></li>
+                </ul>
+            </div>
+        </li>
+        <li class="-has-dropdown">
+            <a href="/products-list.html">Catalog</a>
+            <div>
+                <ul>
+                    <li><a href="/products-list.html">Catalog subdir #1</a></li>
+                    <li><a href="/products-list.html">Catalog subdir #2</a></li>
+                    <li><a href="/products-list.html">Catalog subdir #3</a></li>
+                    <li><a href="/products-list.html">Catalog subdir #4</a></li>
+                </ul>
+            </div>
+        </li>
+        <li><a href="/gallery-list.html">Gallery</a></li>
+        <li><a href="/reviews-list.html">Reviews</a></li>
+        <li><a href="/publication-list-article.html">Publication</a></li>
+        <li><a href="/text.html">Text</a></li>
+        <li><a href="/contacts.html">Contacts</a></li>
+        <li><a href="#">Сертификаты</a></li>
+        <li><a href="#">Доставка</a></li>
+        <li><a href="#">Гарантия</a></li>
+        <li><a href="#">Сертификаты</a></li>
+    </ul>
+    
+</nav>
+<!-- /main-menu end -->
+
+</header>
+
+
+        <!-- end header -->
+
+        <!-- begin main -->
+        <main class="l-main">
+             
+<div class="breadcrumbs"> 
+    <a href="/">Home</a> 
+    <span>Form sctructure</span> 
+</div> 
+<h1>Form sctructure example</h1>
+<div class="l-content">
+    <form action="" class="form">
+    <p class="form__heading">Defualt</p>
+    <p>Самая обычная форма, все элементы находятся один под другим</p>
+    <div class="col">
+        <div class="form__item -name">
+            <label>Имя</label>
+            <input type="text" placeholder="Как вас зовут?">
+            <div class="form__item-error"></div>
+        </div>
+        <div class="form__item -phone">
+            <label>Телефон</label>
+            <input type="tel" placeholder="Номер телефона">
+            <div class="form__item-error">
+                <ul>
+                    <li>Неправильный формат. Пример: 88008008080</li>
+                </ul>
+            </div>
+        </div>
+        <div class="form__item -email">
+            <label>Email</label>
+            <input type="email" placeholder="Электронная почта">
+            <div class="form__item-error"></div>
+        </div>
+        <div class="form__item -text">
+            <label>Сообщение</label>
+            <textarea placeholder="Текст сообщения"></textarea>
+            <div class="form__item-error"></div>
+        </div>
+    </div>
+
+    <div class="btns-container">
+        <div class="custom-checkbox -center">
+            <label for="app_sample_choice_privacy-policy-3" class="required">
+                <input type="checkbox" id="app_sample_choice_privacy-policy-3" value="1" required checked>
+                <span>Согласен с
+                    <a href="">политикой конфиденциальности</a>
+                </span>
+            </label>
+        </div>
+        <button class="btn" type="submit">Отправить</button>
+    </div>
+</form>
+
+<div class="helper-section-split"></div>
+
+<p class="form__heading">Line</p>
+<p>Модификатор
+    <code>
+        <span class="css-class-name">-line</span>
+    </code>
+</p>
+<p>
+    Все item'ы формы располагаются в линию, как inline-block'и.
+    <br> Также тут добавлен модификатор для кнопки
+    <code>
+        <span class="css-class-name">-width-100</span>
+    </code>, чтобы кнопка занимала всё доступное ей пространство.
+</p>
+<form action="" class="form -line">
+
+    <div class="form__item">
+        <input type="text" placeholder="Name">
+        <div class="form__item-error"></div>
+    </div>
+    <div class="form__item">
+        <input type="email" placeholder="Email">
+        <div class="form__item-error">
+            <ul>
+                <li>Неправильный формат. Пример: example@domain.ru</li>
+            </ul>
+        </div>
+    </div>
+    <div class="btns-container">
+        <button class="btn -width-100" type="submit">Submit</button>
+    </div>
+</form>
+
+<div class="helper-section-split"></div>
+
+<h2>Column 1-2 / 1-1-1</h2>
+<p>Модификатор
+    <code>
+        <span class="css-class-name">-columns</span>
+    </code>
+</p>
+<p>Добавляются колонки, внутри которых вставляются item'ы формы</p>
+<form action="" class="form -columns">
+    <div class="col-1">
+        <div class="form__item">
+            <label>Name</label>
+            <input type="text" placeholder="Name">
+            <div class="form__item-error"></div>
+        </div>
+        <div class="form__item">
+            <label>Password</label>
+            <input type="password" placeholder="Password">
+            <div class="form__item-error"></div>
+        </div>
+        <div class="form__item">
+            <label>Email</label>
+            <input type="email" placeholder="Email">
+            <div class="form__item-error">
+                <ul>
+                    <li>Неправильный формат. Пример: example@domain.ru</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-2">
+        <div class="form__item">
+            <label>Text</label>
+            <textarea placeholder="Text"></textarea>
+            <div class="form__item-error"></div>
+        </div>
+    </div>
+
+    <div class="btns-container col-1-1">
+        <button class="btn" type="submit">Submit</button>
+    </div>
+</form>
+
+<div class="helper-section-split"></div>
+
+<p>Пример формы с колонками 1-1-1</p>
+<form action="" class="form -columns">
+    <div class="col-1">
+        <div class="form__item">
+            <label>Name</label>
+            <input type="text" placeholder="Name">
+            <div class="form__item-error"></div>
+        </div>
+        <div class="form__item">
+            <label>Email</label>
+            <input type="email" placeholder="Password">
+            <div class="form__item-error">
+                <ul>
+                    <li>Неправильный формат. Пример: example@domain.ru</li>
+                </ul>
+            </div>
+        </div>
+        <div class="form__item">
+            <label>Password</label>
+            <input type="password" placeholder="Password">
+            <div class="form__item-error"></div>
+        </div>
+    </div>
+    <div class="col-1">
+        <div class="form__item">
+            <label>Name</label>
+            <input type="text" placeholder="Name">
+            <div class="form__item-error"></div>
+        </div>
+        <div class="form__item">
+            <label>Email</label>
+            <input type="email" placeholder="Password">
+            <div class="form__item-error"></div>
+        </div>
+        <div class="form__item">
+            <label>Password</label>
+            <input type="password" placeholder="Password">
+            <div class="form__item-error"></div>
+        </div>
+    </div>
+    <div class="col-1">
+        <div class="form__item">
+            <label>Text</label>
+            <textarea placeholder="Text"></textarea>
+            <div class="form__item-error"></div>
+        </div>
+    </div>
+
+    <div class="btns-container col-1-1">
+        <button class="btn" type="submit">Submit</button>
+    </div>
+</form>
+
+<div class="helper-section-split"></div>
+
+<h2>Horizontal</h2>
+<p>Модификатор
+    <code>
+        <span class="css-class-name">-horizontal</span>
+    </code>
+</p>
+<p>У каждого item'а название и поле расположены в линию</p>
+
+<form action="" class="form -horizontal">
+    <div class="form__item">
+        <label class="form__item-name">Name</label>
+        <input class="form__item-field" type="text" placeholder="Name">
+        <div class="form__item-error"></div>
+    </div>
+    <div class="form__item">
+        <label class="form__item-name">Email</label>
+        <input class="form__item-field" type="email" placeholder="Password">
+        <div class="form__item-error">
+            <ul>
+                <li>Неправильный формат. Пример: example@domain.ru</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="btns-container col-1-1">
+        <button class="btn" type="submit">Submit</button>
+    </div>
+</form>
+
+<div class="helper-section-split"></div>
+
+
+<h2>Horizontal + description</h2>
+<p>Модификатор
+    <code>
+        <span class="css-class-name">-horizontal-desc</span>
+    </code>
+</p>
+<p>Аналогично horizontal, только к полям добавляется описание</p>
+<form action="" class="form -horizontal-desc">
+    <div class="form__item">
+        <label class="form__item-name">Name</label>
+        <input class="form__item-field" type="text" placeholder="Name">
+        <div class="form__item-desc">Описание поля</div>
+        <div class="form__item-error"></div>
+    </div>
+    <div class="form__item">
+        <label class="form__item-name">Email</label>
+        <input class="form__item-field" type="email" placeholder="Password">
+        <div class="form__item-desc">Очень длинное описание поля очень длинное описание поля очень длинное описание поля очень длинное описание поля</div>
+        <div class="form__item-error">
+            <ul>
+                <li>Неправильный формат. Пример: example@domain.ru</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="btns-container col-1-1">
+        <button class="btn" type="submit">Submit</button>
+    </div>
+</form>
+</div>
+
+        </main><!-- end main -->
+
+    </div><!-- end wrapper -->
+
+    <!-- begin footer -->
+    
+    <footer class="l-footer">
+    <div class="footer">
+        <div class="l-container">
+            <div class="footer__container">
+                <div class="footer__info">
+                    <div class="footer__info-container">
+
+                        <a href="" class="footer__info-logo">
+                            <img src="http://via.placeholder.com/230x65/ffffff/000000" alt="logo" title="logo" />
+                        </a>
+
+                        <div class="footer__info-contacts">
+                            <div class="footer__info-contacts-item -phone">
+                                <a href="tel:+70000000000">+7 (000) 000-00-00</a><br>
+                                <a href="tel:+70000000000">+7 (000) 000-00-00</a>
+                            </div>
+                            <div class="footer__info-contacts-item -time">
+                                Пн-Пт: с 0:00 до 0:00<br>
+                                Сб-Вс:  Выходные
+                            </div>
+                            <div class="footer__info-contacts-item -location">
+                                000000, Рыбная обл., г. Рыба, ул. Рыба, дом 00, к. 00 
+                                <a href="/contacts.html">Карта проезда</a>
+                            </div>
+                        </div>
+
+                        <div class="footer__social-link">
+                            <a href="" rel="noreferrer noopener" target="_blank"><img src="http://via.placeholder.com/38x38/ffffff/000000" alt="FB" title="FB" /></a>
+                            <a href="" rel="noreferrer noopener" target="_blank"><img src="http://via.placeholder.com/38x38/ffffff/000000" alt="IN" title="IN" /></a>
+                            <a href="" rel="noreferrer noopener" target="_blank"><img src="http://via.placeholder.com/38x38/ffffff/000000" alt="VK" title="VK" /></a>
+                            <a href="" rel="noreferrer noopener" target="_blank"><img src="http://via.placeholder.com/38x38/ffffff/000000" alt="TW" title="TW" /></a>
+                            <a href="" rel="noreferrer noopener" target="_blank"><img src="http://via.placeholder.com/38x38/ffffff/000000" alt="OK" title="OK" /></a>
+                        </div>
+
+                        <p class="footer__info-text">
+                            Создание и продвижение сайта <a href="//www.darvin-studio.ru">Darvin Studio</a><br>
+                            <a href="">Политика конфиденциальности</a><br>
+                            &copy; 2017. Все права защищены
+                        </p>
+                    </div>
+                </div>
+                <div class="footer__menu b-fmenu">
+                    <ul class="b-fmenu__container">
+                        <li class="b-fmenu__col">
+                            <span class="b-fmenu__col-heading">Компания</span>
+                            <ul class="b-fmenu__list">
+                                <li class="b-fmenu__item"><a href="">О нас</a></li>
+                                <li class="b-fmenu__item"><a href="">Новости</a></li>
+                                <li class="b-fmenu__item"><a href="">Статьи</a></li>
+                                <li class="b-fmenu__item"><a href="">Фотогалерея</a></li>
+                                <li class="b-fmenu__item"><a href="">Продукция</a></li>
+                                <li class="b-fmenu__item"><a href="">Вопрос-ответ</a></li>
+                                <li class="b-fmenu__item"><a href="">Статьи</a></li>
+                                <li class="b-fmenu__item"><a href="">Контакты</a></li>
+                            </ul>
+                        </li>
+                        <li class="b-fmenu__col">
+                            <span class="b-fmenu__col-heading">Каталог</span>
+                            <ul class="b-fmenu__list">
+                                <li class="b-fmenu__item"><a href="/products-list.html">Пункт №1</a></li>
+                                <li class="b-fmenu__item"><a href="/products-list.html">Пункт №2</a></li>
+                                <li class="b-fmenu__item"><a href="/products-list.html">Пункт №3</a></li>
+                                <li class="b-fmenu__item"><a href="/products-list.html">Пункт №4</a></li>
+                                <li class="b-fmenu__item"><a href="/products-list.html">Пункт №5</a></li>
+                                <li class="b-fmenu__item"><a href="/products-list.html">Пункт №6</a></li>
+                                <li class="b-fmenu__item"><a href="/products-list.html">Пункт №7</a></li>
+                                <li class="b-fmenu__item"><a href="/products-list.html">Пункт №8</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- end footer -->
+
+    <button class="scroll-top js-scroll-top">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polyline points="14 18 8 12 14 6"></polyline></svg>
+</button>
+    
+
+     
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" ></script>
+
+<script src="../assets/build-dev/app.js"></script> 
+
+</body>
+</html>

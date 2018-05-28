@@ -1,6 +1,6 @@
 const browserSync = require('browser-sync'),
       include     = require('gulp-include'),
-      merge       = require('gulp-merge');
+      merge       = require('gulp-merge'),
       twig        = require('gulp-twig');
 const reload      = browserSync.reload;
 

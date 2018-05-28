@@ -1,0 +1,30 @@
+.galery-widget {
+    padding: 60px 0 82px;
+    &__header {
+        display: block;
+        width: 100%;
+        max-width: $content-width + 40px;
+        padding: 0 20px;
+        margin: 0 auto 40px;
+        overflow: hidden;
+    }
+    &__title {
+        float: left;
+        &>* {
+            margin: 0;
+        }
+    }
+    &__nav {
+        float: right;
+    }
+    &__carousel {}
+    &__item {
+        width: 318px;
+        img {
+            display: block;
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+    }
+}

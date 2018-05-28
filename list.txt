@@ -1,9 +1,0 @@
-﻿- доделать шапку на адаптиве
-
-
-==================================
-JS
-- валидацию (parsley) к формам добавить
-
-- SocialShare в автоконфиг
-- /utilities/objects  из animation-jelly-scroll

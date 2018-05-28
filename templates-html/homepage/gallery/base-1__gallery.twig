@@ -1,0 +1,69 @@
+{%  set galeryItems = [ {
+    img: 'http://via.placeholder.com/318x200',
+    original: 'http://via.placeholder.com/1318x700',
+    size: '1318x700',
+    title: 'название',
+},{
+    img: 'http://via.placeholder.com/318x200',
+    original: 'http://via.placeholder.com/1318x700',
+    size: '1318x700',
+    title: 'название',
+},{
+    img: 'http://via.placeholder.com/318x200',
+    original: 'http://via.placeholder.com/1318x700',
+    size: '1318x700',
+    title: 'название',
+},{
+    img: 'http://via.placeholder.com/318x200',
+    original: 'http://via.placeholder.com/1318x700',
+    size: '1318x700',
+    title: 'название',
+},{
+    img: 'http://via.placeholder.com/318x200',
+    original: 'http://via.placeholder.com/1318x700',
+    size: '1318x700',
+    title: 'название',
+},{
+    img: 'http://via.placeholder.com/318x200',
+    original: 'http://via.placeholder.com/1318x700',
+    size: '1318x700',
+    title: 'название',
+},{
+    img: 'http://via.placeholder.com/318x200',
+    original: 'http://via.placeholder.com/1318x700',
+    size: '1318x700',
+    title: 'название',
+},{
+    img: 'http://via.placeholder.com/318x200',
+    original: 'http://via.placeholder.com/1318x700',
+    size: '1318x700',
+    title: 'название',
+},{
+    img: 'http://via.placeholder.com/318x200',
+    original: 'http://via.placeholder.com/1318x700',
+    size: '1318x700',
+    title: 'название',
+}] %}
+<!-- begin galery-widget -->
+<section class="galery-widget js-galery-widget">
+
+    <div class="galery-widget__header">
+        <div class="galery-widget__title">
+            <h2>Фотогалерея</h2>
+        </div>
+        <div class="galery-widget__nav nav-arrow">
+            <button class="galery-widget__nav-btn nav-arrow__btn -prev js-nav-prev">prev</button>
+            <button class="galery-widget__nav-btn nav-arrow__btn -next js-nav-next">next</button>
+        </div>
+    </div>
+
+    <div class="galery-widget__carousel owl-carousel js-photoswipe-gallery">
+        {% for item in galeryItems %}
+        <div class="galery-widget__item">
+            <a href="{{ item.original }}" data-size="{{ item.size }}"><img src="{{ item.img }}" alt="{{ item.title }}" title="{{ item.title }}"></a>
+        </div>
+        {% endfor %}
+    </div>
+
+</section>
+<!-- end galery-widget -->

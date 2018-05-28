@@ -1,0 +1,36 @@
+{%  set slides = [ {
+    img: 'http://via.placeholder.com/1920x550',
+    name: 'Luxury Yacht Charter at Bulgari Resort',
+    description: 'Experience unparalleled luxury onboard Sunseeker and Benetti Yachts from the exclusive Bulgari Resort and Residences'
+},{
+    img: 'http://via.placeholder.com/1920x550',
+    name: 'Luxury Yacht Charter at Bulgari Resort 2',
+    description: ''
+},{
+    img: 'http://via.placeholder.com/1920x550',
+    name: '',
+    description: ''
+}] %}
+<!-- begin slider -->
+<div class="slider-header js-slider-header">
+    <div class="js-slider">
+        {% for slide in slides %}
+        <div class="item slider-header__item">
+            <img class="slider-header__img" src="{{ slide.img }}" alt="{{ slide.name }}" title="{{ slide.name }}">
+            <div class="slider-header__text-container">
+                {% if slide.name %}<p class="-title">{{ slide.name }}</p>{% endif %}
+                {% if slide.description %}<p>{{ slide.description }}</p>{% endif %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="slider-header__nav nav-arrow">
+        <button class="slider-header__nav-btn nav-arrow__btn -prev js-nav-prev">prev</button>
+        <button class="slider-header__nav-btn nav-arrow__btn -next js-nav-next">next</button>
+
+        <div class="slider-header__nav-counter js-nav-counter"></div>
+    </div>
+
+</div>
+<!-- end slider -->

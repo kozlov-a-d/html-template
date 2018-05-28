@@ -1,170 +1,119 @@
 // BASE ================================================================================================================
-
-*{
-  box-sizing: border-box;
-  outline: none;
+* {
+    box-sizing: border-box;
+    outline: none;
 }
+
 html {
-  height: 100%;
-}
-body{
-  display: flex;
-  flex-direction: column;
-  min-height: 100%;
-  -webkit-text-size-adjust: 100%;
-  max-height: 999999px;
-  max-width: 100%;
-
-  font-family: $font-main;
-  font-size: $font-size-base;
-  font-weight: $font-weight-base;
-  line-height: $line-height-base;
-  color: $color-base;
+    height: 100%;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    -webkit-text-size-adjust: 100%;
+    max-height: 999999px;
+    max-width: 100%;
+    width: 100%; 
+}
 
 // LAYOUT ==============================================================================================================
-
 .l-wrapper,
 .l-main,
 .l-header,
-.l-footer{
-  width: 100%;
-  position: relative;
-}
-.l-wrapper{
-  flex: 1 0 auto;
-  overflow: hidden;
-}
-.l-header{
-  z-index: 10;
-}
-.l-main{
-  z-index: 5;
-}
-.l-footer{
-  overflow: hidden;
-}
-.l-container{
-  max-width: $content-width;
-  margin: 0 auto;
-  @include cfix();
-  
-  @media (max-width: ( $content-width + $content-gap * 2 ) ) {
-    width: auto;
-    max-width: 100%;
-    margin: 0 $content-gap;
-  }
-}
-
-
-// TYPOGRAPHY ==========================================================================================================
-
-h1, .h1{
-  font-family: $font-main;
-  font-size: 60px;
-  font-weight: 300;
-  line-height: 80px;
-  text-align: left;
-  color: $color-base;
-  margin-bottom: $text-margin;
-
-  @media (max-width: $sm) {
-    font-size: 30px;
-    line-height: 40px;
-    font-weight: 400;
-  }
-}
-
-h2, .h2{
-  font-family: $font-main;
-  font-size: 36px;
-  font-weight: 300;
-  line-height: 46px;
-  text-align: left;
-  color: $color-base;
-  margin-bottom: $text-margin;
-
-  @media (max-width: $sm) {
-    font-size: 25px;
-    line-height: 31px;
-    font-weight: 400;
-  }
-}
-
-h3, .h3{
-  font-family: $font-main;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 30px;
-  text-align: left;
-  color: $color-base;
-  margin-bottom: $text-margin;
-
-  @media (max-width: $sm) {
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 30px;
-  }
-}
-
-a{
-  color: $color-link;
-  transition: $translate-time $translate-ease;
-  &:hover{
-    text-decoration: none;
-  }
-}
-
-p, ul, ol, table, pre, .grid{
-  margin: 0 0 $text-margin;
-}
-
-ul, ol{
-  padding-left: 40px;
-  li{
-    margin: 3px 0;
-  }
-}
-
-.with_marker{
-  list-style: none;
-  li{
+.l-footer {
+    width: 100%;
     position: relative;
-    &:before{
-      content: '';
-      display: block;
-      width: 13px;
-      height: 1px;
-      position: absolute;
-      left: -20px;
-      top: 10px;
-      background: #2b8fc9;
+}
+
+.l-wrapper {
+    flex: 1 0 auto;
+    overflow: hidden;
+}
+
+.l-header {
+    z-index: 10;
+}
+
+.l-main {
+    z-index: 5;
+}
+
+.l-footer {
+    overflow: hidden;
+}
+
+.l-container {
+    max-width: $content-width;
+    margin: 0 auto; 
+    @media (max-width: ( $content-width + $content-gap * 2)) {
+        width: auto;
+        max-width: 100%;
+        margin: 0 $content-gap;
     }
-  }
+    @include cfix();
 }
 
-p + ul,
-p + ol{
-  margin-top: -$text-margin;
+.l-content {
+    display: block;
+    padding: 0 0 60px;
+    
 }
 
-// TABLES ==============================================================================================================
+.inner-page .l-main {
+    max-width: $content-width;
+    margin: 0 auto;
+    @media (max-width: ( $content-width + $content-gap * 2)) {
+        width: auto;
+        max-width: 100%;
+        margin: 0 $content-gap;
+    }
+}
+ 
 
-$tables-color-border: $color-base;                // цвет границ в обычной табилчке
-$nice-tables-color-border: #e8eaeb;               //  цвет границ в табличке
-$nice-tables-color-striped: #e8eaeb;              //  дополнительный цвет для строчек таблицы
-$nice-tables-color-hover: darken(#e8eaeb,10%);    //  подсветка строчек/строк табилцы при наведении
-$nice-tables-padding: 15px 18px;                  //  отступы в ячейках табилцы
+.title_field{
+    display: none !important;
+}
 
-@include table-default($tables-color-border);
-@include table-nice($nice-tables-color-border, $nice-tables-color-striped, $nice-tables-color-hover, $nice-tables-padding){
-  table-layout: fixed;
-  th {
-    background: #2b8fc9;
-    color: #fff;
-    font-weight: bold;
-    text-align: left;
-  }
-};
-@include table-responsive();
+.pswp__bg {
+    opacity: 0.7 !important;
+}
+
+.scroll-top {
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    z-index: 50;
+    display: block;
+    width: 47px;
+    height: 47px;
+    border-radius: 50%;
+    font-size: 0;
+    text-align: center;
+    cursor: pointer;
+    transition: opacity .2s;
+    background: #0090cc;
+    border: 1px solid #0090cc;
+    transform: rotate(90deg);
+
+    opacity: 0;
+    pointer-events: none;
+
+    @media (max-width: $md) {
+        right: 20px;
+        bottom: 20px;
+    }
+
+    svg{
+        fill: #fff;
+    }
+}
+
+.markerLabels{
+  font-size: 15px;
+  transform: translate(15px, -30px);
+  color: #c74747 !important;
+  font-weight: 500;
+  text-shadow: 0 0 4px  rgba(255, 255, 255, 0.5);
+}

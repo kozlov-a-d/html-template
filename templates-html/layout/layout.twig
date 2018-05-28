@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+{% include './head.twig' %}
+    <link rel="shortcut icon" href="assets/favicon.ico">
+    {% block styles %} <link rel="stylesheet" href="assets/build-dev/app.css">{% endblock %}
+</head>
+
+<body  class="{% block body_class %}inner-page{% endblock %}">
+    
+    <!-- begin wrapper -->
+    <div class="l-wrapper"> 
+
+        <!-- begin header -->
+        {% block header %} Header {% endblock %}
+        <!-- end header -->
+
+        <!-- begin main -->
+        <main class="l-main">
+            {% block main %}
+                Content of the page...
+
+                {# <!-- Twig Documentation https://twig.symfony.com/doc/2.x/  -->
+                {% for user in users %}
+                    <li>{{ user.username|e }}</li>
+                {% endfor %}
+
+                {% for i in 0..10 %}
+                    * {{ i }}
+                {% endfor %}
+
+                {% for letter in 'a'..'z' %}
+                    * {{ letter }}
+                {% endfor %} #}
+
+            {% endblock %}
+        </main><!-- end main -->
+
+    </div><!-- end wrapper -->
+
+    <!-- begin footer -->
+    {% block footer %} Footer {% endblock %}
+    <!-- end footer -->
+
+    {% include './to_top.twig' %}
+    
+
+    {% block scripts %} 
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" ></script>
+    {# <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyC4T-H8Uh6hP2gSP05DyocP-C3B88gH790'></script> #}
+    <script src="assets/build-dev/app.js"></script> 
+    {% endblock %}
+</body>
+</html>

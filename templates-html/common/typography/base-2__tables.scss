@@ -1,0 +1,21 @@
+$tables-color-border: #eeeeee; // цвет границ в обычной табилчке
+$nice-tables-color-border: #e8eaeb; //  цвет границ в табличке
+$nice-tables-color-striped: #e8eaeb; //  дополнительный цвет для строчек таблицы
+$nice-tables-color-hover: darken(#e8eaeb, 10%); //  подсветка строчек/строк табилцы при наведении
+$nice-tables-padding: 15px 18px; //  отступы в ячейках табилцы
+@include table-default($tables-color-border);
+@include table-nice($nice-tables-color-border, $nice-tables-color-striped, $nice-tables-color-hover, $nice-tables-padding) {
+    table-layout: fixed;
+    background: #edeff3;
+    th {
+        background: #30454f;
+        color: #fff;
+        font-weight: 400;
+        text-align: left;
+        padding: 12px 15px;
+    }
+    td {
+        padding: 12px 15px;
+    }
+}
+@include table-responsive();

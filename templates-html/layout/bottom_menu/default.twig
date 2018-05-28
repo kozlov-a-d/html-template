@@ -1,0 +1,16 @@
+{% if item.children is not empty %}
+    <div class="b-fmenu">
+        <p class="b-fmenu__heading">{% trans %}layout.bottom_menu.title{% endtrans %}</p>
+        <ul class="b-fmenu__list">
+            {% for child in item.children %}
+                <li{% if matcher.isCurrent(child) or matcher.isAncestor(child) %} class="is-active"{% endif %}>
+                    {% if child.uri %}
+                        <a href="{{ child.uri }}">{{ child.label }}</a>
+                    {% else %}
+                        <span>{{ child.label }}</span>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endif %}

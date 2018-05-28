@@ -28,6 +28,7 @@
                 methods.hideItem(menuRoot, menuItems, containerWidth, options.extraWidth);
 
                 window.addEventListener("resize", function() {
+                    // containerWidth = menuRoot.width();
                     containerWidth = menuRoot.width();
                     if(window.innerWidth > options.minResolution){
                         methods.hideItem(menuRoot, menuItems, containerWidth, options.extraWidth);
@@ -48,16 +49,16 @@
             }
 
             menuRoot.append(
-                '<li class="menu-top__item -extraBar -has-drop-down -drop-down-inverse">' +
-                '<button class="menu-top__item-name">...</button>' +
-                '<div class="menu-top__drop-down">' +
-                '<ul class="menu-top__list">' +
+                '<li class="-extraBar -has-dropdown -drop-down-inverse">' +
+                '<button><span>...</span></button>' +
+                '<div>' +
+                '<ul>' +
                 extrabarContent +
                 '</ul>' +
                 '</div>' +
                 '</li>'
             );
-            menuRoot.find('.-extraBar .menu-top__drop-down .menu-top__drop-down').remove();
+            menuRoot.find('.-extraBar div div').remove(); 
         },
 
         // удаляет дополнительную выпадашку
@@ -70,12 +71,13 @@
         hideItem : function (menuRoot, menuItems, containerWidth, extraWidth) {
             // подготавливаем выпадашку дублёра
             var dubler = menuRoot.find('.-extraBar');
-            var dublerList = dubler.find('.menu-top__item');
+            var dublerList = menuRoot.find('.-extraBar > div > ul > li');
+            // console.log(dublerList);
             dubler.removeClass('-hidden');
-            dublerList.removeClass('-hidden');
             menuItems.removeClass('-hidden');
             var debugLog = false;
 
+            // console.log('containerWidth ' + containerWidth);
 
             var width = containerWidth;
             var sumWidth = 0;
@@ -91,6 +93,7 @@
                     if(i === menuItems.length-1){
                         // да: удаляем многоточие
                         dubler.removeClass('-hidden');
+                        // dublerList.eq(i).addClass('-hidden');
                         if(debugLog){console.log('проверяем это последний пункт -  да');}
                     } else {
                         // нет:

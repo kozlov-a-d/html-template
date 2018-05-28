@@ -34,10 +34,10 @@ module.exports = (gulp, images) => {
                     }),
                     imageMin.jpegtran({
                         progressive: true
-                    }),
-                    mozjpeg({
-                        quality: 90
                     })
+                    // mozjpeg({
+                    //     quality: 90
+                    // })
                 ], {
                     verbose: true
                 })))

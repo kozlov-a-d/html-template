@@ -8,53 +8,76 @@ console.time('extends-js');
 scrollComponent.init('.l-wrapper, .l-footer');
 //=include ../ds-kit/basis/resize.component.js
 resizeComponent.setFreezeTime(200);
-
-
+      
+ 
 // PLUGINS =============================================================================================================
-
 //=include ../ds-kit/plugins/photoswipe/photoswipe.wrapper.js
 photoswipeWrapper.init('.js-photoswipe-gallery', 'a');
 
-//=include ../ds-kit/plugins/menu-smart/menu-smart.jquery.js
-$('.js-menu-smart').menuSmart();
-
 //=include ../ds-kit/plugins/menu-mobile/menu-mobile.vue.js
 //=include ../ds-kit/plugins/menu-mobile/menu-mobile.jquery.js
-$('.js-menu-mobile').menuMobile(); // переделать без vue.js ?
+$('.js-menu-mobile').menuMobile({
+    text: {
+        rootTitle: 'Menu'      
+    },
+}); // переделать без vue.js ?
+ 
+//=include ../ds-kit/plugins/menu-smart/menu-smart.jquery.js
+$('.js-menu-smart').menuSmart();     
 
 //=include ../ds-kit/plugins/modal-ajax/modal-ajax.jquery.js
 $('.js-ajax').modalAjax();
 
-//=include ../ds-kit/plugins/blind-version/blind.js
+
+////=include ../ds-kit/plugins/blind-version/blind.js
 // blindVersion.init();
 
-//=include ../ds-kit/plugins/goals-trigger/goal.component.js
-// переделать
 
 //=include ../ds-kit/plugins/spoiler/spoiler.js
-// переделать
+// FIXME: переделать
 
 //=include ../ds-kit/plugins/tables/tables.js
 /* задаём каим именно табилцам нужно добавлять обертки .table-responsive для адаптива */
 Tables.addMobileView('table'); // переделать
 
+//=include ../ds-kit/plugins/goals.module.js
+
+//=include ../ds-kit/plugins/scroll-top.module.js
+scrollTopModule.init('.js-scroll-top', { speed: 500, offsetTop: 105 });            
+
+//=include ../ds-kit/plugins/print.module.js
+printModule.init('.js-print');    
+
 
 // TEMPLATE ============================================================================================================
+        
+// Header ============================================================================================================*/
+
+//=include ../../templates-html/layout/header/base-1__header.js                               /* Base-1 Denis + Lesya */
 
 
-// Base-1 Denis ------------------------------------------------------------------------------------------------------*/
+// Common-block ======================================================================================================*/
 
-//=include ../../template-block/base-1/_header/header.js
-//=include ../../template-block/base-1/homepage/slider/slider.js
-//=include ../../template-block/base-1/homepage/advantages/advantages.js
-//=include ../../template-block/base-1/homepage/hits-widget/hits-widget.js
-//=include ../../template-block/base-1/homepage/articles-widget/articles-widget.js
-//=include ../../template-block/base-1/homepage/news-widget-and-banners/news-widget-and-banners.js
-//=include ../../template-block/base-1/homepage/galery-fullwidth/galery-fullwidth.js
-//=include ../../template-block/base-1/homepage/certificates-and-partners/certificates-and-partners.js
-//=include ../../template-block/base-1/homepage/testimonials-widget/testimonials-widget.js
+//=include ../../templates-html/feedback/base-1__feedback-container.js                        /* Base-1 Denis + Lesya */
+ 
 
-// Base-1 Denis End --------------------------------------------------------------------------------------------------*/
+// Homepage ==========================================================================================================*/
+
+//=include ../../templates-html/homepage/slider/base-1__slider.js                             /* Base-1 Denis + Lesya */
+//=include ../../templates-html/homepage/products/base-1__products-bestseller.js              /* Base-1 Denis + Lesya */
+//=include ../../templates-html/homepage/extra_text/base-1__partners.js                       /* Base-1 Denis + Lesya */
+//=include ../../templates-html/homepage/publications/base-1__articles.js                     /* Base-1 Denis + Lesya */
+//=include ../../templates-html/homepage/publications/base-1__news.js                         /* Base-1 Denis + Lesya */
+//=include ../../templates-html/homepage/gallery/base-1__gallery.js                           /* Base-1 Denis + Lesya */
+//=include ../../templates-html/homepage/extra_text/base-1__advantages.js                     /* Base-1 Denis + Lesya */
+//=include ../../templates-html/homepage/banner/base-1__banner-list.js                        /* Base-1 Denis + Lesya */
+//=include ../../templates-html/homepage/reviews/base-1__reviews.js                           /* Base-1 Denis + Lesya */
+
+
+// Products ==========================================================================================================*/
+
+//=include ../../templates-html/products/show/base-1__products-show.js                        /* Base-1 Denis + Lesya */
+//=include ../../templates-html/products/similar/base-1__products-similar.js                  /* Base-1 Denis + Lesya */
 
 
 // END EXTENDS =========================================================================================================

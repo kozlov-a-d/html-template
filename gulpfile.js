@@ -14,15 +14,35 @@ const scripts = [
             target: 'app.js',
             src:    [
                 'web/assets/node_modules/jquery/dist/jquery.js',
+                'web/assets/node_modules/bazinga-translator/js/translator.js',
                 'web/assets/node_modules/imagesloaded/imagesloaded.pkgd.js',
+                'web/assets/node_modules/inputmask/dist/inputmask/inputmask.js',
+                'web/assets/node_modules/inputmask/dist/inputmask/jquery.inputmask.js',
+                'web/assets/node_modules/noty/lib/noty.js',
                 'web/assets/node_modules/owl.carousel/dist/owl.carousel.js',
                 'web/assets/node_modules/slick-carousel/slick/slick.js',
                 'web/assets/node_modules/vue/dist/vue.js',
                 'web/assets/node_modules/photoswipe/dist/photoswipe.js',
                 'web/assets/node_modules/photoswipe/dist/photoswipe-ui-default.js',
 
+                // 'assets/vendor/googlemaps/markerwithlabel.js',
+
+                'assets/translations/messages/en.js',
+                'assets/translations/config.js',
+
+                'assets/scripts/app.js',
+                'assets/scripts/form.js',
+                'assets/scripts/inputmask.js',
+                'assets/scripts/map.js',
+                'assets/scripts/novalidate.js',
+
                 'assets/scripts/extend.js',
                 'assets/scripts/main.js'
+            ],
+            watch: [
+                'assets/ds-kit/**/*.js',
+                'assets/scripts/**/*.js',
+                'templates-html/**/*.js'
             ]
         }
     ],
@@ -31,7 +51,9 @@ const scripts = [
             target: 'app.css',
             src:    [
                 'web/assets/node_modules/normalize.css/normalize.css',
-                'web/assets/node_modules/animate.css/animate.css',
+                // 'web/assets/node_modules/animate.css/animate.css',
+                'web/assets/node_modules/noty/lib/noty.css',
+                'web/assets/node_modules/noty/lib/themes/sunset.css',
                 'web/assets/node_modules/owl.carousel/dist/assets/owl.carousel.css',
                 'web/assets/node_modules/owl.carousel/dist/assets/owl.theme.default.css',
                 'web/assets/node_modules/slick-carousel/slick/slick.scss',
@@ -54,10 +76,10 @@ const scripts = [
     html = [
         {
             target: 'web/',
-            src:    'html/[^_]*.{html,twig}',
+            src:    'html/**/[^_]*.{html,twig}',
             watch: [
                 'html/**/*.{html,twig}',
-                'template-block/**/*.{html,twig}'
+                'templates-html/**/*.{html,twig}'
             ]
         }
     ],
@@ -72,7 +94,14 @@ const scripts = [
     ],
     scss = [
         {
-            src: 'assets/**/*.scss'
+            src: [
+                'assets/styles/**/*.scss'
+            ],
+            watch: [
+                'assets/ds-kit/**/*.{css,scss}',
+                'assets/styles/**/*.{css,scss}',
+                'templates-html/**/*.{css,scss}'
+            ]
         }
     ];
 
@@ -97,5 +126,5 @@ gulp
     // HTML
     .task('html', require('./gulp/tasks/html')(gulp, html))
     .task('build-html', ['build', 'html'])
-    .task('watch-html', ['build-html'], require('./gulp/tasks/watch-html')(gulp, html, scripts, scss, styles))
+    .task('watch-html', ['build-html'], require('./gulp/tasks/watch-html')(gulp, html, scripts, scss, styles, images))
     .task('serve-html', ['build-html', 'browser-sync', 'watch-html']);

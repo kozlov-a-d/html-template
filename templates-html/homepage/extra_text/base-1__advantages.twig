@@ -1,0 +1,46 @@
+{%  set advantages = [ {
+    img: 'http://via.placeholder.com/120x120',
+    title: 'Безопасность',
+    text: 'Безопасность вашего дома гарантирует наличие не менее одного замка 4-го (высшего) класса по',
+},{
+    img: 'http://via.placeholder.com/120x120',
+    title: 'Надежность',
+    text: 'Наши мастера прошли специальное обучение на курсах по ремонту электротехники',
+},{
+    img: 'http://via.placeholder.com/120x120',
+    title: 'Качество',
+    text: 'Мы гарантируем качество оказания услуг и предоставление всех заявленных возможностей',
+},{
+    img: 'http://via.placeholder.com/120x120',
+    title: 'Гарантия',
+    text: 'У нас представлен огромный выбор запасных деталей на все сегвеи',
+}] %}
+<!-- advantages -->
+<section class="advantages js-advantages">
+    <div class="advantages__container">
+
+        <div class="advantages__header">
+            <div class="advantages__title">
+                <h2>Преимущества работы с нами</h2>
+            </div>
+            <div class="advantages__nav nav-arrow">
+                <button class="advantages__nav-btn nav-arrow__btn -prev js-nav-prev">prev</button>
+                <button class="advantages__nav-btn nav-arrow__btn -next js-nav-next">next</button>
+            </div>
+        </div>
+
+        <div class="advantages__carousel owl-carousel">
+            {% for item in advantages %}
+            <div class="advantages__item">
+                    <div class="advantages__item-img"><img src="{{ item.img }}" alt="{{ item.title }}" title="{{ item.title }}"></div>
+                    <div class="advantages__item-text">
+                        <p class="advantages__item-name">{{ item.title }}</p>
+                        <p>{{ item.text }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+    </div>
+</section>
+<!-- / advantages END -->
