@@ -50,6 +50,8 @@ const scripts = [
         {
             target: 'app.css',
             src:    [
+                'assets/styles/fonts.scss',
+                
                 'web/assets/node_modules/normalize.css/normalize.css',
                 // 'web/assets/node_modules/animate.css/animate.css',
                 'web/assets/node_modules/noty/lib/noty.css',
