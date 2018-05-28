@@ -6,7 +6,9 @@ $nice-tables-padding: 15px 18px; //  отступы в ячейках табил
 @include table-default($tables-color-border);
 @include table-nice($nice-tables-color-border, $nice-tables-color-striped, $nice-tables-color-hover, $nice-tables-padding) {
     table-layout: fixed;
-    background: #edeff3;
+    background: #ffffff;
+    border: 1px solid #eee;
+    overflow: hidden;
     th {
         background: #30454f;
         color: #fff;
@@ -16,6 +18,10 @@ $nice-tables-padding: 15px 18px; //  отступы в ячейках табил
     }
     td {
         padding: 12px 15px;
+        border-bottom: none;
+    }
+    tr:nth-child(2n) td {
+        background: #f1f4f5; 
     }
 }
 @include table-responsive();

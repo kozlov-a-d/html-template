@@ -76,7 +76,10 @@
 /* Base-2 Oleg          */  @import "../../templates-html/common/typography/base-2__tables.scss";
 
 /* Base-1 Denis + Lesya */  @import "../../templates-html/common/form/base-1__form.scss";
-/* Base-1 Denis + Lesya */  @import "../../templates-html/common/buttons/base-1__buttons.scss";
+
+/* Base-1 Denis + Lesya */  //@import "../../templates-html/common/buttons/base-1__buttons.scss";
+/* Base-2 Oleg          */  @import "../../templates-html/common/buttons/base-2__buttons.scss";
+
 /* Base-1 Denis + Lesya */  @import "../../templates-html/common/modal/base-1__modal.scss";
 /* Base-1 Denis + Lesya */  @import "../../templates-html/common/owl-themes/base-1__owl-themes.scss"; 
 /* Base-1 Denis + Lesya */  @import "../../templates-html/common/nav-btns/base-1__nav-btns.scss";
@@ -103,7 +106,9 @@
 
 // Homepage ==========================================================================================================*/
 
-/* Base-1 Denis + Lesya */  @import "../../templates-html/homepage/slider/base-1__slider.scss";
+/* Base-1 Denis + Lesya */  //@import "../../templates-html/homepage/slider/base-1__slider.scss";
+/* Base-2 Oleg          */  @import "../../templates-html/homepage/slider/base-2__slider.scss";
+
 /* Base-1 Denis + Lesya */  @import "../../templates-html/homepage/catalog-subdirectory/base-1__catalog-subdir.scss";     
 /* Base-1 Denis + Lesya */  @import "../../templates-html/homepage/text/base-1__text.scss";
 /* Base-1 Denis + Lesya */  @import "../../templates-html/homepage/products/base-1__products-bestseller.scss"; 

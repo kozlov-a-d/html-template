@@ -1,0 +1,32 @@
+{%  set slides = [ {
+    img: 'http://via.placeholder.com/1920x530',
+    name: 'Luxury Yacht',
+    text: 'Experience unparalleled luxury onboard Sunseeker and Benetti Yachts from the exclusive Bulgari Resort and Residences',
+    url: '#'
+},{
+    img: 'http://via.placeholder.com/1920x530',
+    name: 'Luxury Yacht Charter',
+    text: '',
+    url: '#'
+},{
+    img: 'http://via.placeholder.com/1920x530',
+    name: '',
+    text: '',
+    url: ''
+}] %}
+<!-- begin slider -->
+<div class="slider-header js-slider-header">
+    <div class="js-slider">
+        {% for item in slides %}
+        <div class="item slider-header__item">
+            <img class="slider-header__img" src="{{ item.img }}" alt="{{ item.name }}" title="{{ item.name }}">
+            <div class="slider-header__text-container">
+                {% if item.name %}<p class="-title">{{ item.name }}</p>{% endif %}
+                {% if item.text %}<p>{{ item.text }}</p>{% endif %}
+                {% if item.url %}<a class="btn -secondary" href="{{ item.url }}">Узнать больше</a>{% endif %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<!-- end slider -->
