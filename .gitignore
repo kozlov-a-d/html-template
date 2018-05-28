@@ -1,6 +1,7 @@
 *.log
 *.sql.gz
 /.idea/
+/.vscode/
 /.web-server-pid
 /app/config/parameters.yml
 /assets/translations/*
