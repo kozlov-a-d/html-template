@@ -56,7 +56,7 @@ printModule.init('.js-print');
 // Header ============================================================================================================*/
 
 //=include ../../templates-html/layout/header/base-1__header.js                               /* Base-1 Denis + Lesya */
-////=include ../../templates-html/layout/header/base-1__header-short.js                               /* Base-1 Denis + Lesya */
+///=include ../../templates-html/layout/header/base-1__header-short.js                         /* Base-1 Denis + Lesya */
 
 
 // Common-block ======================================================================================================*/

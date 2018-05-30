@@ -1,0 +1,77 @@
+{%  set subdir = [ {
+    img150x150: 'http://via.placeholder.com/150x150',
+    img360x150: 'http://via.placeholder.com/360x150',
+    title: 'Подраздел №1',
+    url: '#'
+},{
+    img150x150: 'http://via.placeholder.com/150x150',
+    img360x150: 'http://via.placeholder.com/360x150',
+    title: 'Подраздел №2 с длинным названием',
+    url: '#'
+},{
+    img150x150: 'http://via.placeholder.com/150x150',
+    img360x150: 'http://via.placeholder.com/360x150',
+    title: 'Подраздел каталога №3',
+    url: '#'
+},{
+    img150x150: 'http://via.placeholder.com/150x150',
+    img360x150: 'http://via.placeholder.com/360x150',
+    title: 'Подраздел №4',
+    url: '#'
+},{
+    img150x150: 'http://via.placeholder.com/150x150',
+    img360x150: 'http://via.placeholder.com/360x150',
+    title: 'Подраздел каталога №5',
+    url: '#'
+}] %}
+<!-- catalog-subdir -->
+<section class="catalog-subdir -col-5">
+    <nav class="catalog-subdir__container js-menu-mobile">
+        <button class="catalog-subdir__btn-switcher btn" data-menu-mobile--switcher-btn>Каталог продукции</button>
+        <ul class="catalog-subdir__list" data-menu-mobile--root>
+            {% for i in 0..4 %}
+            <li class="catalog-subdir__item">
+                <a href="{{ subdir[i].url }}" class="catalog-subdir__item-img">
+                    <img src="{{ subdir[i].img150x150 }}" alt="{{ subdir[i].title }}" title="{{ subdir[i].title }}">
+                </a>
+                <a href="{{ subdir[i].url }}" class="catalog-subdir__item-name">{{ subdir[i].title }}</a>
+            </li> 
+            {% endfor %}
+        </ul>
+    </nav>
+</section>
+<!-- catalog-subdir -->
+{# <!-- catalog-subdir -->
+<section class="catalog-subdir -col-3">
+    <nav class="catalog-subdir__container js-menu-mobile">
+        <button class="catalog-subdir__btn-switcher btn" data-menu-mobile--switcher-btn>Каталог продукции</button>
+        <ul class="catalog-subdir__list" data-menu-mobile--root>
+            {% for i in 0..2 %}
+            <li class="catalog-subdir__item">
+                <a href="{{ subdir[i].url }}" class="catalog-subdir__item-img">
+                    <img src="{{ subdir[i].img150x150 }}" alt="{{ subdir[i].title }}" title="{{ subdir[i].title }}">
+                </a>
+                <a href="{{ subdir[i].url }}" class="catalog-subdir__item-name">{{ subdir[i].title }}</a>
+            </li> 
+            {% endfor %}
+        </ul>
+    </nav>
+</section>
+<!-- catalog-subdir -->
+<!-- catalog-subdir -->
+<section class="catalog-subdir -col-2">
+    <nav class="catalog-subdir__container js-menu-mobile">
+        <button class="catalog-subdir__btn-switcher btn" data-menu-mobile--switcher-btn>Каталог продукции</button>
+        <ul class="catalog-subdir__list" data-menu-mobile--root>
+            {% for i in 0..1 %}
+            <li class="catalog-subdir__item">
+                <a href="{{ subdir[i].url }}" class="catalog-subdir__item-img">
+                    <img src="{{ subdir[i].img360x150 }}" alt="{{ subdir[i].title }}" title="{{ subdir[i].title }}">
+                </a>
+                <a href="{{ subdir[i].url }}" class="catalog-subdir__item-name">{{ subdir[i].title }}</a>
+            </li> 
+            {% endfor %}
+        </ul>
+    </nav>
+</section>
+<!-- catalog-subdir --> #}

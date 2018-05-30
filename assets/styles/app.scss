@@ -70,88 +70,91 @@
 
 // Common ============================================================================================================*/
 
-/* Base-1 Denis + Lesya */  //@import "../../templates-html/common/typography/base-1__text.scss";
-/* Base-2 Oleg          */  @import "../../templates-html/common/typography/base-2__text.scss";
+//@import "../../templates-html/common/typography/base-1__text.scss";                         /* Base-1 Denis + Lesya */
+@import "../../templates-html/common/typography/base-2__text.scss";                           /* Base-2 Oleg          */
 
-/* Base-1 Denis + Lesya */  //@import "../../templates-html/common/typography/base-1__tables.scss";
-/* Base-2 Oleg          */  @import "../../templates-html/common/typography/base-2__tables.scss";
+//@import "../../templates-html/common/typography/base-1__tables.scss";                         /* Base-1 Denis + Lesya */
+@import "../../templates-html/common/typography/base-2__tables.scss";                         /* Base-2 Oleg          */
 
-/* Base-1 Denis + Lesya */  @import "../../templates-html/common/form/base-1__form.scss";
+@import "../../templates-html/common/form/base-1__form.scss";                                 /* Base-1 Denis + Lesya */
 
-/* Base-1 Denis + Lesya */  //@import "../../templates-html/common/buttons/base-1__buttons.scss";
-/* Base-2 Oleg          */  @import "../../templates-html/common/buttons/base-2__buttons.scss";
+//@import "../../templates-html/common/buttons/base-1__buttons.scss";                           /* Base-1 Denis + Lesya */
+@import "../../templates-html/common/buttons/base-2__buttons.scss";                           /* Base-2 Oleg          */
 
-/* Base-1 Denis + Lesya */  @import "../../templates-html/common/modal/base-1__modal.scss";
-/* Base-1 Denis + Lesya */  @import "../../templates-html/common/owl-themes/base-1__owl-themes.scss"; 
-/* Base-1 Denis + Lesya */  @import "../../templates-html/common/nav-btns/base-1__nav-btns.scss";
-/* Base-1 Denis + Lesya */  @import "../../templates-html/common/breadcrumbs/base-1__breadcrumbs.scss"; 
-/* Base-1 Denis + Lesya */  @import "../../templates-html/common/pagination/base-1__pagination.scss"; 
+@import "../../templates-html/common/modal/base-1__modal.scss";                               /* Base-1 Denis + Lesya */
+@import "../../templates-html/common/owl-themes/base-1__owl-themes.scss";                     /* Base-1 Denis + Lesya */
+@import "../../templates-html/common/nav-btns/base-1__nav-btns.scss";                         /* Base-1 Denis + Lesya */
+@import "../../templates-html/common/breadcrumbs/base-1__breadcrumbs.scss";                   /* Base-1 Denis + Lesya */
+@import "../../templates-html/common/pagination/base-1__pagination.scss";                     /* Base-1 Denis + Lesya */
 
 
 // Header ============================================================================================================*/
 
-/* Base-1 Denis + Lesya */  @import "../../templates-html/layout/header/base-1__header.scss";
-/* Base-1 Denis + Lesya */  //@import "../../templates-html/layout/header/base-1__header-short.scss";
-/* Base-1 Denis + Lesya */  @import "../../templates-html/layout/top_menu/base-1__main-menu.scss";
+@import "../../templates-html/layout/header/base-1__header.scss";                             /* Base-1 Denis + Lesya */
+//@import "../../templates-html/layout/header/base-1__header-short.scss";                     /* Base-1 Denis + Lesya */
+
+@import "../../templates-html/layout/top_menu/base-1__main-menu.scss";                        /* Base-1 Denis + Lesya */
 
 
 // Footer ============================================================================================================*/
 
-/* Base-1 Denis + Lesya */ @import "../../templates-html/layout/footer/base-1__footer.scss";   
+@import "../../templates-html/layout/footer/base-1__footer.scss";                             /* Base-1 Denis + Lesya */
 
 
 // Common-block ======================================================================================================*/
 
-/* Base-1 Denis + Lesya */  @import "../../templates-html/feedback/base-1__feedback-container.scss";
+@import "../../templates-html/feedback/base-1__feedback-container.scss";                      /* Base-1 Denis + Lesya */
 
 
 // Homepage ==========================================================================================================*/
 
-/* Base-1 Denis + Lesya */  //@import "../../templates-html/homepage/slider/base-1__slider.scss";
-/* Base-2 Oleg          */  @import "../../templates-html/homepage/slider/base-2__slider.scss";
+ //@import "../../templates-html/homepage/slider/base-1__slider.scss";                        /* Base-1 Denis + Lesya */
+@import "../../templates-html/homepage/slider/base-2__slider.scss";                           /* Base-2 Oleg          */
 
-/* Base-1 Denis + Lesya */  @import "../../templates-html/homepage/catalog-subdirectory/base-1__catalog-subdir.scss";     
-/* Base-1 Denis + Lesya */  @import "../../templates-html/homepage/text/base-1__text.scss";
-/* Base-1 Denis + Lesya */  @import "../../templates-html/homepage/products/base-1__products-bestseller.scss"; 
-/* Base-1 Denis + Lesya */  @import "../../templates-html/homepage/extra_text/base-1__work-shema.scss";
-/* Base-1 Denis + Lesya */  @import "../../templates-html/homepage/extra_text/base-1__partners.scss";
-/* Base-1 Denis + Lesya */  @import "../../templates-html/homepage/publications/base-1__articles.scss"; 
-/* Base-1 Denis + Lesya */  @import "../../templates-html/homepage/publications/base-1__news.scss";
-/* Base-1 Denis + Lesya */  @import "../../templates-html/homepage/extra_text/base-1__extra-text.scss";
-/* Base-1 Denis + Lesya */  @import "../../templates-html/homepage/gallery/base-1__gallery.scss";
-/* Base-1 Denis + Lesya */  @import "../../templates-html/homepage/extra_text/base-1__advantages.scss";
-/* Base-1 Denis + Lesya */  @import "../../templates-html/homepage/banner/base-1__banner-list.scss";
-/* Base-1 Denis + Lesya */  @import "../../templates-html/homepage/reviews/base-1__reviews.scss"; 
+// @import "../../templates-html/homepage/catalog-subdirectory/base-1__catalog-subdir.scss";     /* Base-1 Denis + Lesya */
+@import "../../templates-html/homepage/catalog-subdirectory/base-2__catalog-subdir.scss";     /* Base-2 Oleg          */
+
+@import "../../templates-html/homepage/text/base-1__text.scss";                               /* Base-1 Denis + Lesya */
+@import "../../templates-html/homepage/products/base-1__products-bestseller.scss";            /* Base-1 Denis + Lesya */
+@import "../../templates-html/homepage/extra_text/base-1__work-shema.scss";                   /* Base-1 Denis + Lesya */
+@import "../../templates-html/homepage/extra_text/base-1__partners.scss";                     /* Base-1 Denis + Lesya */
+@import "../../templates-html/homepage/publications/base-1__articles.scss";                   /* Base-1 Denis + Lesya */
+@import "../../templates-html/homepage/publications/base-1__news.scss";                       /* Base-1 Denis + Lesya */
+@import "../../templates-html/homepage/extra_text/base-1__extra-text.scss";                   /* Base-1 Denis + Lesya */
+@import "../../templates-html/homepage/gallery/base-1__gallery.scss";                         /* Base-1 Denis + Lesya */
+@import "../../templates-html/homepage/extra_text/base-1__advantages.scss";                   /* Base-1 Denis + Lesya */
+@import "../../templates-html/homepage/banner/base-1__banner-list.scss";                      /* Base-1 Denis + Lesya */
+@import "../../templates-html/homepage/reviews/base-1__reviews.scss";                         /* Base-1 Denis + Lesya */
 
 
 // Text pages ========================================================================================================*/
 
-/* Base-1 Denis + Lesya */ @import "../../templates-html/text/contacts/base-1__contacts.scss";    
+@import "../../templates-html/text/contacts/base-1__contacts.scss";                           /* Base-1 Denis + Lesya */
 
 
 // Products ==========================================================================================================*/
 
-/* Base-1 Denis + Lesya */ @import "../../templates-html/products/list-item/base-1__products-list-item.scss";    
-/* Base-1 Denis + Lesya */ @import "../../templates-html/products/list/base-1__products-list.scss";    
-/* Base-1 Denis + Lesya */ @import "../../templates-html/products/show/base-1__products-show.scss";    
-/* Base-1 Denis + Lesya */ @import "../../templates-html/products/similar/base-1__products-similar.scss";     
+@import "../../templates-html/products/list-item/base-1__products-list-item.scss";            /* Base-1 Denis + Lesya */
+@import "../../templates-html/products/list/base-1__products-list.scss";                      /* Base-1 Denis + Lesya */
+@import "../../templates-html/products/show/base-1__products-show.scss";                      /* Base-1 Denis + Lesya */
+@import "../../templates-html/products/similar/base-1__products-similar.scss";                /* Base-1 Denis + Lesya */
 
 
 // Gallery ===========================================================================================================*/
 
-/* Base-1 Denis + Lesya */ @import "../../templates-html/gallery/list/base-1__gallery-list.scss";  
-/* Base-1 Denis + Lesya */ @import "../../templates-html/gallery/show/base-1__gallery-show.scss";  
+@import "../../templates-html/gallery/list/base-1__gallery-list.scss";                        /* Base-1 Denis + Lesya */
+@import "../../templates-html/gallery/show/base-1__gallery-show.scss";                        /* Base-1 Denis + Lesya */
 
 
 // Reviews ===========================================================================================================*/
 
-/* Base-1 Denis + Lesya */ @import "../../templates-html/reviews/list/base-1__reviews-list.scss";  
-/* Base-1 Denis + Lesya */ @import "../../templates-html/reviews/form/base-1__reviews-form.scss";  
+@import "../../templates-html/reviews/list/base-1__reviews-list.scss";                        /* Base-1 Denis + Lesya */
+@import "../../templates-html/reviews/form/base-1__reviews-form.scss";                        /* Base-1 Denis + Lesya */
 
 
 // Publication =======================================================================================================*/
 
-/* Base-1 Denis + Lesya */ @import "../../templates-html/publication/list/base-1__publication-list-article.scss";       
+@import "../../templates-html/publication/list/base-1__publication-list-article.scss";         /* Base-1 Denis + Lesya */
 
 @import "print";
 

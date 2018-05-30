@@ -1,10 +1,13 @@
-// @class .btn
-// @state :hover -  
-// @state :disabled -  
-// @state .-secondary -  
-// @state .-loading -  
-// @state .-smaller -  
-
+/* 
+@class .btn - обычная кнопка ( по умолчанию inline-block )
+@state :hover - кнопка при наведение
+@state :disabled - неактивная кнопка
+@state -secondary - альтернативный вид кнопки
+@state -loading - любая кнопка при загрузке ( текст и иконка пропадают, появляется лоадер )
+@state -fullwidth - кнопка на всю ширину
+@state -center - центрированая кнопка ( например display: block; margin: 0 auto 20px )
+@state -smaller - мелкая версия любой кнопки
+*/
 .btn {
     display: inline-block;
     vertical-align: top;

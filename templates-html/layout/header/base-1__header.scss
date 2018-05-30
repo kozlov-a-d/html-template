@@ -98,6 +98,7 @@ body:not(.home-page) .header{
     z-index: 5;
     &__container {
         padding: 15px 0;
+        @include cfix();
         @media (max-width: $md) {
             padding-top: 80px;
             text-align: center;
