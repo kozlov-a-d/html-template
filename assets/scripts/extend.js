@@ -28,6 +28,8 @@ $('.js-menu-smart').menuSmart();
 //=include ../ds-kit/plugins/modal-ajax/modal-ajax.jquery.js
 $('.js-ajax').modalAjax();
 
+//=include ../ds-kit/plugins/modal-html/modal-html.jquery.js
+
 
 ////=include ../ds-kit/plugins/blind-version/blind.js
 // blindVersion.init();
@@ -54,6 +56,7 @@ printModule.init('.js-print');
 // Header ============================================================================================================*/
 
 //=include ../../templates-html/layout/header/base-1__header.js                               /* Base-1 Denis + Lesya */
+////=include ../../templates-html/layout/header/base-1__header-short.js                               /* Base-1 Denis + Lesya */
 
 
 // Common-block ======================================================================================================*/

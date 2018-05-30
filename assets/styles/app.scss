@@ -46,8 +46,9 @@
 /* CONTENT */  //@import "./temp/blind-version/blind-version-settings.scss";
 /* CONTENT */  //@import "./temp/blind-version/blind-version-theme.scss";
 
-/* JQUERY PLUGINS */  @import "../ds-kit/plugins/menu-mobile/menu-mobile.scss";
-/* JQUERY PLUGINS */  @import "../ds-kit/plugins/modal-ajax/modal-ajax.jquery.scss";
+/* PLUGINS */  @import "../ds-kit/plugins/menu-mobile/menu-mobile.scss";
+/* PLUGINS */  @import "../ds-kit/plugins/modal-ajax/modal-ajax.jquery.scss";
+/* PLUGINS */  @import "../ds-kit/plugins/modal-html/modal-html.jquery.scss";
 
 /* UTILITIES */  @import "../ds-kit/utilities-styles/grid-inline";  /* .grid  .col-x-y */
 /* UTILITIES */  @import "../ds-kit/utilities-styles/response-img.scss";  /* .response-img (-xs, -sm, -md, -lg, -xl,) */
@@ -89,8 +90,8 @@
 
 // Header ============================================================================================================*/
 
-/* Base-1 Denis + Lesya */  // @import "../../templates-html/layout/header/base-1__header.scss";
-/* Base-1 Denis + Lesya */  @import "../../templates-html/layout/header/base-1__header-short.scss";
+/* Base-1 Denis + Lesya */  @import "../../templates-html/layout/header/base-1__header.scss";
+/* Base-1 Denis + Lesya */  //@import "../../templates-html/layout/header/base-1__header-short.scss";
 /* Base-1 Denis + Lesya */  @import "../../templates-html/layout/top_menu/base-1__main-menu.scss";
 
 

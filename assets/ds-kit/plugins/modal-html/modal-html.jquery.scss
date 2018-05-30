@@ -1,0 +1,164 @@
+$modal-color-bg-base: rgba(#232732, 0.8);
+$modal-color-close-btn: #010101;
+$modal-color-close-btn-hover: #010101;
+$modal-color-bg-container: #d8d8d1;
+
+.modal-html {
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: table;
+    width: 100%;
+    height: 100vh;
+    z-index: 1000;
+    animation: overlay-show 0.7s ease-in-out;
+
+    &.closing {
+        animation: overlay-closing 1s ease-in-out;
+        .modal__container {
+            animation: overlay__container-closing 1s ease-in-out;
+        }
+    }
+
+    &__wrapper {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+    }
+    &__bg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: $modal-color-bg-base;
+    }
+    &__btn-close {
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 48px;
+        height: 48px;
+        font-size: 0;
+        border: none;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        z-index: 20;
+        &:before,
+        &:after{
+            content: '';
+            display: block;
+            width: 23px; 
+            height: 3px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -11px;
+            background: $modal-color-close-btn;
+            transform-origin: center center;
+            transition: background $translate-time $translate-ease;
+        }
+        &:before{
+            transform: rotate(45deg);
+        }
+        &:after{
+            transform: rotate(-45deg);
+        }
+
+        &:hover{
+            &:before,
+            &:after{
+                background: $modal-color-close-btn-hover;
+            }   
+        }
+    }
+    &__title {
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: block;
+        width: 100%;
+        padding: 0 50px 0 20px;
+        font-size: 25px;
+        font-weight: 500;
+        line-height: 50px;
+        color: #000000;
+        text-align: left;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    &__container {
+        min-width: 320px;
+        position: relative;
+        text-align: center;
+        display: inline-block;
+        max-height: 100vh;
+        overflow-y: auto;
+        overflow-x: hidden;
+        background: $modal-color-bg-container;
+        animation: overlay__container-show 1s ease-in-out;
+
+        @media (max-width: 480px) {
+            width: 100vw;
+            height: 100vh;
+        }
+    }
+
+    &__scroll {
+        padding: 50px 20px 80px;
+        background: $modal-color-bg-container;
+        text-align: left;
+        @media (max-width: 480px) {
+            height: 100vh;
+        }
+    }
+    
+
+}
+
+@keyframes overlay-show {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes overlay-closing {
+    from,
+    50% {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes overlay__container-show {
+    from,
+    50% {
+        opacity: 0;
+        transform: translate3d(0, 15px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes overlay__container-closing {
+    from {
+        opacity: 1;
+        transform: none;
+    }
+    50%,
+    to {
+        opacity: 0;
+        transform: translate3d(0, 15px, 0);
+    }
+}
+

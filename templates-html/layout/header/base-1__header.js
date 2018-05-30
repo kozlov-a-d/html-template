@@ -15,3 +15,15 @@
     // вставляем
     appendAfterElement.parentNode.insertBefore(clone,appendAfterElement.nextSibling);
 })();
+
+$('.js-header-modal-cart').modalHtml({
+    title: 'Корзина',
+    html: '' +
+    '<div class="modal-html__phone">' +
+        '<a href="tel:88000000000">8 (800) 000-00-00</a>' +
+        '<a href="tel:88000000000">8 (800) 000-00-00</a>' +
+    '</div>' +
+    '<a class="btn -fullwidth modal-html__btn" href="#">Корзина</a> ' +
+    '',
+    minResolution: 480
+});
