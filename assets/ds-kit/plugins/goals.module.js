@@ -70,11 +70,11 @@ var goalsModule = (function(){
     }  */
 
     
-    $('a[href^="tel:"]').on('click', function(){
+    $('body').on('click', 'a[href^="tel:"]', function(){
         goalDone('Phone', {'event_category': 'Click'});
     });
 
-    $('a[href^="mailto:"]').on('click', function(){
+    $('body').on('click', 'a[href^="mailto:"]', function(){
         goalDone('Email', {'event_category': 'Click'});
     });
 
