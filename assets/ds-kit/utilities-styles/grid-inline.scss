@@ -4,8 +4,7 @@
 /* Основная сетка строится на flexbox'ах  + фолбэки на inline-block'ах                      */
 /* Фолбэки цепляются по классу no-flexbox, который добавляет modernizer                     */
 /********************************************************************************************/
-$grid-type: float;
-$grid-gap: 10px;
+$grid-gap: 26px;
 $grid-screen: (
   xs: $xs,   // iphone5 в портретной ориентации
   sm: $sm,   // большине телефоны  в портретной ориентации
@@ -30,6 +29,7 @@ $grid-screen: (
   [class *= "col-"] {
     margin-left: $grid-gap/2;
     margin-right: $grid-gap/2;
+    margin-bottom: 20px;
   }
 
   .row{
@@ -57,13 +57,12 @@ $grid-screen: (
             width:  unquote($width-col);
           }
         }
-          // и стандартные
+        // и стандартные
         @else {
           .col-#{$j}-#{$i} {
             width:  unquote($width-col);
           }
         }
-
         // и записываем размер в массив существуюих размеров
         $col-widths: append($col-widths, $width, comma);
       }
