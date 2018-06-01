@@ -12,7 +12,7 @@ resizeComponent.setFreezeTime(200);
  
 // PLUGINS =============================================================================================================
 //=include ../ds-kit/plugins/photoswipe/photoswipe.wrapper.js
-photoswipeWrapper.init('.js-photoswipe-gallery', 'a');
+photoswipeWrapper.init('.js-photoswipe-gallery', 'a:not(.no-photoswipe)');
 
 //=include ../ds-kit/plugins/menu-mobile/menu-mobile.vue.js
 //=include ../ds-kit/plugins/menu-mobile/menu-mobile.jquery.js
