@@ -67,7 +67,7 @@ printModule.init('.js-print');
 // Homepage ==========================================================================================================*/
 
 ///=include ../../templates-html/homepage/slider/base-1__slider.js                             /* Base-1 Denis + Lesya */
-//=include ../../templates-html/homepage/slider/base-2__slider.js                             /* Base-2 Oleg          *
+//=include ../../templates-html/homepage/slider/base-2__slider.js                             /* Base-2 Oleg          */
 
 ///=include ../../templates-html/homepage/products/base-1__products-bestseller.js              /* Base-1 Denis + Lesya */
 ///=include ../../templates-html/homepage/extra_text/base-1__partners.js                       /* Base-1 Denis + Lesya */
@@ -76,7 +76,9 @@ printModule.init('.js-print');
 ///=include ../../templates-html/homepage/gallery/base-1__gallery.js                           /* Base-1 Denis + Lesya */
 ///=include ../../templates-html/homepage/extra_text/base-1__advantages.js                     /* Base-1 Denis + Lesya */
 ///=include ../../templates-html/homepage/banner/base-1__banner-list.js                        /* Base-1 Denis + Lesya */
+
 ///=include ../../templates-html/homepage/reviews/base-1__reviews.js                           /* Base-1 Denis + Lesya */
+//=include ../../templates-html/homepage/reviews/base-2__reviews.js                           /* Base-2 Oleg          */
 
 
 // Products ==========================================================================================================*/

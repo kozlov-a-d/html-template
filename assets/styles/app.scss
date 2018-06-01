@@ -31,7 +31,15 @@
 /* Base-1 Denis + Lesya */  //@import "../../templates-html/common/_variables/base-1__variables.scss";
 /* Base-2 Oleg          */  @import "../../templates-html/common/_variables/base-2__variables.scss";
 
-
+// TODO:
+// $grid-screen: (    
+//   xl: 1280px,
+//   lg: 1024px, // планшеты в альбомной ориентации
+//   md: 820px, // планшеты в портретной ориентации 
+//   sm: 568px,
+//   xs: 414px, // большине телефоны  в портретной ориентации
+//   xxs: 320px // iphone5 в портретной ориентации 
+// );
 
 /*‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾*/
 /*                                                      DS-KIT                                                        */
@@ -131,7 +139,9 @@
 @import "../../templates-html/homepage/extra_text/base-2__advantages.scss";                   /* Base-2 Oleg          */
 
 @import "../../templates-html/homepage/banner/base-1__banner-list.scss";                      /* Base-1 Denis + Lesya */
-@import "../../templates-html/homepage/reviews/base-1__reviews.scss";                         /* Base-1 Denis + Lesya */
+
+// @import "../../templates-html/homepage/reviews/base-1__reviews.scss";                         /* Base-1 Denis + Lesya */
+@import "../../templates-html/homepage/reviews/base-2__reviews.scss";                         /* Base-2 Oleg          */
 
 
 // Text pages ========================================================================================================*/
