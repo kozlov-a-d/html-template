@@ -1,0 +1,42 @@
+{%  set advantages = [ {
+    img: 'http://via.placeholder.com/110x110',
+    title: 'Опыт работы <br> более 10 лет',
+},{
+    img: 'http://via.placeholder.com/110x110',
+    title: 'Соблюдение <br> сроков работ',
+},{
+    img: 'http://via.placeholder.com/110x110',
+    title: 'Качество',
+},{
+    img: 'http://via.placeholder.com/110x110',
+    title: 'Гарантия',
+},{
+    img: 'http://via.placeholder.com/110x110',
+    title: 'Команда <br> профессионалов',
+}] %}
+<!-- advantages -->
+<section class="advantages">
+    <div class="advantages__container">
+
+        <div class="advantages__header">
+            <div class="advantages__title">
+                <h2>Преимущества компании</h2>
+            </div>
+        </div> 
+
+        <div class="advantages__list">
+            {% for item in advantages %}
+            <div class="advantages__item">
+                    <div class="advantages__item-img">
+                        <img src="{{ item.img }}" alt="{{ item.title }}" title="{{ item.title }}">
+                    </div>
+                    <div class="advantages__item-text">
+                        <p class="advantages__item-name">{{ item.title }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+    </div>
+</section>
+<!-- / advantages END -->

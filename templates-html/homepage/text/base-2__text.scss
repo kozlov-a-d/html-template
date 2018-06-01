@@ -1,0 +1,28 @@
+.text-block {
+    padding: 20px 0 60px;
+    overflow: hidden;
+    &__container {
+        width: 100%;
+        max-width: $content-width + 40px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    h1{
+        font-size: 50px;
+        text-align: left;
+        margin: 0 0 25px 450px;
+        &:after{
+            content: '';
+            display: block;
+            width: 70px;
+            height: 2px;
+            background: $color-link;
+            margin-top: 25px;
+        }
+    }
+    @include media-max(960px) {
+        h1{
+            margin: 0 0 25px;
+        }
+    }
+}

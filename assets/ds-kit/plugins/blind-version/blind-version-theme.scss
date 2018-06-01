@@ -1,8 +1,9 @@
-$font-family-base: Arial, "Helvetica Neue", Helvetica, sans-serif;
-$font-family-second: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
-$font-bold: 700;
-
 html, body {
+
+  $font-family-base: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  $font-family-second: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
+  $font-bold: 700;
+
   &.blind{
 
     h1, h2, h3, h4, h5, h6,

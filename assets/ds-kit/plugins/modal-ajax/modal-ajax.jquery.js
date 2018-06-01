@@ -20,7 +20,7 @@
                 .on('click', function (e) {
                     e.preventDefault();
 
-                    // TODO заменить встававку картинки на класс -loading
+                    // TODO: заменить встававку картинки на класс -loading
                     var AJAX_LOADER  = '<img class="btn__loader" src="/assets/images/loader.svg" width="20" height="20">';
                     var $link = $(this);
 

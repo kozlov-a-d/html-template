@@ -20,7 +20,7 @@ $('.js-menu-mobile').menuMobile({
     text: {
         rootTitle: 'Menu'      
     },
-}); // переделать без vue.js ?
+}); // TODO: переделать без vue.js ?
  
 //=include ../ds-kit/plugins/menu-smart/menu-smart.jquery.js
 $('.js-menu-smart').menuSmart();     
@@ -36,11 +36,11 @@ $('.js-ajax').modalAjax();
 
 
 //=include ../ds-kit/plugins/spoiler/spoiler.js
-// FIXME: переделать
+// TODO: переделать
 
 //=include ../ds-kit/plugins/tables/tables.js
 /* задаём каим именно табилцам нужно добавлять обертки .table-responsive для адаптива */
-Tables.addMobileView('table'); // переделать
+Tables.addMobileView('table'); // TODO: переделать
 
 //=include ../ds-kit/plugins/goals.module.js
 
