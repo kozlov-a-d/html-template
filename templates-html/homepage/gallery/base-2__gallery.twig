@@ -1,0 +1,71 @@
+{%  set galeryItems = [ {
+    img: 'http://via.placeholder.com/480x480',
+    original: 'http://via.placeholder.com/1318x700',
+    size: '1318x700',
+    title: 'название',
+},{
+    img: 'http://via.placeholder.com/480x480',
+    original: 'http://via.placeholder.com/1318x700',
+    size: '1318x700',
+    title: 'название',
+},{
+    img: 'http://via.placeholder.com/480x480',
+    original: 'http://via.placeholder.com/1318x700',
+    size: '1318x700',
+    title: 'название',
+},{
+    img: 'http://via.placeholder.com/480x480',
+    original: 'http://via.placeholder.com/1318x700',
+    size: '1318x700',
+    title: 'название',
+},{
+    img: 'http://via.placeholder.com/480x480',
+    original: 'http://via.placeholder.com/1318x700',
+    size: '1318x700',
+    title: 'название',
+},{
+    img: 'http://via.placeholder.com/480x480',
+    original: 'http://via.placeholder.com/1318x700',
+    size: '1318x700',
+    title: 'название',
+},{
+    img: 'http://via.placeholder.com/480x480',
+    original: 'http://via.placeholder.com/1318x700',
+    size: '1318x700',
+    title: 'название',
+},{
+    img: 'http://via.placeholder.com/480x480',
+    original: 'http://via.placeholder.com/1318x700',
+    size: '1318x700',
+    title: 'название',
+}] %}
+<!-- begin galery-widget -->
+<section class="galery-widget">
+
+    <div class="galery-widget__header">
+        <div class="galery-widget__title">
+            <h2>Фотогалерея</h2>
+        </div>
+    </div>
+
+    <div class="galery-widget__list js-photoswipe-gallery">
+        {% for item in galeryItems %}
+        <div class="galery-widget__item">
+            <a class="galery-widget__item-img" href="{{ item.original }}" data-size="{{ item.size }}"><img src="{{ item.img }}" alt="{{ item.title }}" title="{{ item.title }}"></a>
+            {% if loop.index == 1 %}
+            <div class="galery-widget__item-overlay">
+                <div class="galery-widget__item-overlay-container">
+                    <p class="galery-widget__item-title">Фотогалерея</p>
+                    <a class="btn -secondary galery-widget__item-btn no-photoswipe" href="">смотреть все фото</a>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+
+    <a class="btn -secondary galery-widget__more" href="">смотреть все фото</a>
+
+
+</section>
+<!-- end galery-widget -->
