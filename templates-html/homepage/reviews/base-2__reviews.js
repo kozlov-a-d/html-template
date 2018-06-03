@@ -10,10 +10,7 @@
         reviewsWidget.carousel.slick({
             infinite: true,
             arrows: false,
-            dots: false,
-            rows: 2,
-            slidesPerRow: 1,
-            slidesToShow: 1,
+            dots: true,
             fade: true,
             speed: 600,
             responsive: [{

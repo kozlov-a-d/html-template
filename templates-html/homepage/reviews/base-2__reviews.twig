@@ -28,12 +28,10 @@
     <div class="reviews-widget__container">
 
         <div class="reviews-widget__header">
+            
             <div class="reviews-widget__title">
+                <a class="reviews-widget__more" href="/reviews-list.html">Смотреть все отзывы</a>
                 <h2>О нас говорят</h2>
-            </div>
-            <div class="reviews-widget__nav nav-arrow">
-                <button class="reviews-widget__nav-btn nav-arrow__btn -prev js-nav-prev">prev</button>
-                <button class="reviews-widget__nav-btn nav-arrow__btn -next js-nav-next">next</button>
             </div>
         </div>
 
@@ -42,14 +40,14 @@
             <div class="reviews-widget__item">
                 <p class="reviews-widget__item-header">
                     <span class="reviews-widget__item-name">{{ item.date }}</span>
-                    <span class="reviews-widget__item-date">{{ item.auther }}</span>
+                    <span class="reviews-widget__item-date">{{ item.author }}</span>
                 </p>
                 <p>{{ item.text }}</p>
             </div>
             {% endfor %}
         </div>
 
-        <a class="reviews-widget__more btn" href="/reviews-list.html">Смотреть все отзывы</a>
+       
 
     </div>
 </section>

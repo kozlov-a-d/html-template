@@ -23,7 +23,7 @@ $('.js-menu-mobile').menuMobile({
 }); // TODO: переделать без vue.js ?
  
 //=include ../ds-kit/plugins/menu-smart/menu-smart.jquery.js
-$('.js-menu-smart').menuSmart();     
+$('.js-menu-smart').menuSmart();     // TODO: вынести настройки
 
 //=include ../ds-kit/plugins/modal-ajax/modal-ajax.jquery.js
 $('.js-ajax').modalAjax();
@@ -48,7 +48,11 @@ Tables.addMobileView('table'); // TODO: переделать
 scrollTopModule.init('.js-scroll-top', { speed: 500, offsetTop: 105 });            
 
 //=include ../ds-kit/plugins/print.module.js
-printModule.init('.js-print');    
+printModule.init('.js-print');   
+
+// TODO: bigpic
+
+// TODO: map
 
 
 // TEMPLATE ============================================================================================================
