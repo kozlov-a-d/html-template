@@ -84,7 +84,8 @@
 //@import "../../templates-html/common/typography/base-1__tables.scss";                         /* Base-1 Denis + Lesya */
 @import "../../templates-html/common/typography/base-2__tables.scss";                         /* Base-2 Oleg          */
 
-@import "../../templates-html/common/form/base-1__form.scss";                                 /* Base-1 Denis + Lesya */
+// @import "../../templates-html/common/form/base-1__form.scss";                                 /* Base-1 Denis + Lesya */
+@import "../../templates-html/common/form/base-2__form.scss";                                 /* Base-2 Oleg          */
 
 //@import "../../templates-html/common/buttons/base-1__buttons.scss";                           /* Base-1 Denis + Lesya */
 @import "../../templates-html/common/buttons/base-2__buttons.scss";                           /* Base-2 Oleg          */
@@ -111,7 +112,8 @@
 
 // Common-block ======================================================================================================*/
 
-@import "../../templates-html/feedback/base-1__feedback-container.scss";                      /* Base-1 Denis + Lesya */
+// @import "../../templates-html/feedback/base-1__feedback-container.scss";                      /* Base-1 Denis + Lesya */
+@import "../../templates-html/feedback/base-2__feedback-container.scss";                      /* Base-2 Oleg          */
 
 
 // Homepage ==========================================================================================================*/
@@ -131,6 +133,8 @@
 @import "../../templates-html/homepage/publications/base-1__articles.scss";                   /* Base-1 Denis + Lesya */
 @import "../../templates-html/homepage/publications/base-1__news.scss";                       /* Base-1 Denis + Lesya */
 
+@import "../../templates-html/homepage/publications/base-2__stock.scss";                       /* Base-2 Oleg          */
+
 // @import "../../templates-html/homepage/extra_text/base-1__extra-text.scss";                   /* Base-1 Denis + Lesya */
 @import "../../templates-html/homepage/extra_text/base-2__extra-text.scss";                   /* Base-2 Oleg          */
 
@@ -140,7 +144,8 @@
 // @import "../../templates-html/homepage/extra_text/base-1__advantages.scss";                   /* Base-1 Denis + Lesya */
 @import "../../templates-html/homepage/extra_text/base-2__advantages.scss";                   /* Base-2 Oleg          */
 
-@import "../../templates-html/homepage/banner/base-1__banner-list.scss";                      /* Base-1 Denis + Lesya */
+// @import "../../templates-html/homepage/banner/base-1__banner-list.scss";                      /* Base-1 Denis + Lesya */
+@import "../../templates-html/homepage/banner/base-2__banner-list.scss";                      /* Base-2 Oleg          */
 
 // @import "../../templates-html/homepage/reviews/base-1__reviews.scss";                         /* Base-1 Denis + Lesya */
 @import "../../templates-html/homepage/reviews/base-2__reviews.scss";                         /* Base-2 Oleg          */

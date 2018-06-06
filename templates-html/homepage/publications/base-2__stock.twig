@@ -1,0 +1,32 @@
+{%  set stockWidget = [ {
+    title: 'Акция! «Радуга в подарок»',
+    img: 'http://via.placeholder.com/310x210/efecec/969696'
+},{
+    title: 'Акция! «В офис – как на праздник»',
+    img: 'http://via.placeholder.com/310x210/efecec/969696'
+},{
+    title: '«Давайте знакомиться – мы ваши соседи»',
+    img: 'http://via.placeholder.com/310x210/efecec/969696'
+},] %}
+<!-- begin stock-widget -->
+<section class="stock-widget l-container js-stock-widget">
+
+    <div class="stock-widget__header">
+        <div class="stock-widget__title">
+            <h2>Акции</h2>
+        </div>
+        <a class="stock-widget__btn-more" href="/publication-list-article.html">Cмотреть все акции</a>
+    </div>
+
+    <div class="stock-widget__carousel owl-carousel">
+        {% for item in stockWidget %}
+        <div class="stock-widget__item">
+            <a class="stock-widget__item-img" href="/text.html"><img src="{{ item.img }}" alt="{{ item.title }}" title="{{ item.title }}"></a>
+            <a class="stock-widget__item-title" href="/text.html">{{ item.title }}</a>
+            <a class="stock-widget__item-more btn" href="/text.html" rel="nofollow">узнать подробнее</a>
+        </div>
+        {% endfor %}
+    </div>
+
+</section>
+<!-- end stock-widget --> 

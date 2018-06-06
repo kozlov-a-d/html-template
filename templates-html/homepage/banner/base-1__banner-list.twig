@@ -1,3 +1,20 @@
+{%  set banners = [ {
+    title: 'Заголовок баннера',
+    text: 'Краткое описание баннера',
+    img: 'http://via.placeholder.com/305x150'
+},{
+    title: 'Заголовок баннера',
+    text: 'Заголовок баннера',
+    img: 'http://via.placeholder.com/305x150'
+},{
+    title: 'Заголовок баннера',
+    text: 'Краткое описание баннера',
+    img: 'http://via.placeholder.com/305x150'
+},{
+    title: 'Заголовок баннера',
+    text: 'Краткое описание баннера',
+    img: 'http://via.placeholder.com/305x150'
+},] %}
 <!-- banner-list -->
 <div class="banner-list js-banner-list">
 
@@ -13,34 +30,15 @@
 
     <div class="banner-list__container">
         <div class="banner-list__carousel owl-carousel">
+            {% for item in banners %}
             <div class="banner-list__item">
-                <a href="" class="banner-list__item-img"><img src="http://via.placeholder.com/305x150" alt=""></a>
+                <a href="" class="banner-list__item-img"><img src="{{ item.img }}" alt="{{ item.title }}" title="{{ item.title }}"></a>
                 <div class="banner-list__item-text">
-                    <a href="" class="banner-list__item-title">Заголовок баннера</a>
-                    <p>Краткое описание баннера</p>
+                    <a href="" class="banner-list__item-title">{{ item.title }}</a>
+                    <p>{{ item.text }}</p>
                 </div>
-            </div>
-            <div class="banner-list__item">
-                <a href="" class="banner-list__item-img"><img src="http://via.placeholder.com/305x150" alt=""></a>
-                <div class="banner-list__item-text">
-                    <a href="" class="banner-list__item-title">Заголовок баннера</a>
-                    <p>Краткое описание баннера</p>
-                </div>
-            </div>
-            <div class="banner-list__item">
-                <a href="" class="banner-list__item-img"><img src="http://via.placeholder.com/305x150" alt=""></a>
-                <div class="banner-list__item-text">
-                    <a href="" class="banner-list__item-title">Заголовок баннера</a>
-                    <p>Краткое описание баннера</p>
-                </div>
-            </div>
-            <div class="banner-list__item">
-                <a href="" class="banner-list__item-img"><img src="http://via.placeholder.com/305x150" alt=""></a>
-                <div class="banner-list__item-text">
-                    <a href="" class="banner-list__item-title">Заголовок баннера</a>
-                    <p>Краткое описание баннера</p>
-                </div>
-            </div>
+            </div> 
+            {% endfor %}
         </div>
     </div>
 </div>

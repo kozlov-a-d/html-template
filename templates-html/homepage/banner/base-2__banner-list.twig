@@ -1,0 +1,29 @@
+{%  set banners = [ {
+    title: 'Заголовок баннера',
+    img: 'http://via.placeholder.com/305x190'
+},{
+    title: 'Заголовок баннера',
+    img: 'http://via.placeholder.com/305x190'
+},{
+    title: 'Заголовок баннера',
+    img: 'http://via.placeholder.com/305x190'
+},{
+    title: 'Заголовок баннера',
+    img: 'http://via.placeholder.com/305x190'
+},] %}
+<!-- banner-list -->
+<div class="banner-list js-banner-list">
+    <div class="banner-list__container l-container">
+        <div class="banner-list__carousel owl-carousel">
+            {% for item in banners %}
+            <div class="banner-list__item">
+                <a href="" class="banner-list__item-img"><img src="{{ item.img }}" alt="{{ item.title }}" title="{{ item.title }}"></a>
+                <div class="banner-list__item-text">
+                    <a href="" class="banner-list__item-title">{{ item.title }}</a>
+                </div>
+            </div> 
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<!-- end banner-list END -->

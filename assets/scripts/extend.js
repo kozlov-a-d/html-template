@@ -77,9 +77,14 @@ printModule.init('.js-print');
 ///=include ../../templates-html/homepage/extra_text/base-1__partners.js                       /* Base-1 Denis + Lesya */
 ///=include ../../templates-html/homepage/publications/base-1__articles.js                     /* Base-1 Denis + Lesya */
 ///=include ../../templates-html/homepage/publications/base-1__news.js                         /* Base-1 Denis + Lesya */
+
+//=include ../../templates-html/homepage/publications/base-2__stock.js                         /* Base-2 Oleg          */
+
 ///=include ../../templates-html/homepage/gallery/base-1__gallery.js                           /* Base-1 Denis + Lesya */
 ///=include ../../templates-html/homepage/extra_text/base-1__advantages.js                     /* Base-1 Denis + Lesya */
+
 ///=include ../../templates-html/homepage/banner/base-1__banner-list.js                        /* Base-1 Denis + Lesya */
+//=include ../../templates-html/homepage/banner/base-2__banner-list.js                        /* Base-2 Oleg          */
 
 ///=include ../../templates-html/homepage/reviews/base-1__reviews.js                           /* Base-1 Denis + Lesya */
 //=include ../../templates-html/homepage/reviews/base-2__reviews.js                           /* Base-2 Oleg          */
