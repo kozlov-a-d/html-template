@@ -8,7 +8,15 @@ console.time('extends-js');
 scrollComponent.init('.l-wrapper, .l-footer');
 //=include ../ds-kit/basis/resize.component.js
 resizeComponent.setFreezeTime(200);
+//=include ../ds-kit/basis/load.component.js
       
+
+// loadComponent.load.script("url").then(function(){
+//     console.log("js ready");
+// },function(error){
+//     console.log(error);
+// })
+
  
 // PLUGINS =============================================================================================================
 //=include ../ds-kit/plugins/photoswipe/photoswipe.wrapper.js
