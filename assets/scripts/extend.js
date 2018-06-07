@@ -61,8 +61,23 @@ printModule.init('.js-print');
 
 // TODO: bigpic
 
-// TODO: map
 
+//=include ../ds-kit/plugins/map/map.jquery.js
+if( $('.js-map').length ){
+    var url = 'https://api-maps.yandex.ru/2.1/?lang=ru_RU';
+    if( $('.js-map').eq(0).data('mapType') === 'google' ){
+        url = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyC4T-H8Uh6hP2gSP05DyocP-C3B88gH790';
+    }
+    loadComponent.script(url, function(){
+        var map = $('.js-map').mapInit('init', {
+            zoom: [18, 18],
+            ui: true,
+        });
+    }); 
+}
+
+
+     
 
 // TEMPLATE ============================================================================================================
         
@@ -74,7 +89,7 @@ printModule.init('.js-print');
 
 // Common-block ======================================================================================================*/
 
-///=include ../../templates-html/feedback/base-1__feedback-container.js                        /* Base-1 Denis + Lesya */
+//=include ../../templates-html/feedback/base-1__feedback-container.js                        /* Base-1 Denis + Lesya */
  
 
 // Homepage ==========================================================================================================*/

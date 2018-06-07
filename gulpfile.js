@@ -33,7 +33,6 @@ const scripts = [
                 'assets/scripts/app.js',
                 'assets/scripts/form.js',
                 'assets/scripts/inputmask.js',
-                'assets/scripts/map.js',
                 'assets/scripts/novalidate.js',
 
                 'assets/scripts/extend.js',
