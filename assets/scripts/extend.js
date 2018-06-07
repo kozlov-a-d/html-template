@@ -87,6 +87,8 @@ printModule.init('.js-print');
 //=include ../../templates-html/homepage/products/base-2__products-bestseller.js              /* Base-2 Oleg          */
 
 ///=include ../../templates-html/homepage/extra_text/base-1__partners.js                       /* Base-1 Denis + Lesya */
+//=include ../../templates-html/homepage/extra_text/base-2__partners.js                       /* Base-2 Oleg          */
+
 ///=include ../../templates-html/homepage/publications/base-1__articles.js                     /* Base-1 Denis + Lesya */
 ///=include ../../templates-html/homepage/publications/base-1__news.js                         /* Base-1 Denis + Lesya */
 

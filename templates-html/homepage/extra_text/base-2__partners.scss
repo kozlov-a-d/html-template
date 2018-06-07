@@ -1,0 +1,64 @@
+.partners {
+    padding: 40px 20px 55px;
+    background: #f5f5f5;
+    overflow: hidden;
+    @media (max-width: $md) {
+        padding: 10px 0 25px;
+    }
+    &__container {
+        width: 100%;
+        max-width: $content-width;
+        margin: 0 auto;
+        padding: 0;
+    }
+    &__header {
+        display: block;
+        width: 100%;
+        margin: 0 auto 13px;
+        overflow: hidden;
+        position: relative;
+    }
+    &__title {
+        &>* {
+            text-align: center;
+        }
+    }
+    &__nav {
+        position: absolute;
+        right: 0;
+        top: 30px;
+        display: block;
+        line-height: 46px;
+        @media (max-width: $mobile-view) {
+            display: none;
+        }
+    }
+    &__carousel {
+        line-height: 0;
+        &.slick-slider {
+            display: none;
+            &.slick-initialized {
+                display: block;
+            }
+        }
+        .slick-slide {
+            margin: 0 15px;
+        }
+        .slick-list {
+            margin: 0 -15px;
+        }
+    }
+    &__item {
+        a {
+            display: block;
+            margin-bottom: 24px;
+            border-radius: 2px;
+            overflow: hidden;
+            box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.2),inset 0px 1px 0px 0px rgba(255, 255, 255, 0.2);
+              
+        }
+        img {
+            width: 100%;
+        }
+    }
+}
