@@ -18,7 +18,10 @@ var resizeComponent = (function(){
 
     // PRIVATE =========================================================================================================
 
-    // установка минимального интервала между ресайзами
+    /**
+     * установка минимального интервала между ресайзами
+     * @param {*} time 
+     */
     var setFreezeTime = function (time) {
         if ( typeof time !== 'number' && typeof time !== 'undefined'){
             console.warn('resizeComponent: freezeTime type must be a number, now a ' +  typeof time);
@@ -27,12 +30,17 @@ var resizeComponent = (function(){
         }
     };
 
-    // проверяем текущий размер экрана
+    /**
+     * проверяем текущий размер экрана
+     */
     var checkScreen = function () {
         screenWidth = window.innerWidth;
     };
 
-    // выполняем медиа-запрос
+    /**
+     * выполняем медиа-запрос
+     * @param {*} query 
+     */
     var triggerQuery = function(query){
         // проверяем разрешение
         if( query.min <= screenWidth && screenWidth <= query.max ){
@@ -52,7 +60,10 @@ var resizeComponent = (function(){
         }
     };
 
-    // проверяем корректность медиа-запроса
+    /**
+     * проверяем корректность медиа-запроса
+     * @param {*} query 
+     */
     var validateQuery = function (query) {
         var validQuery = query;
         if ( typeof validQuery.min !== 'number' && typeof validQuery.min !== 'undefined'){
@@ -78,19 +89,20 @@ var resizeComponent = (function(){
         return validQuery;
     };
 
-    // добавляем новый медиа-запрос
+    /**
+     * добавляем новый медиа-запрос
+     * @param {*} query 
+     */
     var addQuery = function(query){
-        var newQuery = Object.assign(defaultQuery, validateQuery(query));
-        console.log('newQuery', newQuery);
+        var newQuery = validateQuery(query);
         self.queries.push(newQuery);
-        console.log('медиа-запросы', self.queries);
         triggerQuery(newQuery);
     };
 
-    // перебираем все медиа-запросы при ресайзе, используется декоратор throttle
+    /**
+     * перебираем все медиа-запросы при ресайзе, используется декоратор throttle
+     */
     var onResize = throttle(function(){
-        // debounce
-
         self.queries.forEach(function (item) {
             triggerQuery(item);
         })
@@ -130,8 +142,6 @@ var resizeComponent = (function(){
          * @param {{min: number, max: number, onEnter: function, onEach: function, onExit: function}} query
          */
         addMediaQuery: function(query){
-
-            console.log('addMediaQuery', query);
             addQuery(query);
         },
         /**
