@@ -1,6 +1,6 @@
 /**
  * Компонент для работы со скролом
- * @type {{current, direction, enable, disable}}
+ * @method {{ init, current, direction, enable, disable}}
  */
 var scrollComponent = (function(){
 
@@ -69,6 +69,7 @@ var scrollComponent = (function(){
     return Object.freeze({
         /**
          * Можно указать селекторы элементы, которые нужно сдвигать трансформом
+         * @method
          * @param {string} selector селектор
          */
         init: function(selector){

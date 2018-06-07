@@ -11,11 +11,12 @@ resizeComponent.setFreezeTime(200);
 //=include ../ds-kit/basis/load.component.js
       
 
-// loadComponent.load.script("url").then(function(){
-//     console.log("js ready");
-// },function(error){
-//     console.log(error);
-// })
+loadComponent.script("url").then(function(){
+    console.log("js ready");
+},function(error){
+    
+    console.log(error);
+})
 
  
 // PLUGINS =============================================================================================================

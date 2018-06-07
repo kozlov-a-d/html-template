@@ -1,6 +1,6 @@
 /**
  * Компонент для загрузки сторонних ресурсов
- * @type {{setFreezeTime, getScreenWidth, addMediaQuery, resizeForce, debug}}
+ * @method {{ script, style}}
  */
 var loadComponent = (function(){
 
@@ -101,16 +101,14 @@ var loadComponent = (function(){
 
     // PUBLIC ==========================================================================================================
     return  Object.freeze({
-        load: {
+        /**
+         * Загружает скрипт через promise
+         */
+        script: loadScript, 
             /**
-             * Загружает скрипт через promise
-             */
-            script: loadScript, 
-             /**
-             * Загружает css через promise
-             */
-            style: loadCSS,
-        }
+         * Загружает css через promise
+         */
+        style: loadCSS
     })
 
 }());

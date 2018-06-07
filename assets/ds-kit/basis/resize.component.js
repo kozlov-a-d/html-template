@@ -1,6 +1,6 @@
 /**
  * Компонент для отслеживания размеров при ресайзе и добавления функций по ресайзу
- * @type {{setFreezeTime, getScreenWidth, addMediaQuery, resizeForce, debug}}
+ * @method {{setFreezeTime, getScreenWidth, addMediaQuery, resizeForce, debug}}
  */
 var resizeComponent = (function(){
 
