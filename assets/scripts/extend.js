@@ -59,7 +59,15 @@ printModule.init('.js-print');
 //=include ../ds-kit/plugins/tabs/tabs.jquery.js
 // $('.js-tabs').tabs();
 
-// TODO: bigpic
+$('.bigpic').each(function(event){
+    var img = $(this);
+    var link = img.closest('a');
+    if(link.length > 0){
+        link.on('click',function (event) {
+            return hs.expand(this);
+        });
+    }
+});
 
 
 //=include ../ds-kit/plugins/map/map.jquery.js

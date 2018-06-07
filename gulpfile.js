@@ -26,6 +26,7 @@ const scripts = [
                 'web/assets/node_modules/photoswipe/dist/photoswipe-ui-default.js',
 
                 // 'assets/vendor/googlemaps/markerwithlabel.js',
+                'assets/vendor/highslide/highslide-full.js',
 
                 'assets/translations/messages/en.js',
                 'assets/translations/config.js',

@@ -22,11 +22,11 @@ module.exports = (gulp, images) => {
                     zopfli({
                         more: true
                     }),
-                    giflossy({
-                        optimizationLevel: 3,
-                        optimize:          3,
-                        lossy:             2
-                    }),
+                    // giflossy({
+                    //     optimizationLevel: 3,
+                    //     optimize:          3,
+                    //     lossy:             2
+                    // }),
                     imageMin.svgo({
                         plugins: [{
                             removeViewBox: false
@@ -34,10 +34,10 @@ module.exports = (gulp, images) => {
                     }),
                     imageMin.jpegtran({
                         progressive: true
+                    }),
+                    mozjpeg({
+                        quality: 90
                     })
-                    // mozjpeg({
-                    //     quality: 90
-                    // })
                 ], {
                     verbose: true
                 })))
