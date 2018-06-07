@@ -1,0 +1,14 @@
+{
+    "slot": {
+        "header": "base-1"
+    },
+    "options": [{
+        "name": "base-1__header",
+        "slot": "header",
+        "parts": {
+            "html": [],
+            "css": [],
+            "js": []
+        }
+    }]
+}
