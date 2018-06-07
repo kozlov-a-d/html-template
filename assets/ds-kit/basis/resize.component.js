@@ -127,7 +127,7 @@ var resizeComponent = (function(){
         },
         /**
          * Добавляет новый медиа-запрос
-         * @param {{min: number, max: number, onEnter: function, onEach: function}} query
+         * @param {{min: number, max: number, onEnter: function, onEach: function, onExit: function}} query
          */
         addMediaQuery: function(query){
 

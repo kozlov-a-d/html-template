@@ -9,14 +9,12 @@ scrollComponent.init('.l-wrapper, .l-footer');
 //=include ../ds-kit/basis/resize.component.js
 resizeComponent.setFreezeTime(200);
 //=include ../ds-kit/basis/load.component.js
-      
-
+/* example
 loadComponent.script("url").then(function(){
     console.log("js ready");
 },function(error){
-    
     console.log(error);
-})
+})*/
 
  
 // PLUGINS =============================================================================================================
@@ -57,7 +55,10 @@ Tables.addMobileView('table'); // TODO: переделать
 scrollTopModule.init('.js-scroll-top', { speed: 500, offsetTop: 105 });            
 
 //=include ../ds-kit/plugins/print.module.js
-printModule.init('.js-print');   
+printModule.init('.js-print');  
+
+//=include ../ds-kit/plugins/tabs/tabs.jquery.js
+// $('.js-tabs').tabs();
 
 // TODO: bigpic
 
@@ -83,6 +84,8 @@ printModule.init('.js-print');
 //=include ../../templates-html/homepage/slider/base-2__slider.js                             /* Base-2 Oleg          */
 
 ///=include ../../templates-html/homepage/products/base-1__products-bestseller.js              /* Base-1 Denis + Lesya */
+//=include ../../templates-html/homepage/products/base-2__products-bestseller.js              /* Base-2 Oleg          */
+
 ///=include ../../templates-html/homepage/extra_text/base-1__partners.js                       /* Base-1 Denis + Lesya */
 ///=include ../../templates-html/homepage/publications/base-1__articles.js                     /* Base-1 Denis + Lesya */
 ///=include ../../templates-html/homepage/publications/base-1__news.js                         /* Base-1 Denis + Lesya */

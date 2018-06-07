@@ -1,0 +1,55 @@
+{%  set bestsellers = [ {
+    img: 'http://via.placeholder.com/210x210/ffffff/000000',
+    title: 'Плотная',
+    price: '5 999'
+},{
+    img: 'http://via.placeholder.com/210x210/ffffff/000000',
+    title: 'Плотная рубашка',
+    price: '5 999'
+},{
+    img: 'http://via.placeholder.com/210x210/ffffff/000000',
+    title: 'Плотная рубашка',
+    price: '5 999'
+},{
+    img: 'http://via.placeholder.com/210x210/ffffff/000000',
+    title: 'Плотная',
+    price: '5 999'
+},{
+    img: 'http://via.placeholder.com/210x210/ffffff/000000',
+    title: 'Плотная рубашка',
+    price: '5 999'
+},{
+    img: 'http://via.placeholder.com/210x210/ffffff/000000',
+    title: 'Плотная рубашка из эластичной',
+    price: '5 999'
+},{
+    img: 'http://via.placeholder.com/210x210/ffffff/000000',
+    title: 'Плотная рубашка',
+    price: '5 999'
+},{
+    img: 'http://via.placeholder.com/210x210/ffffff/000000',
+    title: 'Плотная рубашка из',
+    price: '5 999'
+}] %}
+<!-- prod-widget -->
+<section class="prod-widget l-container js-prod-widget">
+
+    <div class="prod-widget__container js-tabs">
+        <div class="prod-widget__header js-tabs-nav">
+            <button class="prod-widget__btn btn -secondary js-tabs-nav-item">хит продаж</button>
+            <button class="prod-widget__btn btn -secondary js-tabs-nav-item">популярные товары</button>
+            <button class="prod-widget__btn btn -secondary js-tabs-nav-item">акции</button>
+        </div>
+        <div class="prod-widget__content js-tabs-content">
+            {% for i in 0..2 %}
+            <div class="prod-widget__carousel js-tabs-content-item">
+                {% for item in bestsellers %}
+                {% include '../../products/list-item/base-2__products-list-item.twig' with {'item': item, 'class': 'prod-widget', 'mod': ''} %} 
+                {% endfor %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+</section>
+<!-- / prod-widget END -->

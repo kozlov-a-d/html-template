@@ -1,0 +1,10 @@
+<div class="{{ class }}__item product-item {{ mod }} js-item">
+    <div class="product-item__img">
+        <a href="/products-show.html"><img src="{{ item.img }}" alt="{{ item.title }}" title="{{ item.title }}"></a>
+    </div>
+    <div class="product-item__text">
+        <button class="product-item__buy btn">Купить</button>
+        <a href="/products-show.html" class="product-item__name">{{ item.title }}</a>
+        <span class="product-item__price">{{ item.price }} руб.</span>
+    </div>
+</div>
