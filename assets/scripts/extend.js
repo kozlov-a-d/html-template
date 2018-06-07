@@ -10,13 +10,12 @@ scrollComponent.init('.l-wrapper, .l-footer');
 resizeComponent.setFreezeTime(200);
 //=include ../ds-kit/basis/load.component.js
 /* example
-loadComponent.script("url").then(function(){
-    console.log("js ready");
-},function(error){
-    console.log(error);
-})*/
+    loadComponent.script('https://api-maps.yandex.ru/2.1/?lang=ru_RU', function(){
+        console.log('success');
+    });
+*/
 
- 
+
 // PLUGINS =============================================================================================================
 //=include ../ds-kit/plugins/photoswipe/photoswipe.wrapper.js
 photoswipeWrapper.init('.js-photoswipe-gallery', 'a:not(.no-photoswipe)');
@@ -106,8 +105,8 @@ printModule.init('.js-print');
 
 // Products ==========================================================================================================*/
 
-//=include ../../templates-html/products/show/base-1__products-show.js                        /* Base-1 Denis + Lesya */
-//=include ../../templates-html/products/similar/base-1__products-similar.js                  /* Base-1 Denis + Lesya */
+///=include ../../templates-html/products/show/base-1__products-show.js                        /* Base-1 Denis + Lesya */
+///=include ../../templates-html/products/similar/base-1__products-similar.js                  /* Base-1 Denis + Lesya */
 
 
 // END EXTENDS =========================================================================================================

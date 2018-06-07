@@ -104,11 +104,23 @@ var loadComponent = (function(){
         /**
          * Загружает скрипт через promise
          */
-        script: loadScript, 
-            /**
+        script: function(src, callback, _timeout){
+            loadScript(src,_timeout).then(function(){
+                callback();
+            },function(error){
+                console.log(error);
+            })
+        }, 
+        /**
          * Загружает css через promise
          */
-        style: loadCSS
+        style: function(src, callback, _timeout){
+            loadCSS(src,_timeout).then(function(){
+                callback();
+            },function(error){
+                console.log(error);
+            })
+        }, 
     })
 
 }());
