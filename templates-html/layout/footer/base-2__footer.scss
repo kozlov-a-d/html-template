@@ -1,0 +1,83 @@
+.footer{
+    border-top: 1px solid #eeeeee;
+    border-bottom: 6px solid #3990ab;
+    &__menu{
+        
+    }
+    &__middle{
+        border-top: 1px solid #eeeeee;
+        &-container{
+            padding: 30px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+    &__contacts{
+        border-top: 1px solid #eeeeee;
+        &-container{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        &-item{
+            color: #000000;
+            font-size: 15px;
+            text-decoration: none;
+
+            &:before{
+                content: '';
+                display: inline-block;
+                vertical-align: middle;
+                width: 20px;
+                height: 20px;
+                margin-right: 11px;
+            }
+            &.-phone{
+                &:before{
+                    background: url(http://via.placeholder.com/20x20) center center no-repeat;    
+                }
+            }
+            &.-email{
+                &:before{
+                    background: url(http://via.placeholder.com/20x20) center center no-repeat;    
+                }
+            }
+            &.-location{
+                &:before{
+                    background: url(http://via.placeholder.com/20x20) center center no-repeat;    
+                }
+            }
+        }
+    }
+    &__copywrite{
+        padding: 30px 0;
+        border-top: 1px solid #eeeeee;
+        font-size: 12px;
+        color: #a5a7aa;
+        text-align: center;
+    }
+}
+.logo-footer{
+    img{
+        display: block;
+    }
+}
+.social-footer-icon{
+    font-size: 0;
+    display: block;
+    width: 34px;
+    height: 34px;
+    background: linear-gradient( 70deg, #2c7d9b 0%, #4c9eb6 100%);
+    border-radius: 4px;
+    text-align: center;
+    line-height: 34px;
+    &:before{
+        color: #fff;
+        font-size: 17px;
+    }
+    &:hover{
+        background: linear-gradient( 70deg, #30454f 0%, #30454f 100%);
+    }
+}
