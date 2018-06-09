@@ -59,39 +59,46 @@
 
         <!-- begin header -->
         
-     <header class="l-header header">
-    <div class="header-top">
-        <div class="header-top__container">
-            <div class="header-top__social-link">
-                <a href="" rel="noreferrer noopener" target="_blank"><img src="http://via.placeholder.com/20x20/c0c0c0/000000" alt="Facebook" title="Facebook"></a>
-                <a href="" rel="noreferrer noopener" target="_blank"><img src="http://via.placeholder.com/20x20/c0c0c0/000000" alt="Instagram" title="Instagram"></a>
-                <a href="" rel="noreferrer noopener" target="_blank"><img src="http://via.placeholder.com/20x20/c0c0c0/000000" alt="VKontakte" title="VKontakte"></a>
-                <a href="" rel="noreferrer noopener" target="_blank"><img src="http://via.placeholder.com/20x20/c0c0c0/000000" alt="Twitter" title="Twitter"></a>
-                <a href="" rel="noreferrer noopener" target="_blank"><img src="http://via.placeholder.com/20x20/c0c0c0/000000" alt="Odnoklassniki" title="Odnoklassniki"></a>
+    
+    
+    <header class="l-header header">
+    <div class="header-middle"> 
+        <div class="header-middle__container l-container  js-header-middle">
+            <a class="logo-header js-logo-header" href="/"><img src="http://via.placeholder.com/170x80/c0c0c0/ffffff" alt="TopCharter" title="TopCharter"></a>
+
+            <div class="header-contact">
+                
+                <div class="header-contact__text header-phone js-header-phone">
+                    <!-- если нет дополнительных номеров, то блок header-phone__more нужно удалять целиком -->
+                    <div class="header-phone__more">
+                        <a href="tel:+70000000000">+7 (000) 000-00-01</a>
+                        <a href="tel:+70000000000">+7 (000) 000-00-02</a>
+                        <a href="tel:+70000000000">+7 (000) 000-00-03</a>
+                    </div>
+                    <a class="header-phone__main" href="tel:+70000000000">+7 (000) 000-00-00</a>
+                </div> 
+                <button class="header-contact__btn btn js-ajax" data-class="-callback" data-url="modal-callback.html">Перезвонить мне</button>
             </div>
 
-            <a class="header-top__item cart-header js-header-modal-cart" href="#">Корзина <span class="cart-header__count">24</span></a>
-            <a class="header-top__item account-header js-header-modal-account" href="#">Личный кабинет</a>
-            <a class="header-top__item email-header js-header-modal-contacts" href="mailto:domain@example.com">domain@example.com</a>
-        </div>
-    </div><!-- end header-top-->
-    <div class="header-middle">
-        <div class="header-middle__container l-container">
-            <a class="logo-header js-logo-header" href="/"><img src="http://via.placeholder.com/225x60/c0c0c0/ffffff" alt="" title=""></a>
+            <div class="header-contact -email">
+                <span class="header-contact__text ">Ежедневно с 7:00 до 17:00</span> 
+                <button class="header-contact__btn btn js-ajax" data-class="-send-enquiry" data-url="modal-send-enquiry.html">Оставить заявку</button>
+            </div>
 
-            <a class="header-middle__btn -send-enquiry btn js-ajax" data-class="-dark -send-enquiry" href="modal-send-enquiry.html">Оставить заявку</a>
-            <a class="header-middle__btn -callback btn js-ajax" data-class="-dark -callback" href="modal-callback.html">Перезвоните мне</a>
+            <a class="header-middle__btn btn header-btn -clients js-header-clients" href="/clients.html">
+                <svg  xmlns="http://www.w3.org/2000/svg" width="17px" height="20px">
+                <path fill-rule="evenodd"  fill="rgb(255, 255, 255)"
+                    d="M16.800,17.758 C16.759,17.866 16.680,17.957 16.585,18.019 C16.461,18.098 13.485,19.998 8.506,19.998 C3.527,19.998 0.552,18.102 0.427,18.019 C0.328,17.957 0.254,17.866 0.212,17.758 C-0.007,17.203 -0.003,16.097 0.001,15.882 C0.001,15.877 0.001,15.874 0.001,15.870 C0.005,15.837 0.005,15.803 0.005,15.766 C0.030,14.949 0.084,13.032 1.880,12.415 C1.893,12.411 1.905,12.407 1.921,12.403 C3.796,11.927 5.340,10.850 5.357,10.837 C5.609,10.659 5.957,10.721 6.135,10.974 C6.313,11.227 6.251,11.574 5.998,11.752 C5.928,11.798 4.281,12.950 2.219,13.479 C1.255,13.824 1.148,14.854 1.119,15.799 C1.119,15.837 1.114,15.870 1.114,15.902 C1.106,16.275 1.135,16.851 1.201,17.182 C1.876,17.564 4.521,18.884 8.502,18.884 C12.500,18.884 15.128,17.568 15.798,17.186 C15.865,16.855 15.889,16.279 15.885,15.906 C15.881,15.874 15.881,15.840 15.881,15.803 C15.852,14.859 15.745,13.828 14.780,13.484 C12.719,12.954 11.072,11.806 11.002,11.757 C10.749,11.579 10.687,11.231 10.865,10.978 C11.043,10.726 11.391,10.664 11.643,10.842 C11.660,10.854 13.212,11.931 15.078,12.407 C15.091,12.411 15.107,12.415 15.120,12.420 C16.916,13.032 16.970,14.949 16.995,15.770 C16.995,15.807 16.999,15.840 16.999,15.874 C16.999,15.877 16.999,15.882 16.999,15.886 C17.003,16.101 17.007,17.207 16.800,17.758 ZM8.560,10.775 C8.548,10.775 8.531,10.775 8.519,10.775 C8.510,10.775 8.502,10.775 8.494,10.775 C8.469,10.775 8.448,10.775 8.427,10.775 C7.215,10.754 6.234,10.329 5.514,9.512 C3.921,7.714 4.185,4.633 4.214,4.339 C4.318,2.115 5.377,1.059 6.246,0.566 C7.111,0.073 8.014,-0.002 8.473,-0.002 L8.498,-0.002 C8.502,-0.002 8.510,-0.002 8.514,-0.002 L8.543,-0.002 C9.379,0.015 10.129,0.214 10.770,0.583 C11.631,1.075 12.674,2.131 12.777,4.339 C12.806,4.633 13.071,7.714 11.478,9.512 C10.753,10.329 9.773,10.754 8.560,10.775 ZM11.668,4.443 C11.664,4.435 11.664,4.422 11.664,4.409 C11.536,1.601 9.636,1.146 8.519,1.121 C8.506,1.121 8.494,1.121 8.485,1.121 L8.469,1.121 C7.567,1.121 5.460,1.440 5.323,4.409 C5.323,4.417 5.319,4.430 5.319,4.443 C5.315,4.467 5.034,7.296 6.346,8.770 C6.863,9.358 7.563,9.649 8.473,9.657 C8.481,9.657 8.485,9.657 8.494,9.657 C8.502,9.657 8.506,9.657 8.514,9.657 C9.429,9.649 10.124,9.358 10.646,8.770 C11.962,7.288 11.672,4.471 11.668,4.443 Z"/>
+                </svg>
+            </a>
+            <!-- количество товаров указывать в атрибуте data-count -->
+            <a class="header-middle__btn btn header-btn -cart js-header-cart" data-count="15" href="/cart.html">
+                <svg  xmlns="http://www.w3.org/2000/svg" width="21px" height="15px">
+                <path fill-rule="evenodd"  fill="rgb(255, 255, 255)"
+                d="M8.531,11.259 L9.844,11.259 L9.844,7.519 L8.531,7.519 L8.531,11.259 ZM5.906,11.259 L7.219,11.259 L7.219,7.519 L5.906,7.519 L5.906,11.259 ZM11.156,11.259 L12.469,11.259 L12.469,7.519 L11.156,7.519 L11.156,11.259 ZM13.781,11.259 L15.094,11.259 L15.094,7.519 L13.781,7.519 L13.781,11.259 ZM12.784,3.782 L15.140,0.879 L14.212,-0.001 L11.141,3.782 L-0.000,3.782 L1.969,11.883 C1.969,13.603 3.438,14.999 5.250,14.999 L15.750,14.999 C17.562,14.999 19.031,13.603 19.031,11.883 L21.000,3.782 L12.784,3.782 L12.784,3.782 ZM17.719,11.883 C17.457,13.028 16.837,13.752 15.750,13.752 L5.250,13.752 C4.163,13.752 3.456,12.915 3.281,11.883 L1.681,5.028 L10.129,5.028 L9.797,5.438 L10.725,6.318 L11.772,5.028 L19.318,5.028 L17.719,11.883 Z"/>
+                </svg>
+            </a>
 
-            <div class="header-middle__toggle">
-                <div class="header-middle__toggle-container">
-                    <span class="header-middle__time">С 9:00 до 18:00</span>
-                    <div class="header-middle__phone-list">
-                        <a class="header-middle__phone -first" href="tel:+70000000000">+7 (000) 000-00-00</a>
-                        <a class="header-middle__phone" href="tel:+70000000000">+7 (000) 000-00-00</a>
-                        <a class="header-middle__phone" href="tel:+70000000000">+7 (000) 000-00-00</a>
-                    </div>
-                </div>
-            </div><!-- end header-middle__toggle -->
         </div>
     </div><!-- end header-middle-->
     <nav class="main-menu js-menu-smart js-menu-mobile">
@@ -139,7 +146,7 @@
 <!-- /main-menu end -->
 
 </header>
-    
+
 
         <!-- end header -->
 

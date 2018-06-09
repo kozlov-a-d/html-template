@@ -3,7 +3,12 @@
         <a href="/products-show.html"><img src="{{ item.img }}" alt="{{ item.title }}" title="{{ item.title }}"></a>
     </div>
     <div class="product-item__text">
-        <button class="product-item__buy btn">Купить</button>
+        <button class="product-item__buy btn">
+            <svg  xmlns="http://www.w3.org/2000/svg" width="21px" height="15px">
+                <path fill-rule="evenodd"  fill="rgb(255, 255, 255)"
+                d="M8.531,11.259 L9.844,11.259 L9.844,7.519 L8.531,7.519 L8.531,11.259 ZM5.906,11.259 L7.219,11.259 L7.219,7.519 L5.906,7.519 L5.906,11.259 ZM11.156,11.259 L12.469,11.259 L12.469,7.519 L11.156,7.519 L11.156,11.259 ZM13.781,11.259 L15.094,11.259 L15.094,7.519 L13.781,7.519 L13.781,11.259 ZM12.784,3.782 L15.140,0.879 L14.212,-0.001 L11.141,3.782 L-0.000,3.782 L1.969,11.883 C1.969,13.603 3.438,14.999 5.250,14.999 L15.750,14.999 C17.562,14.999 19.031,13.603 19.031,11.883 L21.000,3.782 L12.784,3.782 L12.784,3.782 ZM17.719,11.883 C17.457,13.028 16.837,13.752 15.750,13.752 L5.250,13.752 C4.163,13.752 3.456,12.915 3.281,11.883 L1.681,5.028 L10.129,5.028 L9.797,5.438 L10.725,6.318 L11.772,5.028 L19.318,5.028 L17.719,11.883 Z"/>
+            </svg>
+        </button>
         <a href="/products-show.html" class="product-item__name">{{ item.title }}</a>
         <span class="product-item__price">{{ item.price }} руб.</span>
     </div>

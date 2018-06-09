@@ -1,4 +1,15 @@
 console.time('extends-js');
+
+var screenSize= {
+    xxs: 320,     // iphone5 в портретной ориентации
+    xs: 414,      // iphone plus в портретной ориентации
+    sm: 568,      // 
+    md: 820,      // планшеты в портретной ориентации / телефоны в альбомной
+    lg: 1024,     // планшеты в альбомной ориентации
+    xl: 1280,     // ширина контента широкого сайта ( 1170 например )
+}
+
+
 // BASIS ===============================================================================================================
 
 //=include ../ds-kit/basis/polyfills.js
@@ -91,8 +102,9 @@ if( $('.js-map').length ){
         
 // Header ============================================================================================================*/
 
-//=include ../../templates-html/layout/header/base-1__header.js                               /* Base-1 Denis + Lesya */
+///=include ../../templates-html/layout/header/base-1__header.js                               /* Base-1 Denis + Lesya */
 ///=include ../../templates-html/layout/header/base-1__header-short.js                         /* Base-1 Denis + Lesya */
+//=include ../../templates-html/layout/header/base-2__header.js                               /* Base-1 Denis + Lesya */
 
 
 // Common-block ======================================================================================================*/
