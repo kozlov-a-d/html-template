@@ -66,7 +66,7 @@
         <div class="header-middle__container l-container  js-header-middle">
             <a class="logo-header js-logo-header" href="/"><img src="http://via.placeholder.com/170x80/c0c0c0/ffffff" alt="TopCharter" title="TopCharter"></a>
 
-            <div class="header-contact">
+            <div class="header-contact -phone">
                 
                 <div class="header-contact__text header-phone js-header-phone">
                     <!-- если нет дополнительных номеров, то блок header-phone__more нужно удалять целиком -->
@@ -80,7 +80,7 @@
                 <button class="header-contact__btn btn js-ajax" data-class="-callback" data-url="modal-callback.html">Перезвонить мне</button>
             </div>
 
-            <div class="header-contact -email">
+            <div class="header-contact -enqury">
                 <span class="header-contact__text ">Ежедневно с 7:00 до 17:00</span> 
                 <button class="header-contact__btn btn js-ajax" data-class="-send-enquiry" data-url="modal-send-enquiry.html">Оставить заявку</button>
             </div>
@@ -103,48 +103,48 @@
     </div><!-- end header-middle-->
     <nav class="main-menu js-menu-smart js-menu-mobile">
 
-    <div class="main-menu__switcher">
-        <button class="main-menu__switcher-btn" data-menu-mobile--switcher-btn><span>Меню</span></button>
-    </div>
-
-    <ul class="is-root" data-menu-mobile--root>
-        <li class="-has-dropdown">
-            <a href="#">Demo</a>
-            <div>
-                <ul>
-                    <li><a href="demo/grid.html">Grids</a></li>
-                    <li><a href="demo/typography.html">Typography</a></li>
-                    <li><a href="demo/tables.html">Tables</a></li>
-                    <li><a href="demo/form-elements.html">Forms elements</a></li>
-                    <li><a href="demo/form-structure.html">Forms structure</a></li>
-                </ul>
-            </div>
-        </li>
-        <li class="-has-dropdown">
-            <a href="/products-list.html">Catalog</a>
-            <div>
-                <ul>
-                    <li><a href="/products-list.html">Catalog subdir #1</a></li>
-                    <li><a href="/products-list.html">Catalog subdir #2</a></li>
-                    <li><a href="/products-list.html">Catalog subdir #3</a></li>
-                    <li><a href="/products-list.html">Catalog subdir #4</a></li>
-                </ul>
-            </div>
-        </li>
-        <li><a href="/gallery-list.html">Gallery</a></li>
-        <li><a href="/reviews-list.html">Reviews</a></li>
-        <li><a href="/publication-list-article.html">Publication</a></li>
-        <li><a href="/text.html">Text</a></li>
-        <li><a href="/contacts.html">Contacts</a></li>
-        <li><a href="#">Сертификаты</a></li>
-        <li><a href="#">Доставка</a></li>
-        <li><a href="#">Гарантия</a></li>
-        <li><a href="#">Сертификаты</a></li>
-    </ul>
+        <div class="main-menu__switcher">
+            <button class="main-menu__switcher-btn" data-menu-mobile--switcher-btn><span>Меню</span></button>
+        </div>
     
-</nav>
-<!-- /main-menu end -->
-
+        <ul class="is-root" data-menu-mobile--root>
+            <li class="-has-dropdown">
+                <a href="#">Demo</a>
+                <div>
+                    <ul>
+                        <li><a href="demo/grid.html">Grids</a></li>
+                        <li><a href="demo/typography.html">Typography</a></li>
+                        <li><a href="demo/tables.html">Tables</a></li>
+                        <li><a href="demo/form-elements.html">Forms elements</a></li>
+                        <li><a href="demo/form-structure.html">Forms structure</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="-has-dropdown">
+                <a href="/products-list.html">Catalog</a>
+                <div>
+                    <ul>
+                        <li><a href="/products-list.html">Catalog subdir #1</a></li>
+                        <li><a href="/products-list.html">Catalog subdir #2</a></li>
+                        <li><a href="/products-list.html">Catalog subdir #3</a></li>
+                        <li><a href="/products-list.html">Catalog subdir #4</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li><a href="/gallery-list.html">Gallery</a></li>
+            <li class="is-active"><a href="/reviews-list.html">Reviews</a></li> 
+            <li><a href="/publication-list-article.html">Publication</a></li>
+            <li><a href="/text.html">Text</a></li>
+            <li><a href="/contacts.html">Contacts</a></li>
+            <li><a href="#">Сертификаты</a></li>
+            <li><a href="#">Доставка</a></li>
+            <li><a href="#">Гарантия</a></li>
+            <li><a href="#">Сертификаты</a></li>
+        </ul>
+        
+    </nav>
+    <!-- /main-menu end -->
+    
 </header>
 
 
@@ -377,13 +377,12 @@
             <nav class="footer-menu">
                 <ul>
                     <li><a href="/text.html">Пункт №1</a></li>
-                    <li><a href="/text.html">Пункт №2</a></li>
+                    <li class="is-active"><a href="/text.html">Пункт №2</a></li>
                     <li><a href="/text.html">Пункт №3</a></li>
                     <li><a href="/text.html">Пункт №4</a></li>
                     <li><a href="/text.html">Пункт №5</a></li>
                     <li><a href="/text.html">Пункт №6</a></li>
                     <li><a href="/text.html">Пункт №7</a></li>
-                    <li><a href="/text.html">Пункт №8</a></li>
                 </ul>
             </nav>
         </div>

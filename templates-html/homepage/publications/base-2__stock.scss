@@ -4,12 +4,22 @@
     position: relative;
     overflow: hidden;
 
+    @media (max-width: $mobile-view){
+        max-width: none;
+        margin: 0 -1*$content-gap;
+    }
+    @media (max-width: $sm){
+        padding: 40px 0 52px;
+    }
+
     &__header {
         display: block;
         margin: 0 auto 40px;
-        overflow: hidden;
         position: relative;
         z-index: 5;
+        @media (max-width: $sm){
+            margin: 0 auto 20px;
+        }
     }
     &__title {
         &>* {
@@ -20,9 +30,16 @@
     &__btn-more{
         position: absolute;
         right: 0;
-        top: 17px;
+        top: 77px;
         color: #000000;
         font-size: 14px;
+        &.btn.-secondary{
+            position: static;
+            display: block;
+            margin: 20px auto;
+            border-color: #3990ab;
+            color: #3990ab;
+        }
     }
     &__item {
         width: 310px;
@@ -64,5 +81,23 @@
     .owl-stage-outer {
         padding: 5px 0 10px;
     }
+    .owl-dots{
+        margin-top: 5px;
+        button {
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            padding: 0;
+            margin: 4px 7px;
+            border-radius: 50%;
+            background: #88a0ab;
+            font-size: 0;
+            opacity: 1;
+            &.active{
+                background: #29363e;
+            }
+        }
+    }
+
 }
 

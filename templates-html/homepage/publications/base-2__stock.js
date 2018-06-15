@@ -2,8 +2,20 @@
     if( $(".js-stock-widget").length ){
 
         var stockWidget = {
-            carousel : $(".js-stock-widget .owl-carousel")
+            carousel : $(".js-stock-widget .owl-carousel"),
+            btn : $(".js-stock-widget .js-btn-more"),
         };
+
+        resizeComponent.addMediaQuery({
+            min: 0,
+            max: 980,
+            onEnter: function(){
+                stockWidget.btn.addClass('btn -secondary');
+            },
+            onExit: function(){
+                stockWidget.btn.removeClass('btn -secondary');
+            }
+        })
 
         $(stockWidget.carousel).imagesLoaded()
             .always( function( instance ) {
@@ -30,7 +42,9 @@
             .fail( function() {
                 console.warn('one or more images is broken in ' + stockWidget.carousel);
             });
-
     }
+
+
+    
 
 }());

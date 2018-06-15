@@ -1,6 +1,12 @@
 .banner-list {
     margin: 85px auto 90px;
     padding: 0;
+    @media (max-width: $mobile-view) {
+        margin: 65px -1*$content-gap  70px;
+    }
+    @media (max-width: $sm) {
+        margin: 35px -1*$content-gap  40px;
+    }
     &__container {
         
     }
@@ -46,6 +52,27 @@
             .banner-list__item-title{
                 text-decoration: none;
                 color: #ade7f9;
+            }
+        }
+    }
+    
+    .owl-stage-outer {
+        padding: 5px 0 10px;
+    }
+    .owl-dots{
+        margin-top: 5px;
+        button {
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            padding: 0;
+            margin: 4px 7px;
+            border-radius: 50%;
+            background: #88a0ab;
+            font-size: 0;
+            opacity: 1;
+            &.active{
+                background: #29363e;
             }
         }
     }

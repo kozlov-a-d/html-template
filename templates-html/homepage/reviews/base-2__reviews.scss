@@ -40,8 +40,8 @@
         color: #000000;
         background: #fff;
         border-radius: 10px;
-        @include media-max(480px) {
-            padding: 17px 0 6px 0;
+        @media (max-width: $sm){
+            padding: 30px 20px;
         }
         &:before,
         &:after {
@@ -51,9 +51,6 @@
             height: 40px;
             background: url(http://via.placeholder.com/40x40/b6c5cc/ffffff) no-repeat;
             position: absolute;
-            @include media-max(480px) {
-                display: none;
-            }
         }
         &:before{
             left: 3%;

@@ -3,7 +3,7 @@
         <div class="header-middle__container l-container  js-header-middle">
             <a class="logo-header js-logo-header" href="/"><img src="http://via.placeholder.com/170x80/c0c0c0/ffffff" alt="TopCharter" title="TopCharter"></a>
 
-            <div class="header-contact">
+            <div class="header-contact -phone">
                 {# TODO: может быть несколько номеров #}
                 <div class="header-contact__text header-phone js-header-phone">
                     <!-- если нет дополнительных номеров, то блок header-phone__more нужно удалять целиком -->
@@ -17,7 +17,7 @@
                 <button class="header-contact__btn btn js-ajax" data-class="-callback" data-url="modal-callback.html">Перезвонить мне</button>
             </div>
 
-            <div class="header-contact -email">
+            <div class="header-contact -enqury">
                 <span class="header-contact__text ">Ежедневно с 7:00 до 17:00</span> 
                 <button class="header-contact__btn btn js-ajax" data-class="-send-enquiry" data-url="modal-send-enquiry.html">Оставить заявку</button>
             </div>
@@ -38,5 +38,5 @@
 
         </div>
     </div><!-- end header-middle-->
-    {% include '../top_menu/base-1__main-menu.twig' %}
+    {% include '../top_menu/base-2__main-menu.twig' %}
 </header>

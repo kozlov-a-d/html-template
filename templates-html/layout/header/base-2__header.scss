@@ -25,7 +25,6 @@
 }
 .header-middle{
     
-
     &__container{
         display: flex;
         align-items: center;
@@ -36,6 +35,19 @@
         }
         @media (max-width: $md) {
             padding: 15px 0;
+        }
+
+        @media (max-width: 700px) {
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            grid-template-rows: auto;
+            grid-column-gap: 10px;
+            grid-row-gap: 1em;
+            grid-template-areas: "logo menu" "btn-phone btn-enquiry";
+        }
+        @media (max-width: $xs) {
+            grid-template-columns: repeat(2,1fr);
+            grid-template-areas: "logo menu" "btn-phone btn-phone" "btn-enquiry btn-enquiry";
         }
     }
 
@@ -53,7 +65,10 @@
 }
 
 .logo-header{
-
+    @media (max-width: 700px) {
+        grid-area: logo;
+        justify-self: start;
+    }
 }
 
 .header-btn{
@@ -100,6 +115,29 @@
 
 .header-contact{
     text-align: center;
+
+    &.-phone{
+        @media (max-width: 700px) {
+            grid-area: btn-phone;
+            justify-self: start;
+        }
+        @media (max-width: $xs) {
+            width: 100%;
+            justify-self: center;
+        }
+    }
+    &.-enqury{
+        @media (max-width: 700px) {
+            grid-area: btn-enquiry;
+            justify-self: end;
+        }
+        @media (max-width: $xs) {
+            width: 100%;
+            justify-self: center;
+        }
+    }
+    
+
     span{
         color: #000000;
         text-decoration: none;
@@ -114,6 +152,9 @@
         margin: 10px 0 0;
         @media (max-width: $md) {
             margin: 0;
+        }
+        @media (max-width: $xs) {
+            width: 100%;
         }
     }
     &__text{
