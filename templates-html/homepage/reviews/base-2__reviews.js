@@ -34,9 +34,6 @@
         });
 
 
-    } else {
-        reviewsWidget.nextBtn.remove();
-        reviewsWidget.prevBtn.remove();
     }
 
 }());

@@ -47,14 +47,14 @@
     }
     &__carousel {
         @media (min-width: 1024px) { 
-            @include grid(15px);
+            @include grid(5px);
         }
         touch-action: none;
     }
     &__item {
         @media (min-width: 1024px) {
-            width: 210px;
-            @include grid-col(1/4, 15px);
+            width: 220px;
+            @include grid-col(1/4, 5px);
             margin-bottom: 30px;
         }
     }

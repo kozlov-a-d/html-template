@@ -1,0 +1,31 @@
+{%  set subcatalog = [ {
+    img: 'http://via.placeholder.com/233x150',
+    title: 'Новинка'
+},{
+    img: 'http://via.placeholder.com/233x150',
+    title: 'Букеты'
+},{
+    img: 'http://via.placeholder.com/233x150',
+    title: 'Ещё одна категория с длинным названием'
+},{
+    img: 'http://via.placeholder.com/233x150',
+    title: 'Композиции'
+},{
+    img: 'http://via.placeholder.com/233x150',
+    title: 'Цветы'
+},{
+    img: 'http://via.placeholder.com/233x150',
+    title: 'Розы'
+}] %}
+<div class="subcatalog-list">
+    <div class="subcatalog-list__container"> 
+        {% for item in subcatalog %}
+        <div class="subcatalog-list__item">
+            <a href="/products-list.html" class="subcatalog-list__item-img"><img src="{{ item.img }}" alt="{{ item.title }}" title="{{ item.title }}"></a>
+            <div class="subcatalog-list__item-text">
+                <a href="" class="subcatalog-list__item-title">{{ item.title }}</a>
+            </div>
+        </div> 
+        {% endfor %}
+    </div>
+</div>

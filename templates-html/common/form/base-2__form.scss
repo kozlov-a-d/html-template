@@ -141,11 +141,18 @@
     &.-columns form{
         $grid-gap: 20px;
         @include grid($grid-gap);
-        .col-1 {
+        .col-1-1 {
+            @include grid-col(1/1, $grid-gap);
+        }
+        .col-1-3 {
             @include grid-col(1/3, $grid-gap);
             @include grid-col-media(1, $grid-gap, 'md');
         }
-        .col-2 {
+        .col-1-2 {
+            @include grid-col(1/2, $grid-gap);
+            @include grid-col-media(1, $grid-gap, 'md');
+        }
+        .col-2-3 {
             @include grid-col(2/3, $grid-gap);
             @include grid-col-media(1, $grid-gap, 'md');
         }

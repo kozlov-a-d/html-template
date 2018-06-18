@@ -1,0 +1,30 @@
+{%  set products = [ {
+    img: 'http://via.placeholder.com/225x210/c0c0c0/fff',
+    title: 'Плотная рубашка из эластичной джинсовой ткани',
+    price: '5 999'
+},{
+    img: 'http://via.placeholder.com/225x210/c0c0c0/fff',
+    title: 'Плотная рубашка из эластичной джинсовой ткани',
+    price: '5 999'
+},{
+    img: 'http://via.placeholder.com/225x210/c0c0c0/fff',
+    title: 'Плотная рубашка из эластичной джинсовой ткани',
+    price: '5 999'
+},{
+    img: 'http://via.placeholder.com/225x210/c0c0c0/fff',
+    title: 'Плотная рубашка из эластичной джинсовой ткани',
+    price: '5 999'
+},{
+    img: 'http://via.placeholder.com/225x210/c0c0c0/fff',
+    title: 'Плотная рубашка из эластичной джинсовой ткани',
+    price: '5 999'
+},{
+    img: 'http://via.placeholder.com/225x210/c0c0c0/fff',
+    title: 'Плотная рубашка из эластичной джинсовой ткани',
+    price: '5 999'
+}] %}
+<div class="products-list">
+    {% for item in products %}
+        {% include '../list-item/base-2__products-list-item.twig' with {'item': item, 'class': 'products-list', 'mod': ''} %}  
+    {% endfor %}
+</div>

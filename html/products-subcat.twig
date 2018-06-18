@@ -2,23 +2,23 @@
 
 {# Настройки #} 
 {% block title %}Products list page | template site {% endblock %}
-{# {% block body_class %}home-page{% endblock %} #}
+{% block body_class %}inner-page{% endblock %}
 
 {% block main %} 
 
 <div class="breadcrumbs"> 
     <a href="/">Home</a> 
-    <a href="/products-subcat.html">Subcatalog</a> 
-    <span>Products list</span> 
+    <span>Subcatalog list</span> 
 </div>
-<h1>Products list</h1>
+<h1>Subcatalog list</h1>
 <div class="l-content">
-    {% include '../templates-html/products/list/base-2__products-list.twig' %}
+    {% include '../templates-html/products/list-subcat/base-2__products-list-subcat.twig' %}
     {% include '../templates-html/common/pagination/default__pagination.twig' %}
 
     {% include '../templates-html/feedback/base-2__feedback-container-inner.twig' %}
 
     {% include '../templates-html/text/default__short-text.twig' %}
+    {% include '../templates-html/homepage/banner/base-2__banner-list.twig' %}
 </div>
 
 {% endblock %}  

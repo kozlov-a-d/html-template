@@ -109,6 +109,8 @@
 // @import "../../templates-html/feedback/base-1__feedback-container.scss";                      /* Base-1 Denis + Lesya */
 @import "../../templates-html/feedback/base-2__feedback-container.scss";                      /* Base-2 Oleg          */
 
+@import "../../templates-html/feedback/base-2__feedback-container-inner.scss";                /* Base-2 Oleg          */
+
 
 // Homepage ==========================================================================================================*/
 
@@ -162,7 +164,11 @@
 // @import "../../templates-html/products/list-item/base-1__products-list-item.scss";            /* Base-1 Denis + Lesya */
 @import "../../templates-html/products/list-item/base-2__products-list-item.scss";            /* Base-2 Oleg          */
 
-@import "../../templates-html/products/list/base-1__products-list.scss";                      /* Base-1 Denis + Lesya */
+@import "../../templates-html/products/list-subcat/base-2__products-list-subcat.scss";        /* Base-2 Oleg          */
+
+// @import "../../templates-html/products/list/base-1__products-list.scss";                      /* Base-1 Denis + Lesya */
+@import "../../templates-html/products/list/base-2__products-list.scss";                      /* Base-2 Oleg          */
+
 @import "../../templates-html/products/show/base-1__products-show.scss";                      /* Base-1 Denis + Lesya */
 @import "../../templates-html/products/similar/base-1__products-similar.scss";                /* Base-1 Denis + Lesya */
 
