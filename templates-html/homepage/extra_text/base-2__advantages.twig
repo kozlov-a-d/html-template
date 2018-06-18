@@ -24,9 +24,9 @@
             </div>
         </div> 
 
-        <div class="advantages__list">
+        <div class="advantages__list js-spoiler-items" data-hidden-resolution="768" data-btn-class="-secondary -center advantages__more">
             {% for item in advantages %}
-            <div class="advantages__item">
+            <div class="advantages__item" {% if loop.index > 2 %}data-hidden-item{% endif %}>
                     <div class="advantages__item-img">
                         <img src="{{ item.img }}" alt="{{ item.title }}" title="{{ item.title }}">
                     </div>

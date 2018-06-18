@@ -15,7 +15,7 @@
             onExit: function(){
                 stockWidget.btn.removeClass('btn -secondary');
             }
-        })
+        });
 
         $(stockWidget.carousel).imagesLoaded()
             .always( function( instance ) {

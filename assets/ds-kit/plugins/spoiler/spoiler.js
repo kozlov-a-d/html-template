@@ -68,12 +68,33 @@ $('.js-spoiler-items').each(function () {
     // кэшируем data-атрибуты, подставляя значения по умолчанию, если атрибуты не заданы
     var btnTextOpened = self.attr('data-text-opened') ? self.attr('data-text-opened') : 'Скрыть',
         btnTextClosed = self.attr('data-text-closed') ? self.attr('data-text-closed') : 'Смотреть полностью',
-        btnClass = self.attr('data-btn-class') ? self.attr('data-btn-class') : '' ;
+        btnClass = self.attr('data-btn-class') ? self.attr('data-btn-class') : ' ' ;
+        hiddenResolution = self.attr('data-hidden-resolution') ? self.attr('data-hidden-resolution') : 980;
+        $hiddenItems = self.find('[data-hidden-item]');
 
     // добавляем необходимый html
     self.addClass('spoiler__content');
     self.wrap('<div class="spoiler"></div>');
-    self.parent().append('<button class="spoiler__btn btn ' + btnClass + '"><span>' + btnTextClosed + '</span></button>');
+    var btn = document.createElement('button');
+    var $btn = $(btn);
+    $btn.addClass('spoiler__btn btn ' + btnClass);
+    $btn.text(btnTextClosed);
+    self.parent().append($btn);
 
+
+    $btn.on('click', function(){
+        $hiddenItems.slideToggle();
+    });
+
+    resizeComponent.addMediaQuery({
+        min: 0,
+        max: hiddenResolution*1,
+        onEnter: function(){
+            $hiddenItems.hide();
+        },
+        onExit: function(){
+            $hiddenItems.show();
+        }
+    });
 
 });
