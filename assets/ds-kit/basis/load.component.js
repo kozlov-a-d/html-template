@@ -25,7 +25,7 @@ var loadComponent = (function(){
     
             function onload(){
                 leanup();
-                if(!script.onreadystatechange||(script.readyState&&script.readyState=="complete")){
+                if(!script.onreadystatechange||(script.readyState && script.readyState=="complete")){
                     resolve(script);
                 }
             }
@@ -47,7 +47,7 @@ var loadComponent = (function(){
             script.setAttribute("type", "text/javascript");
             script.setAttribute("src", src);
         });
-    }
+    };
 
     var loadCSS = function(src,_timeout){
         
@@ -97,7 +97,7 @@ var loadComponent = (function(){
                 reject(new TypeError("filename is missing"));
             }
         });
-    }
+    };
 
     // PUBLIC ==========================================================================================================
     return  Object.freeze({
@@ -120,7 +120,7 @@ var loadComponent = (function(){
             },function(error){
                 console.log(error);
             })
-        }, 
+        }
     })
 
 }());

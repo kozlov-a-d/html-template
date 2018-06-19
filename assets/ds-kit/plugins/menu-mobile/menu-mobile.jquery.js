@@ -31,7 +31,7 @@
         // create a namespace to be used throughout the plugin
         var menuMobile = {};
         // set a reference to our slider element
-        var el = this;
+        // var el = this;
 
         // Return if menuMobile is already initialized
         // if ($(el).data('menuMobile')) { return; }

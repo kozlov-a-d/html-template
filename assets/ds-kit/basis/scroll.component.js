@@ -16,7 +16,7 @@ var scrollComponent = (function(){
 
     var addTransformElements = function(selector){
         self.elsTransform = document.querySelectorAll(selector);
-    }
+    };
 
     var scrollCheck = function () {
         self.previous = self.current;
@@ -106,7 +106,7 @@ var scrollComponent = (function(){
         },
         /**
          * Отключаем скролл
-         * @param {bolean} useTransform использовать ли трансформ
+         * @param {boolean} useTransform использовать ли трансформ
          */
         disable: function(useTransform){
             scrollSave();

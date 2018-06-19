@@ -84,6 +84,12 @@ $('.js-spoiler-items').each(function () {
 
     $btn.on('click', function(){
         $hiddenItems.slideToggle();
+        $btn.toggleClass('is-opened');
+        if($btn.hasClass('is-opened')){
+            $btn.find('span').text(btnTextOpened);
+        } else {
+            $btn.find('span').text(btnTextClosed);
+        }
     });
 
     resizeComponent.addMediaQuery({

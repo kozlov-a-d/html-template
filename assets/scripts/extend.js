@@ -6,8 +6,8 @@ var screenSize= {
     sm: 568,      // 
     md: 820,      // планшеты в портретной ориентации / телефоны в альбомной
     lg: 1024,     // планшеты в альбомной ориентации
-    xl: 1280,     // ширина контента широкого сайта ( 1170 например )
-}
+    xl: 1280     // ширина контента широкого сайта ( 1170 например )
+};
 
 
 // BASIS ===============================================================================================================
@@ -36,7 +36,7 @@ photoswipeWrapper.init('.js-photoswipe-gallery', 'a:not(.no-photoswipe)');
 $('.js-menu-mobile').menuMobile({
     text: {
         rootTitle: 'Menu'      
-    },
+    }
 }); // TODO: переделать без vue.js ?
  
 //=include ../ds-kit/plugins/menu-smart/menu-smart.jquery.js
@@ -70,6 +70,9 @@ printModule.init('.js-print');
 //=include ../ds-kit/plugins/tabs/tabs.jquery.js
 // $('.js-tabs').tabs();
 
+//=include ../ds-kit/plugins/input-number/input-number.jquery.js
+$('.js-custom-number').customNumber();
+
 $('.bigpic').each(function(event){
     var img = $(this);
     var link = img.closest('a');
@@ -90,7 +93,7 @@ if( $('.js-map').length ){
     loadComponent.script(url, function(){
         var map = $('.js-map').mapInit('init', {
             zoom: [18, 18],
-            ui: true,
+            ui: true
         });
     }); 
 }
@@ -141,6 +144,8 @@ if( $('.js-map').length ){
 // Products ==========================================================================================================*/
 
 ///=include ../../templates-html/products/show/base-1__products-show.js                        /* Base-1 Denis + Lesya */
+//=include ../../templates-html/products/show/base-2__products-show.js                        /* Base-2 Oleg          */
+
 ///=include ../../templates-html/products/similar/base-1__products-similar.js                  /* Base-1 Denis + Lesya */
 
 

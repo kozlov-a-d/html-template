@@ -34,7 +34,7 @@ var resizeComponent = (function(){
      * проверяем текущий размер экрана
      */
     var checkScreen = function () {
-        screenWidth = window.innerWidth;
+        self.screenWidth = window.innerWidth;
     };
 
     /**

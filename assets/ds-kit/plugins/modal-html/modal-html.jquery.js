@@ -7,15 +7,20 @@
         html: 'Content...',
         minResolution: 1023
     };
-    var states ={
-        hasExtra: false
+    var options;
+    // var states ={
+    //     hasExtra: false
+    // };
+    var html = {
+        $body: $('body'),
+        $modal: null
     };
 
     var methods = {
 
-        init : function( options ) {
+        init : function( _options ) {
 
-            options = $.extend({}, defaults, options);
+            options = $.extend({}, defaults, _options);
 
             this.each(function() {
                 var modalId = 'modal-' + Math.round(Math.random()*999999);
@@ -38,9 +43,9 @@
                                 '</div>' +
                             '</div>'
                         );
-
-                        $('body').append($html);
-                        $('body').addClass('has-modal');
+                        html.$modal = $html;
+                        html.$body.append($html);
+                        html.$body.addClass('has-modal');
                         setTimeout(function(){
                             scrollComponent.disable();
                             methods.addEventListener($('#' + modalId));
@@ -70,13 +75,13 @@
         closeModal : function (e) {
             e.preventDefault();
             scrollComponent.enable();
-            $('body').removeClass('has-modal');
-            $('.modal-html').addClass('closing');
+            html.$body.removeClass('has-modal');
+            html.$modal.addClass('closing');
             setTimeout(function () {
-                $('.modal-html').remove();
+                html.$modal.remove();
                 $('body').css('position', 'static'); 
             }, 950);
-        },
+        }
 
     };
 

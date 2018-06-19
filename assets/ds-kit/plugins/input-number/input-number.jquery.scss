@@ -1,0 +1,39 @@
+.custom-number {
+	position: relative;
+	display: inline-block;
+    input {
+
+    }
+    span {
+		position: absolute;
+		width: 30px;
+		height: 50%;
+		right: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		&:after{
+			content: '';
+			width: 0;
+			height: 0;
+			border: 5px solid transparent;
+		}
+        &:hover {
+
+        }
+        &.-plus {
+			top: 0;
+			&:after{
+				border-bottom: 5px solid #000000;
+			}
+			
+        }
+        &.-minus {
+			bottom: 0;
+			&:after{
+				border-top: 5px solid #000000;
+			}
+        }
+    }
+}

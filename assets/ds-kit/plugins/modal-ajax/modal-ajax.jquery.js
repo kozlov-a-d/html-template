@@ -4,9 +4,10 @@
         // дефолтные опции
         animation: ''
     };
-    var states ={
-        hasExtra: false
-    };
+    var options;
+    // var states ={
+    //     hasExtra: false
+    // };
 
     var methods = {
 
@@ -83,7 +84,7 @@
                     $('body').css('position', 'static'); 
                 }, 1350);
             });
-        },
+        }
 
     };
 

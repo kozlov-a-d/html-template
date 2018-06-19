@@ -48,6 +48,7 @@
 /* PLUGINS */  @import "../ds-kit/plugins/menu-mobile/menu-mobile.scss";
 /* PLUGINS */  @import "../ds-kit/plugins/modal-ajax/modal-ajax.jquery.scss";
 /* PLUGINS */  @import "../ds-kit/plugins/modal-html/modal-html.jquery.scss";
+/* PLUGINS */  @import "../ds-kit/plugins/input-number/input-number.jquery.scss";
 
 /* UTILITIES */  @import "../ds-kit/utilities-styles/grid-inline";  /* .grid  .col-x-y */
 /* UTILITIES */  @import "../ds-kit/utilities-styles/response-img.scss";  /* .response-img (-xs, -sm, -md, -lg, -xl,) */
@@ -169,7 +170,9 @@
 // @import "../../templates-html/products/list/base-1__products-list.scss";                      /* Base-1 Denis + Lesya */
 @import "../../templates-html/products/list/base-2__products-list.scss";                      /* Base-2 Oleg          */
 
-@import "../../templates-html/products/show/base-1__products-show.scss";                      /* Base-1 Denis + Lesya */
+// @import "../../templates-html/products/show/base-1__products-show.scss";                      /* Base-1 Denis + Lesya */
+@import "../../templates-html/products/show/base-2__products-show.scss";                      /* Base-2 Oleg          */
+
 @import "../../templates-html/products/similar/base-1__products-similar.scss";                /* Base-1 Denis + Lesya */
 
 

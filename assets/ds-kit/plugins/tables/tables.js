@@ -1,7 +1,7 @@
 var Tables = (function(){
 
     // private =============================================================
-    wrapTables = function (tableSelector){
+    var wrapTables = function (tableSelector){
         $(tableSelector).each(function () {
             var currTable = $(this);
             // var className = "table-responsive";

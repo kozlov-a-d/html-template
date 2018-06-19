@@ -49,7 +49,7 @@
 				tab_content.each(function(index) { $(this).attr('data-tab-num', index); $(this).attr('data-tab-id', tabsId); });
 
 				// выводим первый или указанный в опциях, если он возможен
-				if( options.startTab != 0 && options.startTab < tab_name.size() ) { switchTabs(options.startTab); } 
+				if( options.startTab !== 0 && options.startTab < tab_name.size() ) { switchTabs(options.startTab); }
 				else { switchTabs(0); }
 				
 				// нажатие на таб
@@ -65,13 +65,13 @@
 					container.find('[data-tab-id=' + tabsId + '][data-tab-num=' + num + ']').show();
 					container.find(options.selectors.contentItem + '[data-tab-id=' + tabsId + ']').removeClass('is-active');
 
-					var currentContent = container.find(options.selectors.contentItem +'[data-tab-id=' + tabsId + '][data-tab-num=' + num + ']')
+					var currentContent = container.find(options.selectors.contentItem +'[data-tab-id=' + tabsId + '][data-tab-num=' + num + ']');
                     currentContent.addClass('is-active');
 					options.onChange();
 				}
 
 			});
-		},
+		}
 		
 	};
 	 
