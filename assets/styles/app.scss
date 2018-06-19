@@ -179,13 +179,19 @@
 // Gallery ===========================================================================================================*/
 
 @import "../../templates-html/gallery/list/base-1__gallery-list.scss";                        /* Base-1 Denis + Lesya */
+//@import "../../templates-html/gallery/list/base-1__gallery-list.scss";                        /* Base-2 Oleg          */
+
 @import "../../templates-html/gallery/show/base-1__gallery-show.scss";                        /* Base-1 Denis + Lesya */
+//@import "../../templates-html/gallery/show/base-1__gallery-show.scss";                        /* Base-2 Oleg          */
 
 
 // Reviews ===========================================================================================================*/
 
-@import "../../templates-html/reviews/list/base-1__reviews-list.scss";                        /* Base-1 Denis + Lesya */
-@import "../../templates-html/reviews/form/base-1__reviews-form.scss";                        /* Base-1 Denis + Lesya */
+//@import "../../templates-html/reviews/list/base-1__reviews-list.scss";                        /* Base-1 Denis + Lesya */
+@import "../../templates-html/reviews/list/base-2__reviews-list.scss";                        /* Base-2 Oleg          */
+
+//@import "../../templates-html/reviews/form/base-1__reviews-form.scss";                        /* Base-1 Denis + Lesya */
+@import "../../templates-html/reviews/form/base-2__reviews-form.scss";                        /* Base-2 Oleg          */
 
 
 // Publication =======================================================================================================*/

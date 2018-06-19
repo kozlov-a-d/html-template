@@ -43,7 +43,7 @@ var resizeComponent = (function(){
      */
     var triggerQuery = function(query){
         // проверяем разрешение
-        if( query.min <= screenWidth && screenWidth <= query.max ){
+        if( query.min <= self.screenWidth && self.screenWidth <= query.max ){
             // onEnter
             if( typeof query.onEnter === 'function' && !query.isEnter){
                 query.onEnter();
