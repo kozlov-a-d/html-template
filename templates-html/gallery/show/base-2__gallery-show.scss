@@ -1,0 +1,35 @@
+.gallery-show{
+
+    $gap: 2px;
+
+    @include grid($gap);
+    margin-bottom: 35px;
+
+    &__item {
+        @include grid-col(1/3, $gap);
+        margin-bottom: $gap;
+
+        @media (max-width: $md) {
+            @include grid-col(1/2, $gap);
+        }
+        @media (max-width: $sm) {
+            @include grid-col(1, $gap);
+        }
+        display: block;
+    }
+    a{
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 0;
+        padding-bottom: 100%;
+    }
+    img{
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+}

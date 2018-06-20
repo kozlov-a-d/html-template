@@ -1,0 +1,45 @@
+.print-btn{
+    //display: inline-block;
+    //position: relative;
+    //float: right;
+    //padding: 0 0 0 26px;
+    //margin: -50px 0 0;
+    //background: url(http://via.placeholder.com/20x20/c0c0c0/ffffff) left center no-repeat;
+    //&:hover{
+    //    text-decoration: none;
+    //}
+    //@media (max-width: $md) {
+    //    float: none;
+    //    margin: 0 0 20px;
+    //}
+}
+.contacts{
+    margin: 0 0 40px 0;
+    &__item{
+        position: relative;
+        font-size: 17px;
+        font-weight: 300;
+        vertical-align: top;
+        padding: 0 0 0 44px;
+        margin: 0 60px 20px 0;
+        img{
+            position: absolute;
+            left: 0;
+            top:  4px;
+        }
+        a, span{
+            display: block;
+            font-size: 15px;
+            font-weight: 400;
+            text-decoration: none;
+            color: #404040;
+        }
+    }
+}
+
+.contacts-map{
+    width: auto;
+    margin: 40px calc( -1*(50vw - 50%) ) 60px;
+    height: 600px;
+    background: #304a7d;
+}

@@ -2,12 +2,25 @@
 
     var defaults = {
         // дефолтные опции
-        animation: ''
+        animation: '',
+
+        template: function (params) {
+            return  '<div class="modal ' + params.dataClass + '" id="' + params.id + '">' +
+                        '<div class="modal__wrapper">' +
+                            '<div class="modal__bg"></div>' +
+                            '<button class="modal__btn-close">Close</button>' +
+                            '<div class="modal__container">' +
+                                '<div class="modal__scroll">' +
+                                    params.html +
+                                '</div>' +
+                            '</div>' +
+                            '<div class="modal__loader"></div>' +
+                        '</div>' +
+                    '</div>'
+        }
     };
     var options;
-    // var states ={
-    //     hasExtra: false
-    // };
+
 
     var methods = {
 
@@ -36,18 +49,11 @@
                         url: ( $link.attr('data-url') ) ? $link.attr('data-url') : $link.attr('href')
                     }).done(function (html) {
                         var $html = $(
-                            '<div class="modal ' + $link.attr('data-class') + '" id="' + modalId + '">' +
-                                '<div class="modal__wrapper">' +
-                                    '<div class="modal__bg"></div>' +
-                                    '<button class="modal__btn-close">Close</button>' +
-                                    '<div class="modal__container">' +
-                                        '<div class="modal__scroll">' +
-                                            html +
-                                        '</div>' +
-                                    '</div>' +
-                                    '<div class="modal__loader"></div>' +
-                                '</div>' +
-                            '</div>'
+                            options.template({
+                                id: modalId,
+                                dataClass: $link.attr('data-class'),
+                                html: html
+                            })
                         );
                         $('body').append($html);
                         setTimeout(function(){

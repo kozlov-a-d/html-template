@@ -43,7 +43,7 @@ $('.js-menu-mobile').menuMobile({
 $('.js-menu-smart').menuSmart();     // TODO: вынести настройки
 
 //=include ../ds-kit/plugins/modal-ajax/modal-ajax.jquery.js
-$('.js-ajax').modalAjax();
+// $('.js-ajax').modalAjax();
 
 //=include ../ds-kit/plugins/modal-html/modal-html.jquery.js
 
@@ -99,10 +99,15 @@ if( $('.js-map').length ){
 }
 
 
-     
+
 
 // TEMPLATE ============================================================================================================
         
+// Header ============================================================================================================*/
+
+///=include ../../templates-html/common/modal/base-1__modal.js                               /* Base-1 Denis + Lesya */
+//=include ../../templates-html/common/modal/base-2__modal.js                               /* Base-1 Denis + Lesya */
+
 // Header ============================================================================================================*/
 
 ///=include ../../templates-html/layout/header/base-1__header.js                               /* Base-1 Denis + Lesya */

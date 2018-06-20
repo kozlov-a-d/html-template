@@ -3,7 +3,7 @@ var scrollTopModule = (function () {
     var self = {
         btn: null,
         speed: 500,
-        offsetTop: 105,
+        offsetTop: 105
     };
 
     var bindButton = function (selector, callback) {
@@ -14,7 +14,7 @@ var scrollTopModule = (function () {
         
     };
 
-    var checkScroll = function (selector) {
+    var checkScroll = function () {
         if ( scrollComponent.current() > self.offsetTop ){
             self.btn.style.opacity = '1';
             self.btn.style.pointerEvents = 'auto';

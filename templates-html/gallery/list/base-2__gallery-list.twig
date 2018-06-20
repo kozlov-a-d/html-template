@@ -1,0 +1,32 @@
+{%  set galleryList = [ {
+img: 'http://via.placeholder.com/480x480',
+title: 'Album name 1 - bla bla bla bla Album name 1',
+},{
+img: 'http://via.placeholder.com/480x480',
+title: 'Album name 2 - bla bla bla bla',
+},{
+img: 'http://via.placeholder.com/480x480',
+title: 'Album name 3',
+},{
+img: 'http://via.placeholder.com/480x480',
+title: 'Album name 4 - bla bla bla bla',
+},{
+img: 'http://via.placeholder.com/480x480',
+title: 'Album name 2 - bla bla bla bla',
+},{
+img: 'http://via.placeholder.com/480x480',
+title: 'Album name 3',
+}] %}
+<div class="gallery-list">
+    {% for item in galleryList %}
+        <div class="gallery-list__item">
+            <a class="gallery-list__item-img" href="/gallery-show.html" data-size="{{ item.size }}"><img src="{{ item.img }}" alt="{{ item.title }}" title="{{ item.title }}"></a>
+            <div class="gallery-list__item-overlay">
+                <div class="gallery-list__item-overlay-container">
+                    <a class="gallery-list__item-title" href="/gallery-show.html">{{ item.title }}</a>
+                    <a class="gallery-list__item-btn btn -secondary" href="/gallery-show.html" rel="nofollow">смотреть все фото</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>

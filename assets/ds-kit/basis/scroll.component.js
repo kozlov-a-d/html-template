@@ -77,7 +77,7 @@ var scrollComponent = (function(){
         },
         /**
          * Задаём или получаем значение прокрутки
-         * @param {number} value новое значение 
+         * @param {number} [value] новое значение
          * @returns {number} текущее значение
          */
         current: function(value){
