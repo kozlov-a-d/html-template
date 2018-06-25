@@ -31,3 +31,6 @@
 !web/files/uploads/.gitkeep
 web/*.html
 www
+web/assets/build/manifest.json
+web/assets/build/app.js
+web/assets/build/app.css
