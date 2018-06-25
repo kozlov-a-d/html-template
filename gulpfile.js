@@ -118,15 +118,15 @@ gulp
     // Dev
     .task('scripts', require('./gulp/tasks/scripts')(gulp, dir, scripts))
     .task('styles', require('./gulp/tasks/styles')(gulp, dir, styles))
-    .task('build', gulpSequence('vendor', ['fonts', 'images', 'scripts', 'styles']))
+    .task('build', gulpSequence('vendor', ['fonts', 'scripts', 'styles']))
     .task('watch', ['build'], require('./gulp/tasks/watch')(gulp, scripts, scss, styles))
     // Prod
     .task('scripts-prod', ['scripts'], require('./gulp/tasks/scripts-prod')(gulp, dir, scripts))
     .task('styles-prod', ['styles'], require('./gulp/tasks/styles-prod')(gulp, dir, styles))
     .task('manifest', require('./gulp/tasks/manifest')(gulp, dir, images, scripts, styles))
-    .task('build-prod', gulpSequence('vendor', ['fonts', 'images', 'scripts-prod', 'styles-prod'], 'manifest'))
+    .task('build-prod', gulpSequence('vendor', ['fonts', 'scripts-prod', 'styles-prod'], 'manifest'))
     // HTML
     .task('html', require('./gulp/tasks/html')(gulp, html))
-    .task('build-html', ['build', 'html'])
+    .task('build-html', ['build', 'html', 'images'])
     .task('watch-html', ['build-html'], require('./gulp/tasks/watch-html')(gulp, html, scripts, scss, styles, images))
     .task('serve-html', ['build-html', 'browser-sync', 'watch-html']);
