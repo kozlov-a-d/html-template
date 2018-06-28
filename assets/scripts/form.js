@@ -22,6 +22,11 @@ $('body').on('submit', 'form.ajax', function (e) {
     }
 
     $.ajax(options).done(function (data) {
+
+        $(document).trigger('app.form.' + (data.success ? 'success' : 'error'), {
+            $form: $form
+        });
+
         App.notify(data.message, data.success ? 'success' : 'error');
         App.redirect(data.redirectUrl);
 

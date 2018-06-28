@@ -129,4 +129,5 @@ gulp
     .task('html', require('./gulp/tasks/html')(gulp, html))
     .task('build-html', ['build', 'html', 'images'])
     .task('watch-html', ['build-html'], require('./gulp/tasks/watch-html')(gulp, html, scripts, scss, styles, images))
-    .task('serve-html', ['build-html', 'browser-sync', 'watch-html']);
+    .task('serve-html', ['build-html', 'browser-sync', 'watch-html'])
+    .task('generate',  require('./gulp/tasks/generate')(gulp));
