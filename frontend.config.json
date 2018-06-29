@@ -1,85 +1,15 @@
 {
   "slot": [
-    {
-      "name": "header",
-      "value": "base-1__header"
-    },
-    {
-      "name": "footer",
-      "value": "base-1__footer"
-    }
-  ],
-  "options": [
-    {
-      "name": "base-1__header",
-      "slot": "header",
-      "parts": {
-        "html": [
-          "templates-html/layout/header/base-1__header.twig"
-        ],
-        "css": [
-          "templates-html/layout/header/base-1__header.scss"
-        ],
-        "js": [
-          "templates-html/layout/header/base-1__header.js"
-        ]
-      }
-    },
-    {
-      "name": "base-1__header-short",
-      "slot": "header",
-      "parts": {
-        "html": [
-          "templates-html/layout/header/base-1__header-short.twig"
-        ],
-        "css": [
-          "templates-html/layout/header/base-1__header-short.scss"
-        ],
-        "js": [
-          "templates-html/layout/header/base-1__header-short.js"
-        ]
-      }
-    },
-    {
-      "name": "base-2__header",
-      "slot": "header",
-      "parts": {
-        "html": [
-          "templates-html/layout/header/base-2__header.twig"
-        ],
-        "css": [
-          "templates-html/layout/header/base-2__header.scss"
-        ],
-        "js": [
-          "templates-html/layout/header/base-2__header.js"
-        ]
-      }
-    },
-    {
-      "name": "base-1__footer",
-      "slot": "footer",
-      "parts": {
-        "html": [
-          "templates-html/layout/footer/base-1__footer.twig"
-        ],
-        "css": [
-          "templates-html/layout/footer/base-1__footer.scss"
-        ],
-        "js": []
-      }
-    },
-    {
-      "name": "base-2__footer",
-      "slot": "footer",
-      "parts": {
-        "html": [
-          "templates-html/layout/footer/base-2__footer.twig"
-        ],
-        "css": [
-          "templates-html/layout/footer/base-2__footer.scss"
-        ],
-        "js": []
-      }
-    }
+    { "name": "common-typography", "value": "base-1__text" },
+    { "name": "common-form", "value": "base-1__form" },
+    { "name": "common-buttons", "value": "base-1__buttons" },
+    { "name": "common-modal", "value": "base-1__modal" },
+    { "name": "common-vendor", "value": "base-1__vendor-themes" },
+    { "name": "common-nav-btns", "value": "base-1__nav-btns" },
+    { "name": "common-breadcrumbs", "value": "breadcrumbs" },
+    { "name": "common-pagination", "value": "pagination" },
+
+    { "name": "header", "value": "base-1__header" },
+    { "name": "footer", "value": "base-1__footer" }
   ]
 }
