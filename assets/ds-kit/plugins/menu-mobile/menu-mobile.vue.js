@@ -1,99 +1,142 @@
-function initMenuMobile(id, data) {
+var MenuMobile = function (_id, _tree) {
 
-    var menuMobile = new Vue({
-        el: '#menu-mobile-' + id,
-        data: {
-            el: '#menu-mobile-' + id,
-            tree: data,
-            activeNode: {
-                id: data[0].id,
-                name: data[0].name,
-                parentId: data[0].parentId
-            },
-            show: false
-        },
-        template:
-        '<transition name="menu-mobile-toggle" mode="out-in">' +
-            '<div class="menu-mobile" id="menu-mobile-' + id + '" v-if="show">' +
+    var id = _id;
+    var tree = _tree;
+    var activeNode = 0;
+    var html = {
+        root: null,
+        header: null,
+        titleBtn: null,
+        closeBtn: null,
+        list: null,
+        listItem: []
+    };
 
-                // menu-mobile-header begin
-                '<transition name="menu-mobile-header-toggle">' +
-                    '<div class="menu-mobile__header">' +
-                        '<div class="menu-mobile__title">' +
-                            '<button class="menu-mobile__title-btn" :data-node="activeNode.id" v-on:click.prevent="activeParentNode">' +
-                                '<i class="menu-mobile__icon-arrow-right" v-if="activeNode.id"></i>' +
-                                '{{ activeNode.name }}' +
-                            '</button>' +
-                        '</div>' +
-                        '<button class="menu-mobile__switcher-btn" v-on:click.prevent="closeMenu"><span></span></button>' +
-                    '</div>' +
-                '</transition>' +
+    var render = function () {
+        html.root = document.createElement('div');
+        html.root.classList.add('menu-mobile');
+        html.root.id = 'menu-mobile-' + id;
 
-                // menu-mobile__list begin
-                '<ul class="menu-mobile__list">' +
-                    '<template  v-for="item in tree">' +
-                    '<menu-mobile-item v-if="item.parentId === activeNode.id" v-bind:item="item" :key="item.id" ></menu-mobile-item>' +
-                    '</template>' +
-                '</ul>' +
+        document.body.appendChild(html.root);
 
-            '</div>' +
-        '</transition>',
-        methods: {
-            getNodeParam: function (input) {
-                var result = {};
-                result.id = input.id;
-                result.name = input.name;
-                result.parentId = input.parentId;
-                return result;
-            },
-            closeMenu: function () {
-                // $( this.el).hide();
-                this.activeNode = menuMobile.getNodeParam( this.tree[0] );
-                scrollComponent.enable();
-                this.show = false;
-            },
-            activeParentNode: function (event) {
-                if( this.activeNode.parentId !== null ){
-                    var parentId = this.activeNode.parentId;
-                    for(var i = 0; i < menuMobile.tree.length; i++){
-                        if (menuMobile.tree[i].id === parentId) {
-                            menuMobile.activeNode = menuMobile.getNodeParam( menuMobile.tree[i] );
-                        }
-                    }
-                } else {
-                    menuMobile.closeMenu();
-                }
+        renderHeader();
+        generateList();
+
+        renderList();
+        renderListItems();
+    };
+
+    var renderHeader = function () {
+        html.header = document.createElement('div');
+        html.header.classList.add('menu-mobile__header');
+        html.root.appendChild(html.header);
+
+        var titleWrap = document.createElement('div');
+        titleWrap.classList.add('menu-mobile__title');
+        html.header.appendChild(titleWrap);
+
+        html.titleBtn = document.createElement('button');
+        html.titleBtn.classList.add('menu-mobile__title-btn');
+        html.titleBtn.innerText = tree[activeNode].name;
+        titleWrap.appendChild(html.titleBtn);
+
+        html.closeBtn = document.createElement('button');
+        html.closeBtn.classList.add('menu-mobile__switcher-btn');
+        html.closeBtn.innerHTML = '<span></span>';
+        html.header.appendChild(html.closeBtn);
+    };
+
+    var renderList = function () {
+        html.list = document.createElement('ul');
+        html.list.classList.add('menu-mobile__list');
+        html.root.appendChild(html.list);
+
+    };
+    var renderListItems = function () {
+        html.list.innerHTML = '';
+
+        for (var i = 0; i < tree.length; i++ ){
+            if(tree[i].parentId === activeNode){
+                html.list.appendChild(html.listItem[i]);
             }
-        },
-        components: {
-            'menu-mobile-item': {
-                props: ['item', 'activeNode'],
-                template:
-                '<transition name="menu-mobile-item-show" mode="out-in">' +
-                    '<li class="menu-mobile__item">' +
-                        '<a class="menu-mobile__item-name" v-bind:href="item.href">' +
-                            '{{ item.name }}' +
-                            // иконка со стрелкой, для элементов без потомков
-                                '<span v-if="!item.hasChild" class="menu-mobile__item-btn">' +
-                                    '<i class="menu-mobile__icon-arrow-left"></i>' +
-                                '</span>' +
-                            '</a>' +
-                            // для элементов с подкатегориями добавляем кнопочку показывающую эти подразделы
-                            '<button v-if="item.hasChild" class="menu-mobile__item-btn hasChild"  v-on:click.prevent="showChild">' +
-                            '<i class="menu-mobile__icon-more"></i>' +
-                        '</button>' +
-                    '</li>' +
-                '</transition>',
-                methods: {
-                    showChild: function (event) {
-                        menuMobile.activeNode = menuMobile.getNodeParam( this._props.item );
-                    }
-                }
+        }
+    };
+
+    var generateList = function () {
+        for (var i = 0; i < tree.length; i++ ){
+
+            var item = document.createElement('li');
+            item.classList.add('menu-mobile__item');
+
+            var link = document.createElement('a');
+            link.classList.add('menu-mobile__item-name');
+            link.innerText = tree[i].name.replace(/\r?\n/g, "");
+            link.href = tree[i].href;
+            item.appendChild(link);
+
+            var btn = document.createElement('button');
+            btn.classList.add('menu-mobile__item-btn');
+            if (tree[i].hasChild){
+                btn.classList.add('hasChild');
+                btn.innerHTML = '<i class="menu-mobile__icon-more"></i>';
+                btn.setAttribute('data-id',  i);
+                btn.addEventListener('click', function (e) {
+                    updateActiveNode( e.target.getAttribute('data-id'));
+                });
+            } else {
+                btn.innerHTML = '<i class="menu-mobile__icon-arrow-left"></i>';
             }
+            item.appendChild(btn);
+
+            html.listItem.push(item);
+
+        }
+    };
+
+    var hide = function () {
+        html.root.classList.remove('active-open');
+        html.root.classList.add('active-leave');
+    };
+
+    var open = function () {
+        html.root.classList.remove('active-leave');
+        html.root.classList.add('active-open');
+    };
+
+    var updateActiveNode = function (_id) {
+        activeNode = _id;
+        console.log('new active ' +  _id);
+        console.log(tree[_id]);
+        console.log(activeNode);
+        renderListItems();
+    };
+
+    var addHandler = function () {
+
+        html.closeBtn.addEventListener('click', function () {
+            hide();
+        });
+
+        html.titleBtn.addEventListener('click', function () {
+            if(activeNode === 0){
+                hide();
+            } else {
+                updateActiveNode(activeNode = tree[activeNode].parentId);
+            }
+
+        });
+
+
+    };
+
+
+
+    return Object.freeze({
+        init: function () {
+            console.log(id);
+            render();
+            addHandler();
         }
     });
 
-    return menuMobile;
-}
-
-
+};

@@ -51,7 +51,7 @@
                 menuMobile.settings.VM = methods.renderMenu(id, tree);
 
                 // handlers
-                methods.addHandlerToggleBtn(container, menuMobile.settings.selectors.btnToggle, menuMobile.settings.VM);
+                // methods.addHandlerToggleBtn(container, menuMobile.settings.selectors.btnToggle, menuMobile.settings.VM);
 
                 // });
             },
@@ -94,11 +94,18 @@
             },
 
             renderMenu : function(id, tree){
-                $('body').append('' +
-                    '<menu-mobile class="menu-mobile" id="menu-mobile-' + id + '"></menu-mobile>'
-                );
-                // console.log(tree);
-                return initMenuMobile(id, tree);
+
+                console.log(tree);
+                var test = new MenuMobile(id, tree);
+
+                test.init();
+
+                return test;
+                // return initMenuMobile(id, tree);
+            },
+
+            renderHeader : function () {
+
             },
 
             // Вспомогательные ============================================================================================/
