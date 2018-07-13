@@ -36,8 +36,8 @@ const scripts = [
                 'assets/scripts/inputmask.js',
                 'assets/scripts/novalidate.js',
 
-                'assets/scripts/goals.js',
                 'assets/scripts/extend.js',
+                'assets/scripts/goals.js',
                 'assets/scripts/main.js'
             ],
             watch: [
