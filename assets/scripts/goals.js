@@ -15,7 +15,7 @@ var goalsModule = (function(){
 
     // PRIVATE =========================================================================================================
 
-    var goalDone = function (goalName, goalParams) {
+    var goalDone = function (goalName, goalCategory) {
         if(services.yaCounterID !=='' &&  typeof window['yaCounter' + services.yaCounterID] !== "undefined"){
             window['yaCounter' + services.yaCounterID].reachGoal(goalName, function () {});
         }
@@ -23,11 +23,10 @@ var goalsModule = (function(){
             _tmr.push({ id: services.mailRuID, type: 'reachGoal', goal: goalName });
         }
         if(services.gaUsed && typeof ga !== "undefined"){
-            ga('send', 'event', 'button', goalName);
+            ga('send', 'event', goalCategory, goalName);
         }
         if(services.gtagUsed && typeof gtag !== "undefined"){
-            gtag('event', goalName, goalParams);
-            console.log(goalName);
+            gtag('event', goalName, {'event_category': goalCategory});
         }
         if(services.fbqUsed && typeof fbq !== "undefined"){
             fbq('track', goalName, { });
@@ -69,20 +68,21 @@ var goalsModule = (function(){
         Specialist - Вызов специалиста
     }  */
 
-    
-    $('body').on('click', 'a[href^="tel:"]', function(){
-        goalDone('Phone', {'event_category': 'Click'});
+    var $body = $('body');
+
+    $body.on('click', 'a[href^="tel:"]', function(){
+        goalDone('Phone', 'Click');
     });
 
-    $('body').on('click', 'a[href^="mailto:"]', function(){
-        goalDone('Email', {'event_category': 'Click'});
+    $body.on('click', 'a[href^="mailto:"]', function(){
+        goalDone('Email', 'Click');
     });
 
     $(document).on('app.form.success', function (e, args) {
         var $form = args.$form;
         var name = $form.data('goalName') ? $form.data('goalName') : 'default';
         var category = $form.data('goalCategory') ? $form.data('goalCategory') : 'default';
-        goalDone(name, {'event_category': category});
+        goalDone(name, category);
     });
 
     // PUBLIC ==========================================================================================================

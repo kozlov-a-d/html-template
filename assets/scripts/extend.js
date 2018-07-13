@@ -59,7 +59,6 @@ $('.js-menu-smart').menuSmart();     // TODO: вынести настройки
 /* задаём каим именно табилцам нужно добавлять обертки .table-responsive для адаптива */
 Tables.addMobileView('table'); // TODO: переделать
 
-//=include ../ds-kit/plugins/goals.module.js
 
 //=include ../ds-kit/plugins/scroll-top.module.js
 scrollTopModule.init('.js-scroll-top', { speed: 500, offsetTop: 105 });            

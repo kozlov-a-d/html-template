@@ -125,22 +125,18 @@
     @media (max-width: $md) {
         min-height: auto;
     }
+    &__form{
+        overflow: hidden;
+    }
     &__price{
+        float: left;
         font-size: 26px;
         color: #333333;
         margin-bottom: 20px;
     }
-    &__count{
-        display: inline-block;
-        vertical-align: top;
-        margin-right: 10px;
-        input{
-            border-color: #000000 !important;
-            width: 65px !important;
-            height: 40px !important;
-        }
-    }
+    
     &__btn{
+        float: right;
         display: inline-block;
         vertical-align: top;
     }
