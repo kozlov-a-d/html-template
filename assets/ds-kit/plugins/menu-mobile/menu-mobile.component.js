@@ -54,15 +54,12 @@ var MenuMobile = function (_id, _tree) {
 
         html.titleBtn = document.createElement('button');
         html.titleBtn.classList.add('menu-mobile__title-btn');
-        html.titleBtn.innerText = tree[activeNode].name;
         titleWrap.appendChild(html.titleBtn);
 
         html.closeBtn = document.createElement('button');
         html.closeBtn.classList.add('menu-mobile__close-btn');
         html.closeBtn.innerHTML = '<span></span>';
         html.header.appendChild(html.closeBtn);
-
-        updateHeader();
     };
 
     var updateHeader = function () {
@@ -74,14 +71,13 @@ var MenuMobile = function (_id, _tree) {
         html.list = document.createElement('ul');
         html.list.classList.add('menu-mobile__list');
         html.root.appendChild(html.list);
-
     };
 
-    var renderListItems = function () {
+    var updateList = function () {
         html.list.innerHTML = '';
 
         for (var i = 0; i < tree.length; i++ ){
-            if(tree[i].parentId ===  parseInt(activeNode)){
+            if(tree[i].parentId === parseInt(activeNode)){
                 var item = html.listItem[i];
                 html.list.appendChild(item);
             }
@@ -98,7 +94,6 @@ var MenuMobile = function (_id, _tree) {
 
     var generateList = function () {
         for (var i = 0; i < tree.length; i++ ){
-
             var item = document.createElement('li');
             item.classList.add('menu-mobile__item');
 
@@ -113,9 +108,9 @@ var MenuMobile = function (_id, _tree) {
             if (tree[i].hasChild){
                 btn.classList.add('hasChild');
                 btn.innerHTML = '<i class="menu-mobile__icon-more"></i>';
-                btn.setAttribute('data-id',  i);
+                btn.dataset.id = i;
                 btn.addEventListener('click', function (e) {
-                    updateActiveNode( e.target.getAttribute('data-id'));
+                    updateActiveNode( e.target.dataset.id);
                 });
             } else {
                 btn.innerHTML = '<i class="menu-mobile__icon-arrow-left"></i>';
@@ -123,7 +118,6 @@ var MenuMobile = function (_id, _tree) {
             item.appendChild(btn);
 
             html.listItem.push(item);
-
         }
     };
 
@@ -154,7 +148,7 @@ var MenuMobile = function (_id, _tree) {
     var updateActiveNode = function (_id) {
         activeNode = _id;
         updateHeader();
-        renderListItems();
+        updateList();
     };
 
     var addHandler = function () {
