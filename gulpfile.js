@@ -21,7 +21,6 @@ const scripts = [
                 'web/assets/node_modules/noty/lib/noty.js',
                 'web/assets/node_modules/owl.carousel/dist/owl.carousel.js',
                 'web/assets/node_modules/slick-carousel/slick/slick.js',
-                'web/assets/node_modules/vue/dist/vue.js',
                 'web/assets/node_modules/photoswipe/dist/photoswipe.js',
                 'web/assets/node_modules/photoswipe/dist/photoswipe-ui-default.js',
 
