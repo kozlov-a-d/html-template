@@ -12,18 +12,35 @@ var MenuMobile = function (_id, _tree) {
         listItem: []
     };
 
+    var transitionEvent = (function whichAnimationEvent(){
+        var t,
+            el = document.createElement("fakeelement");
+
+        var animations = {
+            "animation"      : "animationend",
+            "OAnimation"     : "oAnimationEnd",
+            "MozAnimation"   : "animationend",
+            "WebkitAnimation": "webkitAnimationEnd"
+        };
+
+        for (t in animations){
+            if (el.style[t] !== undefined){
+                return animations[t];
+            }
+        }
+    })();
+
     var render = function () {
         html.root = document.createElement('div');
         html.root.classList.add('menu-mobile');
         html.root.id = 'menu-mobile-' + id;
-
+        html.root.classList.add('is-closed');
         document.body.appendChild(html.root);
 
+        addToggleAnimateHandler();
         renderHeader();
         generateList();
-
         renderList();
-        renderListItems();
     };
 
     var renderHeader = function () {
@@ -41,9 +58,16 @@ var MenuMobile = function (_id, _tree) {
         titleWrap.appendChild(html.titleBtn);
 
         html.closeBtn = document.createElement('button');
-        html.closeBtn.classList.add('menu-mobile__switcher-btn');
+        html.closeBtn.classList.add('menu-mobile__close-btn');
         html.closeBtn.innerHTML = '<span></span>';
         html.header.appendChild(html.closeBtn);
+
+        updateHeader();
+    };
+
+    var updateHeader = function () {
+        html.titleBtn.innerHTML = '<i class="menu-mobile__icon-arrow-right"></i>' + tree[activeNode].name;
+        html.titleBtn.dataset.node = activeNode;
     };
 
     var renderList = function () {
@@ -52,14 +76,24 @@ var MenuMobile = function (_id, _tree) {
         html.root.appendChild(html.list);
 
     };
+
     var renderListItems = function () {
         html.list.innerHTML = '';
 
         for (var i = 0; i < tree.length; i++ ){
-            if(tree[i].parentId === activeNode){
-                html.list.appendChild(html.listItem[i]);
+            if(tree[i].parentId ===  parseInt(activeNode)){
+                var item = html.listItem[i];
+                html.list.appendChild(item);
             }
         }
+
+        html.list.childNodes.forEach(function (element) {
+            element.addEventListener(transitionEvent, function () {
+                element.classList.remove('menu-mobile-item-show-enter-active');
+                element.removeEventListener(transitionEvent, function () {});
+            });
+            element.classList.add('menu-mobile-item-show-enter-active');
+        });
     };
 
     var generateList = function () {
@@ -93,50 +127,57 @@ var MenuMobile = function (_id, _tree) {
         }
     };
 
-    var hide = function () {
-        html.root.classList.remove('active-open');
-        html.root.classList.add('active-leave');
+    var close = function () {
+        html.root.classList.add('is-closing','menu-mobile-toggle-leave-active');
+        activeNode = 0;
     };
 
     var open = function () {
-        html.root.classList.remove('active-leave');
-        html.root.classList.add('active-open');
+        updateActiveNode(0);
+        html.root.classList.remove('is-closed');
+        html.root.classList.add('is-opening','menu-mobile-toggle-enter-active');
+    };
+
+    var addToggleAnimateHandler = function () {
+        html.root.addEventListener(transitionEvent, function () {
+            if( html.root.classList.contains('is-opening')){
+                html.root.classList.remove('is-opening', 'menu-mobile-toggle-enter-active');
+            }
+            if( html.root.classList.contains('is-closing')){
+                html.root.classList.add('is-closed');
+                html.root.classList.remove('is-closing', 'menu-mobile-toggle-leave-active');
+            }
+            html.root.removeEventListener(transitionEvent, function () {});
+        });
     };
 
     var updateActiveNode = function (_id) {
         activeNode = _id;
-        console.log('new active ' +  _id);
-        console.log(tree[_id]);
-        console.log(activeNode);
+        updateHeader();
         renderListItems();
     };
 
     var addHandler = function () {
 
         html.closeBtn.addEventListener('click', function () {
-            hide();
+            close();
         });
 
         html.titleBtn.addEventListener('click', function () {
             if(activeNode === 0){
-                hide();
+                close();
             } else {
-                updateActiveNode(activeNode = tree[activeNode].parentId);
+                updateActiveNode(activeNode = tree[activeNode].parentId || 0);
             }
-
         });
-
-
     };
-
-
 
     return Object.freeze({
         init: function () {
-            console.log(id);
             render();
             addHandler();
-        }
+        },
+        open: open,
+        close: close
     });
-
 };

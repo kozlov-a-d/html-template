@@ -3,7 +3,7 @@ console.time('extends-js');
 var screenSize= {
     xxs: 320,     // iphone5 в портретной ориентации
     xs: 414,      // iphone plus в портретной ориентации
-    sm: 568,      // 
+    sm: 568,      //
     md: 820,      // планшеты в портретной ориентации / телефоны в альбомной
     lg: 1024,     // планшеты в альбомной ориентации
     xl: 1280     // ширина контента широкого сайта ( 1170 например )
@@ -31,14 +31,14 @@ resizeComponent.setFreezeTime(200);
 //=include ../ds-kit/plugins/photoswipe/photoswipe.wrapper.js
 photoswipeWrapper.init('.js-photoswipe-gallery', 'a:not(.no-photoswipe)');
 
-//=include ../ds-kit/plugins/menu-mobile/menu-mobile.vue.js
+//=include ../ds-kit/plugins/menu-mobile/menu-mobile.component.js
 //=include ../ds-kit/plugins/menu-mobile/menu-mobile.jquery.js
 $('.js-menu-mobile').menuMobile({
     text: {
-        rootTitle: 'Menu'      
+        rootTitle: 'Меню'
     }
-}); // TODO: переделать без vue.js ?
- 
+});
+
 //=include ../ds-kit/plugins/menu-smart/menu-smart.jquery.js
 $('.js-menu-smart').menuSmart();     // TODO: вынести настройки
 
@@ -61,10 +61,10 @@ Tables.addMobileView('table'); // TODO: переделать
 
 
 //=include ../ds-kit/plugins/scroll-top.module.js
-scrollTopModule.init('.js-scroll-top', { speed: 500, offsetTop: 105 });            
+scrollTopModule.init('.js-scroll-top', { speed: 500, offsetTop: 105 });
 
 //=include ../ds-kit/plugins/print.module.js
-printModule.init('.js-print');  
+printModule.init('.js-print');
 
 //=include ../ds-kit/plugins/tabs/tabs.jquery.js
 // $('.js-tabs').tabs();
@@ -94,14 +94,14 @@ if( $('.js-map').length ){
             zoom: [18, 18],
             ui: true
         });
-    }); 
+    });
 }
 
 
 
 
 // TEMPLATE ============================================================================================================
-        
+
 // Header ============================================================================================================*/
 
 ///=include ../../templates-html/common/modal/base-1__modal.js                               /* Base-1 Denis + Lesya */
@@ -117,7 +117,7 @@ if( $('.js-map').length ){
 // Common-block ======================================================================================================*/
 
 //=include ../../templates-html/feedback/base-1__feedback-container.js                        /* Base-1 Denis + Lesya */
- 
+
 
 // Homepage ==========================================================================================================*/
 

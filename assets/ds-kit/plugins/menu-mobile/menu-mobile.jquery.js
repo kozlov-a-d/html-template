@@ -10,8 +10,7 @@
             node: '-has-dropdown',
             btnToggle: '[data-menu-mobile--switcher-btn]'
         }
-    }; 
-
+    };
 
 
     $.fn.menuMobile = function(options, method) {
@@ -45,15 +44,14 @@
                 var container = $(this);
                 var id = Math.round( Math.random()*10000);
 
-                menuMobile.settings.text.rootTitle = $(container).find(menuMobile.settings.selectors.btnToggle).text();
+                // menuMobile.settings.text.rootTitle = $(container).find(menuMobile.settings.text.rootTitle).text();
 
                 var tree = methods.buildMenuTree($(this), options);
-                menuMobile.settings.VM = methods.renderMenu(id, tree);
+                methods.renderMenu(id, tree);
 
                 // handlers
-                // methods.addHandlerToggleBtn(container, menuMobile.settings.selectors.btnToggle, menuMobile.settings.VM);
+                methods.addHandlerToggleBtn(container, menuMobile.settings.selectors.btnToggle, menuMobile.settings.VM);
 
-                // });
             },
 
             // Работа с деревом ===========================================================================================/
@@ -94,18 +92,8 @@
             },
 
             renderMenu : function(id, tree){
-
-                console.log(tree);
-                var test = new MenuMobile(id, tree);
-
-                test.init();
-
-                return test;
-                // return initMenuMobile(id, tree);
-            },
-
-            renderHeader : function () {
-
+                menuMobile.settings.VM = new MenuMobile(id, tree);
+                menuMobile.settings.VM.init();
             },
 
             // Вспомогательные ============================================================================================/
@@ -141,7 +129,9 @@
             // Внешнее управление =========================================================================================/
 
             showMenu : function (VM) {
-                VM.show = true;
+                // VM.show = true;
+                console.log(menuMobile.settings.VM);
+                VM.open();
                 if( typeof scrollComponent !== "undefined") {
                     scrollComponent.disable();
                 }
@@ -149,7 +139,7 @@
 
             // как ту из вне поулчить вьюмодел?
             hideMenu : function (VM) {
-                VM.show = false;
+                VM.close();
                 if( typeof scrollComponent !== "undefined") {
                     scrollComponent.enable();
                 }

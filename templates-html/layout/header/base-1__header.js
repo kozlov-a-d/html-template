@@ -25,5 +25,5 @@ $('.js-header-modal-cart').modalHtml({
     '</div>' +
     '<a class="btn -fullwidth modal-html__btn" href="#">Корзина</a> ' +
     '',
-    minResolution: 480
+    maxResolution: 480
 });

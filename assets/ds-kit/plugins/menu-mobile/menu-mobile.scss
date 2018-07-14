@@ -12,284 +12,294 @@ $mobile-menu-color-border: #fff;
 $mobile-menu-color-icons: #fff;
 $mobile-menu-header-height: 70px;
 
-.menu-mobile{
-  position: fixed;
-  left: 0;
-  top: 0;
-  z-index: 1000;
-  width: 100%;
-  height: 100vh;
-  background: $mobile-menu-color-bg;
-  box-sizing: border-box;
-  overflow: hidden;
-
-  &__header{
-    position: relative;
-    display: block;
-    width: 100%;
-    height: $mobile-menu-header-height;
-    border-bottom: 1px solid $mobile-menu-color-border;
-  }
-
-  &__title{
-    width: 100%;
-    height: $mobile-menu-header-height;
-    text-align: left;
-    &-btn{
-      position: relative;
-      width: 100%;
-      height: $mobile-menu-header-height;
-      padding: 0 21px 0 36px;
-      border: none;
-      font-size: 20px;
-      font-weight: 600;
-      color: $mobile-menu-color-header;
-      line-height: $mobile-menu-header-height;
-      text-align: left;
-      text-transform: uppercase;
-      text-overflow:ellipsis;
-      white-space: nowrap;
-      background: none;
-      transition: .25s;
-      &[data-node='0']{
-        padding: 0 21px 0 21px;
-      }
-    }
-  }
-
-  &__switcher-btn{
-    position: absolute;
-    right: 0;
+.menu-mobile {
+    position: fixed;
+    left: 0;
     top: 0;
-    display: block;
-    width: 40px;
-    height: $mobile-menu-header-height;
-    background: none;
-    border: none;
-    cursor: pointer;
-    span{
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      display: block;
-      width: 24px;
-      height: 2px;
-      margin: -1px 0 0 -12px;
-      background: none;
-      border: none;
+    z-index: 1000;
+    width: 100%;
+    height: 100vh;
+    background: $mobile-menu-color-bg;
+    box-sizing: border-box;
+    overflow: hidden;
 
-      &:before,
-      &:after{
-        content: '';
+    &.is-closed{
+        display: none;
+    }
+
+    &__header {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: $mobile-menu-header-height;
+        border-bottom: 1px solid $mobile-menu-color-border;
+    }
+
+    &__title {
+        width: 100%;
+        height: $mobile-menu-header-height;
+        text-align: left;
+        &-btn {
+            position: relative;
+            width: 100%;
+            height: $mobile-menu-header-height;
+            padding: 0 21px 0 36px;
+            border: none;
+            font-size: 20px;
+            font-weight: 600;
+            color: $mobile-menu-color-header;
+            line-height: $mobile-menu-header-height;
+            text-align: left;
+            text-transform: uppercase;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            background: none;
+            transition: .25s;
+            &[data-node='0'] {
+                padding: 0 21px 0 21px;
+                i{
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &__close-btn {
         position: absolute;
-        left: 0;
+        right: 0;
         top: 0;
         display: block;
-        width: 24px;
-        height: 2px;
-        margin: 0;
-        transform: rotate(45deg);
-        background: $mobile-menu-color-icons;
-        transition: .2s;
-      }
-      &:before{
-        transform: rotate(45deg);
-      }
-      &:after{
-        transform: rotate(-45deg);
-      }
-    }
-  }
+        width: 40px;
+        height: $mobile-menu-header-height;
+        background: none;
+        border: none;
+        cursor: pointer;
+        span {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            display: block;
+            width: 24px;
+            height: 2px;
+            margin: -1px 0 0 -12px;
+            background: none;
+            border: none;
+            pointer-events: none;
 
-  &__list{
-    display: block;
-    margin: 0;
-    padding: 0 0 60px;  // iOS safari bottom toolbar
-    list-style: none;
-    height: calc(100vh - #{$mobile-menu-header-height} );
-    overflow-y: auto;
-  }
-
-  &__item{
-    display: block;
-    position: relative;
-    margin: 0;
-    border-bottom: 1px solid $mobile-menu-color-border;
-
-    &-name{
-      position: relative;
-      display: block;
-      padding: 11px 21px 13px;
-      text-decoration: none;
-      color: $mobile-menu-color-main;
-    }
-
-    &.-has-child .menu-mobile-name{
-      padding: 11px 51px 13px 21px;
-    }
-
-    &-btn{
-      display: block;
-      width: 42px;
-      height: 100%;
-      position: absolute;
-      right: 0;
-      top: 0;
-      background: none;
-      border: none;
-      pointer-events: none;
-
-      &.hasChild{
-        pointer-events: auto;
-        border-left: 1px solid $mobile-menu-color-border;
-      }
-
-    }
-
-  }
-
-  &__icon{
-    display: block;
-
-    &-arrow-left,
-    &-arrow-right{
-      width: 8px;
-      height: 8px;
-      position: absolute;
-      border: 1px solid $mobile-menu-color-icons;
-      border-left: none;
-      border-bottom: none;
-      top: 50%;
-    } 
-
-    &-arrow-left{ 
-      left: 50%;
-      margin: -4px -4px 0 -5px;
-      transform: rotate(45deg);
-    }
-
-    &-arrow-right{
-      left: 21px;
-      margin: -4px -4px 0 3px;
-      transform: rotate(-135deg);
-    }
-
-    &-more{
-      width: 4px;
-      height: 4px;
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      margin: -2px 0 0 -2px;
-      border-radius: 50%;
-      background: $mobile-menu-color-icons;
-
-      &:before,
-      &:after{
-        content: '';
-        display: block;
-        width: 4px;
-        height: 4px;
-        position: absolute;
-        left: 0;
-        border-radius: 50%;
-        background: $mobile-menu-color-icons;
-      }
-      &:before{
-        top: -7px;
-      }
-      &:after{
-        bottom: -7px;
-      }
-    }
-  }
-
-
-  /* animations */
-  &-toggle{
-    &-enter-active{
-      animation: menu-mobile-open 0.5s;
-    }
-    &-leave-active{
-      animation: menu-mobile-close 0.3s;
-    }
-  }
-
-  &-header-toggle{
-    &-enter,
-    &-leave{
-      opacity: 0
-    }
-    &-enter-active,
-    &-leave-active{
-      transition: opacity .5s .2s;
-    }
-  }
-
-  &-item-show{
-    &-enter{
-      opacity: 0;
-    }
-    &-enter-active{
-      opacity: 0;
-      animation: menu-mobile-item-show 0.35s ease-out;
-      @for $i from 0 through 15 {
-        &:nth-child(#{$i}){
-          animation-delay: 0.20s + 0.05s * $i;
+            &:before,
+            &:after {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                display: block;
+                width: 24px;
+                height: 2px;
+                margin: 0;
+                transform: rotate(45deg);
+                background: $mobile-menu-color-icons;
+                transition: .2s;
+            }
+            &:before {
+                transform: rotate(45deg);
+            }
+            &:after {
+                transform: rotate(-45deg);
+            }
         }
-      }
     }
-    &-leave {
-      opacity: 0;
+
+    &__list {
+        display: block;
+        margin: 0;
+        padding: 0 0 60px; // iOS safari bottom toolbar
+        list-style: none;
+        height: calc(100vh - #{$mobile-menu-header-height});
+        overflow-y: auto;
     }
-    &-leave-active{
-      display: none;
-      transition: opacity 0.1s ease-out;
-      animation-delay: 0s !important;
+
+    &__item {
+        display: block;
+        position: relative;
+        margin: 0;
+        border-bottom: 1px solid $mobile-menu-color-border;
+
+        &-name {
+            position: relative;
+            display: block;
+            padding: 11px 21px 13px;
+            text-decoration: none;
+            color: $mobile-menu-color-main;
+        }
+
+        &.-has-child .menu-mobile-name {
+            padding: 11px 51px 13px 21px;
+        }
+
+        &-btn {
+            display: block;
+            width: 42px;
+            height: 100%;
+            position: absolute;
+            right: 0;
+            top: 0;
+            background: none;
+            border: none;
+            pointer-events: none;
+
+            &.hasChild {
+                pointer-events: auto;
+                border-left: 1px solid $mobile-menu-color-border;
+            }
+
+        }
+
     }
-  }
+
+    i{
+        pointer-events: none;
+    }
+
+    &__icon {
+        display: block;
+
+        &-arrow-left,
+        &-arrow-right {
+            width: 8px;
+            height: 8px;
+            position: absolute;
+            border: 1px solid $mobile-menu-color-icons;
+            border-left: none;
+            border-bottom: none;
+            top: 50%;
+        }
+
+        &-arrow-left {
+            left: 50%;
+            margin: -4px -4px 0 -5px;
+            transform: rotate(45deg);
+        }
+
+        &-arrow-right {
+            left: 21px;
+            margin: -4px -4px 0 3px;
+            transform: rotate(-135deg);
+        }
+
+        &-more {
+            width: 4px;
+            height: 4px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin: -2px 0 0 -2px;
+            border-radius: 50%;
+            background: $mobile-menu-color-icons;
+
+            &:before,
+            &:after {
+                content: '';
+                display: block;
+                width: 4px;
+                height: 4px;
+                position: absolute;
+                left: 0;
+                border-radius: 50%;
+                background: $mobile-menu-color-icons;
+            }
+            &:before {
+                top: -7px;
+            }
+            &:after {
+                bottom: -7px;
+            }
+        }
+    }
+
+    /* animations */
+    &-toggle {
+        &-enter-active {
+            animation: menu-mobile-open 0.5s;
+        }
+        &-leave-active {
+            animation: menu-mobile-close 0.3s;
+        }
+    }
+
+    &-header-toggle {
+        &-enter,
+        &-leave {
+            opacity: 0
+        }
+        &-enter-active,
+        &-leave-active {
+            transition: opacity .5s .2s;
+        }
+    }
+
+    &-item-show {
+        &-enter {
+            opacity: 0;
+        }
+        &-enter-active {
+            opacity: 0;
+            animation: menu-mobile-item-show 0.35s ease-out;
+            @for $i from 0 through 15 {
+                &:nth-child(#{$i}) {
+                    animation-delay: 0.20s + 0.05s * $i;
+                }
+            }
+        }
+        &-leave {
+            opacity: 0;
+        }
+        &-leave-active {
+            display: none;
+            transition: opacity 0.1s ease-out;
+            animation-delay: 0s !important;
+        }
+    }
 }
 
-
 @keyframes menu-mobile-open {
-  0% {
-    transform: scaleY(0);
-    height: 0;
-    opacity: 0;
-    transform-origin: center top;
-  }
-  20%{
-    opacity: 1;
-  }
-  100% {
-    transform: scaleY(1);
-    height: auto;
-    opacity: 1;
-    transform-origin: center top;
-  }
+    0% {
+        transform: scaleY(0);
+        height: 0;
+        opacity: 0;
+        transform-origin: center top;
+    }
+    20% {
+        opacity: 1;
+    }
+    100% {
+        transform: scaleY(1);
+        height: auto;
+        opacity: 1;
+        transform-origin: center top;
+    }
 }
 
 @keyframes menu-mobile-close {
-  0% {
-    top:0;
-  }
-  20% {
-    opacity: 1;
-  }
-  100% {
-    top:-100vh;
-  }
+    0% {
+        top: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    100% {
+        top: -100vh;
+    }
 }
 
 @keyframes menu-mobile-item-show {
-  0% {
-    transform: scale(1.1) translateY(-24px);
-    opacity: 0;
-    transform-origin: center top;
-  }
-  100% {
-    transform: translate(0, 0);
-    opacity: 1;
-    transform-origin: center top;
-  }
+    0% {
+        transform: scale(1.1) translateY(-24px);
+        opacity: 0;
+        transform-origin: center top;
+    }
+    100% {
+        transform: translate(0, 0);
+        opacity: 1;
+        transform-origin: center top;
+    }
 }
