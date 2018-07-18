@@ -5,10 +5,11 @@
     padding-bottom: 56.25%;
     background-color: #000;
     background-position: center;
+    background-size: contain;
     background-repeat: no-repeat;
     display: inline-block;
     overflow: hidden;
-    transition: all 200ms ease-out;
+    transition: all $transition-time $transition-ease;
     cursor: pointer;
 }
 
