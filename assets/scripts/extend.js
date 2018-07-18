@@ -31,6 +31,9 @@ resizeComponent.setFreezeTime(200);
 //=include ../ds-kit/plugins/photoswipe/photoswipe.wrapper.js
 photoswipeWrapper.init('.js-photoswipe-gallery', 'a:not(.no-photoswipe)');
 
+//=include ../ds-kit/plugins/embed-video/embed-video.module.js
+embedVideoModule.init('.js-embed-video');
+
 //=include ../ds-kit/plugins/menu-mobile/menu-mobile.component.js
 //=include ../ds-kit/plugins/menu-mobile/menu-mobile.jquery.js
 $('.js-menu-mobile').menuMobile({
