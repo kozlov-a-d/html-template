@@ -1,9 +1,9 @@
-##Embed Video Module 
+## Embed Video Module 
 Модуль для вставки видео с youtube
 >Ссылка на файл в gitlab [resize.component.js](https://git.darvins.ru/darvin-cms/skeleton/blob/master/assets/ds-kit/plugins/embed-video)
 
-###Методы:
-####init
+### Методы:
+#### init
 Указываем селектор элементов, внутрь которых загрузится видео
 ```
 /**
@@ -12,7 +12,7 @@
 embedVideoModule.init('.js-embed-video');
 ```
 
-###HTML
+### HTML
 ```html
 <div class="video js-embed-video" data-type="youtube" data-id="6Gar6lnh2PI"></div>
 ```
