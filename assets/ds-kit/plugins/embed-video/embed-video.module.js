@@ -1,9 +1,12 @@
 /**
- * Компонент для вставки видео с youtube
+ * Модуль для вставки видео с youtube
  * @type {{init}}
  */
 var embedVideoModule = (function(){
 
+    /**
+     * @param {String} selector
+     */
     var init = function (selector) {
         var videos = document.querySelectorAll(selector);
 
@@ -36,6 +39,9 @@ var embedVideoModule = (function(){
     // PUBLIC ==========================================================================================================
 
     return Object.freeze({
+        /**
+         *
+         */
         init : init
     });
 
